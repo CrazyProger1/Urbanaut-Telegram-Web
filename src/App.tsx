@@ -4,7 +4,7 @@ import MainPage from "./components/pages/MainPage.tsx";
 
 const App = () => {
   return (
-    <div>
+    <div className="dark">
       <BrowserRouter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MainPage />} />
