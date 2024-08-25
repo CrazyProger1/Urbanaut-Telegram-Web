@@ -12,31 +12,31 @@ const FooterNavbar = () => {
         className="flex flex-col items-center text-white text-base mob2:text-lg p-1 mob2:p-0.5 active:bg-main active:ring-1 active:ring-gray-400 focus:ring-1 focus:ring-gray-400 rounded-lg"
         to={"/top"}
       >
-        <img src={starUrl} alt="test" width="52px"></img>
+        <img src={starUrl} alt="test" width="32px"></img>
       </Link>
       <Link
         className="flex flex-col items-center text-white text-base mob2:text-lg p-1 mob2:p-0.5 active:bg-main active:ring-1 active:ring-gray-400 focus:ring-1 focus:ring-gray-400 rounded-lg"
         to={"/friends"}
       >
-        <img src={profileUrl} alt="test" width="52px"></img>
+        <img src={profileUrl} alt="test" width="32px"></img>
       </Link>
       <Link
         className="flex flex-col items-center text-white text-base mob2:text-lg p-1 mob2:p-0.5 active:bg-main active:ring-1 active:ring-gray-400 focus:ring-1 focus:ring-gray-400 rounded-lg"
         to={"/"}
       >
-        <img src={searchUrl} alt="test" width="52px"></img>
+        <img src={searchUrl} alt="test" width="42px"></img>
       </Link>
       <Link
         className="flex flex-col items-center text-white text-base mob2:text-lg p-1 mob2:p-0.5 active:bg-main active:ring-1 active:ring-gray-400 focus:ring-1 focus:ring-gray-400 rounded-lg"
         to={"/tasks"}
       >
-        <img src={agendaUrl} alt="test" width="52px"></img>
+        <img src={agendaUrl} alt="test" width="32px"></img>
       </Link>
       <Link
         className="flex flex-col items-center text-white text-base mob2:text-lg p-1 mob2:p-0.5 active:bg-main active:ring-1 active:ring-gray-400 focus:ring-1 focus:ring-gray-400 rounded-lg"
         to={"/shop"}
       >
-        <img src={calendarUrl} alt="test" width="52px"></img>
+        <img src={calendarUrl} alt="test" width="32px"></img>
       </Link>
     </div>
   );
