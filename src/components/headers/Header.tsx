@@ -3,7 +3,7 @@ const Header = () => {
     <header className="bg-card rounded-b-2xl m-4">
       <div className="w-full">
         <div className="flex flex-row items-center justify-between">
-          <div className="m-3">
+          <div className="m-4">
             <img
               className="rounded-2xl"
               src={new URL("/photo.jpg", import.meta.url).href}
@@ -13,7 +13,7 @@ const Header = () => {
           </div>
 
           <img
-            className="m-3"
+            className="m-4"
             src={new URL("/settings.png", import.meta.url).href}
             alt=""
             width="32px"
