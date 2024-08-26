@@ -9,7 +9,7 @@ interface FooterNavbarButtonProps {
 const FooterNavbarLink: FC<FooterNavbarButtonProps> = ({ to, image }) => {
   return (
     <Link className="" to={to}>
-      <img src={image} alt="test" width="32px"></img>
+      <img src={image} alt="test" width="42px"></img>
     </Link>
   );
 };
