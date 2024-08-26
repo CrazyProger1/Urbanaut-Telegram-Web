@@ -1,7 +1,7 @@
 import PageBodyWrapper from "../wrappers/PageBodyWrapper.tsx";
 
 const ObjectsPage = () => {
-  return <PageBodyWrapper>Hello, World</PageBodyWrapper>;
+  return <PageBodyWrapper>Objects Page</PageBodyWrapper>;
 };
 
 export default ObjectsPage;

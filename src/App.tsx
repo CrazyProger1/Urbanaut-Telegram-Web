@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ObjectsPage from "./components/pages/ObjectsPage.tsx";
 import MainPage from "./components/pages/MainPage.tsx";
+import ProfilePage from "./components/pages/ProfilePage.tsx";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MainPage />} />
           <Route path="/objects" element={<ObjectsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </div>
