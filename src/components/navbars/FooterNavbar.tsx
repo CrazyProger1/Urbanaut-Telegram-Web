@@ -5,7 +5,9 @@ const FooterNavbar = () => {
   return (
     <div className="flex justify-around">
       {FOOTER_NAVBAR_LINKS.map((link) => (
-        <FooterNavbarLink {...link} />
+        <div className="m-3">
+          <FooterNavbarLink {...link} />
+        </div>
       ))}
     </div>
   );

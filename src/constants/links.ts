@@ -13,7 +13,7 @@ export const FOOTER_NAVBAR_LINKS = [
   },
   {
     to: "/friends",
-    image: new URL("/agenda.png", import.meta.url).href,
+    image: new URL("/friends.png", import.meta.url).href,
   },
   {
     to: "/events",
