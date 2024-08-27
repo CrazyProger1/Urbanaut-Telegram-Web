@@ -10,7 +10,9 @@ const ObjectsTable: FC<ObjectsTableProps> = ({ objects }) => {
   return (
     <div>
       {objects.map((obj) => (
-        <ObjectItem key={obj.name} obj={obj} />
+        <div className="m-4">
+          <ObjectItem key={obj.name} obj={obj} />
+        </div>
       ))}
     </div>
   );
