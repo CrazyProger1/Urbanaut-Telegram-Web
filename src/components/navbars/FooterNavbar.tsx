@@ -13,7 +13,7 @@ const FooterNavbar = observer(() => {
         <div
           className={uiStore.currentPage == link.to ? "bg-cta" : ""}
         >
-          <div className="m-3">
+          <div className="m-4">
             <FooterNavbarLink {...link} onChoose={handlePageChosen} />
           </div>
         </div>
