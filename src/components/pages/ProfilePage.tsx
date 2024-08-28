@@ -3,7 +3,7 @@ import PageBodyWrapper from "../wrappers/PageBodyWrapper.tsx";
 const ProfilePage = () => {
   return (
     <PageBodyWrapper>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-4 mb-4">
         <img
           src={new URL("/photo.jpg", import.meta.url).href}
           alt=""

@@ -8,7 +8,7 @@ interface PageWrapperProps {
 
 const PageBodyWrapper: FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div>
+    <div className="ml-4 mr-4">
       <Header />
       {children}
       <Footer />

@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="bg-card rounded-b-2xl m-4">
+    <header className="bg-card rounded-b-2xl">
       <div className="w-full">
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-row m-4">
