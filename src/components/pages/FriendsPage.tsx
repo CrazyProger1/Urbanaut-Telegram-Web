@@ -4,11 +4,10 @@ import FriendsTable from "../tables/FriendsTable.tsx";
 import usersStore from "../../stores/UsersStore.ts";
 
 const FriendsPage = () => {
-
   return (
     <PageBodyWrapper>
       <FriendTeamSelectButton />
-      <FriendsTable friends={usersStore.friends}/>
+      <FriendsTable friends={usersStore.friends} />
     </PageBodyWrapper>
   );
 };
