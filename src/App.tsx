@@ -8,7 +8,7 @@ import EventsPage from "./components/pages/EventsPage.tsx";
 
 const App = () => {
   return (
-    <div className="dark">
+    <div className="dark min-h-screen flex flex-col">
       <BrowserRouter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<ObjectsPage />} />
