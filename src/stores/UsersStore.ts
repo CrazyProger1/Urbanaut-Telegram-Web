@@ -6,6 +6,14 @@ class UsersStore {
       name: "superuser",
       photo: new URL("/photo.jpg", import.meta.url).href,
     },
+    {
+      name: "topuser",
+      photo: new URL("/photo.jpg", import.meta.url).href,
+    },
+    {
+      name: "thirduser",
+      photo: new URL("/photo.jpg", import.meta.url).href,
+    },
   ];
 
   constructor() {
