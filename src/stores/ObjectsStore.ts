@@ -1,12 +1,13 @@
 import { makeAutoObservable } from "mobx";
 
-class UIStore {
+class ObjectsStore {
   objects = [
     {
       name: "Abandoned Factory",
       description: "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a",
       photo:
         "https://journalistsresource.org/wp-content/uploads/2018/05/Abandoned-buildings.jpg",
+      rating: 1.2,
     },
     {
       name: "Abandoned Building",
@@ -14,6 +15,7 @@ class UIStore {
         "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
       photo:
         "https://c8.alamy.com/comp/HH0NF9/abandoned-building-exterior-HH0NF9.jpg",
+      rating: 4.5,
     },
     {
       name: "Some Military Facility",
@@ -21,6 +23,8 @@ class UIStore {
         "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
       photo:
         "https://t4.ftcdn.net/jpg/04/74/75/25/360_F_474752545_MpPpL8uMkCviZKBswbLbdRcgo6PXMwwt.jpg",
+
+      rating: 5,
     },
   ];
 
@@ -29,4 +33,4 @@ class UIStore {
   }
 }
 
-export default new UIStore();
+export default new ObjectsStore();

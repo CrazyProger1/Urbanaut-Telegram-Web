@@ -8,7 +8,7 @@ export const FOOTER_NAVBAR_LINKS = [
     image: new URL("/profile.png", import.meta.url).href,
   },
   {
-    to: "/objects",
+    to: "/",
     image: new URL("/search.png", import.meta.url).href,
   },
   {
