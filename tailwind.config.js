@@ -12,6 +12,8 @@ export default {
       "cta-active": "rgba(var(--cta-active))",
       "cta-text": "rgba(var(--cta-text))",
       red: "#C94F4F",
+      selection: "#564E85",
+      "selection-border": "#564E85",
 
       grape: "rgba(var(--grape))",
     },
