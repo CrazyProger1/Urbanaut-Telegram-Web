@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Header from "../headers/Header.tsx";
 import Footer from "../footers/Footer.tsx";
 

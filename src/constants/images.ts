@@ -8,4 +8,5 @@ export const IMAGES = {
   objects: new URL("/search.png", import.meta.url).href,
   friends: new URL("/friends.png", import.meta.url).href,
   events: new URL("/calendar.png", import.meta.url).href,
+  settings: new URL("/settings.png", import.meta.url).href,
 };
