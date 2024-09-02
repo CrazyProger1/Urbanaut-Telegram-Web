@@ -4,7 +4,7 @@ import uiStore from "../../stores/UIStore.ts";
 
 const Header = () => {
   return (
-    <header className="flex flex-row bg-foreground rounded-b-2xl w-full p-2">
+    <header className="flex flex-row bg-foreground rounded-b-2xl w-full p-2 pr-4 items-center">
       <Link to="/profile" onClick={() => uiStore.setPage("/profile")}>
         <img
           className="size-16 rounded-2xl shadow-frame shadow-shadow-first/50"
@@ -19,7 +19,7 @@ const Header = () => {
       </div>
 
       <img
-        className="size-16 ml-auto"
+        className="size-12 ml-auto"
         src={IMAGES.settings}
         alt="settings-image"
       />
