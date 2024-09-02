@@ -6,7 +6,7 @@ interface FriendItemProps {
 }
 
 const FriendItem: FC<FriendItemProps> = ({ friend }) => {
-  return <div></div>;
+  return <div>{friend.name}</div>;
 };
 
 export default FriendItem;

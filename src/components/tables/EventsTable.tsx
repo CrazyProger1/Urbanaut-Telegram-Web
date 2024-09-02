@@ -1,16 +1,12 @@
 import { AbandonedObject } from "../../types/objects.ts";
 import { FC } from "react";
-import ObjectItem from "../items/ObjectItem.tsx";
 
 interface EventsTableProps {
-    objects: AbandonedObject[];
+  objects: AbandonedObject[];
 }
 
 const EventsTable: FC<EventsTableProps> = ({ objects }) => {
-    return (
-        <div>
-        </div>
-    );
+  return <div>{objects[0].name}</div>;
 };
 
 export default EventsTable;
