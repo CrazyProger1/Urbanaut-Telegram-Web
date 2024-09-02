@@ -12,6 +12,8 @@ export default {
       "selection-border": "rgba(var(--selection-border))",
 
       delete: "rgba(var(--delete))",
+
+      "shadow-first":  "rgba(var(--shadow-first))",
     },
     extend: {
       fontFamily: {
