@@ -1,7 +1,13 @@
+import { DEFAULT_IMAGES } from "../../constants/images.ts";
+
 const Header = () => {
   return (
-    <header className="bg-foreground rounded-b-2xl">
-      <div className="w-full"></div>
+    <header className="bg-foreground rounded-b-2xl w-full p-4">
+      <img
+        className="size-16 rounded-2xl"
+        src={DEFAULT_IMAGES.profile}
+        alt="profile-image"
+      />
     </header>
   );
 };
