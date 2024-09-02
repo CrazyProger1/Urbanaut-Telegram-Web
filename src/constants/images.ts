@@ -1,3 +1,11 @@
 export const DEFAULT_IMAGES = {
-  profile: new URL("/photo.jpg", import.meta.url).href,
+  user: new URL("/photo.jpg", import.meta.url).href,
+};
+
+export const IMAGES = {
+  leaderboard: new URL("/star.png", import.meta.url).href,
+  profile: new URL("/profile.png", import.meta.url).href,
+  objects: new URL("/search.png", import.meta.url).href,
+  friends: new URL("/friends.png", import.meta.url).href,
+  events: new URL("/calendar.png", import.meta.url).href,
 };
