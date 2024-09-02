@@ -13,8 +13,8 @@ const FooterNavbarLink: FC<FooterNavbarButtonProps> = ({
   onChoose,
 }) => {
   return (
-    <Link className="" to={to} onClick={() => onChoose(to)}>
-      <img src={image} alt="test" width="38px"></img>
+    <Link to={to} onClick={() => onChoose(to)}>
+      <img className="size-8" src={image} alt="footer-navbar-link"></img>
     </Link>
   );
 };

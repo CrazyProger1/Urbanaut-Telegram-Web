@@ -1,7 +1,22 @@
 import { observer } from "mobx-react";
+import FooterNavbarLink from "../links/FooterNavbarLink.tsx";
+import { FOOTER_NAVBAR_LINKS } from "../../constants/links.ts";
+import uiStore from "../../stores/UIStore.ts";
 
 const FooterNavbar = observer(() => {
-  return <div className="p-4">TEST</div>;
+  const handlePageChosen = (page: string) => uiStore.setPage(page);
+
+  return (
+    <div className="flex flex-row justify-around">
+      {FOOTER_NAVBAR_LINKS.map((link) => (
+        <FooterNavbarLink
+          image={link.image}
+          to={link.to}
+          onChoose={handlePageChosen}
+        ></FooterNavbarLink>
+      ))}
+    </div>
+  );
 });
 
 export default FooterNavbar;
