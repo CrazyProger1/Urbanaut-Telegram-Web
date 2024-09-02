@@ -9,11 +9,6 @@ interface EventsTableProps {
 const EventsTable: FC<EventsTableProps> = ({ objects }) => {
     return (
         <div>
-            {objects.map((obj) => (
-                <div className="mt-4 mb-4">
-                    <ObjectItem key={obj.name} obj={obj} />
-                </div>
-            ))}
         </div>
     );
 };

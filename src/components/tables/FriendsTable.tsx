@@ -9,11 +9,7 @@ interface FriendsTableProps {
 const FriendsTable: FC<FriendsTableProps> = ({ friends }) => {
   return (
     <div>
-      {friends.map((obj) => (
-        <div className="mt-4 mb-4">
-          <FriendItem key={obj.name} friend={obj} />
-        </div>
-      ))}
+
     </div>
   );
 };

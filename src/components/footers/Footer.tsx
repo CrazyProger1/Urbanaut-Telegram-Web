@@ -5,7 +5,7 @@ const Footer = () => {
     <div className=" fixed
              inset-x-0
              bottom-0 ml-4 mr-4">
-      <footer className="bg-card rounded-t-2xl">
+      <footer className="bg-foreground rounded-t-2xl">
         <div className="w-full">
           <FooterNavbar />
         </div>

@@ -8,13 +8,7 @@ interface ObjectsTableProps {
 
 const ObjectsTable: FC<ObjectsTableProps> = ({ objects }) => {
   return (
-    <div>
-      {objects.map((obj) => (
-        <div className="mt-4 mb-4">
-          <ObjectItem key={obj.name} obj={obj} />
-        </div>
-      ))}
-    </div>
+    <div></div>
   );
 };
 

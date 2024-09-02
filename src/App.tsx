@@ -5,10 +5,11 @@ import LeaderBoardPage from "./components/pages/LeaderBoardPage.tsx";
 import LockedPage from "./components/pages/LockedPage.tsx";
 import FriendsPage from "./components/pages/FriendsPage.tsx";
 import EventsPage from "./components/pages/EventsPage.tsx";
+import uiStore from "./stores/UIStore.ts";
 
 const App = () => {
   return (
-    <div className="dark min-h-screen flex flex-col">
+    <div className={`${uiStore.currentTheme} min-h-screen flex flex-col`}>
       <BrowserRouter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<ObjectsPage />} />

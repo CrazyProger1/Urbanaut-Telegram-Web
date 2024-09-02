@@ -1,13 +1,7 @@
 import PageBodyWrapper from "../wrappers/PageBodyWrapper.tsx";
-import ObjectsTable from "../tables/ObjectsTable.tsx";
-import ObjectsStore from "../../stores/ObjectsStore.ts";
 
 const ObjectsPage = () => {
-  return (
-    <PageBodyWrapper>
-        <ObjectsTable objects={ObjectsStore.objects} />
-    </PageBodyWrapper>
-  );
+  return <PageBodyWrapper>Objects Page</PageBodyWrapper>;
 };
 
 export default ObjectsPage;

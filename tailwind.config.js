@@ -4,22 +4,18 @@ export default {
   theme: {
     colors: {
       background: "rgba(var(--background))",
-      border: "rgba(var(--border))",
-      card: "rgba(var(--card))",
-      "copy-primary": "rgba(var(--copy-primary))",
-      "copy-secondary": "rgba(var(--copy-secondary))",
-      cta: "rgba(var(--cta))",
-      "cta-active": "rgba(var(--cta-active))",
-      "cta-text": "rgba(var(--cta-text))",
-      red: "#C94F4F",
-      selection: "#564E85",
-      "selection-border": "#564E85",
+      foreground: "rgba(var(--foreground))",
 
-      grape: "rgba(var(--grape))",
+      text: "rgba(var(--text))",
+
+      selection: "rgba(var(--selection))",
+      "selection-border": "rgba(var(--selection-border))",
+
+      delete: "rgba(var(--delete))",
     },
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        primary: ["Poppins", "sans-serif"],
       },
     },
   },
