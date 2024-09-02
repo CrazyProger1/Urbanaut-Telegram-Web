@@ -9,11 +9,16 @@ const FooterNavbar = observer(() => {
   return (
     <div className="flex flex-row justify-around">
       {FOOTER_NAVBAR_LINKS.map((link) => (
-        <FooterNavbarLink
-          image={link.image}
-          to={link.to}
-          onChoose={handlePageChosen}
-        ></FooterNavbarLink>
+        <div
+          className={`p-4 w-full flex justify-center items-center 
+        ${link.to == uiStore.currentPage ? "bg-selection/10" : ""}`}
+        >
+          <FooterNavbarLink
+            image={link.image}
+            to={link.to}
+            onChoose={handlePageChosen}
+          />
+        </div>
       ))}
     </div>
   );
