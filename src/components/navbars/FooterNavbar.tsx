@@ -11,7 +11,9 @@ const FooterNavbar = observer(() => {
       {FOOTER_NAVBAR_LINKS.map((link) => (
         <div
           className={`p-4 w-full flex justify-center items-center 
-        ${link.to == uiStore.currentPage ? "bg-selection/10" : ""}`}
+        ${link.to == uiStore.currentPage ? "bg-selection/10" : ""}
+        first:rounded-tl-2xl last:rounded-tr-2xl
+        `}
         >
           <FooterNavbarLink
             image={link.image}
