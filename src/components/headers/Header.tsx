@@ -1,8 +1,12 @@
 import { DEFAULT_IMAGES, IMAGES } from "../../constants/images.ts";
 import { Link } from "react-router-dom";
 import uiStore from "../../stores/UIStore.ts";
+import { useState } from "react";
+import SettingsModal from "../modals/SettingsModal.tsx";
 
 const Header = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <header className="flex flex-row bg-foreground rounded-b-2xl w-full p-2 pr-4 items-center">
       <Link to="/profile" onClick={() => uiStore.setPage("/profile")}>
@@ -19,9 +23,15 @@ const Header = () => {
       </div>
 
       <img
-        className="size-12 ml-auto"
+        className="size-12 ml-auto cursor-pointer"
         src={IMAGES.settings}
         alt="settings-image"
+        onClick={() => setShowModal(true)}
+      />
+      <SettingsModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onSave={() => setShowModal(false)}
       />
     </header>
   );
