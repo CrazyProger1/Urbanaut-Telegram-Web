@@ -1,5 +1,6 @@
 import { AbandonedObject } from "../../types/objects.ts";
 import { FC } from "react";
+import ObjectItem from "../items/ObjectItem.tsx";
 
 interface ObjectsTableProps {
   objects: AbandonedObject[];
@@ -7,7 +8,13 @@ interface ObjectsTableProps {
 
 const ObjectsTable: FC<ObjectsTableProps> = ({ objects }) => {
   return (
-    <div>{objects[0].name}</div>
+    <div>
+      {objects.map((obj) => (
+        <div className="mt-4">
+          <ObjectItem obj={obj} />
+        </div>
+      ))}
+    </div>
   );
 };
 

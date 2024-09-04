@@ -5,7 +5,7 @@ import { useState } from "react";
 import SettingsModal from "../modals/SettingsModal.tsx";
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   return (
     <header className="flex flex-row bg-foreground rounded-b-2xl w-full p-2 pr-4 items-center">
@@ -26,12 +26,12 @@ const Header = () => {
         className="size-12 ml-auto cursor-pointer"
         src={IMAGES.settings}
         alt="settings-image"
-        onClick={() => setShowModal(true)}
+        onClick={() => setShowSettingsModal(true)}
       />
       <SettingsModal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        onSave={() => setShowModal(false)}
+        show={showSettingsModal}
+        onClose={() => setShowSettingsModal(false)}
+        onSave={() => setShowSettingsModal(false)}
       />
     </header>
   );

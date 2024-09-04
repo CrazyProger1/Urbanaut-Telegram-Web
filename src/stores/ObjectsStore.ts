@@ -3,6 +3,7 @@ import { makeAutoObservable } from "mobx";
 class ObjectsStore {
   objects = [
     {
+      id: 1,
       name: "Abandoned Factory",
       description: "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a",
       photo:
@@ -10,6 +11,7 @@ class ObjectsStore {
       rating: 1.2,
     },
     {
+      id: 2,
       name: "Abandoned Building",
       description:
         "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
@@ -18,6 +20,7 @@ class ObjectsStore {
       rating: 4.5,
     },
     {
+      id: 3,
       name: "Some Military Facility",
       description:
         "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",

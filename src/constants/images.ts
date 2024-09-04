@@ -1,5 +1,6 @@
 export const DEFAULT_IMAGES = {
   user: new URL("/photo.jpg", import.meta.url).href,
+  object: new URL("/photo.jpg",  import.meta.url).href,
 };
 
 export const IMAGES = {
