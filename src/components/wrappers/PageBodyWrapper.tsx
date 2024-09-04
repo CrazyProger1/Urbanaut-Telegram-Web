@@ -1,6 +1,7 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import Header from "../headers/Header.tsx";
 import Footer from "../footers/Footer.tsx";
+import uiStore from "../../stores/UIStore.ts";
 
 interface PageWrapperProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ const PageBodyWrapper: FC<PageWrapperProps> = ({ children }) => {
       <Header />
       {children}
       <Footer />
+      <div className="mt-4" style={{ height: uiStore.footerHeight }} />
     </div>
   );
 };

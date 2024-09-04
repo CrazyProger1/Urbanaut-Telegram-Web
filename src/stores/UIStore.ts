@@ -3,6 +3,7 @@ import { makeAutoObservable } from "mobx";
 class UIStore {
   currentPage: string = "/";
   currentTheme: string = "dark";
+  footerHeight: number = 0;
 
   constructor() {
     makeAutoObservable(this);
@@ -14,6 +15,10 @@ class UIStore {
 
   setTheme(theme: string) {
     this.currentTheme = theme;
+  }
+
+  setFooterHeight(height: number) {
+    this.footerHeight = height;
   }
 }
 
