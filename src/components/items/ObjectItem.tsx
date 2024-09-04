@@ -12,7 +12,7 @@ const ObjectItem: FC<ObjectItemProps> = ({ obj }) => {
       <div className="min-w-fit">
         <img
           className="rounded-2xl size-32 shadow-shadow-first/50 shadow-frame"
-          src={DEFAULT_IMAGES.object}
+          src={obj.photo || DEFAULT_IMAGES.object}
           alt="image-object"
         />
       </div>

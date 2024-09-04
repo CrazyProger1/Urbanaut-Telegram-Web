@@ -35,7 +35,7 @@ class ObjectsStore {
       description:
           "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
       photo:
-          "https://t4.ftcdn.net/jpg/04/74/75/25/360_F_474752545_MpPpL8uMkCviZKBswbLbdRcgo6PXMwwt.jpg",
+          "https://the-cradle-media.s3.eu-west-1.amazonaws.com/wp-content/uploads/2023/05/ain-al-asad-e1684847368461.jpg",
 
       rating: 5,
     },
@@ -45,7 +45,7 @@ class ObjectsStore {
       description:
           "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
       photo:
-          "https://t4.ftcdn.net/jpg/04/74/75/25/360_F_474752545_MpPpL8uMkCviZKBswbLbdRcgo6PXMwwt.jpg",
+          "https://hips.hearstapps.com/popularmechanics/assets/cm/15/06/768x516/54cfccf3521fd_-_bases-12-xln.jpg",
 
       rating: 5,
     },
