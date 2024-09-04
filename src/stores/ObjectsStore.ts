@@ -29,6 +29,26 @@ class ObjectsStore {
 
       rating: 5,
     },
+    {
+      id: 3,
+      name: "Some Military Facility",
+      description:
+          "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
+      photo:
+          "https://t4.ftcdn.net/jpg/04/74/75/25/360_F_474752545_MpPpL8uMkCviZKBswbLbdRcgo6PXMwwt.jpg",
+
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Some Military Facility",
+      description:
+          "lorem ipsum asdkjkad kjalskdkl jaskljd k;lask;dkla;skd l;a dsasda dasdasd asdasdasdas ad",
+      photo:
+          "https://t4.ftcdn.net/jpg/04/74/75/25/360_F_474752545_MpPpL8uMkCviZKBswbLbdRcgo6PXMwwt.jpg",
+
+      rating: 5,
+    },
   ];
 
   constructor() {
