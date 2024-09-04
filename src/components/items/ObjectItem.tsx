@@ -9,9 +9,9 @@ interface ObjectItemProps {
 const ObjectItem: FC<ObjectItemProps> = ({ obj }) => {
   return (
     <div className="p-4 bg-foreground rounded-2xl flex flex-row">
-      <div>
+      <div className="min-w-fit">
         <img
-          className="rounded-2xl w-32 h-32 shadow-shadow-first/50 shadow-frame"
+          className="rounded-2xl size-32 shadow-shadow-first/50 shadow-frame"
           src={DEFAULT_IMAGES.object}
           alt="image-object"
         />
