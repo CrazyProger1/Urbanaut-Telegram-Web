@@ -4,14 +4,15 @@ import ObjectItem from "../items/ObjectItem.tsx";
 
 interface ObjectsTableProps {
   objects: AbandonedObject[];
+  onChoose?: (obj: AbandonedObject) => void;
 }
 
-const ObjectsTable: FC<ObjectsTableProps> = ({ objects }) => {
+const ObjectsTable: FC<ObjectsTableProps> = ({ objects, onChoose }) => {
   return (
     <div>
       {objects.map((obj) => (
         <div className="mt-4">
-          <ObjectItem obj={obj} />
+          <ObjectItem obj={obj} onChoose={onChoose} />
         </div>
       ))}
     </div>

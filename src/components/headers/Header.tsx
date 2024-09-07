@@ -1,4 +1,4 @@
-import { DEFAULT_IMAGES, IMAGES } from "../../constants/images.ts";
+import { DEFAULT_IMAGES, IMAGES } from "../../config/content.ts";
 import { Link } from "react-router-dom";
 import uiStore from "../../stores/UIStore.ts";
 import { useState } from "react";

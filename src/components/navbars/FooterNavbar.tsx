@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import FooterNavbarLink from "../links/FooterNavbarLink.tsx";
-import { FOOTER_NAVBAR_LINKS } from "../../constants/links.ts";
+import { FOOTER_NAVBAR_LINKS } from "../../config/content.ts";
 import uiStore from "../../stores/UIStore.ts";
 
 const FooterNavbar = observer(() => {

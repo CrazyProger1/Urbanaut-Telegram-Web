@@ -1,14 +1,21 @@
 import { FC } from "react";
 import { AbandonedObject } from "../../types/objects.ts";
-import { DEFAULT_IMAGES } from "../../constants/images.ts";
+import { DEFAULT_IMAGES } from "../../config/content.ts";
+
 
 interface ObjectItemProps {
   obj: AbandonedObject;
+  onChoose?: (obj: AbandonedObject) => void;
 }
 
-const ObjectItem: FC<ObjectItemProps> = ({ obj }) => {
+const ObjectItem: FC<ObjectItemProps> = ({ obj, onChoose }) => {
   return (
-    <div className="p-4 bg-foreground rounded-2xl flex flex-row">
+    <div
+      className="p-4 bg-foreground rounded-2xl flex flex-row"
+      onClick={() => {
+        onChoose && onChoose(obj);
+      }}
+    >
       <div className="min-w-fit">
         <img
           className="rounded-2xl size-32 shadow-shadow-first/50 shadow-frame"
