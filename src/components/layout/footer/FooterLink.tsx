@@ -8,6 +8,7 @@ interface FooterNavbarButtonProps {
 }
 
 const FooterLink: FC<FooterNavbarButtonProps> = ({ href, image, onChoose }) => {
+  console.log(onChoose);
   return (
     <Link href={href}>
       <img className="size-9" src={image} alt="footer-navbar-link"></img>
