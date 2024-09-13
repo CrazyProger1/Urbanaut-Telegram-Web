@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import "./globals.scss";
-import { Poppins } from "next/font/google";
+// import { Poppins } from "next/font/google";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 
@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description: "Social network for stalkers, diggers and so on.",
 };
 
-const poppins = Poppins({
-  weight: "900",
-  style: "normal",
-  subsets: ["latin"],
-  variable: "--font-primary",
-});
+// const poppins = Poppins({
+//   weight: "900",
+//   style: "normal",
+//   subsets: ["latin"],
+//   variable: "--font-primary",
+// });
 
 const RootLayout = ({
   children,
