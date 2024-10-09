@@ -4,7 +4,7 @@ import { LINKS } from "@/constants/links";
 
 const Header = () => {
   return (
-    <div className="bg-foreground rounded-b-2xl p-2 pr-4 flex flex-row items-center">
+    <div className="bg-secondary rounded-b-2xl p-2 pr-4 flex flex-row items-center">
       <Link href={LINKS.profile}>
         <img
           className="size-16 rounded-2xl"

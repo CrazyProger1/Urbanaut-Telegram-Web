@@ -1,15 +1,8 @@
-import ObjectSearchBar from "@/components/bars/ObjectSearchBar";
-import ObjectsTable from "@/components/tables/ObjectsTable";
+import { redirect } from "next/navigation";
 
 const Home = () => {
-  return (
-    <main>
-      <div className="mt-4" />
-      <ObjectSearchBar />
-      <div className="mt-4" />
-      <ObjectsTable />
-    </main>
-  );
+  redirect("objects");
+  return <div />;
 };
 
 export default Home;

@@ -1,5 +1,12 @@
-const ObjectItem = () => (
-  <div className="bg-foreground rounded-2xl p-2 flex flex-row">
+import { TObject } from "@/types/objects";
+import React from "react";
+
+interface IObjectItemProps {
+  object: TObject;
+}
+
+const ObjectItem: React.FC<IObjectItemProps> = ({ object }) => (
+  <div className="bg-secondary rounded-2xl p-2 flex flex-row">
     <div className="min-w-fit">
       <img
         className="rounded-2xl size-24 shadow-shadow-first/50 shadow-frame"
@@ -8,10 +15,8 @@ const ObjectItem = () => (
       />
     </div>
     <div className="ml-4">
-      <p className="text-text text-lg">Object name</p>
-      <p className="text-text text-sm">
-        Lorem ipsum. Lorem ipsum. Lorem ipsum.
-      </p>
+      <p className="text-text text-lg">{object.name}</p>
+      <p className="text-text text-sm">{object.description}</p>
     </div>
   </div>
 );
