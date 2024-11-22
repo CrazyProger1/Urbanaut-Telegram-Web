@@ -1,31 +1,26 @@
 import React from "react";
 import type { Metadata } from "next";
 import "./globals.scss";
-
-import Header from "@/components/layout/header/Header";
-import Footer from "@/components/layout/footer/Footer";
+import Footer from "@/components/footers/Footer";
+import Header from "@/components/headers/Header";
+import { APP, DESCRIPTION } from "@/constants/app";
 
 export const metadata: Metadata = {
-  title: "Urbanaut",
-  description: "Social network for stalkers, diggers and so on.",
+  title: APP,
+  description: DESCRIPTION,
+  applicationName: APP,
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) => {
-  return (
-    <html lang="en">
-      <body className="dark bg-primary">
-        <div className="ml-4 mr-4">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang="en">
+    <body className="dark bg-primary">
+      <div className="ml-4 mr-4">
+        <Header />
+        {children}
+        <Footer />
+      </div>
+    </body>
+  </html>
+);
 
 export default RootLayout;
