@@ -1,18 +1,15 @@
 "use client";
 
-import Link from "next/link";
-
 interface GlobalErrorProps {
   error: Error;
   reset: () => void;
 }
 
-const GlobalError = ({ error, reset }: GlobalErrorProps) => {
+const GlobalError = (props: GlobalErrorProps) => {
+  console.error(props);
   return (
     <html>
-      <body>
-        <Link href={CONTACT_ADMIN_URL}>Contact the administrators.</Link>
-      </body>
+      <body>An error occurred</body>
     </html>
   );
 };

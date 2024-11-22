@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { LINKS } from "@/constants/links";
 import { DEFAULT_IMAGES, IMAGES } from "@/constants/images";
