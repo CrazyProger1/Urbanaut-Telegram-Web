@@ -1,5 +1,10 @@
 const Home = () => {
-  return <div className="h-96 bg-secondary mt-4"></div>;
+  return (
+    <div>
+      <div className="h-96 bg-yellow-400 mt-4"></div>
+      <div className="h-96 bg-yellow-400"></div>
+    </div>
+  );
 };
 
 export default Home;
