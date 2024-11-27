@@ -22,9 +22,9 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
     <Providers>
-      <ThemedBody className="mx-4">
+      <ThemedBody className="mx-4 flex flex-col">
         <Header />
-        <SwapWrapper className="my-4">{children}</SwapWrapper>
+        <SwapWrapper className="my-4 flex-grow">{children}</SwapWrapper>
         <Footer />
       </ThemedBody>
     </Providers>
