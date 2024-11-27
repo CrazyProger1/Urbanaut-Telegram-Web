@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import { PAGES } from "@/constants/navigation";
 
 interface SwapWrapperProps {
   children: React.ReactNode;
@@ -34,10 +36,15 @@ const swipePower = (offset: number, velocity: number) => {
 };
 
 const SwapWrapper = ({ children }: SwapWrapperProps) => {
-  const [[page, direction], setPage] = useState([0, 0]);
+  const pathname = usePathname();
+
+  const router = useRouter();
+
+  const [[page, direction], setPage] = useState([PAGES.indexOf(pathname), 0]);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
+    router.push(PAGES[page]);
   };
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -65,7 +72,6 @@ const SwapWrapper = ({ children }: SwapWrapperProps) => {
           }
         }}
       >
-        {page}
         {children}
       </motion.div>
     </AnimatePresence>

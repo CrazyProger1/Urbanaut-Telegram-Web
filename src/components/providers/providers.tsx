@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { defaultTheme, ThemeContext } from "@/contexts/theme";
+import { defaultUI, UIContext } from "@/contexts/ui";
 
 interface CommonProviderProps {
   children: React.ReactNode;
@@ -10,9 +10,7 @@ interface CommonProviderProps {
 const Providers = ({ children }: CommonProviderProps) => {
   return (
     <>
-      <ThemeContext.Provider value={defaultTheme}>
-        {children}
-      </ThemeContext.Provider>
+      <UIContext.Provider value={defaultUI}>{children}</UIContext.Provider>
     </>
   );
 };
