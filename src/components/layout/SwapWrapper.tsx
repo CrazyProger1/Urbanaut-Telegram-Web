@@ -65,12 +65,7 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
         initial="enter"
         animate="center"
         exit="exit"
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.1 },
-        }}
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.1}
         onDragEnd={(e, { offset, velocity }) => {
           const swipe = swipePower(offset.x, velocity.x);
