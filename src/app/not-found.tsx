@@ -2,7 +2,7 @@ import { ICONS } from "@/constants/media";
 
 const NotFound = () => {
   return (
-    <div className="relative flex min-h-96 items-center justify-center rounded-2xl my-4">
+    <div className="relative flex items-center justify-center rounded-2xl my-4 h-fill">
       <div className="absolute inset-0 bg-secondary blur-sm rounded-2xl"></div>
       <img
         src={ICONS.notfound}

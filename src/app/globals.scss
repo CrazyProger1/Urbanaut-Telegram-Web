@@ -34,3 +34,7 @@
   --color-state-error-light: #EA665D;
   --color-state-error-lightest: #EA665D;
 }
+
+.h-fill {
+  height: calc(100vh - 11.3rem);
+}

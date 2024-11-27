@@ -9,7 +9,7 @@ interface PageWrapperProps {
 
 const PageWrapper = ({ children }: PageWrapperProps) => {
   return (
-    <ThemedBody className="mx-4 h-full">
+    <ThemedBody className="mx-4">
       <Header />
       {children}
       <Footer />

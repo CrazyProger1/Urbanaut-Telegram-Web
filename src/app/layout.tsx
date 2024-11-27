@@ -17,7 +17,7 @@ interface RootLayoutProps {
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => (
-  <html lang="en" className="h-full">
+  <html lang="en">
     <Providers>
       <PageWrapper>{children}</PageWrapper>
     </Providers>
