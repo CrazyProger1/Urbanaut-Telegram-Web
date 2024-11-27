@@ -1,12 +1,14 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface FooterLinkProps {
   href: string;
   image: string;
-  active: boolean;
 }
 
-const FooterLink = ({ href, image, active }: FooterLinkProps) => {
+const FooterLink = ({ href, image }: FooterLinkProps) => {
+  const active = usePathname() === href;
   return (
     <Link
       href={href}
