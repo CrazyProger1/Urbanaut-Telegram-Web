@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
-import { PAGES } from "@/constants/navigation";
+import { FOOTER_PAGES } from "@/constants/nav";
 
 interface SwapWrapperProps {
   children: React.ReactNode;
@@ -42,33 +42,33 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
   const router = useRouter();
 
   const [[page, direction], setPage] = useState([
-    PAGES.includes(pathname) ? PAGES.indexOf(pathname) : 0,
+    FOOTER_PAGES.includes(pathname) ? FOOTER_PAGES.indexOf(pathname) : 0,
     0,
   ]);
 
   const paginate = (newDirection: number) => {
     let newPage = page + newDirection;
 
-    if (newPage === -1) newPage = PAGES.length - 1;
-    else if (newPage === PAGES.length) newPage = 0;
+    if (newPage === -1) newPage = FOOTER_PAGES.length - 1;
+    else if (newPage === FOOTER_PAGES.length) newPage = 0;
 
-    router.push(PAGES[newPage]);
+    router.push(FOOTER_PAGES[newPage]);
     setPage([newPage, newDirection]);
   };
-  const [animationComplete, setAnimationComplete] = useState(false);
+  // const [animationComplete, setAnimationComplete] = useState(false);
 
-  useEffect(() => {
-    if (!animationComplete) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
-    } else {
-      document.body.style.overflow = ""; // Re-enable scrolling
-    }
-
-    // Cleanup on component unmount
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [animationComplete]);
+  // useEffect(() => {
+  //   if (!animationComplete) {
+  //     document.body.style.overflow = "hidden"; // Disable scrolling
+  //   } else {
+  //     document.body.style.overflow = ""; // Re-enable scrolling
+  //   }
+  //
+  //   // Cleanup on component unmount
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [animationComplete]);
 
   return (
     <AnimatePresence mode="wait" initial={false} custom={direction}>
@@ -85,7 +85,7 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
           opacity: { duration: 0.1 },
           duration: 0.1,
         }}
-        onAnimationComplete={() => setAnimationComplete(true)}
+        // onAnimationComplete={() => setAnimationComplete(true)}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.1}
@@ -94,10 +94,10 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
 
           if (swipe < -swipeConfidenceThreshold) {
             paginate(1);
-            setAnimationComplete(false);
+            // setAnimationComplete(false);
           } else if (swipe > swipeConfidenceThreshold) {
             paginate(-1);
-            setAnimationComplete(false);
+            // setAnimationComplete(false);
           }
         }}
       >
