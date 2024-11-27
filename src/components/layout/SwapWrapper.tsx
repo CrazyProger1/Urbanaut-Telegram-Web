@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import { FOOTER_PAGES } from "@/constants/nav";
@@ -55,20 +55,20 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
     router.push(FOOTER_PAGES[newPage]);
     setPage([newPage, newDirection]);
   };
-  // const [animationComplete, setAnimationComplete] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
 
-  // useEffect(() => {
-  //   if (!animationComplete) {
-  //     document.body.style.overflow = "hidden"; // Disable scrolling
-  //   } else {
-  //     document.body.style.overflow = ""; // Re-enable scrolling
-  //   }
-  //
-  //   // Cleanup on component unmount
-  //   return () => {
-  //     document.body.style.overflow = "";
-  //   };
-  // }, [animationComplete]);
+  useEffect(() => {
+    if (!animationComplete) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable scrolling
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [animationComplete]);
 
   return (
     <AnimatePresence mode="wait" initial={false} custom={direction}>
@@ -85,7 +85,7 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
           opacity: { duration: 0.1 },
           duration: 0.1,
         }}
-        // onAnimationComplete={() => setAnimationComplete(true)}
+        onAnimationComplete={() => setAnimationComplete(true)}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.1}
@@ -94,10 +94,10 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
 
           if (swipe < -swipeConfidenceThreshold) {
             paginate(1);
-            // setAnimationComplete(false);
+            setAnimationComplete(false);
           } else if (swipe > swipeConfidenceThreshold) {
             paginate(-1);
-            // setAnimationComplete(false);
+            setAnimationComplete(false);
           }
         }}
       >
