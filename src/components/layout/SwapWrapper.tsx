@@ -40,11 +40,19 @@ const SwapWrapper = ({ children }: SwapWrapperProps) => {
 
   const router = useRouter();
 
-  const [[page, direction], setPage] = useState([PAGES.indexOf(pathname), 0]);
+  const [[page, direction], setPage] = useState([
+    PAGES.includes(pathname) ? PAGES.indexOf(pathname) : 0,
+    0,
+  ]);
 
   const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-    router.push(PAGES[page]);
+    let newPage = page + newDirection;
+
+    if (newPage === -1) newPage = PAGES.length - 1;
+    else if (newPage === PAGES.length) newPage = 0;
+
+    router.push(PAGES[newPage]);
+    setPage([newPage, newDirection]);
   };
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -56,8 +64,8 @@ const SwapWrapper = ({ children }: SwapWrapperProps) => {
         animate="center"
         exit="exit"
         transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
+          x: { type: "spring", stiffness: 500, damping: 30 },
+          opacity: { duration: 0.1 },
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}

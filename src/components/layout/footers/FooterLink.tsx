@@ -10,10 +10,6 @@ interface FooterLinkProps {
 const FooterLink = ({ href, image }: FooterLinkProps) => {
   const pathname = usePathname();
 
-  if (pathname === "/friends") {
-    console.log(pathname === href ? "bg-selection" : "");
-  }
-
   return (
     <Link
       href={href}
