@@ -1,6 +1,4 @@
-import { Config } from "tailwindcss";
-
-const config: Config = {
+const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -38,6 +36,7 @@ const config: Config = {
           DEFAULT: "rgba(var(--color-text-default))",
           light: "rgba(var(--color-text-light))",
         },
+        selection: "rgba(var(--color-selection), 0.3)",
         state: {
           success: {
             darkest: "var(--color-state-success-darkest)",

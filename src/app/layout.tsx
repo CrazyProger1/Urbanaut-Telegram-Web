@@ -1,9 +1,10 @@
 import React from "react";
+
 import type { Metadata } from "next";
 import "./globals.scss";
-import Footer from "@/components/footers/Footer";
-import Header from "@/components/headers/Header";
 import { APP, DESCRIPTION } from "@/constants/app";
+import Providers from "@/components/providers/providers";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 export const metadata: Metadata = {
   title: APP,
@@ -11,15 +12,15 @@ export const metadata: Metadata = {
   applicationName: APP,
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => (
-  <html lang="en">
-    <body className="dark bg-primary">
-      <div className="ml-4 mr-4">
-        <Header />
-        {children}
-        <Footer />
-      </div>
-    </body>
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+const RootLayout = ({ children }: RootLayoutProps) => (
+  <html lang="en" className="h-full">
+    <Providers>
+      <PageWrapper>{children}</PageWrapper>
+    </Providers>
   </html>
 );
 
