@@ -1,21 +1,18 @@
-"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface FooterLinkProps {
   href: string;
   image: string;
+  active: boolean;
 }
 
-const FooterLink = ({ href, image }: FooterLinkProps) => {
-  const pathname = usePathname();
-
+const FooterLink = ({ href, image, active }: FooterLinkProps) => {
   return (
     <Link
       href={href}
       className={
         "flex p-4 w-full first:rounded-tl-2xl last:rounded-tr-2xl justify-center items-center " +
-        (pathname === href ? "bg-selection" : "")
+        (active ? "bg-selection" : "")
       }
     >
       <img className="size-9" src={image} alt="footer-navbar-link" />

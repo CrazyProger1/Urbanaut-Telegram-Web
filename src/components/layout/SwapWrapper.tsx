@@ -55,7 +55,7 @@ const SwapWrapper = ({ children }: SwapWrapperProps) => {
     setPage([newPage, newDirection]);
   };
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={false} custom={direction}>
       <motion.div
         key={page}
         custom={direction}

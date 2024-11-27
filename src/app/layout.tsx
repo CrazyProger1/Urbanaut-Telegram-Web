@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import { APP, DESCRIPTION } from "@/constants/app";
 import Providers from "@/components/providers/providers";
-import PageWrapper from "@/components/layout/PageWrapper";
+import Header from "@/components/layout/headers/Header";
+import SwapWrapper from "@/components/layout/SwapWrapper";
+import Footer from "@/components/layout/footers/Footer";
+import ThemedBody from "@/components/layout/ThemedBody";
 
 export const metadata: Metadata = {
   title: APP,
@@ -19,7 +22,11 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
     <Providers>
-      <PageWrapper>{children}</PageWrapper>
+      <ThemedBody className="mx-4">
+        <Header />
+        <SwapWrapper>{children}</SwapWrapper>
+        <Footer />
+      </ThemedBody>
     </Providers>
   </html>
 );
