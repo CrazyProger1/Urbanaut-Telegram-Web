@@ -1,38 +1,27 @@
 import React from "react";
+
 import type { Metadata } from "next";
 import "./globals.scss";
-// import { Poppins } from "next/font/google";
-import Header from "@/components/layout/header/Header";
-import Footer from "@/components/layout/footer/Footer";
+import { APP, DESCRIPTION } from "@/constants/app";
+import Providers from "@/components/providers/providers";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 export const metadata: Metadata = {
-  title: "Urbanaut",
-  description: "Social network for stalkers, diggers and so on.",
+  title: APP,
+  description: DESCRIPTION,
+  applicationName: APP,
 };
 
-// const poppins = Poppins({
-//   weight: "900",
-//   style: "normal",
-//   subsets: ["latin"],
-//   variable: "--font-primary",
-// });
-
-const RootLayout = ({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) => {
-  return (
-    <html lang="en">
-      <body className="dark bg-background">
-        <div className="ml-4 mr-4">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
-  );
-};
+}
+
+const RootLayout = ({ children }: RootLayoutProps) => (
+  <html lang="en">
+    <Providers>
+      <PageWrapper>{children}</PageWrapper>
+    </Providers>
+  </html>
+);
 
 export default RootLayout;

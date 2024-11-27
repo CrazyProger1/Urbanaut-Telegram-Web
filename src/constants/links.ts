@@ -1,4 +1,4 @@
-import { IMAGES } from "@/constants/images";
+import { ICONS } from "@/constants/media";
 
 export const LINKS = {
   profile: "/profile",
@@ -7,22 +7,22 @@ export const LINKS = {
 export const FOOTER_LINKS = [
   {
     href: "/leaders",
-    image: IMAGES.leaders,
+    image: ICONS.leaders,
   },
   {
     href: "/profile",
-    image: IMAGES.profile,
+    image: ICONS.profile,
   },
   {
     href: "/",
-    image: IMAGES.objects,
+    image: ICONS.objects,
   },
   {
     href: "/friends",
-    image: IMAGES.friends,
+    image: ICONS.friends,
   },
   {
     href: "/events",
-    image: IMAGES.events,
+    image: ICONS.events,
   },
 ];
