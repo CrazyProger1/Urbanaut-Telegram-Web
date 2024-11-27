@@ -10,9 +10,7 @@ interface CommonProviderProps {
 const Providers = ({ children }: CommonProviderProps) => {
   return (
     <>
-      <UIContext.Provider value={defaultUI}>
-        {children}
-      </UIContext.Provider>
+      <UIContext.Provider value={defaultUI}>{children}</UIContext.Provider>
     </>
   );
 };

@@ -4,7 +4,6 @@ export const LINKS = {
   profile: "/profile",
 };
 
-
 export const FOOTER_LINKS = [
   {
     href: "/leaders",
