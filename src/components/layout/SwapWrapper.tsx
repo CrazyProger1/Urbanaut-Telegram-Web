@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import { PAGES } from "@/constants/navigation";
@@ -55,6 +55,21 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
     router.push(PAGES[newPage]);
     setPage([newPage, newDirection]);
   };
+  const [animationComplete, setAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    if (!animationComplete) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable scrolling
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [animationComplete]);
+
   return (
     <AnimatePresence mode="wait" initial={false} custom={direction}>
       <motion.div
@@ -65,10 +80,12 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
         initial="enter"
         animate="center"
         exit="exit"
-        // transition={{
-          //   x: { type: "spring", stiffness: 300, damping: 30 },
-          //   opacity: { duration: 0.1 },
-          // }}
+        transition={{
+          x: { type: "spring", stiffness: 300, damping: 30 },
+          opacity: { duration: 0.1 },
+          duration: 0.1,
+        }}
+        onAnimationComplete={() => setAnimationComplete(true)}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.1}
@@ -77,8 +94,10 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
 
           if (swipe < -swipeConfidenceThreshold) {
             paginate(1);
+            setAnimationComplete(false);
           } else if (swipe > swipeConfidenceThreshold) {
             paginate(-1);
+            setAnimationComplete(false);
           }
         }}
       >
