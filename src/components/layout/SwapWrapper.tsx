@@ -2,13 +2,10 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { wrap } from "popmotion";
 
 interface SwapWrapperProps {
   children: React.ReactNode;
 }
-
-const pages = ["rating", "profile", "", "events", "friends"];
 
 const variants = {
   enter: (direction: number) => {
@@ -38,8 +35,6 @@ const swipePower = (offset: number, velocity: number) => {
 
 const SwapWrapper = ({ children }: SwapWrapperProps) => {
   const [[page, direction], setPage] = useState([0, 0]);
-
-  const pageIndex = wrap(0, pages.length, page);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
