@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { LINKS } from "@/constants/links";
 import { STUBS, ICONS } from "@/constants/media";
+import { LINKS } from "@/constants/nav";
 
 const Header = () => (
   <div className="sticky top-0 z-10 bg-secondary rounded-b-2xl p-2 pr-4 flex flex-row items-center">

@@ -1,7 +1,8 @@
 import React from "react";
 
 import type { Metadata } from "next";
-import "./globals.scss";
+
+import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
 import Providers from "@/components/providers/providers";
 import Header from "@/components/layout/headers/Header";
@@ -22,9 +23,9 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
     <Providers>
-      <ThemedBody className="mx-4 flex flex-col">
+      <ThemedBody className="mx-4">
         <Header />
-        <SwapWrapper className="my-4 flex-grow">{children}</SwapWrapper>
+        <SwapWrapper className="my-4">{children}</SwapWrapper>
         <Footer />
       </ThemedBody>
     </Providers>
