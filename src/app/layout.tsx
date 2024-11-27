@@ -24,7 +24,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     <Providers>
       <ThemedBody className="mx-4">
         <Header />
-        <SwapWrapper>{children}</SwapWrapper>
+        <SwapWrapper className="my-4">{children}</SwapWrapper>
         <Footer />
       </ThemedBody>
     </Providers>

@@ -7,6 +7,7 @@ import { PAGES } from "@/constants/navigation";
 
 interface SwapWrapperProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 const variants = {
@@ -35,7 +36,7 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-const SwapWrapper = ({ children }: SwapWrapperProps) => {
+const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
   const pathname = usePathname();
 
   const router = useRouter();
@@ -57,6 +58,7 @@ const SwapWrapper = ({ children }: SwapWrapperProps) => {
   return (
     <AnimatePresence mode="wait" initial={false} custom={direction}>
       <motion.div
+        className={className}
         key={page}
         custom={direction}
         variants={variants}
