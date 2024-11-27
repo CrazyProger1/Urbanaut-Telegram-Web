@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 
-import { ThemeContext } from "@/contexts/theme";
+import { UIContext } from "@/contexts/ui";
 
 interface ThemedBodyProps {
   children: React.ReactNode;
@@ -10,10 +10,8 @@ interface ThemedBodyProps {
 }
 
 const ThemedBody = ({ children, className }: ThemedBodyProps) => {
-  const { variant } = useContext(ThemeContext);
-  return (
-    <body className={className + " bg-primary " + variant}>{children}</body>
-  );
+  const { theme } = useContext(UIContext);
+  return <body className={className + " bg-primary " + theme}>{children}</body>;
 };
 
 export default ThemedBody;
