@@ -6,7 +6,7 @@ import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
 import Providers from "@/components/providers/providers";
 import Header from "@/components/layout/headers/Header";
-import SwapWrapper from "@/components/layout/SwapWrapper";
+import FramerSwapWrapper from "@/components/layout/FramerSwapWrapper";
 import Footer from "@/components/layout/footers/Footer";
 import ThemedBody from "@/components/layout/ThemedBody";
 
@@ -25,9 +25,12 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     <Providers>
       <ThemedBody className="mx-4 flex min-h-screen flex-col">
         <Header />
-        <SwapWrapper className="my-4 flex-1 flex h-full flex-col">
+        {/*<SwapWrapper className="my-4 flex-1 flex h-full flex-col">*/}
+        {/*  {children}*/}
+        {/*</SwapWrapper>*/}
+        <FramerSwapWrapper className="my-4 flex-1 flex h-full flex-col">
           {children}
-        </SwapWrapper>
+        </FramerSwapWrapper>
         <Footer />
       </ThemedBody>
     </Providers>
