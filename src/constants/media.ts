@@ -14,4 +14,5 @@ export const ICONS = {
   friends: `${ICONS_DIR}/friends.png`,
   events: `${ICONS_DIR}/events.png`,
   notfound: `${ICONS_DIR}/404.png`,
+  lock: `${ICONS_DIR}/padlock.png`,
 };
