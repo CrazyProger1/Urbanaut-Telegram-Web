@@ -1,16 +1,8 @@
 import { ICONS } from "@/constants/media";
+import UnavailablePage from "@/components/layout/pages/UnavailablePage";
 
 const NotFound = () => {
-  return (
-    <div className="relative h-full w-full flex-1 flex items-center justify-center rounded-2xl">
-      <div className="absolute inset-0 bg-secondary blur-sm rounded-2xl h-full"></div>
-      <img
-        src={ICONS.notfound}
-        className="relative z-10 size-14"
-        alt="not-found"
-      ></img>
-    </div>
-  );
+  return <UnavailablePage icon={ICONS.notfound} />;
 };
 
 export default NotFound;
