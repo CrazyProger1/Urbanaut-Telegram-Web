@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { defaultUI, UIContext } from "@/contexts/ui";
+import { DEFAULT_UI_SETTINGS, UIContext } from "@/contexts/ui";
 
 interface CommonProviderProps {
   children: React.ReactNode;
@@ -10,7 +10,9 @@ interface CommonProviderProps {
 const Providers = ({ children }: CommonProviderProps) => {
   return (
     <>
-      <UIContext.Provider value={defaultUI}>{children}</UIContext.Provider>
+      <UIContext.Provider value={DEFAULT_UI_SETTINGS}>
+        {children}
+      </UIContext.Provider>
     </>
   );
 };
