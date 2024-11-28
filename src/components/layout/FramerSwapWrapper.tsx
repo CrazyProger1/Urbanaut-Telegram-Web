@@ -8,32 +8,98 @@ import {
   SWIPE_CONFIDENCE_THRESHOLD,
   SWIPE_DRAG_CONSTRAINTS,
   SWIPE_DRAG_ELASTIC,
-  SWIPE_OFFSET,
   SWIPE_TRANSITION,
 } from "@/constants/animations";
 import { swipePower } from "@/utils/swipe";
 import { UIContext } from "@/contexts/ui";
 
+// const variants = {
+//   enter: (direction: number) => {
+//     return {
+//       x: direction > 0 ? SWIPE_OFFSET : -SWIPE_OFFSET,
+//       opacity: 0,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction: number) => {
+//     return {
+//       zIndex: 0,
+//       x: direction < 0 ? SWIPE_OFFSET : -SWIPE_OFFSET,
+//       opacity: 0,
+//     };
+//   },
+// };
+// const variants = {
+//   enter: (direction: number) => ({
+//     opacity: 0,
+//     zIndex: 1,
+//     scale: 0.9, // Можно добавить уменьшение для эффекта масштаба
+//   }),
+//   center: {
+//     zIndex: 1,
+//     opacity: 1,
+//     scale: 1,
+//   },
+//   exit: (direction: number) => ({
+//     zIndex: 0,
+//     opacity: 0,
+//     scale: 0.9, // Уменьшение масштаба при выходе
+//     y: 50, // Смещение вниз при уходе
+//   }),
+// };
+// const variants = {
+//   enter: (direction: number) => ({
+//     rotateY: 90, // Начало слайда с поворотом по оси Y
+//     opacity: 0,
+//   }),
+//   center: {
+//     zIndex: 1,
+//     rotateY: 0, // Конечное состояние — без поворота
+//     opacity: 1,
+//   },
+//   exit: (direction: number) => ({
+//     rotateY: -90, // Поворот при уходе
+//     opacity: 0,
+//     zIndex: 0,
+//   }),
+// };
 const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? SWIPE_OFFSET : -SWIPE_OFFSET,
-      opacity: 0,
-    };
-  },
+  enter: (direction: number) => ({
+    opacity: 0,
+    filter: "blur(10px)", // Размытие на входе
+  }),
   center: {
     zIndex: 1,
-    x: 0,
     opacity: 1,
+    filter: "blur(0)", // Четкость при отображении
   },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? SWIPE_OFFSET : -SWIPE_OFFSET,
-      opacity: 0,
-    };
-  },
+  exit: (direction: number) => ({
+    opacity: 0,
+    filter: "blur(10px)", // Размытие при выходе
+    zIndex: 0,
+  }),
 };
+
+// const variants = {
+//   enter: (direction: number) => ({
+//     x: direction > 0 ? "100%" : "-100%",
+//     opacity: 0,
+//   }),
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction: number) => ({
+//     x: direction > 0 ? "-100%" : "100%",
+//     opacity: 0,
+//     zIndex: 0,
+//   }),
+// };
 
 interface SwapWrapperProps {
   children: React.ReactNode;
