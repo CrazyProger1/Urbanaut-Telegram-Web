@@ -25,9 +25,6 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     <Providers>
       <ThemedBody className="mx-4 flex min-h-screen flex-col">
         <Header />
-        {/*<SwapWrapper className="my-4 flex-1 flex h-full flex-col">*/}
-        {/*  {children}*/}
-        {/*</SwapWrapper>*/}
         <FramerSwapWrapper className="my-4 flex-1 flex h-full flex-col">
           {children}
         </FramerSwapWrapper>
