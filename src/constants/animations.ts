@@ -7,7 +7,7 @@ export const SWIPE_TRANSITION = {
   ease: "easeIn",
 };
 export const SWIPE_DRAG_CONSTRAINTS = { left: 0, right: 0 };
-export const SWIPE_DRAG_ELASTIC = 0.1;
+export const SWIPE_DRAG_ELASTIC = 0.2;
 
 export const SWIPE_VARIANTS = {
   enter: {
