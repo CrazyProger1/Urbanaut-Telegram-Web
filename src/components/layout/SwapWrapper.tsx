@@ -70,6 +70,7 @@ const SwapWrapper = ({ children, className }: SwapWrapperProps) => {
     <div className={className}>
       <AnimatePresence mode="wait" initial={false} custom={direction}>
         <motion.div
+          className="flex-1 h-full flex flex-col"
           key={page}
           custom={direction}
           variants={variants}
