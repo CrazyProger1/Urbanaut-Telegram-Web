@@ -29,8 +29,8 @@ const SwipeWrapper = ({ children, className }: SwipeWrapperProps) => {
 
   const paginate = (direction: number) => {
     let newPage = initialPage + direction;
-    if (newPage === -1) newPage = FOOTER_PAGES.length - 1;
-    else if (newPage === FOOTER_PAGES.length) newPage = 0;
+    if (newPage <= -1) newPage = FOOTER_PAGES.length - 1;
+    else if (newPage >= FOOTER_PAGES.length) newPage = 0;
     router.push(FOOTER_PAGES[newPage]);
   };
   if (!animationsEnabled) return <div className={className}>{children}</div>;
