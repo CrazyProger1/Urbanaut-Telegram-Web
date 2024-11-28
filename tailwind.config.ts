@@ -36,7 +36,10 @@ const config = {
           DEFAULT: "rgba(var(--color-text-default))",
           light: "rgba(var(--color-text-light))",
         },
-        selection: "rgba(var(--color-selection), 0.3)",
+        selection: {
+          border: "rgba(var(--color-selection), 0.35)",
+          DEFAULT: "rgba(var(--color-selection), 0.3)",
+        },
         state: {
           success: {
             darkest: "var(--color-state-success-darkest)",

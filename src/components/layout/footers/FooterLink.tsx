@@ -14,7 +14,7 @@ const FooterLink = ({ href, image }: FooterLinkProps) => {
       href={href}
       className={
         "flex p-4 w-full first:rounded-tl-2xl last:rounded-tr-2xl justify-center items-center " +
-        (active ? "bg-selection" : "")
+        (active ? "bg-selection border border-selection-border" : "")
       }
     >
       <img className="size-9" src={image} alt="footer-navbar-link" />
