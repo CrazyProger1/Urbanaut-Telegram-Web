@@ -8,3 +8,20 @@ export const SWIPE_TRANSITION = {
 };
 export const SWIPE_DRAG_CONSTRAINTS = { left: 0, right: 0 };
 export const SWIPE_DRAG_ELASTIC = 0.1;
+
+export const SWIPE_VARIANTS = {
+  enter: {
+    opacity: 0,
+    filter: "blur(10px)",
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1,
+    filter: "blur(0)",
+  },
+  exit: {
+    opacity: 0,
+    filter: "blur(10px)",
+    zIndex: 0,
+  },
+};
