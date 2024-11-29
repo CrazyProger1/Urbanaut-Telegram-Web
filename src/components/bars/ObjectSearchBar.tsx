@@ -1,15 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import ObjectSearchBarButton from "@/components/bars/ObjectSearchBarButton";
 
 const ObjectSearchBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-secondary rounded-2xl flex flex-row justify-around">
-      <ObjectSearchBarButton active={true} text="rating" />
-      <ObjectSearchBarButton active={false} text="difficulty" />
-      <ObjectSearchBarButton active={false} text="nearest" />
+    <div className="flex flex-row bg-secondary rounded-2xl">
+      <div className="flex flex-col flex-1">
+        <div
+          className={"bg-secondary flex flex-wrap justify-around rounded-2xl"}
+        >
+          <ObjectSearchBarButton active={true} text="rating" />
+          <ObjectSearchBarButton active={false} text="difficulty" />
+          <ObjectSearchBarButton active={false} text="nearest" />
+        </div>
+        {isOpen ? (
+          <div
+            className={"bg-secondary flex flex-wrap justify-around rounded-2xl"}
+          >
+            <ObjectSearchBarButton active={false} text="category" />
+            <ObjectSearchBarButton active={false} text="name" />
+            <ObjectSearchBarButton active={false} text="..." />
+          </div>
+        ) : null}
+      </div>
       <button
-        className="p-2 bg-selection  rounded-r-2xl border border-selection-border"
+        className={
+          "p-2 rounded-r-2xl " +
+          (isOpen ? "bg-selection border border-selection-border" : "")
+        }
         aria-label="More options"
+        onClick={() => setIsOpen(!isOpen)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
