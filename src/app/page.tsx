@@ -1,8 +1,11 @@
+import { ObjectSearchBar } from "@/components/bars";
+import { ObjectTable } from "@/components/tables";
+
 const Home = () => {
   return (
     <div>
-      <div className="h-96 bg-yellow-400"></div>
-      <div className="h-96 bg-yellow-400"></div>
+      <ObjectSearchBar />
+      <ObjectTable />
     </div>
   );
 };
