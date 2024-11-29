@@ -7,7 +7,7 @@ const ObjectItem = () => {
       <img
         src={STUBS.object}
         alt="object-image"
-        className="size-52 rounded-2xl"
+        className="size-20 rounded-2xl"
       />
       <div className="flex flex-col ml-4">
         <div className="text-text  font-bold font-primary">Name</div>
