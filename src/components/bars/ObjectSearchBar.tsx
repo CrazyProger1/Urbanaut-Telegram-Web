@@ -30,8 +30,8 @@ const ObjectSearchBar = () => {
           <div className="bg-secondary flex flex-wrap justify-around rounded-2xl">
             <Form className="w-full" action="/search">
               <input
-                placeholder="Type to search..."
-                className="w-full rounded-bl-2xl bg-secondary text-text font-primary p-2 placeholder-text focus:border-selection-border focus:border focus:outline-none"
+                placeholder="type to search..."
+                className="w-full rounded-bl-2xl bg-secondary text-text font-primary p-2 placeholder-text focus:border-selection-border focus:border focus:outline-none text-center"
                 name="query"
               />
             </Form>
