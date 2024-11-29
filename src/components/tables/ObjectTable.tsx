@@ -7,6 +7,9 @@ const ObjectTable = () => {
       <ObjectItem />
       <ObjectItem />
       <ObjectItem />
+      <ObjectItem />
+      <ObjectItem />
+      <ObjectItem />
     </>
   );
 };
