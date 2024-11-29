@@ -9,9 +9,9 @@ interface ThemedBodyProps {
   className?: string;
 }
 
-const ThemedBody = ({ children, className }: ThemedBodyProps) => {
+const ThemedBodyWrapper = ({ children, className }: ThemedBodyProps) => {
   const { theme } = useContext(UIContext);
   return <body className={className + " bg-primary " + theme}>{children}</body>;
 };
 
-export default ThemedBody;
+export default ThemedBodyWrapper;

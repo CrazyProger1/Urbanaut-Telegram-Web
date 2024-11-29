@@ -7,7 +7,7 @@ interface CommonProviderProps {
   children: React.ReactNode;
 }
 
-const Providers = ({ children }: CommonProviderProps) => {
+const ProviderWrapper = ({ children }: CommonProviderProps) => {
   return (
     <>
       <UIContext.Provider value={DEFAULT_UI_SETTINGS}>
@@ -17,4 +17,4 @@ const Providers = ({ children }: CommonProviderProps) => {
   );
 };
 
-export default Providers;
+export default ProviderWrapper;

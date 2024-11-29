@@ -4,11 +4,13 @@ import type { Metadata } from "next";
 
 import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
-import Providers from "@/components/providers/providers";
-import Header from "@/components/layout/headers/Header";
-import SwipeWrapper from "@/components/layout/SwipeWrapper";
-import Footer from "@/components/layout/footers/Footer";
-import ThemedBody from "@/components/layout/ThemedBody";
+import {
+  ProviderWrapper,
+  SwipeWrapper,
+  ThemedBodyWrapper,
+} from "@/components/layout/wrappers";
+import { Footer } from "@/components/layout/footers";
+import { Header } from "@/components/layout/headers";
 
 export const metadata: Metadata = {
   title: APP,
@@ -22,15 +24,15 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
-    <Providers>
-      <ThemedBody className="mx-4 flex min-h-screen flex-col">
+    <ProviderWrapper>
+      <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
         <Header />
-        <SwipeWrapper className="my-4 flex-1 flex h-full flex-col">
+        <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
           {children}
         </SwipeWrapper>
         <Footer />
-      </ThemedBody>
-    </Providers>
+      </ThemedBodyWrapper>
+    </ProviderWrapper>
   </html>
 );
 

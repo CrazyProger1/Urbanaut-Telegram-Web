@@ -13,7 +13,6 @@ import {
 } from "@/constants/animations";
 import { swipePower } from "@/utils/swipe";
 import { UIContext } from "@/contexts/ui";
-import { set } from "immutable";
 
 interface SwipeWrapperProps {
   children: React.ReactNode;
@@ -26,7 +25,7 @@ const SwipeWrapper = ({ children, className }: SwipeWrapperProps) => {
   const pathname = usePathname();
   const initialPage = FOOTER_PAGES.includes(pathname)
     ? FOOTER_PAGES.indexOf(pathname)
-    : 0;
+    : -1;
   const [page, setPage] = useState(initialPage);
 
   const paginate = (direction: number) => {
@@ -36,7 +35,8 @@ const SwipeWrapper = ({ children, className }: SwipeWrapperProps) => {
     router.push(FOOTER_PAGES[newPage]);
     setPage(newPage);
   };
-  if (!animationsEnabled) return <div className={className}>{children}</div>;
+  if (!animationsEnabled || initialPage === -1)
+    return <div className={className}>{children}</div>;
 
   return (
     <div className={className}>
