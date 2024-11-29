@@ -7,13 +7,13 @@ const ObjectItem = () => {
       <img
         src={STUBS.object}
         alt="object-image"
-        className="size-24 rounded-2xl"
+        className="size-28 rounded-2xl"
       />
       <div className="flex flex-col ml-4">
         <div className="text-text  font-bold font-primary">Name</div>
         <div className="text-text font-primary">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s.
+          industry.
         </div>
       </div>
     </div>
