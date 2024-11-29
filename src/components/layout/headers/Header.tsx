@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { STUBS, ICONS } from "@/constants/media";
+
+import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
+
+import { SettingsButton } from "@/components/buttons";
 
 const Header = () => (
   <div className="sticky top-0 z-10 bg-secondary rounded-b-2xl p-2 pr-4 flex flex-row items-center">
@@ -12,11 +15,7 @@ const Header = () => (
       <p className="text-text font-primary text-lg">username</p>
       <p className="text-text font-primary text-sm">smth</p>
     </div>
-    <img
-      className="size-12 ml-auto cursor-pointer"
-      src={ICONS.settings}
-      alt="settings-icon"
-    />
+    <SettingsButton />
   </div>
 );
 

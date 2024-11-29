@@ -6,6 +6,7 @@ export const LINKS = {
   friends: "/friends",
   events: "/events",
   blog: "/blog",
+  settings: "/settings",
 };
 export const FOOTER_PAGES = [
   LINKS.blog,

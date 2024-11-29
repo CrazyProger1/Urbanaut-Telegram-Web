@@ -1,7 +1,10 @@
 "use client";
 
 import React from "react";
+
 import { motion, useAnimation } from "framer-motion";
+
+import { LOCK_WOBBLE_ANIMATION } from "@/constants/animations";
 
 interface UnavailablePageProps {
   icon: string;
@@ -11,17 +14,10 @@ interface UnavailablePageProps {
 const UnavailablePage = ({ icon, href }: UnavailablePageProps) => {
   const controls = useAnimation();
 
-  const shakeAnimation = {
-    rotate: [0, -10, 10, -10, 10, 0],
-    transition: { duration: 0.3, ease: "easeInOut" },
-  };
-
-  const handleTap = () => controls.start(shakeAnimation);
-
   return (
     <div
       className="relative h-full w-full flex-1 flex items-center justify-center rounded-2xl"
-      onClick={handleTap}
+      onClick={() => controls.start(LOCK_WOBBLE_ANIMATION)}
     >
       <div className="absolute inset-0 bg-secondary blur-sm rounded-2xl h-full"></div>
       <motion.img
