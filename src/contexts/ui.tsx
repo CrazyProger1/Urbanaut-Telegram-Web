@@ -9,7 +9,7 @@ export type UISettings = {
 };
 
 export const DEFAULT_UI_SETTINGS: UISettings = {
-  theme: "dark",
+  theme: "light",
   animationsEnabled: true,
 };
 export const UIContext = createContext<UISettings>(DEFAULT_UI_SETTINGS);

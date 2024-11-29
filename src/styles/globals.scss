@@ -35,6 +35,38 @@
   --color-state-error-lightest: #EA665D;
 }
 
+.light {
+  --color-primary-dark: 36, 29, 21;
+  --color-primary-default: 36, 29, 21;
+  --color-primary-light: 36, 29, 21;
+
+  --color-secondary-dark: 44, 36, 27;
+  --color-secondary-default: 44, 36, 27;
+  --color-secondary-light: 44, 36, 27;
+
+  --color-text-dark: 209,166,107;
+  --color-text-default: 209,166,107;
+  --color-text-light: 209,166,107;
+
+  --color-selection: 209,166,107;
+
+  --color-state-success-darkest: #19372B;
+  --color-state-success-dark: #345C2C;
+  --color-state-success-default: #457A3B;
+  --color-state-success-light: #66AF59;
+  --color-state-success-lightest: #92CEB8;
+
+  --color-state-warning-dark: #BC7916;
+  --color-state-warning-default: #FAA21E;
+  --color-state-warning-light: #FBB956;
+
+  --color-state-error-darkest: #6C140E;
+  --color-state-error-dark: #A71C0F;
+  --color-state-error-default: #DA291C;
+  --color-state-error-light: #EA665D;
+  --color-state-error-lightest: #EA665D;
+}
+
 
 body {
   overflow-x: hidden;
