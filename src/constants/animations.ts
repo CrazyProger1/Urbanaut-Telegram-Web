@@ -25,3 +25,8 @@ export const SWIPE_VARIANTS = {
     zIndex: 0,
   },
 };
+
+export const LOCK_WOBBLE_ANIMATION = {
+  rotate: [0, -10, 10, -10, 10, 0],
+  transition: { duration: 0.3, ease: "easeInOut" },
+};
