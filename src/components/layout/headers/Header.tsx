@@ -4,6 +4,7 @@ import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 
 import { SettingsButton } from "@/components/buttons";
+import { Suspense } from "react";
 
 const Header = () => (
   <div className="sticky top-0 z-10 bg-secondary rounded-b-2xl p-2 pr-4 flex flex-row items-center">
@@ -15,7 +16,9 @@ const Header = () => (
       <p className="text-text font-primary text-lg">username</p>
       <p className="text-text font-primary text-sm">smth</p>
     </div>
-    <SettingsButton />
+    <Suspense>
+      <SettingsButton />
+    </Suspense>
   </div>
 );
 
