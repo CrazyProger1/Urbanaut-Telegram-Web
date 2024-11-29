@@ -2,10 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ICONS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
-import { usePathname, useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
 
 const SettingsButton = () => {
   const params = useSearchParams();
