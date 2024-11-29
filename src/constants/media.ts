@@ -4,6 +4,7 @@ const STUBS_DIR = `${IMAGES_DIR}/stubs`;
 
 export const STUBS = {
   user: `${STUBS_DIR}/user.png`,
+  object: `${STUBS_DIR}/object.png`,
 };
 
 export const ICONS = {

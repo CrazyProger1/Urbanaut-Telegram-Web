@@ -1,12 +1,7 @@
-const Page = () => {
-  return (
-    <div>
-      <div className="bg-green-500 h-96"></div>
-      <div className="bg-green-500 h-96"></div>
-      <div className="bg-green-500 h-96"></div>
-      <div className="bg-green-500 h-96"></div>
-    </div>
-  );
-};
+import React from "react";
+import { ICONS } from "@/constants/media";
+import { UnavailablePage } from "@/components/layout/pages";
+
+const Page = () => <UnavailablePage icon={ICONS.lock} />;
 
 export default Page;
