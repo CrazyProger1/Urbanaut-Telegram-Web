@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ObjectSearchBarButton from "@/components/bars/ObjectSearchBarButton";
+import Form from "next/form";
 
 const ObjectSearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,17 +12,29 @@ const ObjectSearchBar = () => {
         <div
           className={"bg-secondary flex flex-wrap justify-around rounded-2xl"}
         >
-          <ObjectSearchBarButton active={true} text="rating" />
-          <ObjectSearchBarButton active={false} text="difficulty" />
-          <ObjectSearchBarButton active={false} text="nearest" />
+          <ObjectSearchBarButton
+            text="rating"
+            className={isOpen ? "rounded-tl-2xl" : "rounded-l-2xl"}
+          />
+          <ObjectSearchBarButton text="difficulty" />
+          <ObjectSearchBarButton text="nearest" />
         </div>
         {isOpen ? (
-          <div
-            className={"bg-secondary flex flex-wrap justify-around rounded-2xl"}
-          >
-            <ObjectSearchBarButton active={false} text="category" />
-            <ObjectSearchBarButton active={false} text="name" />
-            <ObjectSearchBarButton active={false} text="..." />
+          <div className="bg-secondary flex flex-wrap justify-around rounded-2xl">
+            <ObjectSearchBarButton text="category" />
+            <ObjectSearchBarButton text="name" />
+            <ObjectSearchBarButton text="..." />
+          </div>
+        ) : null}
+        {isOpen ? (
+          <div className="bg-secondary flex flex-wrap justify-around rounded-2xl">
+            <Form className="w-full" action="/search">
+              <input
+                placeholder="Type to search..."
+                className="w-full rounded-bl-2xl bg-secondary text-text font-primary p-2 placeholder-text focus:border-selection-border focus:border focus:outline-none"
+                name="query"
+              />
+            </Form>
           </div>
         ) : null}
       </div>

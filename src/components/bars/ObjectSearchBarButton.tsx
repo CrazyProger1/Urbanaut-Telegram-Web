@@ -3,19 +3,20 @@
 import React, { useState } from "react";
 
 interface ObjectSearchBarButtonProps {
-  active: boolean;
   text?: string;
+  className?: string;
 }
 
 const ObjectSearchBarButton = ({
-  active,
   text,
+  className,
 }: ObjectSearchBarButtonProps) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div
       className={
-        "flex-1 p-2 text-text font-primary flex justify-center first:rounded-l-2xl cursor-pointer " +
+        className +
+        " flex-1 p-2 text-text font-primary flex justify-center cursor-pointer " +
         (isActive ? "bg-selection border border-selection-border" : "")
       }
       onClick={() => setIsActive(!isActive)}
