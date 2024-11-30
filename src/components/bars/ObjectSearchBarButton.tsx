@@ -20,7 +20,7 @@ const ObjectSearchBarButton = ({
 
   useEffect(() => {
     if (params.has(text)) setIsActive(true);
-  }, [text]);
+  }, [text, params]);
 
   const handleSearch = () => {
     if (!isActive && text) {
