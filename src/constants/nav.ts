@@ -1,7 +1,7 @@
 import { ICONS } from "@/constants/media";
 
 export const LINKS = {
-  main: "/",
+  objects: "/objects",
   profile: "/profile",
   friends: "/friends",
   events: "/events",
@@ -11,7 +11,7 @@ export const LINKS = {
 export const FOOTER_PAGES = [
   LINKS.blog,
   LINKS.profile,
-  LINKS.main,
+  LINKS.objects,
   LINKS.friends,
   LINKS.events,
 ];
@@ -26,7 +26,7 @@ export const FOOTER_LINKS = [
     image: ICONS.profile,
   },
   {
-    href: LINKS.main,
+    href: LINKS.objects,
     image: ICONS.objects,
   },
   {

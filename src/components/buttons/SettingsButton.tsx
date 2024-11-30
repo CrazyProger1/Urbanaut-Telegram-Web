@@ -1,21 +1,18 @@
 "use client";
 
 import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ICONS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 
 const SettingsButton = () => {
-  const params = useSearchParams();
-  const prevPage = params.get("prev");
   const pathname = usePathname();
   const isOpened = pathname === LINKS.settings;
   const router = useRouter();
   const handleToggle = () => {
-    if (isOpened && prevPage) router.push(prevPage);
-    else if (isOpened && !prevPage) router.push("/");
-    else router.push(LINKS.settings + "?prev=" + pathname);
+    if (isOpened) router.back();
+    else router.push(LINKS.settings);
   };
 
   return (
