@@ -1,13 +1,9 @@
-import { ObjectSearchBar } from "@/components/bars";
-import { ObjectTable } from "@/components/tables";
+import React from "react";
+import { redirect } from "next/navigation";
 
-const Home = () => {
-  return (
-    <div>
-      <ObjectSearchBar />
-      <ObjectTable />
-    </div>
-  );
+const Page = () => {
+  redirect("/objects");
+  return <div />;
 };
 
-export default Home;
+export default Page;
