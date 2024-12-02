@@ -3,15 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-interface ObjectSearchBarButtonProps {
+interface Props {
   text: string;
   className?: string;
 }
 
-const ObjectSearchBarButton = ({
-  text,
-  className,
-}: ObjectSearchBarButtonProps) => {
+const ObjectSearchBarButton = ({ text, className }: Props) => {
   const [isActive, setIsActive] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();

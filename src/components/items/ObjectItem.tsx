@@ -4,11 +4,11 @@ import { AbandonedObject } from "@/types/objects";
 import Link from "next/link";
 import { LINKS } from "@/constants/nav";
 
-interface ObjectItemProps {
+interface Props {
   object: AbandonedObject;
 }
 
-const ObjectItem = ({ object }: ObjectItemProps) => {
+const ObjectItem = ({ object }: Props) => {
   const { id, name, description } = object;
   return (
     <Link

@@ -10,6 +10,7 @@ const SettingsButton = () => {
   const pathname = usePathname();
   const isOpened = pathname === LINKS.settings;
   const router = useRouter();
+
   const handleToggle = () => {
     if (isOpened) router.back();
     else router.push(LINKS.settings);

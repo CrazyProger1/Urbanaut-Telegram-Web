@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useContext } from "react";
+import React from "react";
 
-import { UIContext } from "@/contexts/ui";
+import { useUIStore } from "@/stores";
 
-interface ThemedBodyProps {
+interface Props {
   children: React.ReactNode;
   className?: string;
 }
 
-const ThemedBodyWrapper = ({ children, className }: ThemedBodyProps) => {
-  const { theme } = useContext(UIContext);
+const ThemedBodyWrapper = ({ children, className }: Props) => {
+  const { theme } = useUIStore();
   return <body className={className + " bg-primary " + theme}>{children}</body>;
 };
 

@@ -4,11 +4,7 @@ import type { Metadata } from "next";
 
 import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
-import {
-  ProviderWrapper,
-  SwipeWrapper,
-  ThemedBodyWrapper,
-} from "@/components/layout/wrappers";
+import { SwipeWrapper, ThemedBodyWrapper } from "@/components/layout/wrappers";
 import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
 
@@ -18,21 +14,19 @@ export const metadata: Metadata = {
   applicationName: APP,
 };
 
-interface RootLayoutProps {
+interface Props {
   children: React.ReactNode;
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => (
+const RootLayout = ({ children }: Props) => (
   <html lang="en">
-    <ProviderWrapper>
-      <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
-        <Header />
-        <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
-          {children}
-        </SwipeWrapper>
-        <Footer />
-      </ThemedBodyWrapper>
-    </ProviderWrapper>
+    <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
+      <Header />
+      <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
+        {children}
+      </SwipeWrapper>
+      <Footer />
+    </ThemedBodyWrapper>
   </html>
 );
 

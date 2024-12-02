@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface FooterLinkProps {
+interface Props {
   href: string;
   image: string;
 }
 
-const FooterLink = ({ href, image }: FooterLinkProps) => {
+const FooterLink = ({ href, image }: Props) => {
   const active = usePathname() === href;
   return (
     <Link

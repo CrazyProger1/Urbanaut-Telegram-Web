@@ -1,11 +1,11 @@
 import { ObjectSearchBar } from "@/components/bars";
 import { ObjectTable } from "@/components/tables";
 
-interface ObjectPageProps {
+interface Props {
   searchParams: Promise<{ test: string }>;
 }
 
-const ObjectsPage = async ({ searchParams }: ObjectPageProps) => {
+const ObjectsPage = async ({ searchParams }: Props) => {
   console.log(await searchParams);
   return (
     <div>

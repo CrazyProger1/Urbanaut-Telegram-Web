@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { FOOTER_PAGES } from "@/constants/nav";
@@ -12,15 +12,15 @@ import {
   SWIPE_VARIANTS,
 } from "@/constants/animations";
 import { swipePower } from "@/utils/swipe";
-import { UIContext } from "@/contexts/ui";
+import { useUIStore } from "@/stores";
 
-interface SwipeWrapperProps {
+interface Props {
   children: React.ReactNode;
   className?: string;
 }
 
-const SwipeWrapper = ({ children, className }: SwipeWrapperProps) => {
-  const { animationsEnabled } = useContext(UIContext);
+const SwipeWrapper = ({ children, className }: Props) => {
+  const { animationsEnabled } = useUIStore();
   const router = useRouter();
   const pathname = usePathname();
   const initialPage = FOOTER_PAGES.includes(pathname)

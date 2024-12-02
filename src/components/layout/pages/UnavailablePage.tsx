@@ -6,12 +6,12 @@ import { motion, useAnimation } from "framer-motion";
 
 import { LOCK_WOBBLE_ANIMATION } from "@/constants/animations";
 
-interface UnavailablePageProps {
+interface Props {
   icon: string;
   href?: string;
 }
 
-const UnavailablePage = ({ icon, href }: UnavailablePageProps) => {
+const UnavailablePage = ({ icon, href }: Props) => {
   const controls = useAnimation();
 
   return (
