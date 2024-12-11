@@ -7,6 +7,7 @@ import { APP, DESCRIPTION } from "@/constants/app";
 import { SwipeWrapper, ThemedBodyWrapper } from "@/components/layout/wrappers";
 import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
+import ToastProvider from "@/components/providers/ToastProvider";
 
 export const metadata: Metadata = {
   title: APP,
@@ -21,11 +22,13 @@ interface Props {
 const RootLayout = ({ children }: Props) => (
   <html lang="en">
     <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
-      <Header />
-      <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
-        {children}
-      </SwipeWrapper>
-      <Footer />
+      <ToastProvider>
+        <Header />
+        <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
+          {children}
+        </SwipeWrapper>
+        <Footer />
+      </ToastProvider>
     </ThemedBodyWrapper>
   </html>
 );

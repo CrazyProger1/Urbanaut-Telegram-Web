@@ -11,7 +11,9 @@ interface Props {
 
 const ThemedBodyWrapper = ({ children, className }: Props) => {
   const { theme } = useUIStore();
-  return <body className={className + " bg-primary " + theme}>{children}</body>;
+  return (
+    <body className={className + " bg-background " + theme}>{children}</body>
+  );
 };
 
 export default ThemedBodyWrapper;

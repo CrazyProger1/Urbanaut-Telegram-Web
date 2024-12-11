@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'GigaSans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/GigaSans/GigaSans-Medium.ttf) format('truetype');
+    }
+}
+
+.dark {
+    --color-background-default: 48, 23, 80;
+
+    --color-foreground-default: 67, 58, 119;
+
+    --color-text-default: 255, 255, 255;
+
+    --color-selection-border: 255, 255, 255;
+    --color-selection-default: 255, 255, 255;
+
+    --color-state-success-darkest: #19372B;
+    --color-state-success-dark: #345C2C;
+    --color-state-success-default: #457A3B;
+    --color-state-success-light: #66AF59;
+    --color-state-success-lightest: #92CEB8;
+
+    --color-state-warning-dark: #BC7916;
+    --color-state-warning-default: #FAA21E;
+    --color-state-warning-light: #FBB956;
+
+    --color-state-error-darkest: #6C140E;
+    --color-state-error-dark: #A71C0F;
+    --color-state-error-default: #DA291C;
+    --color-state-error-light: #EA665D;
+    --color-state-error-lightest: #EA665D;
+}
+
+.light {
+    --color-background-default: 36, 29, 21;
+
+    --color-foreground-default: 44, 36, 27;
+
+    --color-text-default: 209, 166, 107;
+
+    --color-selection-border: 209, 166, 107;
+    --color-selection-default: 209, 166, 107;
+
+    --color-state-success-darkest: #19372B;
+    --color-state-success-dark: #345C2C;
+    --color-state-success-default: #457A3B;
+    --color-state-success-light: #66AF59;
+    --color-state-success-lightest: #92CEB8;
+
+    --color-state-warning-dark: #BC7916;
+    --color-state-warning-default: #FAA21E;
+    --color-state-warning-light: #FBB956;
+
+    --color-state-error-darkest: #6C140E;
+    --color-state-error-dark: #A71C0F;
+    --color-state-error-default: #DA291C;
+    --color-state-error-light: #EA665D;
+    --color-state-error-lightest: #EA665D;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #221F1F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.14);
+}

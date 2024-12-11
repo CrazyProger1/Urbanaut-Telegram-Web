@@ -1,37 +1,37 @@
 "use client";
-
 import React, { useState } from "react";
-import ObjectSearchBarButton from "@/components/bars/ObjectSearchBarButton";
+import ObjectSearchBarButton from "./ObjectSearchBarButton";
 import Form from "next/form";
 
 const ObjectSearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex flex-row bg-secondary rounded-2xl">
+    <div className="flex flex-row bg-foreground rounded-2xl shadow-volume-frame">
       <div className="flex flex-col flex-1">
         <div
-          className={"bg-secondary flex flex-wrap justify-around rounded-2xl"}
+          className={"bg-foreground flex flex-wrap justify-around rounded-2xl"}
         >
           <ObjectSearchBarButton
+            target="rating"
             text="rating"
             className={isOpen ? "rounded-tl-2xl" : "rounded-l-2xl"}
           />
-          <ObjectSearchBarButton text="difficulty" />
-          <ObjectSearchBarButton text="nearest" />
+          <ObjectSearchBarButton target="difficulty" text="difficulty" />
+          <ObjectSearchBarButton target="nearest" text="nearest" />
         </div>
         {isOpen ? (
-          <div className="bg-secondary flex flex-wrap justify-around rounded-2xl">
-            <ObjectSearchBarButton text="category" />
-            <ObjectSearchBarButton text="name" />
-            <ObjectSearchBarButton text="..." />
+          <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
+            <ObjectSearchBarButton target="category" text="category" />
+            <ObjectSearchBarButton target="name" text="name" />
+            <ObjectSearchBarButton target="more" text="..." />
           </div>
         ) : null}
         {isOpen ? (
-          <div className="bg-secondary flex flex-wrap justify-around rounded-2xl">
+          <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
             <Form className="w-full" action="/search">
               <input
                 placeholder="type to search..."
-                className="w-full rounded-bl-2xl bg-secondary text-text font-primary p-2 placeholder-text focus:border-selection-border focus:border focus:outline-none text-center"
+                className="w-full rounded-bl-2xl bg-foreground text-text font-primary p-2 placeholder-text focus:border-selection-border focus:border focus:outline-none text-center"
                 name="query"
               />
             </Form>

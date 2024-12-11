@@ -1,5 +1,5 @@
-const ICONS_DIR = "icons";
-const IMAGES_DIR = "images";
+const ICONS_DIR = "/icons";
+const IMAGES_DIR = "/images";
 const STUBS_DIR = `${IMAGES_DIR}/stubs`;
 
 export const STUBS = {
