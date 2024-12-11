@@ -1,4 +1,3 @@
-const plugin = require("tailwindcss/plugin");
 const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",

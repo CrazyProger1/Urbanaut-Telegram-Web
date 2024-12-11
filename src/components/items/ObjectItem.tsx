@@ -4,7 +4,14 @@ import { LINKS } from "@/constants/nav";
 import { AbandonedObject } from "@/types/objects";
 import Link from "next/link";
 import { RatingBar } from "@/components/bars/ratings";
-import { DIFFICULTY_FRAME } from "@/constants/frames";
+
+export const DIFFICULTY_FRAME = {
+  DEFAULT: "shadow-difficulty-frame-newbie",
+  NEWBIE: "shadow-difficulty-frame-newbie",
+  EASY: "shadow-difficulty-frame-easy",
+  MEDIUM: "shadow-difficulty-frame-medium",
+  HARD: "shadow-difficulty-frame-hard",
+};
 
 interface Props {
   object: AbandonedObject;
