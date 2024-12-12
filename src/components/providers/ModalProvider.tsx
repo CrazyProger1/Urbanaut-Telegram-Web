@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -8,11 +7,11 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function ToastProvider({ children }: Props) {
+export default function ModalProvider({ children }: Props) {
   return (
     <>
+      <div id="modal-container" />
       {children}
-      <ToastContainer />
     </>
   );
 }

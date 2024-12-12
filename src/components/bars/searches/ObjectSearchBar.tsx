@@ -5,12 +5,11 @@ import Form from "next/form";
 
 const ObjectSearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="flex flex-row bg-foreground rounded-2xl shadow-volume-frame">
       <div className="flex flex-col flex-1">
-        <div
-          className={"bg-foreground flex flex-wrap justify-around rounded-2xl"}
-        >
+        <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
           <ObjectSearchBarButton
             target="rating"
             text="rating"

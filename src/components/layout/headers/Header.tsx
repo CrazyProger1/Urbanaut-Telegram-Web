@@ -5,7 +5,7 @@ import { LINKS } from "@/constants/nav";
 
 import { SettingsButton } from "@/components/buttons";
 import { Suspense } from "react";
-// import { RANK_FRAME } from "@/constants/frames";
+
 export const RANK_FRAME = {
   DEFAULT: "shadow-rank-frame-newbie",
   NEWBIE: "shadow-rank-frame-newbie",

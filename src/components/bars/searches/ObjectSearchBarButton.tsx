@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import ModalPortal from "@/components/modals/ModalPortal";
 
 interface Props {
   target: string;
@@ -28,16 +29,18 @@ const ObjectSearchBarButton = ({ target, text, className }: Props) => {
   };
 
   return (
-      <div
-          className={`${className} flex-1 p-2 text-text font-primary flex justify-center cursor-pointer relative 
+    <div
+      className={`${className} flex-1 p-2 text-text font-primary flex justify-center cursor-pointer relative 
         ${isActive ? "bg-selection" : ""}`}
-          onClick={handleSearch}
-      >
-        {isActive && (
-            <div className={`${className} absolute inset-0 border border-selection-border pointer-events-none`}/>
-        )}
-        {text}
-      </div>
+      onClick={handleSearch}
+    >
+      {isActive && (
+        <div
+          className={`${className} absolute inset-0 border border-selection-border pointer-events-none`}
+        />
+      )}
+      {text}
+    </div>
   );
 };
 
