@@ -1,24 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import { ModalPortal } from "@/components/modals";
+import {CategoryModal, DifficultyModal} from "@/components/modals/searches";
 
 const AboutSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   return (
-    <>
-      <ModalPortal
-        show={isOpen}
-        onClose={() => {
-          setIsOpen(false);
-        }}
-      >
-        <div className="size-32 bg-foreground">TEST</div>
+    <div>
+      <button onClick={() => setVisible(true)}>Open modal</button>
+      <ModalPortal show={visible} onClose={() => setVisible(false)}>
+        {/*<DifficultyModal />*/}
+        <CategoryModal />
       </ModalPortal>
-
-      <button className="text-text" onClick={() => setIsOpen(true)}>
-        Show Modal
-      </button>
-    </>
+    </div>
   );
 };
 
