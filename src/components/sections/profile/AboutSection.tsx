@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ModalPortal } from "@/components/modals";
-import {CategoryModal, DifficultyModal} from "@/components/modals/searches";
+import { CategoryModal } from "@/components/modals/searches";
 
 const AboutSection = () => {
   const [visible, setVisible] = useState(false);
@@ -9,7 +9,6 @@ const AboutSection = () => {
     <div>
       <button onClick={() => setVisible(true)}>Open modal</button>
       <ModalPortal show={visible} onClose={() => setVisible(false)}>
-        {/*<DifficultyModal />*/}
         <CategoryModal />
       </ModalPortal>
     </div>

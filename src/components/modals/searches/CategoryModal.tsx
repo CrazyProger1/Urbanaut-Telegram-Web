@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import Masonry from "@/components/Masonry";
+import React, { useState } from "react";
+import { HorizontalMasonry } from "simple-masonry-ui";
 
 const CategoryBadge = ({ text }: { text: string }) => {
   const [active, setActive] = useState(false);
@@ -26,22 +26,19 @@ const CategoryModal = () => {
         Category
       </label>
       <div className="mt-2" />
-      <Masonry>
-        <CategoryBadge text="Faaactqwerty" />
-        <CategoryBadge text="Cvvv" />
-        <CategoryBadge text="Abcdabcd" />
-        <CategoryBadge text="Testcat" />
-        <CategoryBadge text="Somecat" />
-        <CategoryBadge text="Ultrasuperpupercat" />
-        <CategoryBadge text="Hmhmsomething" />
-        <CategoryBadge text="Interesting" />
-        <CategoryBadge text="Well" />
-        <CategoryBadge text="See" />
-        <CategoryBadge text="S" />
-        <CategoryBadge text="CS" />
-        <CategoryBadge text="Cat" />
+      <HorizontalMasonry gap={0.5}>
+        <CategoryBadge text="Long Long Long Category" />
+        <CategoryBadge text="Short Category" />
         <CategoryBadge text="Category" />
-      </Masonry>
+        <CategoryBadge text="Test" />
+        <CategoryBadge text="Short" />
+        <CategoryBadge text="A" />
+        <CategoryBadge text="B" />
+        <CategoryBadge text="C" />
+        <CategoryBadge text="ABC" />
+        <CategoryBadge text="More" />
+        <CategoryBadge text="More More" />
+      </HorizontalMasonry>
     </div>
   );
 };
