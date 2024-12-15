@@ -20,7 +20,7 @@ interface Props {
 const ObjectItem = ({ object }: Props) => {
   const { id, name, short_description, photo, difficulty_level } = object;
   const frameClass = DIFFICULTY_FRAME[difficulty_level];
-  console.log(frameClass);
+
   return (
     <Link
       className="bg-foreground flex flex-row rounded-2xl mt-4 p-4 shadow-volume-frame"

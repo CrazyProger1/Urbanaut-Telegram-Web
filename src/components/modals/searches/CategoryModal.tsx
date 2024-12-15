@@ -26,7 +26,7 @@ const CategoryModal = () => {
         Category
       </label>
       <div className="mt-2" />
-      <HorizontalMasonry gap={0.5}>
+      <HorizontalMasonry className=" flex flex-wrap gap-0.5 " gap={0.5}>
         <CategoryBadge text="Long Long Long Category" />
         <CategoryBadge text="Short Category" />
         <CategoryBadge text="Category" />

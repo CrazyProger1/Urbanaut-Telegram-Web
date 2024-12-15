@@ -10,7 +10,6 @@ type Props = {
 };
 
 const ObjectsPage = async (props: Props) => {
-  console.log(props);
 
   const response = await getObjects();
 
