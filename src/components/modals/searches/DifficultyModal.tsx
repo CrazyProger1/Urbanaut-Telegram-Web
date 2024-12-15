@@ -6,10 +6,10 @@ const DifficultyModal = () => {
 
   const DIFFICULTIES = ["Newbie", "Easy", "Medium", "Hard", "Legend"];
   return (
-    <div className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl">
-      <label className="text-text text-lg font-primary text-center font-bold">
+    <div className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none">
+      <div className="text-text text-lg font-primary text-center font-bold">
         Difficulty
-      </label>
+      </div>
       <input
         type="range"
         value={value}

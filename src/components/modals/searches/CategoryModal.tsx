@@ -21,7 +21,7 @@ const CategoryBadge = ({ text }: { text: string }) => {
 };
 const CategoryModal = () => {
   return (
-    <div className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl">
+    <div className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none">
       <label className="text-text text-lg font-primary text-center font-bold">
         Category
       </label>
