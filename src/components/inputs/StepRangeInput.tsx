@@ -2,12 +2,13 @@ import React from "react";
 
 interface Props {
   level: number;
-  levels: string[];
+  max: number;
+  min: number;
   step?: number;
   onChange?: (level: number) => void;
 }
 
-const StepRangeInput = ({ level, levels, onChange, step = 1 }: Props) => {
+const StepRangeInput = ({ level, onChange, step = 1, min, max }: Props) => {
   return (
     <input
       type="range"
@@ -17,9 +18,9 @@ const StepRangeInput = ({ level, levels, onChange, step = 1 }: Props) => {
       style={{
         background: `linear-gradient(to right, gray 0%, green 25%, yellow 50%, red 75%, purple 100%)`,
       }}
-      min={1}
+      min={min}
       step={step}
-      max={levels.length}
+      max={max}
     />
   );
 };

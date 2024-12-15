@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchToggle } from "@/components/toggles";
 import { ExpandButton } from "@/components/buttons";
 import { SearchForm } from "@/components/forms";
-import { ModalPortal } from "@/components/modals";
 import { CategoryModal, DifficultyModal } from "@/components/modals/searches";
+import { usePathname, useRouter } from "next/navigation";
 
 const DIFFICULTY_LEVELS = ["Newbie", "Easy", "Middle", "Hard", "Legend"];
 const ObjectSearchBar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
     rating: false,
@@ -23,9 +25,12 @@ const ObjectSearchBar = () => {
     difficulty: false,
     category: false,
   });
+  const [filters, setFilters] = useState({});
 
-  const [difficultyLevel, setDifficultyLevel] = useState(3);
-  const [chosenCategories, setChosenCategories] = useState([]);
+  useEffect(() => {
+    const query = new URLSearchParams(filters).toString();
+    router.push(`${pathname}?${query}`);
+  }, [filters, router]);
 
   const closeModal = (target: string) => {
     setModalStates({ ...modalStates, [target]: false });
@@ -44,6 +49,8 @@ const ObjectSearchBar = () => {
       ...prevFilters,
       [target]: active,
     }));
+
+    if (!active) setFilters({ ...filters, [target]: null });
   };
 
   const handleHold = (target: string) => {
@@ -57,22 +64,21 @@ const ObjectSearchBar = () => {
 
   return (
     <>
-      <ModalPortal
+      <DifficultyModal
         show={modalStates.difficulty}
-        onClose={() => closeModal("difficulty")}
-      >
-        <DifficultyModal
-          levels={DIFFICULTY_LEVELS}
-          level={difficultyLevel}
-          onChange={setDifficultyLevel}
-        />
-      </ModalPortal>
-      <ModalPortal
+        levels={DIFFICULTY_LEVELS}
+        onClose={(difficulty) => {
+          closeModal("difficulty");
+          setFilters({ ...filters, difficulty: difficulty });
+        }}
+      />
+      <CategoryModal
         show={modalStates.category}
-        onClose={() => closeModal("category")}
-      >
-        <CategoryModal />
-      </ModalPortal>
+        onClose={(categories) => {
+          closeModal("category");
+          setFilters({ ...filters, categories: categories });
+        }}
+      />
       <div className="flex flex-row bg-foreground rounded-2xl shadow-volume-frame">
         <div className="flex flex-col flex-1">
           <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">

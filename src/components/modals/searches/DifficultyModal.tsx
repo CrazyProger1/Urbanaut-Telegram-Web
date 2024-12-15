@@ -1,33 +1,41 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { StepRangeInput } from "@/components/inputs";
+import { ModalPortal } from "@/components/modals";
 
 interface Props {
-  level: number;
+  show: boolean;
   levels: string[];
-  onChange?: (level: number) => void;
+  onClose?: (difficulty: string) => void;
 }
 
-const DifficultyModal = ({ levels, level, onChange }: Props) => {
+const DifficultyModal = ({ show, levels, onClose }: Props) => {
+  const [level, setLevel] = useState(1);
   return (
-    <div
-      className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none"
-      onClick={(ev) => ev.stopPropagation()}
+    <ModalPortal
+      show={show}
+      onClose={() => (onClose ? onClose(levels[level - 1]) : null)}
     >
-      <div className="text-text text-lg font-primary text-center font-bold">
-        Difficulty
+      <div
+        className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none"
+        onClick={(ev) => ev.stopPropagation()}
+      >
+        <div className="text-text text-lg font-primary text-center font-bold">
+          Difficulty
+        </div>
+        <StepRangeInput
+          max={levels.length}
+          min={1}
+          step={1}
+          level={level}
+          onChange={setLevel}
+        />
+        <div className="mt-2" />
+        <div className="text-text text-center">
+          <p className="font-medium font-primary">{levels[level - 1]}</p>
+        </div>
       </div>
-      <StepRangeInput
-        levels={levels}
-        level={level}
-        onChange={onChange}
-        step={1}
-      />
-      <div className="mt-2" />
-      <div className="text-text text-center">
-        <p className="font-medium font-primary">{levels[level - 1]}</p>
-      </div>
-    </div>
+    </ModalPortal>
   );
 };
 
