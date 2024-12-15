@@ -7,6 +7,7 @@ import { SearchForm } from "@/components/forms";
 import { ModalPortal } from "@/components/modals";
 import { CategoryModal, DifficultyModal } from "@/components/modals/searches";
 
+const DIFFICULTY_LEVELS = ["Newbie", "Easy", "Middle", "Hard", "Legend"];
 const ObjectSearchBar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
@@ -22,6 +23,9 @@ const ObjectSearchBar = () => {
     difficulty: false,
     category: false,
   });
+
+  const [difficultyLevel, setDifficultyLevel] = useState(3);
+  const [chosenCategories, setChosenCategories] = useState([]);
 
   const closeModal = (target: string) => {
     setModalStates({ ...modalStates, [target]: false });
@@ -57,7 +61,11 @@ const ObjectSearchBar = () => {
         show={modalStates.difficulty}
         onClose={() => closeModal("difficulty")}
       >
-        <DifficultyModal />
+        <DifficultyModal
+          levels={DIFFICULTY_LEVELS}
+          level={difficultyLevel}
+          onChange={setDifficultyLevel}
+        />
       </ModalPortal>
       <ModalPortal
         show={modalStates.category}

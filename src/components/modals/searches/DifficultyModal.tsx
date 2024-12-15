@@ -1,30 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { StepRangeInput } from "@/components/inputs";
 
-const DifficultyModal = () => {
-  const [value, setValue] = useState(3);
+interface Props {
+  level: number;
+  levels: string[];
+  onChange?: (level: number) => void;
+}
 
-  const DIFFICULTIES = ["Newbie", "Easy", "Medium", "Hard", "Legend"];
+const DifficultyModal = ({ levels, level, onChange }: Props) => {
   return (
-    <div className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none">
+    <div
+      className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none"
+      onClick={(ev) => ev.stopPropagation()}
+    >
       <div className="text-text text-lg font-primary text-center font-bold">
         Difficulty
       </div>
-      <input
-        type="range"
-        value={value}
-        className="h-2 rounded-lg appearance-none cursor-pointer w-full mt-4"
-        onChange={(ev) => setValue(Number(ev.target.value))}
-        style={{
-          background: `linear-gradient(to right, gray 0%, green 25%, yellow 50%, red 75%, purple 100%)`,
-        }}
-        min={1}
+      <StepRangeInput
+        levels={levels}
+        level={level}
+        onChange={onChange}
         step={1}
-        max={5}
       />
       <div className="mt-2" />
       <div className="text-text text-center">
-        <p className="font-medium font-primary">{DIFFICULTIES[value - 1]}</p>
+        <p className="font-medium font-primary">{levels[level - 1]}</p>
       </div>
     </div>
   );

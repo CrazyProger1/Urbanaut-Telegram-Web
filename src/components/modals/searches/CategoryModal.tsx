@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
 
 const CategoryBadge = ({ text }: { text: string }) => {
-  const [active, setActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   return (
     <div
       className={
         "bg-foreground text-text text-center text-xs font-medium p-1 rounded grid-item " +
-        (active ? "bg-selection" : "")
+        (isActive ? "bg-selection" : "")
       }
       onClick={(ev) => {
-        setActive(!active);
+        setIsActive(!isActive);
         ev.stopPropagation();
       }}
     >
@@ -19,9 +19,19 @@ const CategoryBadge = ({ text }: { text: string }) => {
     </div>
   );
 };
+
+// interface Props {
+//   categories: string[];
+//   chosen: string[];
+//   onChange: (chosen: string[]) => void;
+// }
+
 const CategoryModal = () => {
   return (
-    <div className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none">
+    <div
+      className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none"
+      onClick={(ev) => ev.stopPropagation()}
+    >
       <label className="text-text text-lg font-primary text-center font-bold">
         Category
       </label>
