@@ -19,7 +19,8 @@ interface Props {
 
 const ObjectItem = ({ object }: Props) => {
   const { id, name, short_description, photo, difficulty_level } = object;
-  const frameClass = DIFFICULTY_FRAME[difficulty_level];
+  const frameClass =
+    DIFFICULTY_FRAME[difficulty_level as keyof typeof DIFFICULTY_FRAME];
 
   return (
     <Link

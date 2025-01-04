@@ -32,9 +32,9 @@ const GradientStepInput = ({
       style={{
         background: `linear-gradient(to right, ${gradient})`,
       }}
-      min={min | 0}
+      min={min || 0}
       step={step}
-      max={max | (colors.length - 1)}
+      max={max || colors.length - 1}
     />
   );
 };

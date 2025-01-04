@@ -38,7 +38,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
   useEffect(() => {
     const query = new URLSearchParams(filters).toString();
     router.push(`${pathname}?${query}`);
-  }, [filters, router]);
+  }, [filters, router, pathname]);
 
   const closeModal = (target: string) => {
     setModalStates({ ...modalStates, [target]: false });

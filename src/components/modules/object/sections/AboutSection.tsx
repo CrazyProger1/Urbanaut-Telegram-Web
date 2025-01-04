@@ -17,9 +17,9 @@ const AboutSection = ({ object }: Props) => {
 
   return (
     <div className="text-text text-xs">
-      <p>Created at: {created_at}</p>
-      <p>Built at: {built_at}</p>
-      <p>Abandoned at: {abandoned_at}</p>
+      <p>Created at: {String(created_at)}</p>
+      <p>Built at: {String(built_at)}</p>
+      <p>Abandoned at: {String(abandoned_at)}</p>
       <p>
         Difficulty: <span className="underline">{difficulty_level}</span>
       </p>

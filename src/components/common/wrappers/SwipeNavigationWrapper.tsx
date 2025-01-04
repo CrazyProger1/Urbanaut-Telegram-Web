@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { FOOTER_PAGES } from "@/constants/nav";
 import {
   SWIPE_CONFIDENCE_THRESHOLD,
   SWIPE_DRAG_CONSTRAINTS,
@@ -16,24 +15,23 @@ import { useUIStore } from "@/stores";
 
 interface Props {
   children: React.ReactNode;
+  pages: string[];
   className?: string;
 }
 
-const SwipeWrapper = ({ children, className }: Props) => {
+const SwipeNavigationWrapper = ({ children, pages, className }: Props) => {
   const { animationsEnabled } = useUIStore();
   const router = useRouter();
   const pathname = usePathname();
-  const initialPage = FOOTER_PAGES.includes(pathname)
-    ? FOOTER_PAGES.indexOf(pathname)
-    : -1;
+  const initialPage = pages.includes(pathname) ? pages.indexOf(pathname) : -1;
   const [page, setPage] = useState(initialPage);
 
   const paginate = (direction: number) => {
     let newPage = initialPage + direction;
-    if (newPage <= -1) newPage = FOOTER_PAGES.length - 1;
-    else if (newPage >= FOOTER_PAGES.length) newPage = 0;
-    router.push(FOOTER_PAGES[newPage]);
+    if (newPage <= -1) newPage = pages.length - 1;
+    else if (newPage >= pages.length) newPage = 0;
     setPage(newPage);
+    router.push(pages[newPage]);
   };
   if (!animationsEnabled || initialPage === -1)
     return <div className={className}>{children}</div>;
@@ -65,4 +63,4 @@ const SwipeWrapper = ({ children, className }: Props) => {
   );
 };
 
-export default SwipeWrapper;
+export default SwipeNavigationWrapper;

@@ -4,13 +4,16 @@ import { AbandonedObjectCategory } from "@/types/categories";
 import { getCategories } from "@/services/categories";
 
 const SearchSection = async () => {
-  const categoriesResponse = await getCategories();
   let categories: AbandonedObjectCategory[] = [];
-  if (categoriesResponse.success) categories = categoriesResponse.results;
+  try {
+    const categoriesResponse = await getCategories();
+    if (categoriesResponse.success) categories = categoriesResponse.results;
+  } catch (err) {}
+
   return (
-      <Suspense>
-        <ObjectSearchBar categories={categories} />
-      </Suspense>
+    <Suspense>
+      <ObjectSearchBar categories={categories} />
+    </Suspense>
   );
 };
 

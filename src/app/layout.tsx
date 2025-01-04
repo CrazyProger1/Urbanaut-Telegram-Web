@@ -4,11 +4,14 @@ import type { Metadata } from "next";
 
 import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
-import { SwipeWrapper, ThemedBodyWrapper } from "@/components/common/wrappers";
+import {
+  SwipeNavigationWrapper,
+  ThemedBodyWrapper,
+} from "@/components/common/wrappers";
 import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
 import { IgnorePagesWrapper } from "@/components/common/wrappers";
-import { LINKS } from "@/constants/nav";
+import { FOOTER_PAGES, LINKS } from "@/constants/nav";
 import { Providers } from "@/components/common/wrappers/providers";
 
 export const metadata: Metadata = {
@@ -30,9 +33,12 @@ const RootLayout = ({ children }: Props) => {
           <IgnorePagesWrapper pages={[LINKS.profile]}>
             <Header />
           </IgnorePagesWrapper>
-          <SwipeWrapper className="my-4 flex-1 flex flex-col h-full">
+          <SwipeNavigationWrapper
+            pages={FOOTER_PAGES}
+            className="my-4 flex-1 flex flex-col h-full"
+          >
             {children}
-          </SwipeWrapper>
+          </SwipeNavigationWrapper>
           <Footer />
         </Providers>
       </ThemedBodyWrapper>

@@ -15,7 +15,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended"
   ],
   "settings": {
     "react": {
@@ -23,6 +24,8 @@
     }
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["off"]
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ]
   }
 }
