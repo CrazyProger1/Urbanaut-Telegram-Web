@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
 import { IgnorePagesWrapper } from "@/components/wrappers";
 import { LINKS } from "@/constants/nav";
-import { Providers } from "@/components/providers";
+import { Providers } from "@/components/common/wrappers/providers";
 
 export const metadata: Metadata = {
   title: APP,
@@ -26,7 +26,7 @@ const RootLayout = ({ children }: Props) => {
     <html lang="en">
       <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
         <Providers>
-          <div id="myportal"/>
+          <div id="myportal" />
           <IgnorePagesWrapper pages={[LINKS.profile]}>
             <Header />
           </IgnorePagesWrapper>

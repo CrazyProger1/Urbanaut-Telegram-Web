@@ -7,14 +7,16 @@ import { SearchForm } from "@/components/forms";
 import { CategoryModal, DifficultyModal } from "@/components/modals/searches";
 import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
+import { Color } from "@/types/colors";
 
 const DIFFICULTY_LEVELS = ["Newbie", "Easy", "Middle", "Hard", "Legend"];
+const DIFFICULTY_COLORS: Color[] = ["gray", "green", "yellow", "red", "purple"];
 
 interface Props {
   categories: AbandonedObjectCategory[];
 }
 
-const ObjectSearchBar = ({categories}: Props) => {
+const ObjectSearchBar = ({ categories }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -73,6 +75,7 @@ const ObjectSearchBar = ({categories}: Props) => {
       <DifficultyModal
         show={modalStates.difficulty}
         levels={DIFFICULTY_LEVELS}
+        colors={DIFFICULTY_COLORS}
         onClose={(difficulty) => {
           closeModal("difficulty");
           setFilters({ ...filters, difficulty: difficulty });

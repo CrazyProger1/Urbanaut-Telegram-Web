@@ -8,11 +8,11 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function ToastProvider({ children }: Props) {
-  return (
-    <>
-      {children}
-      <ToastContainer />
-    </>
-  );
-}
+const ToastProvider = ({ children }: Props) => (
+  <>
+    {children}
+    <ToastContainer />
+  </>
+);
+
+export default ToastProvider;

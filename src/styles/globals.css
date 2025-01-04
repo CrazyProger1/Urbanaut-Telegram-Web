@@ -94,3 +94,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(85, 85, 85, 0.14);
 }
+
+input[type="range"] {
+    -webkit-appearance: none;
+}

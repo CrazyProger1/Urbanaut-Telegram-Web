@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
 import { ModalPortal } from "@/components/modals";
 import { AbandonedObjectCategory } from "@/types/categories";
+import { ModalTitle } from "@/components/common/typography/titles";
 
 interface CategoryBadgeProps {
   category: AbandonedObjectCategory;
@@ -45,7 +46,6 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
       : [...activeCategories, category];
     const newVisibleCategories = categories;
 
-
     setActiveCategories(newActiveCategories);
     setVisibleCategories(newVisibleCategories);
   };
@@ -56,12 +56,10 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
         className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none"
         onClick={(ev) => ev.stopPropagation()}
       >
-        <label className="text-text text-lg font-primary text-center font-bold">
-          Category
-        </label>
+        <ModalTitle>Category</ModalTitle>
 
         <div className="mt-2" />
-        <HorizontalMasonry gap={0.5}>
+        <HorizontalMasonry gap={1} extendClassName="gap-1">
           {visibleCategories.map((category) => (
             <CategoryBadge
               key={category.id}

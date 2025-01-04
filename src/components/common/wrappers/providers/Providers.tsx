@@ -6,12 +6,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Providers = ({ children }: Props) => {
-  return (
-    <ToastProvider>
-      <ModalProvider>{children}</ModalProvider>
-    </ToastProvider>
-  );
-};
+const Providers = ({ children }: Props) => (
+  <ToastProvider>
+    <ModalProvider>{children}</ModalProvider>
+  </ToastProvider>
+);
 
 export default Providers;
