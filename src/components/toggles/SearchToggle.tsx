@@ -36,7 +36,7 @@ const SearchToggle = ({
       const timeoutId = setTimeout(() => {
         onHold(target, active);
         setIsHeld(true);
-      }, 300);
+      }, 200);
       setHoldTimeout(timeoutId);
     }
   };
@@ -48,7 +48,7 @@ const SearchToggle = ({
       const timeoutId = setTimeout(() => {
         onHold(target, active);
         setIsHeld(true);
-      }, 300);
+      }, 200);
       setHoldTimeout(timeoutId);
     }
   };
