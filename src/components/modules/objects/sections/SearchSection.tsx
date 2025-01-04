@@ -8,7 +8,9 @@ const SearchSection = async () => {
   try {
     const categoriesResponse = await getCategories();
     if (categoriesResponse.success) categories = categoriesResponse.results;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 
   return (
     <Suspense>

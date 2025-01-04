@@ -9,7 +9,9 @@ const TableSection = async () => {
   try {
     const objectsResponse = await getObjects();
     if (objectsResponse.success) objects = objectsResponse.results;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 
   return <ObjectTable objects={objects} />;
 };
