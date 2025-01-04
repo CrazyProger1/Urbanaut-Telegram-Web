@@ -1,4 +1,5 @@
 const config = {
+  mode: "jit",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,28 +18,32 @@ const config = {
           "2xl": "8rem",
         },
       },
+      boxShadow: {
+        "volume-frame": "0 0 10px 2px rgba(0, 0, 0, 0.5)",
+        "difficulty-frame-newbie": "3px 3px 5px 0px rgba(255, 255, 255, 0.5)",
+        "difficulty-frame-easy": "3px 3px 5px 0px rgba(0, 255, 0, 0.5)",
+        "difficulty-frame-medium": "3px 3px 5px 0px rgba(255, 255, 0, 0.5)",
+        "difficulty-frame-hard": "3px 3px 5px 0px rgba(255, 0, 0, 0.5)",
+        "rank-frame-newbie": "3px 3px 5px 0px rgba(255, 255, 255, 0.5)",
+        "rank-frame-stalker": "3px 3px 5px 0px rgba(255, 0, 0, 0.5)",
+        "rank-frame-legend": "3px 3px 5px 0px rgba(157,0,255, 0.5)",
+      },
       fontFamily: {
-        primary: ["Poppins"],
+        primary: ["Poppins", "GigaSans"],
       },
       colors: {
-        primary: {
-          dark: "rgba(var(--color-primary-dark))",
-          DEFAULT: "rgba(var(--color-primary-default))",
-          light: "rgba(var(--color-primary-light))",
+        background: {
+          DEFAULT: "rgba(var(--color-background-default))",
         },
-        secondary: {
-          dark: "rgba(var(--color-secondary-dark))",
-          DEFAULT: "rgba(var(--color-secondary-default))",
-          light: "rgba(var(--color-secondary-light))",
+        foreground: {
+          DEFAULT: "rgba(var(--color-foreground-default))",
         },
         text: {
-          dark: "rgba(var(--color-text-dark))",
           DEFAULT: "rgba(var(--color-text-default))",
-          light: "rgba(var(--color-text-light))",
         },
         selection: {
-          border: "rgba(var(--color-selection), 0.35)",
-          DEFAULT: "rgba(var(--color-selection), 0.3)",
+          border: "rgba(var(--color-selection-border), 0.35)",
+          DEFAULT: "rgba(var(--color-selection-default), 0.3)",
         },
         state: {
           success: {

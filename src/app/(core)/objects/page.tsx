@@ -1,17 +1,21 @@
-import { ObjectSearchBar } from "@/components/bars";
-import { ObjectTable } from "@/components/tables";
+import {
+  SearchSection,
+  TableSection,
+} from "@/components/modules/objects/sections";
 
-interface ObjectPageProps {
-  searchParams: Promise<{ test: string }>;
-}
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-const ObjectsPage = async ({ searchParams }: ObjectPageProps) => {
-  console.log(await searchParams);
+const ObjectsPage = async (props: Props) => {
   return (
-    <div>
-      <ObjectSearchBar />
-      <ObjectTable />
-    </div>
+    <>
+      <SearchSection />
+
+      <div className="mt-4" />
+      <TableSection />
+    </>
   );
 };
 

@@ -1,6 +1,20 @@
-import { ICONS } from "@/constants/media";
 import React from "react";
-import { UnavailablePage } from "@/components/layout/pages";
+import {
+  AboutSection,
+  AvatarSection,
+  HeadSection,
+} from "@/components/modules/profile/sections";
 
-const Profile = () => <UnavailablePage icon={ICONS.lock} />;
+const Profile = () => {
+  return (
+    <>
+      <HeadSection />
+      <div className="mt-16" />
+      <AvatarSection />
+      <div className="mt-4" />
+      <AboutSection />
+      <div className="mt-4" />
+    </>
+  );
+};
 export default Profile;

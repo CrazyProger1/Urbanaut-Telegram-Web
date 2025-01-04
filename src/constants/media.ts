@@ -1,5 +1,5 @@
-const ICONS_DIR = "icons";
-const IMAGES_DIR = "images";
+const ICONS_DIR = "/icons";
+const IMAGES_DIR = "/images";
 const STUBS_DIR = `${IMAGES_DIR}/stubs`;
 
 export const STUBS = {
@@ -16,4 +16,5 @@ export const ICONS = {
   events: `${ICONS_DIR}/events.png`,
   notfound: `${ICONS_DIR}/404.png`,
   lock: `${ICONS_DIR}/padlock.png`,
+  bell: `${ICONS_DIR}/bell.png`,
 };

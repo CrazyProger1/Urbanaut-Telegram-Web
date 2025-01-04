@@ -1,1 +1,2 @@
-import "./globals.scss";
+import "swiper/css";
+import "./globals.css";

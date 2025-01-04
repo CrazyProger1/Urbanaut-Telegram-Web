@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ICONS } from "@/constants/media";
@@ -10,20 +10,23 @@ const SettingsButton = () => {
   const pathname = usePathname();
   const isOpened = pathname === LINKS.settings;
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => {
     if (isOpened) router.back();
     else router.push(LINKS.settings);
   };
 
   return (
-    <motion.img
-      className="size-12 ml-auto cursor-pointer"
-      src={ICONS.settings}
-      alt="settings-icon"
-      animate={{ rotate: isOpened ? 360 : 0 }}
-      transition={{ duration: 0.5 }}
-      onTap={handleToggle}
-    />
+    <>
+      <motion.img
+        className="size-12 ml-auto cursor-pointer"
+        src={ICONS.settings}
+        alt="settings-icon"
+        animate={{ rotate: isOpened ? 360 : 0 }}
+        transition={{ duration: 0.5 }}
+        onTap={handleToggle}
+      />
+    </>
   );
 };
 

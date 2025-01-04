@@ -6,12 +6,12 @@ import { motion, useAnimation } from "framer-motion";
 
 import { LOCK_WOBBLE_ANIMATION } from "@/constants/animations";
 
-interface UnavailablePageProps {
+interface Props {
   icon: string;
   href?: string;
 }
 
-const UnavailablePage = ({ icon, href }: UnavailablePageProps) => {
+const UnavailablePage = ({ icon, href }: Props) => {
   const controls = useAnimation();
 
   return (
@@ -19,7 +19,7 @@ const UnavailablePage = ({ icon, href }: UnavailablePageProps) => {
       className="relative h-full w-full flex-1 flex items-center justify-center rounded-2xl"
       onClick={() => controls.start(LOCK_WOBBLE_ANIMATION)}
     >
-      <div className="absolute inset-0 bg-secondary blur-sm rounded-2xl h-full"></div>
+      <div className="absolute inset-0 bg-foreground blur-sm rounded-2xl h-full"></div>
       <motion.img
         src={icon}
         className="relative z-10 size-14"
