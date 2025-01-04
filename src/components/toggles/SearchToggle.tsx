@@ -29,7 +29,9 @@ const SearchToggle = ({
     }
   };
 
-  const handleHoldStart = () => {
+  const handleMouseHoldStart = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+
     if (onHold) {
       const timeoutId = setTimeout(() => {
         onHold(target, active);
@@ -39,7 +41,29 @@ const SearchToggle = ({
     }
   };
 
-  const handleHoldEnd = () => {
+  const handleTouchHoldStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+
+    if (onHold) {
+      const timeoutId = setTimeout(() => {
+        onHold(target, active);
+        setIsHeld(true);
+      }, 300);
+      setHoldTimeout(timeoutId);
+    }
+  };
+
+  const handleMouseHoldEnd = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    clearHoldTimeout();
+  };
+
+  const handleTouchHoldEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    clearHoldTimeout();
+  };
+
+  const clearHoldTimeout = () => {
     if (holdTimeout) {
       clearTimeout(holdTimeout);
       setHoldTimeout(null);
@@ -53,12 +77,12 @@ const SearchToggle = ({
         ${active ? "bg-selection" : ""}`}
       animate={{ scale: isHeld ? 0.95 : 1 }}
       onClick={handleToggle}
-      onMouseDown={handleHoldStart}
-      onMouseUp={handleHoldEnd}
-      onMouseLeave={handleHoldEnd}
-      onTouchStart={handleHoldStart}
-      onTouchEnd={handleHoldEnd}
-      onTouchMove={handleHoldEnd}
+      onMouseDown={handleMouseHoldStart}
+      onMouseUp={handleMouseHoldEnd}
+      onMouseLeave={handleMouseHoldEnd}
+      onTouchStart={handleTouchHoldStart}
+      onTouchEnd={handleTouchHoldEnd}
+      onTouchMove={handleTouchHoldEnd}
     >
       {active && (
         <motion.div

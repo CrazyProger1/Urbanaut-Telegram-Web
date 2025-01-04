@@ -18,6 +18,10 @@ const config = {
           "2xl": "8rem",
         },
       },
+      blur: {
+        "2px": "2px",
+        "10px": "10px",
+      },
       boxShadow: {
         "volume-frame": "0 0 10px 2px rgba(0, 0, 0, 0.5)",
         "difficulty-frame-newbie": "3px 3px 5px 0px rgba(255, 255, 255, 0.5)",
