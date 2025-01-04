@@ -1,37 +1,57 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
 import { ModalPortal } from "@/components/modals";
+import { AbandonedObjectCategory } from "@/types/categories";
 
-const CategoryBadge = ({ text }: { text: string }) => {
-  const [isActive, setIsActive] = useState(false);
+interface CategoryBadgeProps {
+  category: AbandonedObjectCategory;
+  variant: "active" | "inactive";
+  onClick?: () => void;
+}
+
+const CategoryBadge = ({ category, variant, onClick }: CategoryBadgeProps) => {
+  const { name } = category;
   return (
     <div
       className={
         "bg-foreground text-text text-center text-xs font-medium p-1 rounded grid-item " +
-        (isActive ? "bg-selection" : "")
+        (variant === "active" ? "bg-selection" : "")
       }
-      onClick={(ev) => {
-        setIsActive(!isActive);
-        ev.stopPropagation();
-      }}
+      onClick={onClick}
     >
-      {text}
+      {name}
     </div>
   );
 };
 
 interface Props {
   show: boolean;
+  categories: AbandonedObjectCategory[];
   onClose: (categories: string[]) => void;
 }
 
-const CategoryModal = ({ show, onClose }: Props) => {
+const CategoryModal = ({ show, categories, onClose }: Props) => {
+  const [visibleCategories, setVisibleCategories] = useState(categories);
+  const [activeCategories, setActiveCategories] = useState<
+    AbandonedObjectCategory[]
+  >([]);
+
+  const toggleCategory = (category: AbandonedObjectCategory) => {
+    const isActive = activeCategories.includes(category);
+
+    const newActiveCategories = isActive
+      ? activeCategories.filter((cat) => cat !== category)
+      : [...activeCategories, category];
+    const newVisibleCategories = categories;
+
+
+    setActiveCategories(newActiveCategories);
+    setVisibleCategories(newVisibleCategories);
+  };
+
   return (
-    <ModalPortal
-      show={show}
-      onClose={() => (onClose ? onClose(["test", "cat"]) : null)}
-    >
+    <ModalPortal show={show} onClose={() => onClose && onClose([])}>
       <div
         className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none"
         onClick={(ev) => ev.stopPropagation()}
@@ -39,19 +59,19 @@ const CategoryModal = ({ show, onClose }: Props) => {
         <label className="text-text text-lg font-primary text-center font-bold">
           Category
         </label>
+
         <div className="mt-2" />
-        <HorizontalMasonry className=" flex flex-wrap gap-0.5 " gap={0.5}>
-          <CategoryBadge text="Long Long Long Category" />
-          <CategoryBadge text="Short Category" />
-          <CategoryBadge text="Category" />
-          <CategoryBadge text="Test" />
-          <CategoryBadge text="Short" />
-          <CategoryBadge text="A" />
-          <CategoryBadge text="B" />
-          <CategoryBadge text="C" />
-          <CategoryBadge text="ABC" />
-          <CategoryBadge text="More" />
-          <CategoryBadge text="More More" />
+        <HorizontalMasonry gap={0.5}>
+          {visibleCategories.map((category) => (
+            <CategoryBadge
+              key={category.id}
+              category={category}
+              variant={
+                activeCategories.includes(category) ? "active" : "inactive"
+              }
+              onClick={() => toggleCategory(category)}
+            />
+          ))}
         </HorizontalMasonry>
       </div>
     </ModalPortal>

@@ -6,9 +6,15 @@ import { ExpandButton } from "@/components/buttons";
 import { SearchForm } from "@/components/forms";
 import { CategoryModal, DifficultyModal } from "@/components/modals/searches";
 import { usePathname, useRouter } from "next/navigation";
+import { AbandonedObjectCategory } from "@/types/categories";
 
 const DIFFICULTY_LEVELS = ["Newbie", "Easy", "Middle", "Hard", "Legend"];
-const ObjectSearchBar = () => {
+
+interface Props {
+  categories: AbandonedObjectCategory[];
+}
+
+const ObjectSearchBar = ({categories}: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -74,6 +80,7 @@ const ObjectSearchBar = () => {
       />
       <CategoryModal
         show={modalStates.category}
+        categories={categories}
         onClose={(categories) => {
           closeModal("category");
           setFilters({ ...filters, categories: categories });

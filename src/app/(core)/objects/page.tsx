@@ -3,6 +3,8 @@ import { ObjectTable } from "@/components/tables";
 import { Suspense } from "react";
 import { getObjects } from "@/services/objects";
 import { AbandonedObject } from "@/types/objects";
+import { getCategories } from "@/services/categories";
+import { AbandonedObjectCategory } from "@/types/categories";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -10,17 +12,19 @@ type Props = {
 };
 
 const ObjectsPage = async (props: Props) => {
-
-  const response = await getObjects();
+  const objectsResponse = await getObjects();
+  const categoriesResponse = await getCategories();
 
   let objects: AbandonedObject[] = [];
+  let categories: AbandonedObjectCategory[] = [];
 
-  if (response.success) objects = response.results;
+  if (objectsResponse.success) objects = objectsResponse.results;
+  if (categoriesResponse.success) categories = categoriesResponse.results;
 
   return (
     <div>
       <Suspense>
-        <ObjectSearchBar />
+        <ObjectSearchBar categories={categories} />
       </Suspense>
 
       <ObjectTable objects={objects} />
