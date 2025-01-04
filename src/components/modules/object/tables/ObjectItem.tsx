@@ -3,7 +3,7 @@ import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 import { AbandonedObject } from "@/types/objects";
 import Link from "next/link";
-import { RatingBar } from "@/components/bars/ratings";
+import { RatingBar } from "../../../common/bars/ratings";
 
 export const DIFFICULTY_FRAME = {
   DEFAULT: "shadow-difficulty-frame-newbie",

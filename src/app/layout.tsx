@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 import "@/styles";
 import { APP, DESCRIPTION } from "@/constants/app";
-import { SwipeWrapper, ThemedBodyWrapper } from "@/components/layout/wrappers";
+import { SwipeWrapper, ThemedBodyWrapper } from "@/components/common/wrappers";
 import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
 import { IgnorePagesWrapper } from "@/components/common/wrappers";

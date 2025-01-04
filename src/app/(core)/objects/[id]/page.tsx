@@ -6,7 +6,7 @@ import {
   DescriptionSection,
   GallerySection,
   HeadSection,
-} from "@/components/sections/object";
+} from "@/components/modules/object/sections";
 
 type Props = {
   params: Promise<{ id: number }>;

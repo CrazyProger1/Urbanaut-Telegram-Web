@@ -3,7 +3,7 @@ import {
   AboutSection,
   AvatarSection,
   HeadSection,
-} from "@/components/sections/profile";
+} from "@/components/modules/profile/sections";
 
 const Profile = () => {
   return (

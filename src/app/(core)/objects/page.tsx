@@ -1,10 +1,7 @@
-import { ObjectSearchBar } from "@/components/bars/searches";
-import { ObjectTable } from "@/components/tables";
-import { Suspense } from "react";
-import { getObjects } from "@/services/objects";
-import { AbandonedObject } from "@/types/objects";
-import { getCategories } from "@/services/categories";
-import { AbandonedObjectCategory } from "@/types/categories";
+import {
+  SearchSection,
+  TableSection,
+} from "@/components/modules/objects/sections";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -12,23 +9,13 @@ type Props = {
 };
 
 const ObjectsPage = async (props: Props) => {
-  const objectsResponse = await getObjects();
-  const categoriesResponse = await getCategories();
-
-  let objects: AbandonedObject[] = [];
-  let categories: AbandonedObjectCategory[] = [];
-
-  if (objectsResponse.success) objects = objectsResponse.results;
-  if (categoriesResponse.success) categories = categoriesResponse.results;
-
   return (
-    <div>
-      <Suspense>
-        <ObjectSearchBar categories={categories} />
-      </Suspense>
+    <>
+      <SearchSection />
 
-      <ObjectTable objects={objects} />
-    </div>
+      <div className="mt-4" />
+      <TableSection />
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ObjectItem } from "@/components/items";
+import ObjectItem from "./ObjectItem";
 import { AbandonedObject } from "@/types/objects";
 
 interface Props {
