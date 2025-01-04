@@ -7,7 +7,7 @@ import { APP, DESCRIPTION } from "@/constants/app";
 import { SwipeWrapper, ThemedBodyWrapper } from "@/components/layout/wrappers";
 import { Footer } from "@/components/layout/footers";
 import { Header } from "@/components/layout/headers";
-import { IgnorePagesWrapper } from "@/components/wrappers";
+import { IgnorePagesWrapper } from "@/components/common/wrappers";
 import { LINKS } from "@/constants/nav";
 import { Providers } from "@/components/common/wrappers/providers";
 
