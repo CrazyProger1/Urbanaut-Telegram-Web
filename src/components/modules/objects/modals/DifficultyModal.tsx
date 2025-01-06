@@ -20,7 +20,7 @@ const DifficultyModal = ({ show, levels, colors, onClose }: Props) => {
       onClose={() => (onClose ? onClose(levels[level]) : null)}
     >
       <div
-        className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl  select-none"
+        className="flex flex-col w-52 bg-background shadow-volume-frame py-2 px-4 rounded-2xl select-none"
         onClick={(ev) => ev.stopPropagation()}
       >
         <ModalTitle>Difficulty</ModalTitle>

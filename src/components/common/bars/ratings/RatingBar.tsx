@@ -1,8 +1,9 @@
 import React from "react";
 import StarIcon from "../../icons/StarIcon";
+import { Rating } from "@/types/common";
 
 interface Props {
-  stars: 1 | 2 | 3 | 4 | 5;
+  stars: Rating;
 }
 
 const RatingBar = ({ stars }: Props) => (

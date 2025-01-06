@@ -18,7 +18,7 @@ interface Props {
 }
 
 const ObjectItem = ({ object }: Props) => {
-  const { id, name, short_description, photo, difficulty_level } = object;
+  const { id, name, short_description, photo, difficulty_level, rating } = object;
   const frameClass =
     DIFFICULTY_FRAME[difficulty_level as keyof typeof DIFFICULTY_FRAME];
 
@@ -37,7 +37,7 @@ const ObjectItem = ({ object }: Props) => {
         <div className="font-bold">{name}</div>
         <div>{short_description}</div>
         <div className="mt-auto mb-2">
-          <RatingBar stars={5} />
+          <RatingBar stars={rating || 5} />
         </div>
       </div>
     </Link>

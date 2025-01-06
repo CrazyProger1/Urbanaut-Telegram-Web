@@ -1,13 +1,17 @@
 import React from "react";
 import { getObjects } from "@/services/objects";
-import { AbandonedObject } from "@/types/objects";
+import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { ObjectTable } from "@/components/modules/object/tables";
 
-const TableSection = async () => {
+interface Props {
+  filters: AbandonedObjectFilters;
+}
+
+const TableSection = async ({ filters }: Props) => {
   let objects: AbandonedObject[] = [];
 
   try {
-    const objectsResponse = await getObjects();
+    const objectsResponse = await getObjects(filters);
     if (objectsResponse.success) objects = objectsResponse.results;
   } catch (err) {
     console.log(err);

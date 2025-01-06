@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 import { SearchToggle } from "@/components/common/contols/toggles";
 import { ExpandButton } from "@/components/common/contols/buttons";
 import { SearchForm } from "../forms";
-import { CategoryModal, DifficultyModal } from "@/components/modules/objects/modals";
+import {
+  CategoryModal,
+  DifficultyModal,
+} from "@/components/modules/objects/modals";
 import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
-import { Color } from "@/types/colors";
-
-const DIFFICULTY_LEVELS = ["Newbie", "Easy", "Middle", "Hard", "Legend"];
-const DIFFICULTY_COLORS: Color[] = ["gray", "green", "yellow", "red", "purple"];
+import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
 
 interface Props {
   categories: AbandonedObjectCategory[];
@@ -22,7 +22,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
     rating: false,
-    difficulty: false,
+    difficulty_level: false,
     nearest: false,
     category: false,
     name: false,
@@ -30,7 +30,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
   });
 
   const [modalStates, setModalStates] = useState({
-    difficulty: false,
+    difficulty_level: false,
     category: false,
   });
   const [filters, setFilters] = useState({});
@@ -58,7 +58,10 @@ const ObjectSearchBar = ({ categories }: Props) => {
       [target]: active,
     }));
 
-    if (!active) setFilters({ ...filters, [target]: null });
+    if (!active) {
+      const { [target]: _, ...rest } = filters;
+      setFilters(rest);
+    }
   };
 
   const handleHold = (target: string) => {
@@ -73,12 +76,12 @@ const ObjectSearchBar = ({ categories }: Props) => {
   return (
     <>
       <DifficultyModal
-        show={modalStates.difficulty}
+        show={modalStates.difficulty_level}
         levels={DIFFICULTY_LEVELS}
         colors={DIFFICULTY_COLORS}
         onClose={(difficulty) => {
-          closeModal("difficulty");
-          setFilters({ ...filters, difficulty: difficulty });
+          closeModal("difficulty_level");
+          setFilters({ ...filters, difficulty_level: difficulty });
         }}
       />
       <CategoryModal
@@ -101,9 +104,9 @@ const ObjectSearchBar = ({ categories }: Props) => {
               extendClassName={isExpanded ? "rounded-tl-2xl" : "rounded-l-2xl"}
             />
             <SearchToggle
-              target="difficulty"
+              target="difficulty_level"
               text="difficulty"
-              active={activeFilters.difficulty}
+              active={activeFilters.difficulty_level}
               onToggle={handleToggle}
               onHold={handleHold}
             />
