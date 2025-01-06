@@ -24,7 +24,7 @@ const ObjectItem = ({ object }: Props) => {
 
   return (
     <Link
-      className="bg-foreground flex flex-row rounded-2xl mt-4 p-4 shadow-volume-frame"
+      className="bg-foreground flex flex-row rounded-2xl p-4 shadow-volume-frame"
       href={LINKS.objects + `/${id}`}
       draggable={false}
     >

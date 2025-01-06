@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { SearchToggle } from "@/components/toggles";
-import { ExpandButton } from "@/components/buttons";
-import { SearchForm } from "@/components/forms";
-import { CategoryModal, DifficultyModal } from "@/components/modals/searches";
+import { SearchToggle } from "@/components/common/contols/toggles";
+import { ExpandButton } from "@/components/common/contols/buttons";
+import { SearchForm } from "../forms";
+import { CategoryModal, DifficultyModal } from "@/components/modules/objects/modals";
 import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { Color } from "@/types/colors";
@@ -149,7 +149,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
         <ExpandButton
           onClick={() => setIsExpanded(!isExpanded)}
           className={
-            "p-2 rounded-r-2xl bg-foreground flex items-center " +
+            "p-2 rounded-r-2xl bg-foreground flex items-center  text-text fill-current " +
             (isExpanded ? "bg-selection border border-selection-border" : "")
           }
         />

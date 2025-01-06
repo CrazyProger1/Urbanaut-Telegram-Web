@@ -3,7 +3,7 @@ import Link from "next/link";
 import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 
-import { SettingsButton } from "@/components/buttons";
+import { SettingsButton } from "@/components/common/contols/buttons";
 import { Suspense } from "react";
 
 export const RANK_FRAME = {

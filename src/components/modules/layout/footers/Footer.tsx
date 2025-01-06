@@ -1,4 +1,4 @@
-import FooterLink from "@/components/layout/footers/FooterLink";
+import FooterLink from "@/components/modules/layout/footers/FooterLink";
 import { FOOTER_LINKS } from "@/constants/nav";
 
 const Footer = () => (

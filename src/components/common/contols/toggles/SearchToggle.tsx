@@ -23,7 +23,9 @@ const SearchToggle = ({
   const [holdTimeout, setHoldTimeout] = useState<NodeJS.Timeout | null>(null);
   const [isHeld, setIsHeld] = useState(false);
 
-  const handleToggle = () => {
+  const handleToggle = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+
     if (onToggle) {
       onToggle(target, !active);
     }

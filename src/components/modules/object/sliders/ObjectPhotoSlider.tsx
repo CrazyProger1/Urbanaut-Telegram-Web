@@ -4,32 +4,25 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AbandonedObjectPhoto } from "@/types/objects";
 import { EffectCards } from "swiper/modules";
+import ObjectPhotoItem from "@/components/modules/object/sliders/ObjectPhotoItem";
 
 interface Props {
   photos?: AbandonedObjectPhoto[];
 }
 
-const ObjectPhotos = ({ photos }: Props) => {
+const ObjectPhotoSlider = ({ photos }: Props) => {
   return (
-    <div className="flex items-center rounded-2xl  shadow-volume-frame">
+    <div className="flex items-center rounded-2xl shadow-volume-frame">
       <Swiper
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
         loop={true}
       >
-        {photos?.map((photo) => (
-          <SwiperSlide key={photo.src}>
-            <img
-              className="object-cover max-h-80 rounded-2xl"
-              src={photo.src}
-              alt="object-photo"
-            />
-          </SwiperSlide>
-        ))}
+        {photos?.map((photo) => <ObjectPhotoItem photo={photo} />)}
       </Swiper>
     </div>
   );
 };
 
-export default ObjectPhotos;
+export default ObjectPhotoSlider;

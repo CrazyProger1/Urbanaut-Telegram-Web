@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ModalPortal } from "@/components/modals";
+import { ModalPortal } from "@/components/common/modals";
 import { ModalTitle } from "@/components/common/typography/titles";
 import { GradientStepInput } from "@/components/common/contols/inputs";
 import { Color } from "@/types/colors";

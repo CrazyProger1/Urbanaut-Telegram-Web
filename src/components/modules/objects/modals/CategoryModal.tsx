@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
-import { ModalPortal } from "@/components/modals";
+import { ModalPortal } from "@/components/common/modals";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { ModalTitle } from "@/components/common/typography/titles";
 
