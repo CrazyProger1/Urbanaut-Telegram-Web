@@ -12,6 +12,7 @@ import {
 import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
+import { Location } from "@/types/common";
 
 interface Props {
   categories: AbandonedObjectCategory[];
@@ -25,6 +26,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [location, setLocation] = useState<Location | undefined>(undefined);
   const [activeFilters, setActiveFilters] = useState({
     top: false,
     difficulty_level: false,
@@ -66,6 +68,24 @@ const ObjectSearchBar = ({ categories }: Props) => {
   const handleToggle = (target: string, active: boolean) => {
     if (active && target in modalStates) {
       openModal(target);
+    }
+
+    if (target === "nearest") {
+      if (!navigator.geolocation) {
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (err) => {
+          console.log(err);
+        },
+      );
     }
 
     setActiveFilters((prevFilters) => ({
