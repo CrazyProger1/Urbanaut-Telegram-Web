@@ -3,7 +3,7 @@ import {
   SuccessfulResponse,
   PaginatedResponse,
 } from "@/types/api";
-import { AbandonedObject } from "@/types/objects";
+import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { API_URL } from "@/config/urls";
 
 type ObjectsResponse = PaginatedResponse<AbandonedObject> | ErrorResponse;
@@ -26,8 +26,22 @@ export const getObject = async (id: number): Promise<ObjectResponse> => {
     ...data,
   };
 };
-export const getObjects = async (): Promise<ObjectsResponse> => {
-  const response = await fetch(`${API_URL}/objects`, {
+export const getObjects = async (
+  filters: AbandonedObjectFilters,
+): Promise<ObjectsResponse> => {
+  const queryParams = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(filters)) {
+    if (Array.isArray(value)) {
+      value.forEach((v) => queryParams.append(key, v));
+    } else {
+      queryParams.append(key, String(value));
+    }
+  }
+
+  const url = `${API_URL}/objects?${queryParams.toString()}`;
+
+  const response = await fetch(url, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

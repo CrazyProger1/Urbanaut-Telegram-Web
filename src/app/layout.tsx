@@ -8,8 +8,8 @@ import {
   SwipeNavigationWrapper,
   ThemedBodyWrapper,
 } from "@/components/common/wrappers";
-import { Footer } from "@/components/layout/footers";
-import { Header } from "@/components/layout/headers";
+import { Footer } from "@/components/modules/layout/footers";
+import { Header } from "@/components/modules/layout/headers";
 import { IgnorePagesWrapper } from "@/components/common/wrappers";
 import { FOOTER_PAGES, LINKS } from "@/constants/nav";
 import { Providers } from "@/components/common/wrappers/providers";
