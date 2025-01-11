@@ -70,8 +70,12 @@ const ObjectSearchBar = ({ categories }: Props) => {
       openModal(target);
     }
 
-    if (target === "nearest") {
+    if (active && target === "nearest") {
       if (!navigator.geolocation) {
+        setActiveFilters((prevFilters) => ({
+          ...prevFilters,
+          [target]: false,
+        }));
         return;
       }
 
