@@ -1,7 +1,7 @@
 import React from "react";
 import { getObjects } from "@/services/objects";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
-import { ObjectTable } from "@/components/modules/object/tables";
+import { ObjectTable } from "../tables";
 
 interface Props {
   filters: AbandonedObjectFilters;

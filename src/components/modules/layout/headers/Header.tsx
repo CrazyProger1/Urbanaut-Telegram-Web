@@ -22,7 +22,7 @@ const Header = () => (
       />
     </Link>
 
-    <div className="ml-2">
+    <div className="pl-2">
       <p className="text-text font-primary text-lg">username</p>
       <p className="text-text font-primary text-sm">smth</p>
     </div>

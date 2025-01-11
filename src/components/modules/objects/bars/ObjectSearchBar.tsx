@@ -6,6 +6,7 @@ import { ExpandButton } from "@/components/common/contols/buttons";
 import { SearchForm } from "../forms";
 import {
   CategoryModal,
+  DateModal,
   DifficultyModal,
 } from "@/components/modules/objects/modals";
 import { usePathname, useRouter } from "next/navigation";
@@ -16,28 +17,42 @@ interface Props {
   categories: AbandonedObjectCategory[];
 }
 
+type Filters = {
+  [key: string]: string | string[];
+};
+
 const ObjectSearchBar = ({ categories }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
-    rating: false,
+    top: false,
     difficulty_level: false,
     nearest: false,
     category: false,
-    name: false,
+    new: false,
     more: false,
   });
 
   const [modalStates, setModalStates] = useState({
     difficulty_level: false,
     category: false,
+    new: false,
   });
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState<Filters>({});
 
   useEffect(() => {
-    const query = new URLSearchParams(filters).toString();
-    router.push(`${pathname}?${query}`);
+    const searchParams = new URLSearchParams();
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        value.forEach((v) => searchParams.append(key, String(v)));
+      } else {
+        searchParams.append(key, String(value));
+      }
+    });
+
+    router.push(`${pathname}?${searchParams.toString()}`);
   }, [filters, router, pathname]);
 
   const closeModal = (target: string) => {
@@ -89,20 +104,27 @@ const ObjectSearchBar = ({ categories }: Props) => {
         categories={categories}
         onClose={(categories) => {
           closeModal("category");
-          setFilters({ ...filters, categories: categories });
+          setFilters({ ...filters, category: categories });
+        }}
+      />
+      <DateModal
+        show={modalStates.new}
+        onClose={() => {
+          closeModal("new");
         }}
       />
       <div className="flex flex-row bg-foreground rounded-2xl shadow-volume-frame">
         <div className="flex flex-col flex-1">
           <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
             <SearchToggle
-              target="rating"
-              text="rating"
-              active={activeFilters.rating}
+              target="category"
+              text="category"
+              active={activeFilters.category}
               onToggle={handleToggle}
               onHold={handleHold}
               extendClassName={isExpanded ? "rounded-tl-2xl" : "rounded-l-2xl"}
             />
+
             <SearchToggle
               target="difficulty_level"
               text="difficulty"
@@ -121,16 +143,16 @@ const ObjectSearchBar = ({ categories }: Props) => {
           {isExpanded ? (
             <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
               <SearchToggle
-                target="category"
-                text="category"
-                active={activeFilters.category}
+                target="top"
+                text="top"
+                active={activeFilters.top}
                 onToggle={handleToggle}
                 onHold={handleHold}
               />
               <SearchToggle
-                target="name"
-                text="name"
-                active={activeFilters.name}
+                target="new"
+                text="new"
+                active={activeFilters.new}
                 onToggle={handleToggle}
                 onHold={handleHold}
               />

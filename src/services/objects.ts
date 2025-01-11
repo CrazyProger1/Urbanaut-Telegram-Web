@@ -35,7 +35,7 @@ export const getObjects = async (
     if (Array.isArray(value)) {
       value.forEach((v) => queryParams.append(key, v));
     } else {
-      queryParams.append(key, value);
+      queryParams.append(key, String(value));
     }
   }
 

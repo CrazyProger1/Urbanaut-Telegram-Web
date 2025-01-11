@@ -19,7 +19,9 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
         modules={[EffectCards]}
         loop={true}
       >
-        {photos?.map((photo) => <ObjectPhotoItem photo={photo} />)}
+        {photos?.map((photo) => (
+          <ObjectPhotoItem key={photo.src} photo={photo} />
+        ))}
       </Swiper>
     </div>
   );

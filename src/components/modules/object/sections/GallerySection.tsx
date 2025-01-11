@@ -1,7 +1,6 @@
 import React from "react";
 import { AbandonedObject } from "@/types/objects";
-import {ObjectPhotoSlider} from "@/components/modules/object/sliders";
-
+import { ObjectPhotoSlider } from "@/components/modules/object/sliders";
 
 interface Props {
   object: AbandonedObject;

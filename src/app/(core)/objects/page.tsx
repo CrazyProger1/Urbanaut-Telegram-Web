@@ -9,7 +9,6 @@ type Props = {
   searchParams: Promise<AbandonedObjectFilters>;
 };
 
-
 const ObjectsPage = async (props: Props) => {
   return (
     <>
