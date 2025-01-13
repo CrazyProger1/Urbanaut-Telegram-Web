@@ -2,21 +2,13 @@ import React from "react";
 import { getObjects } from "@/services/objects";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { ObjectTable } from "../tables";
+import { GetServerSideProps } from "next";
 
 interface Props {
-  filters: AbandonedObjectFilters;
+  objects: AbandonedObject[];
 }
 
-const TableSection = async ({ filters }: Props) => {
-  let objects: AbandonedObject[] = [];
-
-  try {
-    const objectsResponse = await getObjects(filters);
-    if (objectsResponse.success) objects = objectsResponse.results;
-  } catch (err) {
-    console.log(err);
-  }
-
+const TableSection = async ({ objects }: Props) => {
   return <ObjectTable objects={objects} />;
 };
 

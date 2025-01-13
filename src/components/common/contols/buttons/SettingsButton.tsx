@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ICONS } from "@/constants/media";
@@ -11,7 +11,7 @@ const SettingsButton = () => {
   const pathname = usePathname();
   const isOpened = pathname === LINKS.settings;
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+
   const handleToggle = () => {
     if (isOpened) {
       router.back();

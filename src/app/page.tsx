@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
-import { redirect } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const Auth = dynamic(() => import("@/app/Test"), {
+  ssr: false,
+});
 
 const Page = () => {
-  redirect("/objects");
-  return <div />;
+  return <Auth />;
 };
 
 export default Page;

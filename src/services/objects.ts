@@ -8,7 +8,6 @@ import { API_URL } from "@/config/urls";
 
 type ObjectsResponse = PaginatedResponse<AbandonedObject> | ErrorResponse;
 type ObjectResponse = (SuccessfulResponse & AbandonedObject) | ErrorResponse;
-
 export const getObject = async (id: number): Promise<ObjectResponse> => {
   const response = await fetch(`${API_URL}/objects/${id}`, {
     method: "GET",
@@ -27,6 +26,7 @@ export const getObject = async (id: number): Promise<ObjectResponse> => {
   };
 };
 export const getObjects = async (
+  initData: string,
   filters: AbandonedObjectFilters,
 ): Promise<ObjectsResponse> => {
   const queryParams = new URLSearchParams();
@@ -45,6 +45,7 @@ export const getObjects = async (
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: initData,
     },
     next: {
       revalidate: 120,
