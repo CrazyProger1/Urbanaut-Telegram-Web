@@ -10,8 +10,8 @@ interface Props {
 
 const TMAProvider = ({ children }: Props) => {
   useTelegramMiniApp();
-  const initDataRaw = initData.raw;
-  const initDataState = initData.state;
+  const initDataRaw = initData.raw();
+  const initDataState = initData.state();
 
   console.log(initDataRaw);
   console.log(initDataState);

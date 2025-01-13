@@ -5,7 +5,7 @@ import { LINKS } from "@/constants/nav";
 
 import { SettingsButton } from "@/components/common/contols/buttons";
 import { Suspense } from "react";
-import { initData } from "@telegram-apps/sdk-react";
+
 
 export const RANK_FRAME = {
   DEFAULT: "shadow-rank-frame-newbie",
