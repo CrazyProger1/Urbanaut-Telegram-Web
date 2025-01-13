@@ -10,6 +10,8 @@ const Auth = () => {
   const initDataRaw = params.initDataRaw;
   const router = useRouter();
 
+  console.log(initDataRaw);
+
   const saveInitData = async () => {
     const response = await fetch("/api/v1/auth", {
       method: "POST",
