@@ -17,6 +17,7 @@ import {
   ToastProvider,
   TMAProvider,
 } from "@/components/common/wrappers/providers";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: APP,
@@ -31,6 +32,12 @@ interface Props {
 const RootLayout = ({ children }: Props) => {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://telegram.org/js/telegram-web-app.js"
+          strategy="beforeInteractive" // Ensures the script loads before your app
+        />
+      </head>
       <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
         <TMAProvider>
           <ToastProvider>
