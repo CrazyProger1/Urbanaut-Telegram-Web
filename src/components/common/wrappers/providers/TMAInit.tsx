@@ -8,13 +8,11 @@ const TMAInit = () => {
     init();
   }, []);
 
-  const initDataRaw = useSignal(initData.raw);
-  const initDataState = useSignal(initData.user);
+  const initDataRaw = initData.raw();
 
   useEffect(() => {
     console.log("Raw Data:", initDataRaw);
-    console.log("User Data:", initDataState);
-  }, [initDataRaw, initDataState]);
+  }, [initDataRaw]);
 
   return <></>;
 };
