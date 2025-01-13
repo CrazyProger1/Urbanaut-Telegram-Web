@@ -7,7 +7,7 @@ import { initData, useSignal } from "@telegram-apps/sdk-react";
 const TMAInit = () => {
   useTelegramMiniApp();
   const initDataRaw = useSignal(initData.raw);
-  const initDataState = useSignal(initData.state);
+  const initDataState = useSignal(initData.user);
 
   console.log(initDataRaw, initDataState);
 
