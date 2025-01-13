@@ -1,19 +1,17 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { initData, init } from "@telegram-apps/sdk";
-import { useSignal } from "@telegram-apps/sdk-react";
+
+import { useTelegramMiniApp } from "@/hooks/telegram";
+import { useLaunchParams } from "@telegram-apps/sdk-react";
 
 const TMAInit = () => {
-  useEffect(() => {
-    init();
-  }, []);
-
-  const initDataRaw = useSignal(initData.raw);
+  useTelegramMiniApp();
+  const params = useLaunchParams();
 
   useEffect(() => {
-    console.log("Raw Data:", initDataRaw);
-  }, [initDataRaw]);
+    console.log("Raw Data:", params.initData);
+  }, [params]);
 
   return <></>;
 };

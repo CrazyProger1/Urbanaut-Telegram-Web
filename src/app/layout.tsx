@@ -17,7 +17,6 @@ import {
   ToastProvider,
   TMAProvider,
 } from "@/components/common/wrappers/providers";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: APP,
