@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ICONS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
+import { backButton } from "@telegram-apps/sdk-react";
 
 const SettingsButton = () => {
   const pathname = usePathname();
@@ -12,8 +13,10 @@ const SettingsButton = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => {
-    if (isOpened) router.back();
-    else router.push(LINKS.settings);
+    if (isOpened) {
+      router.back();
+      backButton.isVisible() && backButton.hide();
+    } else router.push(LINKS.settings);
   };
 
   return (
