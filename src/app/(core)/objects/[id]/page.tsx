@@ -7,6 +7,7 @@ import {
   GallerySection,
   HeadSection,
 } from "@/components/modules/object/sections";
+import { BackButtonWrapper } from "@/components/common/wrappers";
 
 type Props = {
   params: Promise<{ id: number }>;
@@ -18,7 +19,7 @@ const ObjectPage = async ({ params }: Props) => {
   if (!response.success) notFound();
 
   return (
-    <>
+    <BackButtonWrapper>
       <HeadSection object={response} />
 
       <div className="mt-4" />
@@ -29,7 +30,7 @@ const ObjectPage = async ({ params }: Props) => {
 
       <div className="mt-4" />
       <DescriptionSection object={response} />
-    </>
+    </BackButtonWrapper>
   );
 };
 
