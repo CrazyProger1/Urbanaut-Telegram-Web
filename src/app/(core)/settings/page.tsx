@@ -1,7 +1,12 @@
 import React from "react";
-import { UnavailablePage } from "../../../components/common/pages";
+import { UnavailablePage } from "@/components/common/pages";
 import { ICONS } from "@/constants/media";
+import { BackButtonWrapper } from "@/components/common/wrappers";
 
-const SettingsPage = () => <UnavailablePage icon={ICONS.lock} />;
+const SettingsPage = () => (
+  <BackButtonWrapper>
+    <UnavailablePage icon={ICONS.lock} />
+  </BackButtonWrapper>
+);
 
 export default SettingsPage;
