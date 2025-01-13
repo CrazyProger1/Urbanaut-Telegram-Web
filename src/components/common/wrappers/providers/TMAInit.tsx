@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { initData, useSignal, init } from "@telegram-apps/sdk-react";
+import { initData, init } from "@telegram-apps/sdk";
+import { useSignal } from "@telegram-apps/sdk-react";
 
 const TMAInit = () => {
   useEffect(() => {
     init();
   }, []);
 
-  const initDataRaw = initData.raw();
+  const initDataRaw = useSignal(initData.raw);
 
   useEffect(() => {
     console.log("Raw Data:", initDataRaw);
