@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { init } from "@telegram-apps/sdk-react";
+import { backButton, init } from "@telegram-apps/sdk-react";
+import { useRouter } from "next/navigation";
 
 export const useTelegramMiniApp = () => {
   useEffect(() => {
@@ -9,4 +10,16 @@ export const useTelegramMiniApp = () => {
       console.error(exc);
     }
   }, []);
+};
+
+export const useBackButton = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    backButton.show();
+    return backButton.onClick(() => {
+      backButton.hide();
+      router.back();
+    });
+  }, [router]);
 };
