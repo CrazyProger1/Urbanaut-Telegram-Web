@@ -1,1 +1,1 @@
-export { default as useUIStore } from "./ui";
+export { default as useAccountStore } from "./account";

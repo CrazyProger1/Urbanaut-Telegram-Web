@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useUIStore } from "@/stores";
+import { useAccountStore } from "@/stores";
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ThemedBodyWrapper = ({ children, className }: Props) => {
-  const { theme } = useUIStore();
+  const { theme } = useAccountStore();
   return (
     <body className={className + " bg-background " + theme}>{children}</body>
   );

@@ -11,7 +11,7 @@ import {
   SWIPE_VARIANTS,
 } from "@/constants/animations";
 import { swipePower } from "@/utils/swipe";
-import { useUIStore } from "@/stores";
+import { useAccountStore } from "@/stores";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const SwipeNavigationWrapper = ({ children, pages, className }: Props) => {
-  const { animationsEnabled } = useUIStore();
+  const { animationsEnabled } = useAccountStore();
   const router = useRouter();
   const pathname = usePathname();
   const initialPage = pages.includes(pathname) ? pages.indexOf(pathname) : -1;
