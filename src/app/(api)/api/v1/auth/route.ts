@@ -1,5 +1,5 @@
 export async function POST(request: Request) {
-  const { initData } = await request.json();
+  const initData = await request.json();
 
   if (!initData) {
     return new Response("initData is required", { status: 400 });

@@ -29,7 +29,7 @@ const ObjectsPage = async (props: Props) => {
   return (
     <>
       <SearchSection />
-
+      {String(initData?.value)}
       <div className="mt-4" />
       <TableSection objects={objects} />
     </>

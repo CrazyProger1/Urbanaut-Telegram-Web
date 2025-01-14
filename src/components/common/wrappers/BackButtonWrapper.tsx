@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useBackButton } from "@/hooks/telegram";
+import { useBackButton } from "@/hooks/client/telegram";
 
 interface Props {
   children: React.ReactNode;

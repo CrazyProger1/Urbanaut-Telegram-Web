@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { backButton, init } from "@telegram-apps/sdk-react";
+import { backButton, init, useLaunchParams } from "@telegram-apps/sdk-react";
 import { useRouter } from "next/navigation";
 
 export const useTelegramMiniApp = () => {
@@ -25,4 +25,11 @@ export const useBackButton = () => {
       router.back();
     });
   }, [router]);
+};
+
+export const useInitData = () => {
+  const params = useLaunchParams();
+  const initDataRaw = params.initDataRaw;
+  const initData = params.initData;
+  return { initData: initData, initDataRaw: initDataRaw };
 };

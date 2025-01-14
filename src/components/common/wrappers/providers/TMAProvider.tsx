@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useTelegramMiniApp } from "@/hooks/telegram";
+import { useTelegramMiniApp } from "@/hooks/client/telegram";
 
 interface Props {
   children: React.ReactNode;
