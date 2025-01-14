@@ -41,7 +41,7 @@ export const getObjects = async (
     }
   }
 
-  const url = `${API_URL}/objects?${queryParams.toString()}`;
+  const url = `${API_URL}/objects/?${queryParams.toString()}`;
 
   const encodedInitData = encodeURIComponent(initData);
 
