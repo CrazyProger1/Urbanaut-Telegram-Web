@@ -15,18 +15,19 @@ const RANK_FRAME = {
   LEGEND: "shadow-rank-frame-legend",
 };
 const UserItem = ({ user }: Props) => {
+  const { rank, username } = user;
   return (
     <div className="bg-foreground rounded-2xl p-2 pr-4 flex flex-row items-center shadow-volume-frame">
       <Link href={LINKS.profile}>
         <img
-          className={`size-16 rounded-2xl ${RANK_FRAME.NEWBIE}`}
+          className={`size-16 rounded-2xl ${RANK_FRAME[rank]}}`}
           src={STUBS.user}
           alt="user-photo"
         />
       </Link>
 
       <div className="pl-2 text-text font-primary">
-        <p className="text-lg">@{user.username}</p>
+        <p className="text-lg">@{username}</p>
         <p className="text-text font-primary text-sm">newbie</p>
       </div>
     </div>
