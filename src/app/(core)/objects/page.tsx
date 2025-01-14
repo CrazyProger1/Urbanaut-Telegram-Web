@@ -30,6 +30,7 @@ const ObjectsPage = async (props: Props) => {
     <>
       <SearchSection />
       {String(initData?.value)}
+      {String(cookieStore)}
       <div className="mt-4" />
       <TableSection objects={objects} />
     </>
