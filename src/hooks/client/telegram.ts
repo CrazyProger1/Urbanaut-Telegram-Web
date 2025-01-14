@@ -20,10 +20,14 @@ export const useBackButton = () => {
   useEffect(() => {
     !backButton.isMounted() && backButton.mount();
     backButton.show();
-    return backButton.onClick(() => {
+    backButton.onClick(() => {
       backButton.hide();
       router.back();
     });
+
+    return () => {
+      backButton.hide();
+    };
   }, [router]);
 };
 
