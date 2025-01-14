@@ -29,7 +29,6 @@ const ObjectsPage = async (props: Props) => {
   return (
     <>
       <SearchSection />
-      {initDataRaw?.value}
       <div className="mt-4" />
       <TableSection objects={objects} />
     </>
