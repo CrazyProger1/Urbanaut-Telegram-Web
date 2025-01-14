@@ -20,7 +20,7 @@ const ObjectsPage = async (props: Props) => {
     if (initDataRaw) {
       console.log(`Raw init data:`, initDataRaw);
       const objectsResponse = await getObjects(
-        String(initDataRaw.value),
+        initDataRaw.value,
         await props.searchParams,
       );
       if (objectsResponse.success) objects = objectsResponse.results;
