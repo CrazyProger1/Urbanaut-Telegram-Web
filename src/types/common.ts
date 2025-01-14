@@ -3,3 +3,4 @@ export type Location = {
   latitude: number;
   longitude: number;
 };
+export type Rank = "NEWBIE" | "STALKER" | "LEGEND";

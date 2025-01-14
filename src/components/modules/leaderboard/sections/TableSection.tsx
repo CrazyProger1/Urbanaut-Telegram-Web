@@ -6,18 +6,22 @@ const TableSection = () => {
     {
       id: 7489488665,
       username: "crazy2228",
+      rank: "NEWBIE",
     },
     {
       id: 7479599447,
       username: "urbanautdev",
+      rank: "STALKER",
     },
     {
       id: 798395009,
       username: "crazyproger1",
+      rank: "LEGEND",
     },
     {
       id: 7439174727,
       username: "Nikolai_id865",
+      rank: "NEWBIE",
     },
   ];
   return (
