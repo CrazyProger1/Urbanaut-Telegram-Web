@@ -14,7 +14,7 @@ type Props = {
 const ObjectsPage = async (props: Props) => {
   let objects: AbandonedObject[] = [];
   const cookieStore = await cookies();
-  const initData = cookieStore.get("initData");
+  const initData = cookieStore.get("initDataRaw");
 
   try {
     const objectsResponse = await getObjects(
