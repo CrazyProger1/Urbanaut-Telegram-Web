@@ -6,10 +6,6 @@ export async function POST(request: Request) {
   }
 
   const headers = new Headers();
-  headers.set(
-    "Set-Cookie",
-    `initData=${JSON.stringify(initData)}; HttpOnly; Path=/; Max-Age=3600; SameSite=Lax`,
-  );
 
   headers.set(
     "Set-Cookie",

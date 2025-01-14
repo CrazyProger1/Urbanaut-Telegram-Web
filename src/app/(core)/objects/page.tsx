@@ -14,12 +14,11 @@ type Props = {
 const ObjectsPage = async (props: Props) => {
   let objects: AbandonedObject[] = [];
   const cookieStore = await cookies();
-  const initData = cookieStore.get("initData");
   const initDataRaw = cookieStore.get("initDataRaw");
 
   try {
     const objectsResponse = await getObjects(
-      String(initData?.value),
+      String(initDataRaw?.value),
       await props.searchParams,
     );
     if (objectsResponse.success) objects = objectsResponse.results;
@@ -30,7 +29,6 @@ const ObjectsPage = async (props: Props) => {
   return (
     <>
       <SearchSection />
-      {String(initData?.value)}
       {String(initDataRaw?.value)}
       <div className="mt-4" />
       <TableSection objects={objects} />
