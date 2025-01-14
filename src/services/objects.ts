@@ -43,11 +43,13 @@ export const getObjects = async (
 
   const url = `${API_URL}/objects?${queryParams.toString()}`;
 
+  const encodedInitData = encodeURIComponent(initData);
+
   try {
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: initData,
+        Authorization: encodedInitData,
       },
     });
 
