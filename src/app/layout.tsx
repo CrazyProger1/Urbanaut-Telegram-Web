@@ -31,7 +31,7 @@ interface Props {
 const RootLayout = ({ children }: Props) => {
   return (
     <html lang="en">
-      <ThemedBodyWrapper className="mx-4 flex flex-col min-h-screen">
+      <ThemedBodyWrapper className="px-4 flex flex-col min-h-screen">
         <TMAProvider>
           <ToastProvider>
             <ModalProvider>
@@ -40,7 +40,7 @@ const RootLayout = ({ children }: Props) => {
               </IgnorePagesWrapper>
               <SwipeNavigationWrapper
                 pages={FOOTER_PAGES}
-                className="my-4 flex-1 flex flex-col h-full"
+                className="py-4 flex-1 flex flex-col h-full"
               >
                 {children}
               </SwipeNavigationWrapper>

@@ -16,7 +16,7 @@ const RANK_FRAME = {
 };
 const UserItem = ({ user }: Props) => {
   return (
-    <div className="bg-foreground rounded-b-2xl p-2 pr-4 flex flex-row items-center shadow-volume-frame">
+    <div className="bg-foreground rounded-2xl p-2 pr-4 flex flex-row items-center shadow-volume-frame">
       <Link href={LINKS.profile}>
         <img
           className={`size-16 rounded-2xl ${RANK_FRAME.NEWBIE}`}
