@@ -25,6 +25,8 @@ export const getObject = async (id: number): Promise<ObjectResponse> => {
     ...data,
   };
 };
+import axios from "axios";
+
 export const getObjects = async (
   initData: string,
   filters: AbandonedObjectFilters,
@@ -41,20 +43,22 @@ export const getObjects = async (
 
   const url = `${API_URL}/objects?${queryParams.toString()}`;
 
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: initData,
-    },
-    next: {
-      revalidate: 120,
-    },
-  });
-  const data = await response.json();
+  try {
+    const response = await axios.get(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: initData,
+      },
+    });
 
-  return {
-    success: response.ok,
-    ...data,
-  };
+    return {
+      success: response.status === 200,
+      ...response.data,
+    };
+  } catch (error) {
+    console.error("Error fetching objects:", error);
+    return {
+      success: false,
+    } as ObjectsResponse;
+  }
 };

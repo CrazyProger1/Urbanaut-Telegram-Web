@@ -14,6 +14,7 @@
     "@telegram-apps/sdk-react": "^2.0.25",
     "@vkruglikov/react-telegram-web-app": "^2.1.9",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "dompurify": "^3.2.1",
     "framer-motion": "^11.11.17",
