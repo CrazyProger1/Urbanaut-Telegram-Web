@@ -1,7 +1,17 @@
 import React from "react";
-import { ICONS } from "@/constants/media";
-import { UnavailablePage } from "@/components/common/pages";
+import {
+  SearchSection,
+  TableSection,
+} from "@/components/modules/leaderboard/sections";
 
-const Page = () => <UnavailablePage icon={ICONS.lock} />;
+const LeaderboardPage = () => {
+  return (
+    <>
+      <SearchSection />
+      <div className="mt-4" />
+      <TableSection />
+    </>
+  );
+};
 
-export default Page;
+export default LeaderboardPage;
