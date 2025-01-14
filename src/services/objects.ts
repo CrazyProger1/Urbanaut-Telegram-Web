@@ -46,6 +46,7 @@ export const getObjects = async (
   const encodedInitData = encodeURIComponent(initData);
 
   try {
+    // noinspection JSAnnotator
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",

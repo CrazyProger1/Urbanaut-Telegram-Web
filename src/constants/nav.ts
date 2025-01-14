@@ -7,6 +7,7 @@ export const LINKS = {
   events: "/events",
   blog: "/blog",
   settings: "/settings",
+  leaderboard: "/leaderboard",
 };
 export const FOOTER_PAGES = [
   LINKS.blog,
