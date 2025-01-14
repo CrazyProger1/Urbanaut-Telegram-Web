@@ -1,8 +1,9 @@
 import React from "react";
 import { UserTable } from "@/components/modules/leaderboard/tables";
+import { User } from "@/types/users";
 
 const TableSection = () => {
-  const users = [
+  const users: User[] = [
     {
       id: 7489488665,
       username: "crazy2228",
