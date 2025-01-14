@@ -16,15 +16,15 @@ const ObjectsPage = async (props: Props) => {
   const cookieStore = await cookies();
   const initDataRaw = cookieStore.get("initDataRaw");
 
-  console.log(`Raw init data:`, initDataRaw);
-  console.log(`Cookies:`, cookieStore);
-
   try {
-    const objectsResponse = await getObjects(
-      String(initDataRaw?.value),
-      await props.searchParams,
-    );
-    if (objectsResponse.success) objects = objectsResponse.results;
+    if (initDataRaw) {
+      console.log(`Raw init data:`, initDataRaw);
+      const objectsResponse = await getObjects(
+        String(initDataRaw.value),
+        await props.searchParams,
+      );
+      if (objectsResponse.success) objects = objectsResponse.results;
+    }
   } catch (err) {
     console.log(err);
   }
