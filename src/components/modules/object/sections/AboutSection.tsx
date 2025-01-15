@@ -26,6 +26,8 @@ const AboutSection = ({ object, activeTab }: Props) => {
   return (
     <div className="flex flex-col">
       <TabBar activeTab={activeTab} tabs={TABS} />
+
+      <div className="mt-4" />
       <TabbedView activeTab={activeTab}>
         <Tab name="description">
           <DescriptionTab object={object} />
