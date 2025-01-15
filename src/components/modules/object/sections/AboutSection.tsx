@@ -15,12 +15,12 @@ const AboutSection = ({ object, activeTab }: Props) => {
     {
       key: "description",
       text: "description",
-      href: `/objects/${object.id}/description`,
+      href: `/objects/${object.id}?tab=description`,
     },
     {
       key: "stats",
       text: "stats",
-      href: `/objects/${object.id}/stats`,
+      href: `/objects/${object.id}?tab=stats`,
     },
   ];
   return (
