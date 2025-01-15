@@ -27,7 +27,7 @@ const AboutSection = ({ object, activeTab }: Props) => {
     <div className="flex flex-col">
       <TabBar activeTab={activeTab} tabs={TABS} />
       <TabbedView activeTab={activeTab}>
-        <Tab name="desciption">
+        <Tab name="description">
           <DescriptionTab object={object} />
         </Tab>
         <Tab name="stats">
