@@ -3,21 +3,38 @@ import { AbandonedObject } from "@/types/objects";
 import { Tab, TabbedView } from "@/components/common/views";
 
 import { DescriptionTab, StatsTab } from "@/components/modules/object/tabs";
+import TabBar from "@/components/modules/object/bars/TabBar";
 
 interface Props {
+  activeTab: string;
   object: AbandonedObject;
 }
 
-const AboutSection = ({ object }: Props) => {
+const AboutSection = ({ object, activeTab }: Props) => {
+  const TABS = [
+    {
+      key: "description",
+      text: "description",
+      href: `/objects/${object.id}/description`,
+    },
+    {
+      key: "stats",
+      text: "stats",
+      href: `/objects/${object.id}/stats`,
+    },
+  ];
   return (
-    <TabbedView activeTab="desciption">
-      <Tab name="desciption">
-        <DescriptionTab object={object} />
-      </Tab>
-      <Tab name="stats">
-        <StatsTab object={object} />
-      </Tab>
-    </TabbedView>
+    <div className="flex flex-col">
+      <TabBar activeTab={activeTab} tabs={TABS} />
+      <TabbedView activeTab={activeTab}>
+        <Tab name="desciption">
+          <DescriptionTab object={object} />
+        </Tab>
+        <Tab name="stats">
+          <StatsTab object={object} />
+        </Tab>
+      </TabbedView>
+    </div>
   );
 };
 

@@ -10,9 +10,12 @@ import { BackButtonWrapper } from "@/components/common/wrappers";
 
 type Props = {
   params: Promise<{ id: number }>;
+  searchParams: Promise<{
+    tab?: string;
+  }>;
 };
 
-const ObjectPage = async ({ params }: Props) => {
+const ObjectPage = async ({ params, searchParams }: Props) => {
   const response = await getObject(Number((await params).id));
 
   if (!response.success) notFound();
@@ -25,7 +28,10 @@ const ObjectPage = async ({ params }: Props) => {
       <GallerySection object={response} />
 
       <div className="mt-4" />
-      <AboutSection object={response} />
+      <AboutSection
+        object={response}
+        activeTab={(await searchParams).tab || "description"}
+      />
     </BackButtonWrapper>
   );
 };
