@@ -6,7 +6,7 @@ interface Props {
   object: AbandonedObject;
 }
 
-const DescriptionSection = ({ object }: Props) => {
+const DescriptionTab = ({ object }: Props) => {
   return (
     <div className="text-text font-primary w-full prose prose-strong:font-primary prose-h1:text-text prose-h3:text-text prose-h3:font-primary prose-hr:border-text max-w-full prose-strong:text-text">
       <h3 className="font-primary text-text text-center">Description</h3>
@@ -15,4 +15,4 @@ const DescriptionSection = ({ object }: Props) => {
   );
 };
 
-export default DescriptionSection;
+export default DescriptionTab;

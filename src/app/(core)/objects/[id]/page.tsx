@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 
 import {
   AboutSection,
-  DescriptionSection,
   GallerySection,
   HeadSection,
 } from "@/components/modules/object/sections";
@@ -27,9 +26,6 @@ const ObjectPage = async ({ params }: Props) => {
 
       <div className="mt-4" />
       <AboutSection object={response} />
-
-      <div className="mt-4" />
-      <DescriptionSection object={response} />
     </BackButtonWrapper>
   );
 };

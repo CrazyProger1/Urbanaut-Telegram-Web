@@ -1,35 +1,23 @@
 import React from "react";
 import { AbandonedObject } from "@/types/objects";
+import { Tab, TabbedView } from "@/components/common/views";
+
+import { DescriptionTab, StatsTab } from "@/components/modules/object/tabs";
 
 interface Props {
   object: AbandonedObject;
 }
 
 const AboutSection = ({ object }: Props) => {
-  const {
-    created_at,
-    abandoned_at,
-    built_at,
-    preservation_level,
-    difficulty_level,
-    security_level,
-  } = object;
-
   return (
-    <div className="text-text text-xs">
-      <p>Created at: {String(created_at)}</p>
-      <p>Built at: {String(built_at)}</p>
-      <p>Abandoned at: {String(abandoned_at)}</p>
-      <p>
-        Difficulty: <span className="underline">{difficulty_level}</span>
-      </p>
-      <p>
-        State: <span className="underline">{preservation_level}</span>
-      </p>
-      <p>
-        Security: <span className="underline">{security_level}</span>
-      </p>
-    </div>
+    <TabbedView activeTab="desciption">
+      <Tab name="desciption">
+        <DescriptionTab object={object} />
+      </Tab>
+      <Tab name="stats">
+        <StatsTab object={object} />
+      </Tab>
+    </TabbedView>
   );
 };
 
