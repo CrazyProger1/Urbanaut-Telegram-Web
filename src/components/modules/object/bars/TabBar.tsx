@@ -14,7 +14,7 @@ interface Props {
 
 const TabBar = ({ activeTab, tabs }: Props) => {
   return (
-    <div className="flex flex-row bg-foreground first:rounded-l-2xl last:rounded-r-2xl">
+    <div className="flex flex-row">
       {tabs.map(({ text, href, key }) => (
         <TabLink key={key} text={text} href={href} active={key === activeTab} />
       ))}
