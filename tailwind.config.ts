@@ -36,6 +36,15 @@ const config = {
         primary: ["Poppins", "GigaSans"],
       },
       colors: {
+        md: {
+          h1: "rgba(var(--color-mdx-heading-1))",
+          h2: "rgba(var(--color-mdx-heading-2))",
+          h3: "rgba(var(--color-mdx-heading-3))",
+          h4: "rgba(var(--color-mdx-heading-4))",
+          h5: "rgba(var(--color-mdx-heading-5))",
+          h6: "rgba(var(--color-mdx-heading-6))",
+          li: "rgba(var(--color-mdx-li))",
+        },
         background: {
           DEFAULT: "rgba(var(--color-background-default))",
         },
