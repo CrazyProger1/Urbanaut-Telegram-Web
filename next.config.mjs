@@ -2,8 +2,11 @@
 const nextConfig = {
     transpilePackages: ['next-mdx-remote'],
     i18n: {
-        locales: ['en-US', ],
+        locales: ['en-US',],
         defaultLocale: 'en-US',
+    },
+    images: {
+        domains: ["api.urbanaut.club"],
     },
 
 };
