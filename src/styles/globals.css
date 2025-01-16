@@ -26,7 +26,9 @@
     --color-mdx-heading-4: 69, 133, 136;
     --color-mdx-heading-5: 177, 98, 110;
     --color-mdx-heading-6: 177, 98, 110;
-    --color-mdx-li: 204, 228, 247;
+    --color-mdx-ul: 204, 228, 247;
+    --color-mdx-ol: 204, 228, 247;
+    --color-mdx-a: 36, 156, 216;
 
     --color-background-default: 48, 23, 80;
 

@@ -43,7 +43,9 @@ const config = {
           h4: "rgba(var(--color-mdx-heading-4))",
           h5: "rgba(var(--color-mdx-heading-5))",
           h6: "rgba(var(--color-mdx-heading-6))",
-          li: "rgba(var(--color-mdx-li))",
+          ul: "rgba(var(--color-mdx-ul))",
+          ol: "rgba(var(--color-mdx-ol))",
+          a: "rgba(var(--color-mdx-a))",
         },
         background: {
           DEFAULT: "rgba(var(--color-background-default))",
