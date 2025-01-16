@@ -4,6 +4,7 @@ import { LINKS } from "@/constants/nav";
 import { AbandonedObject } from "@/types/objects";
 import Link from "next/link";
 import { RatingBar } from "../../../common/bars/ratings";
+import Image from "next/image";
 
 export const DIFFICULTY_FRAME = {
   DEFAULT: "shadow-difficulty-frame-newbie",
@@ -29,10 +30,12 @@ const ObjectItem = ({ object }: Props) => {
       href={LINKS.objects + `/${id}`}
       draggable={false}
     >
-      <img
+      <Image
         src={photo || STUBS.object}
         alt="object-image"
-        className={`size-28 rounded-2xl object-cover ${frameClass}`}
+        className={`rounded-2xl object-cover ${frameClass}`}
+        width={112}
+        height={112}
       />
       <div className="flex flex-col ml-4 font-primary text-text">
         <div className="font-bold">{name}</div>
