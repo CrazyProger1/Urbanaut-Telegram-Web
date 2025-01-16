@@ -7,7 +7,7 @@ interface Props {
 
 const HeadSection = ({ object }: Props) => {
   return (
-    <div className="text-center text-text font-primary font-bold text-xl">
+    <div className="text-center text-text font-primary font-bold text-2xl">
       {object.name}
     </div>
   );
