@@ -117,8 +117,12 @@ input[type="range"] {
     -webkit-appearance: none;
 }
 
-.prose::marker {
+.prose li::marker {
     color: rgb(var(--color-mdx-marker));
+}
+
+.prose li {
+    color: rgb(var(--color-text-default))
 }
 
 
