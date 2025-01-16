@@ -11,6 +11,7 @@ interface Props {
 }
 
 const ObjectPhotoSlider = ({ photos }: Props) => {
+  console.log(photos);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -28,7 +29,7 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full h-full rounded-2xl shadow-volume-frame overflow-hidden">
+    <div className="flex items-center justify-center w-full h-full rounded-2xl shadow-volume-frame overflow-hidden">
       <AnimatePresence initial={false}>
         {photos && photos.length > 0 && (
           <motion.div
@@ -37,7 +38,7 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="absolute w-full h-full"
+            className="w-full h-full"
           >
             <ObjectPhotoItem photo={photos[currentIndex]} />
           </motion.div>
