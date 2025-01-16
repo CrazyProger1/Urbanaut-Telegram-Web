@@ -7,6 +7,7 @@ import {
   HeadSection,
 } from "@/components/modules/object/sections";
 import { BackButtonWrapper } from "@/components/common/wrappers";
+import { LINKS } from "@/constants/nav";
 
 type Props = {
   params: Promise<{ id: number }>;
@@ -21,7 +22,7 @@ const ObjectPage = async ({ params, searchParams }: Props) => {
   if (!response.success) notFound();
 
   return (
-    <BackButtonWrapper>
+    <BackButtonWrapper path={LINKS.objects}>
       <HeadSection object={response} />
 
       <div className="mt-4" />

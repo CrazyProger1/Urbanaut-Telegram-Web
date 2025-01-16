@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { backButton, init, useLaunchParams } from "@telegram-apps/sdk-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const useTelegramMiniApp = () => {
   useEffect(() => {
@@ -14,21 +14,24 @@ export const useTelegramMiniApp = () => {
   }, []);
 };
 
-export const useBackButton = () => {
+export const useBackButton = (path?: string) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     !backButton.isMounted() && backButton.mount();
     backButton.show();
     backButton.onClick(() => {
       backButton.hide();
-      router.back();
+
+      if (!path) router.back();
+      else if (pathname != path) router.push(path);
     });
 
     return () => {
       backButton.hide();
     };
-  }, [router]);
+  }, [pathname, router]);
 };
 
 export const useInitData = () => {
