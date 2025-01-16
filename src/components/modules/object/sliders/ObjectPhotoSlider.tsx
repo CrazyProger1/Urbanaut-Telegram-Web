@@ -34,7 +34,7 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-full min-h-72 rounded-2xl shadow-volume-frame overflow-hidden">
+    <div className="flex items-center justify-center w-full h-full min-h-64 rounded-2xl shadow-volume-frame overflow-hidden">
       <AnimatePresence initial={false} custom={currentIndex}>
         {photos && photos.length > 0 && (
           <motion.div
