@@ -119,11 +119,11 @@ input[type="range"] {
     -webkit-appearance: none;
 }
 
-.prose marker {
+.prose li {
     color: rgb(var(--color-mdx-ul));
 }
 
-.prose marker {
+.prose li {
     color: rgb(var(--color-mdx-ol));
 }
 
