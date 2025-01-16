@@ -41,7 +41,7 @@ const ObjectItem = ({ object }: Props) => {
 
       <div className="flex flex-col ml-4 font-primary text-text">
         <div className="font-bold">{name}</div>
-        <div>{short_description}</div>
+        <div className="text-sm">{short_description}</div>
         <div className="mt-auto mb-2">
           <RatingBar stars={rating || 5} />
         </div>
