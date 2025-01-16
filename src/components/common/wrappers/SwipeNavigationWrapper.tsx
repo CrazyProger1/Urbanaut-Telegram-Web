@@ -31,18 +31,18 @@ const SwipeNavigationWrapper = ({ children, pages, className }: Props) => {
   const pathname = usePathname();
   const initialPage = pages.includes(pathname) ? pages.indexOf(pathname) : -1;
   const [page, setPage] = useState(initialPage);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(false); // Set loading to false after the initial render
-  }, []);
+    setLoading(false);
+  }, [pathname]);
 
   const paginate = (direction: number) => {
     let newPage = initialPage + direction;
     if (newPage <= -1) newPage = pages.length - 1;
     else if (newPage >= pages.length) newPage = 0;
     setPage(newPage);
-    setLoading(true); // Set loading to true when the page changes
+    setLoading(true);
     router.push(pages[newPage]);
   };
 
