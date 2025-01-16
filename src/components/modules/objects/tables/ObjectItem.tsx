@@ -33,9 +33,9 @@ const ObjectItem = ({ object }: Props) => {
       <Image
         src={photo || STUBS.object}
         alt="object-image"
-        className={`rounded-2xl object-cover aspect-square ${frameClass}`}
-        width={112}
-        height={112}
+        className={`rounded-2xl object-cover aspect-square size-28 ${frameClass}`}
+        width={300}
+        height={300}
         placeholder="blur"
       />
 
