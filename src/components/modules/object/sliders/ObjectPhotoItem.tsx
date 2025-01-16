@@ -8,16 +8,16 @@ interface Props {
 }
 
 const ObjectPhotoItem = ({ photo }: Props) => (
-  <SwiperSlide key={photo.src}>
-    <Image
-      className="object-cover max-h-80 rounded-2xl"
-      src={photo.src}
-      alt="object-photo"
-      placeholder="blur"
-      width={420}
-      height={320}
-    />
-  </SwiperSlide>
+  // <SwiperSlide key={photo.src}>
+  <Image
+    className="object-cover max-h-80 rounded-2xl"
+    src={photo.src}
+    alt="object-photo"
+    placeholder="blur"
+    width={420}
+    height={320}
+  />
+  // </SwiperSlide>
 );
 
 export default ObjectPhotoItem;
