@@ -40,7 +40,7 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
           <motion.div
             key={photos[currentIndex].src}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1}}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             drag="x"
