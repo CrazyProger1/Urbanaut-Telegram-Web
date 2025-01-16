@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { AbandonedObjectPhoto } from "@/types/objects";
 import ObjectPhotoItem from "@/components/modules/object/sliders/ObjectPhotoItem";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
 interface Props {
   photos?: AbandonedObjectPhoto[];
@@ -14,7 +14,7 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
 
   const handleDragEnd = (
     event: MouseEvent | TouchEvent | PointerEvent,
-    info: any,
+    info: PanInfo,
   ) => {
     if (!photos) return;
 
