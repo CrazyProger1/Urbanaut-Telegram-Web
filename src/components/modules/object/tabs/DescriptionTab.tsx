@@ -8,7 +8,17 @@ interface Props {
 
 const DescriptionTab = ({ object }: Props) => {
   return (
-    <div className="text-text font-primary w-full prose prose-strong:font-primary prose-h1:text-md-h1 prose-h2:text-md-h2 prose-h3:text-md-h3 prose-h4:text-md-h4 prose-h3:font-primary prose-hr:border-text max-w-full prose-strong:text-text prose-ul:text-md-ul prose-ol:text-md-ol prose-a:text-md-a">
+    <div
+      className="
+      text-text font-primary w-full prose prose-strong:font-primary
+      prose-h1:text-mdx-h1 prose-h1:text-xl
+      prose-h2:text-mdx-h2 prose-h2:text-lg
+      prose-h3:text-mdx-h3 prose-h3:text-md
+      prose-h4:text-mdx-h4 prose-h4:text-sm
+      prose-h3:font-primary prose-hr:border-text
+      max-w-full prose-strong:text-text prose-ul:text-mdx-ul prose-ol:text-mdx-ol
+      prose-a:text-mdx-a"
+    >
       <MDXRemote source={object.description as string} />
     </div>
   );
