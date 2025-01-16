@@ -115,3 +115,25 @@ body {
 input[type="range"] {
     -webkit-appearance: none;
 }
+
+.prose ul {
+    color: #2563eb; /* Tailwind's blue-600 */
+    list-style-type: disc; /* Tailwind's list-disc */
+    padding-left: 1.25rem; /* Equivalent to Tailwind's pl-5 */
+}
+
+.prose ol {
+    color: #10b981; /* Tailwind's green-600 */
+    list-style-type: decimal; /* Tailwind's list-decimal */
+    padding-left: 1.25rem; /* Equivalent to Tailwind's pl-5 */
+}
+
+.prose a {
+    color: #f87171; /* Tailwind's red-500 */
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: #b91c1c; /* Tailwind's red-700 */
+}
+

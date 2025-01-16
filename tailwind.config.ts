@@ -8,18 +8,6 @@ const config = {
   plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            ul: {
-              color: "rgba(var(--color-mdx-ul))",
-            },
-            ol: {
-              color: "rgba(var(--color-mdx-ol))",
-            },
-          },
-        },
-      },
       container: {
         center: true,
         padding: {
