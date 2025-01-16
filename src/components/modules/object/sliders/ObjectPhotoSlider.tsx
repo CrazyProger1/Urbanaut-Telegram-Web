@@ -21,12 +21,12 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
-    // Определяем направление свайпа и порог
+    // Determine swipe direction and threshold
     if (offset < -100 || velocity < -500) {
-      // Свайп влево
+      // Swiped left
       setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
     } else if (offset > 100 || velocity > 500) {
-      // Свайп вправо
+      // Swiped right
       setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? photos.length - 1 : prevIndex - 1,
       );
@@ -39,17 +39,14 @@ const ObjectPhotoSlider = ({ photos }: Props) => {
         {photos && photos.length > 0 && (
           <motion.div
             key={photos[currentIndex].src}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
+            transition={{ duration: 0.01 }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
             className="w-full h-full"
-            style={{
-              transform: "none",
-            }}
           >
             <ObjectPhotoItem photo={photos[currentIndex]} />
           </motion.div>
