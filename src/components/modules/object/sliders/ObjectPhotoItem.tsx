@@ -14,9 +14,7 @@ const ObjectPhotoItem = ({ photo }: Props) => (
       src={photo.src}
       alt="object-photo"
       placeholder="blur"
-      width={420}
-      height={320}
-      layout="responsive"
+      fill
     />
   </SwiperSlide>
 );
