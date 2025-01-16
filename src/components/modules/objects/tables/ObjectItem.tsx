@@ -30,14 +30,16 @@ const ObjectItem = ({ object }: Props) => {
       href={LINKS.objects + `/${id}`}
       draggable={false}
     >
-      <Image
-        src={photo || STUBS.object}
-        alt="object-image"
-        className={`rounded-2xl object-cover ${frameClass}`}
-        width={112}
-        height={112}
-        placeholder="blur"
-      />
+      <div className="size-28">
+        <Image
+          src={photo || STUBS.object}
+          alt="object-image"
+          className={`rounded-2xl object-cover ${frameClass}`}
+          fill={true}
+          placeholder="blur"
+        />
+      </div>
+
       <div className="flex flex-col ml-4 font-primary text-text">
         <div className="font-bold">{name}</div>
         <div>{short_description}</div>
