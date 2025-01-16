@@ -30,7 +30,7 @@ const ObjectItem = ({ object }: Props) => {
       href={LINKS.objects + `/${id}`}
       draggable={false}
     >
-      <div className="size-28">
+      <div className="size-28 relative">
         <Image
           src={photo || STUBS.object}
           alt="object-image"
