@@ -19,22 +19,39 @@ interface Props {
   className?: string;
 }
 
+const Loader = () => (
+  <div className="flex justify-center items-center h-full">
+    <div className="animate-spin border-t-2 border-b-2 border-gray-900 rounded-full w-8 h-8"></div>
+  </div>
+);
+
 const SwipeNavigationWrapper = ({ children, pages, className }: Props) => {
   const { animationsEnabled } = useAccountStore();
   const router = useRouter();
   const pathname = usePathname();
   const initialPage = pages.includes(pathname) ? pages.indexOf(pathname) : -1;
   const [page, setPage] = useState(initialPage);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false); // Set loading to false after the initial render
+  }, []);
 
   const paginate = (direction: number) => {
     let newPage = initialPage + direction;
     if (newPage <= -1) newPage = pages.length - 1;
     else if (newPage >= pages.length) newPage = 0;
     setPage(newPage);
+    setLoading(true); // Set loading to true when the page changes
     router.push(pages[newPage]);
   };
-  if (!animationsEnabled || initialPage === -1)
-    return <div className={className}>{children}</div>;
+
+  if (loading || !animationsEnabled || initialPage === -1)
+    return (
+      <div className={className}>
+        <Loader />
+      </div>
+    );
 
   return (
     <div className={className}>
