@@ -46,7 +46,7 @@ const SwipeNavigationWrapper = ({ children, pages, className }: Props) => {
     router.push(pages[newPage]);
   };
 
-  if (loading || !animationsEnabled || initialPage === -1)
+  if (loading)
     return (
       <div className={className}>
         <Loader />
