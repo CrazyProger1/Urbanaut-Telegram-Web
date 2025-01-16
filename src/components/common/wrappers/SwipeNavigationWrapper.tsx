@@ -21,7 +21,7 @@ interface Props {
 
 const Loader = () => (
   <div className="flex justify-center items-center h-full">
-    <div className="animate-spin border-t-2 border-b-2 border-gray-900 rounded-full w-8 h-8"></div>
+    <div className="animate-spin border-t-2 border-b-2 border-white rounded-full w-8 h-8"></div>
   </div>
 );
 
