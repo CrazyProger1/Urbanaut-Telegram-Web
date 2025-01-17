@@ -46,6 +46,7 @@ const StatsTab = ({ object }: Props) => {
         <Row name="Security level" value={security_level} />
         <Row name="Difficulty level" value={difficulty_level} />
       </div>
+      <div className="mt-4" />
       <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
         <div className="font-bold text-xl text-center">Statistics</div>
         <div className="mt-2" />
@@ -58,6 +59,7 @@ const StatsTab = ({ object }: Props) => {
         <div className="mt-2" />
         <RatingBar stars={3} size="lg" />
       </div>
+      <div className="mt-4" />
       <ConcludeSection object={object} />
     </div>
   );
