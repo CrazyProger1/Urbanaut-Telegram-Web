@@ -46,9 +46,7 @@ const StatsTab = ({ object }: Props) => {
         <Row name="Difficulty level" value={difficulty_level} />
       </div>
       <div className="mt-4" />
-      <div className="flex flex-col items-center">
-        <RatingBar stars={3} size="lg" />
-      </div>
+      <RatingBar stars={3} size="lg" />
     </div>
   );
 };
