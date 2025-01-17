@@ -5,6 +5,7 @@ import {
   AboutSection,
   GallerySection,
   HeadSection,
+  ConcludeSection,
 } from "@/components/modules/object/sections";
 import { BackButtonWrapper } from "@/components/common/wrappers";
 import { LINKS } from "@/constants/nav";
@@ -33,6 +34,9 @@ const ObjectPage = async ({ params, searchParams }: Props) => {
         object={response}
         activeTab={(await searchParams).tab || "description"}
       />
+      <div className="mt-4" />
+      <ConcludeSection object={response} />
+
     </BackButtonWrapper>
   );
 };

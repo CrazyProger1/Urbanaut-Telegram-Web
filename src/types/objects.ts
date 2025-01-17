@@ -1,6 +1,7 @@
 import { AbandonedArea } from "@/types/areas";
 import { DIFFICULTY_LEVELS } from "@/constants/levels";
 import { Rating } from "@/types/common";
+import { AbandonedObjectCategory } from "@/types/categories";
 
 export type AbandonedObjectPhoto = {
   src: string;
@@ -9,6 +10,7 @@ export type AbandonedObject = {
   id: number;
   area: number | AbandonedArea;
   name: string;
+  categories?: AbandonedObjectCategory[];
   rating?: Rating;
   short_description: string;
   description?: string;
