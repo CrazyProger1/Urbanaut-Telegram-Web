@@ -14,12 +14,12 @@ interface Props {
 
 const CategoryModal = ({ show, categories, onClose }: Props) => {
   const [activeCategories, setActiveCategories] = useState<{
-    [key: string]: boolean;
+    [key: number]: boolean;
   }>({});
 
   const toggleCategory = (category: AbandonedObjectCategory) => {
-    const isActive = activeCategories[category.name];
-    const key = category.name;
+    const isActive = activeCategories[category.id];
+    const key = category.id;
     setActiveCategories({ ...activeCategories, [key]: !isActive });
   };
 
@@ -32,19 +32,16 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
         <ModalTitle>Category</ModalTitle>
 
         <div className="mt-2" />
-        {/*<HorizontalMasonry gap={1} extendClassName="gap-1">*/}
-        <div className="flex flex-wrap gap-1">
+        <HorizontalMasonry dynamic={false} gap={1} extendClassName="gap-1">
           {categories.map((category) => (
             <CategoryBadge
               key={category.id}
               category={category}
-              active={activeCategories[category.name]}
+              active={activeCategories[category.id]}
               onClick={() => toggleCategory(category)}
             />
           ))}
-        </div>
-
-        {/*</HorizontalMasonry>*/}
+        </HorizontalMasonry>
       </div>
     </ModalPortal>
   );
