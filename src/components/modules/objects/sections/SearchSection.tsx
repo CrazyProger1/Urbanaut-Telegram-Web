@@ -3,15 +3,11 @@ import { ObjectSearchBar } from "@/components/modules/objects/bars";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { getCategories } from "@/services/categories";
 
-const SearchSection = async () => {
-  let categories: AbandonedObjectCategory[] = [];
-  try {
-    const categoriesResponse = await getCategories();
-    if (categoriesResponse.success) categories = categoriesResponse.results;
-  } catch (err) {
-    console.log(err);
-  }
+interface Props {
+  categories: AbandonedObjectCategory[];
+}
 
+const SearchSection = async ({ categories }: Props) => {
   return (
     <Suspense>
       <ObjectSearchBar categories={categories} />

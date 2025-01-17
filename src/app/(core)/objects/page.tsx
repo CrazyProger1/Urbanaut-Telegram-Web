@@ -5,6 +5,8 @@ import {
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { getObjects } from "@/services/objects";
 import { cookies } from "next/headers";
+import { AbandonedObjectCategory } from "@/types/categories";
+import { getCategories } from "@/services/categories";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -13,6 +15,8 @@ type Props = {
 
 const ObjectsPage = async (props: Props) => {
   let objects: AbandonedObject[] = [];
+  let categories: AbandonedObjectCategory[] = [];
+
   const cookieStore = await cookies();
   const initDataRaw = cookieStore.get("initDataRaw");
 
@@ -29,9 +33,16 @@ const ObjectsPage = async (props: Props) => {
     console.log(err);
   }
 
+  try {
+    const categoriesResponse = await getCategories();
+    if (categoriesResponse.success) categories = categoriesResponse.results;
+  } catch (err) {
+    console.log(err);
+  }
+
   return (
     <>
-      <SearchSection />
+      <SearchSection categories={categories} />
       <div className="mt-4" />
       <TableSection objects={objects} />
     </>

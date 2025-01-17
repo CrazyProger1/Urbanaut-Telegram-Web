@@ -33,7 +33,7 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
   return (
     <ModalPortal show={show} onClose={() => onClose && onClose([])}>
       <div
-        className="flex flex-col w-2/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none"
+        className="flex flex-col w-3/4 bg-background shadow-volume-frame pt-2 pb-4 px-4 rounded-2xl select-none"
         onClick={(ev) => ev.stopPropagation()}
       >
         <ModalTitle>Category</ModalTitle>
