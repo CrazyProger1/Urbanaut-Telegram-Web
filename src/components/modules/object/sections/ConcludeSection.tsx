@@ -18,16 +18,18 @@ const ConcludeSection = ({ object }: Props) => {
     return <div />;
   }
   return (
-    <HorizontalMasonry gap={1} extendClassName="gap-1">
-      {categories.map((category) => (
-        <Link
-          key={category.id}
-          href={`${LINKS.objects}?category=${category.name}`}
-        >
-          <CategoryBadge category={category} active={false} />
-        </Link>
-      ))}
-    </HorizontalMasonry>
+    <div className="p-4 bg-foreground rounded-2xl w-full">
+      <HorizontalMasonry gap={1} extendClassName="gap-1">
+        {categories.map((category) => (
+          <Link
+            key={category.id}
+            href={`${LINKS.objects}?category=${category.name}`}
+          >
+            <CategoryBadge category={category} active={false} />
+          </Link>
+        ))}
+      </HorizontalMasonry>
+    </div>
   );
 };
 
