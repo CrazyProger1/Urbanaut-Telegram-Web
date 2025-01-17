@@ -19,7 +19,9 @@ const ConcludeSection = ({ object }: Props) => {
   }
   return (
     <div className="p-4 bg-foreground rounded-2xl w-full">
-      <div className="font-bold text-xl text-center">Categories</div>
+      <div className="font-bold text-xl text-center text-text font-primary">
+        Categories
+      </div>
       <div className="mt-2" />
       <HorizontalMasonry gap={1} extendClassName="gap-1">
         {categories.map((category) => (
