@@ -32,7 +32,8 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
         <ModalTitle>Category</ModalTitle>
 
         <div className="mt-2" />
-        <HorizontalMasonry gap={1} extendClassName="gap-1">
+        {/*<HorizontalMasonry gap={1} extendClassName="gap-1">*/}
+        <div className="flex flex-wrap gap-1">
           {categories.map((category) => (
             <CategoryBadge
               key={category.id}
@@ -41,7 +42,9 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
               onClick={() => toggleCategory(category)}
             />
           ))}
-        </HorizontalMasonry>
+        </div>
+
+        {/*</HorizontalMasonry>*/}
       </div>
     </ModalPortal>
   );
