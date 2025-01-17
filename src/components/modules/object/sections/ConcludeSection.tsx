@@ -24,7 +24,7 @@ const ConcludeSection = ({ object }: Props) => {
           key={category.id}
           href={`${LINKS.objects}?category=${category.name}`}
         >
-          <CategoryBadge category={category} variant="inactive" />
+          <CategoryBadge category={category} active={true} />
         </Link>
       ))}
     </HorizontalMasonry>

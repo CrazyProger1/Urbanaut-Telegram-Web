@@ -13,18 +13,14 @@ interface Props {
 }
 
 const CategoryModal = ({ show, categories, onClose }: Props) => {
-  const [activeCategories, setActiveCategories] = useState<
-    AbandonedObjectCategory[]
-  >([]);
+  const { activeCategories, setActiveCategories } = useState<{
+    [key: string]: boolean;
+  }>({});
 
   const toggleCategory = (category: AbandonedObjectCategory) => {
-    const isActive = activeCategories.includes(category);
-
-    const newActiveCategories = isActive
-      ? activeCategories.filter((cat) => cat !== category)
-      : [...activeCategories, category];
-
-    setActiveCategories(newActiveCategories);
+    const isActive = activeCategories[category.name];
+    const key = category.name;
+    setActiveCategories({ ...activeCategories, [key]: !isActive });
   };
 
   return (
@@ -41,9 +37,7 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
             <CategoryBadge
               key={category.id}
               category={category}
-              variant={
-                activeCategories.includes(category) ? "active" : "inactive"
-              }
+              active={activeCategories[category.name]}
               onClick={() => toggleCategory(category)}
             />
           ))}
