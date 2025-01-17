@@ -1,6 +1,7 @@
 import React from "react";
 import { AbandonedObject } from "@/types/objects";
 import { RatingBar } from "@/components/common/bars/ratings";
+import { formatDate } from "@/utils/date";
 
 interface Props {
   object: AbandonedObject;
@@ -19,9 +20,9 @@ const StatsTab = ({ object }: Props) => {
     <div className="flex flex-col font-primary text-text">
       <div className="flex flex-col bg-foreground w-full p-4">
         <div className="font-bold text-xl">Dates</div>
-        <p>Created at: {String(created_at)}</p>
-        <p>Abandoned at: {String(abandoned_at)}</p>
-        <p>Abandoned at: {String(built_at)}</p>
+        <p>Created at: {formatDate(created_at)}</p>
+        <p>Abandoned at: {formatDate(abandoned_at)}</p>
+        <p>Abandoned at: {formatDate(built_at)}</p>
       </div>
       <div className="mt-4" />
       <div className="flex flex-col bg-foreground w-full p-4">
