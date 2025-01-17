@@ -8,7 +8,6 @@ interface Props {
 
 const StarIcon = ({ color = "yellow" }: Props) => (
   <svg
-    className="w-4 h-4 ms-1"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill={color}
