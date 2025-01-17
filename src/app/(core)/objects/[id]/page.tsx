@@ -34,8 +34,6 @@ const ObjectPage = async ({ params, searchParams }: Props) => {
         object={response}
         activeTab={(await searchParams).tab || "description"}
       />
-      <div className="mt-4" />
-      <ConcludeSection object={response} />
     </BackButtonWrapper>
   );
 };

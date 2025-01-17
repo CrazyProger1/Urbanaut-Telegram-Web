@@ -18,7 +18,7 @@ const ConcludeSection = ({ object }: Props) => {
     return <div />;
   }
   return (
-    <div className="p-4 bg-foreground rounded-2xl w-full">
+    <div className="p-4 bg-foreground rounded-2xl w-full shadow-volume-frame">
       <div className="font-bold text-xl text-center text-text font-primary">
         Categories
       </div>

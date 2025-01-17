@@ -2,6 +2,7 @@ import React from "react";
 import { AbandonedObject } from "@/types/objects";
 import { RatingBar } from "@/components/common/bars/ratings";
 import { formatDate } from "@/utils/date";
+import { ConcludeSection } from "@/components/modules/object/sections";
 
 interface Props {
   object: AbandonedObject;
@@ -30,7 +31,7 @@ const StatsTab = ({ object }: Props) => {
   } = object;
   return (
     <div className="flex flex-col font-primary text-text">
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
+      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
         <div className="font-bold text-xl text-center">Dates</div>
         <div className="mt-2" />
         <Row name="Created at" value={formatDate(created_at)} />
@@ -38,19 +39,26 @@ const StatsTab = ({ object }: Props) => {
         <Row name="Built at" value={formatDate(built_at)} />
       </div>
       <div className="mt-4" />
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
-        <div className="font-bold text-xl text-center">State</div>
+      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
+        <div className="font-bold text-xl text-center">Status</div>
         <div className="mt-2" />
         <Row name="Preservation level" value={preservation_level} />
         <Row name="Security level" value={security_level} />
         <Row name="Difficulty level" value={difficulty_level} />
       </div>
+      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
+        <div className="font-bold text-xl text-center">Statistics</div>
+        <div className="mt-2" />
+        <Row name="Reports" value="0" />
+        <Row name="Visits" value="0" />
+      </div>
       <div className="mt-4" />
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
+      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
         <div className="font-bold text-xl text-center">Rating</div>
         <div className="mt-2" />
         <RatingBar stars={3} size="lg" />
       </div>
+      <ConcludeSection object={object} />
     </div>
   );
 };
