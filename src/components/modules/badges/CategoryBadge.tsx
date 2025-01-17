@@ -1,5 +1,6 @@
 import React from "react";
 import { AbandonedObjectCategory } from "@/types/categories";
+import clsx from "clsx";
 
 interface Props {
   category: AbandonedObjectCategory;
@@ -9,14 +10,13 @@ interface Props {
 
 const CategoryBadge = ({ category, variant, onClick }: Props) => {
   const { name } = category;
+
+  const className = clsx(
+    "bg-foreground text-text text-center text-md font-medium p-1 rounded grid-item cursor-pointer",
+    variant === "active" && "bg-selection",
+  );
   return (
-    <div
-      className={
-        "bg-foreground text-text text-center text-xs font-medium p-1 rounded grid-item " +
-        (variant === "active" ? "bg-selection" : "")
-      }
-      onClick={onClick}
-    >
+    <div className={className} onClick={onClick}>
       {name}
     </div>
   );

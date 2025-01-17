@@ -4,6 +4,8 @@ import React from "react";
 import { AbandonedObject } from "@/types/objects";
 import { CategoryBadge } from "@/components/modules/badges";
 import { HorizontalMasonry } from "simple-masonry-ui";
+import Link from "next/link";
+import { LINKS } from "@/constants/nav";
 
 interface Props {
   object: AbandonedObject;
@@ -18,11 +20,12 @@ const ConcludeSection = ({ object }: Props) => {
   return (
     <HorizontalMasonry gap={1} extendClassName="gap-1">
       {categories.map((category) => (
-        <CategoryBadge
+        <Link
           key={category.id}
-          category={category}
-          variant="inactive"
-        />
+          href={`${LINKS.objects}?category=${category.name}`}
+        >
+          <CategoryBadge category={category} variant="inactive" />
+        </Link>
       ))}
     </HorizontalMasonry>
   );
