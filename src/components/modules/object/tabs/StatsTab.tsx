@@ -14,8 +14,8 @@ interface RowProps {
 
 const Row = ({ name, value }: RowProps) => (
   <div className="flex flex-row">
-    <div className="font-bold">{name}:</div>{" "}
-    <div className="cursor-pointer text-amber-600">{value}</div>
+    <div className="font-bold">{name}:</div>
+    <div className="pl-1 cursor-pointer">{value}</div>
   </div>
 );
 
