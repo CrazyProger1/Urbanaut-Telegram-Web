@@ -29,7 +29,7 @@
     "react-masonry-css": "^1.0.16",
     "react-toastify": "^10.0.6",
     "sass": "^1.81.0",
-    "simple-masonry-ui": "^0.0.10",
+    "simple-masonry-ui": "^0.0.11",
     "swiper": "^11.1.15",
     "waterfall.js": "^1.1.0",
     "zustand": "^5.0.1"
