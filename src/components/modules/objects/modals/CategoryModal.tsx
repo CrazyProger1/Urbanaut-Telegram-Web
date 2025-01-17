@@ -32,7 +32,7 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
         <ModalTitle>Category</ModalTitle>
 
         <div className="mt-2" />
-        <HorizontalMasonry gap={1} extendClassName="gap-1">
+        <HorizontalMasonry dynamic={false} gap={1} extendClassName="gap-1">
           {categories.map((category) => (
             <CategoryBadge
               key={category.id}
