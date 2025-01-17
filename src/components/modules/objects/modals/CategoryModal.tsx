@@ -13,7 +13,7 @@ interface Props {
 }
 
 const CategoryModal = ({ show, categories, onClose }: Props) => {
-  const [ activeCategories, setActiveCategories ] = useState<{
+  const [activeCategories, setActiveCategories] = useState<{
     [key: string]: boolean;
   }>({});
 
