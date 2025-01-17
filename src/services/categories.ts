@@ -6,7 +6,7 @@ type CategoriesResponse =
   | PaginatedResponse<AbandonedObjectCategory>
   | ErrorResponse;
 export const getCategories = async (): Promise<CategoriesResponse> => {
-  const response = await fetch(`${API_URL}/categories/toplevel/`, {
+  const response = await fetch(`${API_URL}/categories/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

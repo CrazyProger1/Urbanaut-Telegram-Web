@@ -13,7 +13,6 @@ interface Props {
 }
 
 const CategoryModal = ({ show, categories, onClose }: Props) => {
-  const [visibleCategories, setVisibleCategories] = useState(categories);
   const [activeCategories, setActiveCategories] = useState<
     AbandonedObjectCategory[]
   >([]);
@@ -24,10 +23,8 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
     const newActiveCategories = isActive
       ? activeCategories.filter((cat) => cat !== category)
       : [...activeCategories, category];
-    const newVisibleCategories = categories;
 
     setActiveCategories(newActiveCategories);
-    setVisibleCategories(newVisibleCategories);
   };
 
   return (
@@ -40,7 +37,7 @@ const CategoryModal = ({ show, categories, onClose }: Props) => {
 
         <div className="mt-2" />
         <HorizontalMasonry gap={1} extendClassName="gap-1">
-          {visibleCategories.map((category) => (
+          {categories.map((category) => (
             <CategoryBadge
               key={category.id}
               category={category}
