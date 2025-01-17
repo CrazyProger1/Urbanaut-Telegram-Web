@@ -47,6 +47,8 @@ const StatsTab = ({ object }: Props) => {
       </div>
       <div className="mt-4" />
       <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
+        <div className="font-bold text-xl text-center">Rating</div>
+        <div className="mt-2" />
         <RatingBar stars={3} size="lg" />
       </div>
     </div>
