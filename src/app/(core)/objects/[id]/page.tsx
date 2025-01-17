@@ -36,7 +36,6 @@ const ObjectPage = async ({ params, searchParams }: Props) => {
       />
       <div className="mt-4" />
       <ConcludeSection object={response} />
-
     </BackButtonWrapper>
   );
 };

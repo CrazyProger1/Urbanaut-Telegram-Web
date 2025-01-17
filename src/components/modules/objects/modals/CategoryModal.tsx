@@ -1,30 +1,10 @@
 "use client";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
 import { ModalPortal } from "@/components/common/modals";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { ModalTitle } from "@/components/common/typography/titles";
-
-interface CategoryBadgeProps {
-  category: AbandonedObjectCategory;
-  variant: "active" | "inactive";
-  onClick?: () => void;
-}
-
-const CategoryBadge = ({ category, variant, onClick }: CategoryBadgeProps) => {
-  const { name } = category;
-  return (
-    <div
-      className={
-        "bg-foreground text-text text-center text-xs font-medium p-1 rounded grid-item " +
-        (variant === "active" ? "bg-selection" : "")
-      }
-      onClick={onClick}
-    >
-      {name}
-    </div>
-  );
-};
+import { CategoryBadge } from "@/components/modules/badges";
 
 interface Props {
   show: boolean;
