@@ -7,6 +7,18 @@ interface Props {
   object: AbandonedObject;
 }
 
+interface RowProps {
+  name: string;
+  value: string;
+}
+
+const Row = ({ name, value }: RowProps) => (
+  <div className="flex flex-row">
+    <div className="font-bold">{name}:</div>
+    <div className="underline cursor-pointer">{value}</div>
+  </div>
+);
+
 const StatsTab = ({ object }: Props) => {
   const {
     created_at,
@@ -21,38 +33,22 @@ const StatsTab = ({ object }: Props) => {
       <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
         <div className="font-bold text-xl text-center">Dates</div>
         <div className="mt-2" />
-        <div>
-          <div className="font-bold">Created at:</div>
-          {formatDate(created_at)}
-        </div>
-        <div>
-          <div className="font-bold">Abandoned at:</div>
-          {formatDate(abandoned_at)}
-        </div>
-        <div>
-          <div className="font-bold">Abandoned at:</div>
-          {formatDate(built_at)}
-        </div>
+        <Row name="Created at" value={formatDate(created_at)} />
+        <Row name="Abandoned at" value={formatDate(abandoned_at)} />
+        <Row name="Built at" value={formatDate(built_at)} />
       </div>
       <div className="mt-4" />
       <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl">
         <div className="font-bold text-xl text-center">State</div>
         <div className="mt-2" />
-        <div>
-          <div className="font-bold">Preservation level:</div>
-          {preservation_level}
-        </div>
-        <div>
-          <div className="font-bold">Security level:</div>
-          {security_level}
-        </div>
-        <div>
-          <div className="font-bold">Difficulty at:</div>
-          {difficulty_level}
-        </div>
+        <Row name="Preservation level" value={preservation_level} />
+        <Row name="Security level" value={security_level} />
+        <Row name="Difficulty level" value={difficulty_level} />
       </div>
       <div className="mt-4" />
-      <RatingBar stars={3} />
+      <div className="flex items-center justify-items-center">
+        <RatingBar stars={3} />
+      </div>
     </div>
   );
 };
