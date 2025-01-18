@@ -7,6 +7,7 @@ import { LINKS } from "@/constants/nav";
 import { CategoryBadge } from "@/components/modules/badges";
 import { HorizontalMasonry } from "simple-masonry-ui";
 import { Block } from "@/components/common/blocks";
+import { CategoriesBlock } from "@/components/modules/object/blocks";
 
 interface Props {
   object: AbandonedObject;
@@ -57,21 +58,7 @@ const StatsTab = ({ object }: Props) => {
         <RatingBar stars={5} size="lg" />
       </Block>
       <div className="mt-4" />
-
-      {categories && (
-        <Block name="Categories">
-          <HorizontalMasonry gap={1} extendClassName="gap-1">
-            {categories.map((category) => (
-              <Link
-                key={category.id}
-                href={`${LINKS.objects}?category=${category.name}`}
-              >
-                <CategoryBadge category={category} active={true} />
-              </Link>
-            ))}
-          </HorizontalMasonry>
-        </Block>
-      )}
+      <CategoriesBlock object={object} />
     </div>
   );
 };
