@@ -2,7 +2,11 @@ import React from "react";
 import { AbandonedObject } from "@/types/objects";
 import { RatingBar } from "@/components/common/bars/ratings";
 import { formatDate } from "@/utils/date";
-import { ConcludeSection } from "@/components/modules/object/sections";
+import Link from "next/link";
+import { LINKS } from "@/constants/nav";
+import { CategoryBadge } from "@/components/modules/badges";
+import { HorizontalMasonry } from "simple-masonry-ui";
+import { Block } from "@/components/common/blocks";
 
 interface Props {
   object: AbandonedObject;
@@ -28,39 +32,46 @@ const StatsTab = ({ object }: Props) => {
     preservation_level,
     security_level,
     difficulty_level,
+    categories,
   } = object;
   return (
     <div className="flex flex-col font-primary text-text">
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
-        <div className="font-bold text-xl text-center">Dates</div>
-        <div className="mt-2" />
+      <Block name="Dates">
         <Row name="Created at" value={formatDate(created_at)} />
         <Row name="Abandoned at" value={formatDate(abandoned_at)} />
         <Row name="Built at" value={formatDate(built_at)} />
-      </div>
+      </Block>
       <div className="mt-4" />
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
-        <div className="font-bold text-xl text-center">Status</div>
-        <div className="mt-2" />
+      <Block name="Status">
         <Row name="Preservation level" value={preservation_level} />
         <Row name="Security level" value={security_level} />
         <Row name="Difficulty level" value={difficulty_level} />
-      </div>
+      </Block>
       <div className="mt-4" />
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
-        <div className="font-bold text-xl text-center">Statistics</div>
-        <div className="mt-2" />
+      <Block name="Statistics">
         <Row name="Reports" value="0" />
         <Row name="Visits" value="0" />
-      </div>
+      </Block>
       <div className="mt-4" />
-      <div className="flex flex-col bg-foreground w-full p-4 rounded-2xl shadow-volume-frame">
-        <div className="font-bold text-xl text-center">Rating</div>
-        <div className="mt-2" />
-        <RatingBar stars={3} size="lg" />
-      </div>
+      <Block name="Rating">
+        <RatingBar stars={5} size="lg" />
+      </Block>
       <div className="mt-4" />
-      <ConcludeSection object={object} />
+
+      {categories && (
+        <Block name="Categories">
+          <HorizontalMasonry gap={1} extendClassName="gap-1">
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                href={`${LINKS.objects}?category=${category.name}`}
+              >
+                <CategoryBadge category={category} active={true} />
+              </Link>
+            ))}
+          </HorizontalMasonry>
+        </Block>
+      )}
     </div>
   );
 };
