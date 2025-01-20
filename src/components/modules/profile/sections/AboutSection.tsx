@@ -24,15 +24,6 @@ const AboutSection = () => {
         <Row name="Reports" value="0" />
         <Row name="Visits" value="0" />
       </Block>
-      <div className="mt-4" />
-      <Block>
-        <div className="flex flex-col first:rounded-t-2xl last:rounded-b-2xl">
-          <div className="w-full bg-blue-600 p-4 text-center">Edit Profile</div>
-          <div className="w-full bg-red-600 p-4 text-center">
-            Delete Account
-          </div>
-        </div>
-      </Block>
     </div>
   );
 };
