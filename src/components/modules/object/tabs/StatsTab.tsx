@@ -33,7 +33,6 @@ const StatsTab = ({ object }: Props) => {
     preservation_level,
     security_level,
     difficulty_level,
-    categories,
   } = object;
   return (
     <div className="flex flex-col font-primary text-text">
