@@ -26,6 +26,9 @@ const DescriptionTab = ({ object }: Props) => {
       prose-ol:text-mdx-ol
       prose-a:text-mdx-a"
     >
+      <div className="text-center text-text font-primary font-bold text-2xl">
+        {object.name}
+      </div>
       <MDXRemote source={object.description as string} />
     </div>
   );
