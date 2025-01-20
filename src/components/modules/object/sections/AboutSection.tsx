@@ -11,22 +11,11 @@ interface Props {
 }
 
 const AboutSection = ({ object, activeTab }: Props) => {
-  const TABS = [
-    {
-      key: "description",
-      text: "description",
-      href: `/objects/${object.id}?tab=description`,
-    },
-    {
-      key: "stats",
-      text: "stats",
-      href: `/objects/${object.id}?tab=stats`,
-    },
-  ];
   return (
     <div className="flex flex-col">
-      <TabBar activeTab={activeTab} tabs={TABS} />
-
+      <div className="text-center text-text font-primary font-bold text-2xl">
+        {object.name}
+      </div>
       <div className="mt-4" />
       <TabbedView activeTab={activeTab}>
         <Tab name="description">

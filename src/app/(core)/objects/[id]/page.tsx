@@ -22,18 +22,16 @@ const ObjectPage = async ({ params, searchParams }: Props) => {
 
   if (!response.success) notFound();
 
+  const tab = (await searchParams).tab || "description";
   return (
     <BackButtonWrapper path={LINKS.objects}>
-      <HeadSection object={response} />
+      <HeadSection object={response} activeTab={tab} />
 
       <div className="mt-4" />
       <GallerySection object={response} />
 
       <div className="mt-4" />
-      <AboutSection
-        object={response}
-        activeTab={(await searchParams).tab || "description"}
-      />
+      <AboutSection object={response} activeTab={tab} />
     </BackButtonWrapper>
   );
 };
