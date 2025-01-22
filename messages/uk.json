@@ -12,6 +12,6 @@
     "more": "більше"
   },
   "SearchTextInput": {
-    "type to search...": "введіть для пошуку..."
+    "search_placeholder": "введіть для пошуку..."
   }
 }

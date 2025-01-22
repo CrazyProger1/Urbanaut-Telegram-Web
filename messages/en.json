@@ -12,6 +12,6 @@
     "more": "more"
   },
   "SearchTextInput": {
-    "type to search...": "type to search..."
+    "search_placeholder": "type to search..."
   }
 }

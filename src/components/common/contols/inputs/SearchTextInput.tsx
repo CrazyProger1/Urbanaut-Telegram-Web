@@ -9,7 +9,7 @@ const SearchTextInput = ({ className }: Props) => {
   const t = useTranslations("SearchTextInput");
   return (
     <input
-      placeholder={t("type to search...")}
+      placeholder={t("search_placeholder")}
       className={className}
       name="query"
     />
