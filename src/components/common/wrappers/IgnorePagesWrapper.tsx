@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/routing";
 
 interface Props {
   pages: string[];

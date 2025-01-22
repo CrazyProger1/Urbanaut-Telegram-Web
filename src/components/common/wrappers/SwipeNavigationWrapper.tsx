@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   SWIPE_CONFIDENCE_THRESHOLD,

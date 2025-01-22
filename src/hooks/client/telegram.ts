@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { backButton, init, useLaunchParams } from "@telegram-apps/sdk-react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 export const useTelegramMiniApp = () => {
   useEffect(() => {
