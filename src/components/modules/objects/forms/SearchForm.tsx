@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "next/form";
+import { SearchTextInput } from "@/components/common/contols/inputs";
 
 interface Props {
   className?: string;
@@ -7,12 +8,8 @@ interface Props {
 
 const SearchForm = ({ className }: Props) => {
   return (
-    <Form className="w-full" action="/search">
-      <input
-        placeholder="type to search..."
-        className={className}
-        name="query"
-      />
+    <Form className="w-full" action="/">
+      <SearchTextInput className={className} />
     </Form>
   );
 };

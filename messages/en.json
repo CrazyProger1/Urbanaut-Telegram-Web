@@ -10,5 +10,8 @@
     "top": "top",
     "new": "new",
     "more": "more"
+  },
+  "SearchTextInput": {
+    "type to search...": "type to search..."
   }
 }

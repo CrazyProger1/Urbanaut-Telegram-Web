@@ -10,5 +10,8 @@
     "top": "топ",
     "new": "нові",
     "more": "більше"
+  },
+  "SearchTextInput": {
+    "type to search...": "введіть для пошуку..."
   }
 }
