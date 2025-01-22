@@ -5,7 +5,7 @@ import { redirect } from "@/i18n/routing";
 const Page = () => {
   redirect({
     href: LINKS.objects,
-    locale: "en",
+    locale: "uk",
   });
   return <div />;
 };
