@@ -13,6 +13,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
 import { Location } from "@/types/common";
+import { useTranslations } from "use-intl";
 
 interface Props {
   categories: AbandonedObjectCategory[];
@@ -23,6 +24,7 @@ type Filters = {
 };
 
 const ObjectSearchBar = ({ categories }: Props) => {
+  const t = useTranslations("ObjectSearchBar");
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -142,7 +144,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
           <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
             <SearchToggle
               target="category"
-              text="category"
+              text={t("category")}
               active={activeFilters.category}
               onToggle={handleToggle}
               onHold={handleHold}
@@ -151,14 +153,14 @@ const ObjectSearchBar = ({ categories }: Props) => {
 
             <SearchToggle
               target="difficulty_level"
-              text="difficulty"
+              text={t("difficulty")}
               active={activeFilters.difficulty_level}
               onToggle={handleToggle}
               onHold={handleHold}
             />
             <SearchToggle
               target="nearest"
-              text="nearest"
+              text={t("nearest")}
               active={activeFilters.nearest}
               onToggle={handleToggle}
               onHold={handleHold}
@@ -168,21 +170,21 @@ const ObjectSearchBar = ({ categories }: Props) => {
             <div className="bg-foreground flex flex-wrap justify-around rounded-2xl">
               <SearchToggle
                 target="top"
-                text="top"
+                text={t("top")}
                 active={activeFilters.top}
                 onToggle={handleToggle}
                 onHold={handleHold}
               />
               <SearchToggle
                 target="new"
-                text="new"
+                text={t("new")}
                 active={activeFilters.new}
                 onToggle={handleToggle}
                 onHold={handleHold}
               />
               <SearchToggle
                 target="more"
-                text="more"
+                text={t("more")}
                 active={activeFilters.more}
                 onToggle={handleToggle}
                 onHold={handleHold}

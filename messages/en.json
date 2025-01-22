@@ -2,5 +2,13 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "ObjectSearchBar": {
+    "category": "category",
+    "difficulty": "difficulty",
+    "nearest": "nearest",
+    "top": "top",
+    "new": "new",
+    "more": "more"
   }
 }
