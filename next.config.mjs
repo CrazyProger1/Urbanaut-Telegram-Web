@@ -6,7 +6,13 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
     transpilePackages: ['next-mdx-remote'],
     images: {
-        domains: ["api.urbanaut.club"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "api.urbanaut.club",
+                pathname: "/**",
+            },
+        ],
     },
 
 };

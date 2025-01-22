@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ICONS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";

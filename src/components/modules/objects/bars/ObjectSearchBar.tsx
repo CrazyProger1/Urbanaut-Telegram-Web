@@ -9,7 +9,7 @@ import {
   DateModal,
   DifficultyModal,
 } from "@/components/modules/objects/modals";
-import { usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "next/navigation";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
 import { Location } from "@/types/common";
