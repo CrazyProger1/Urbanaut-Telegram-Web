@@ -1,9 +1,12 @@
 import React from "react";
 import { LINKS } from "@/constants/nav";
-import { redirect } from "next/navigation";
+import { redirect } from "@/i18n/routing";
 
 const Page = () => {
-  redirect(LINKS.objects);
+  redirect({
+    href: LINKS.objects,
+    locale: "en",
+  });
   return <div />;
 };
 
