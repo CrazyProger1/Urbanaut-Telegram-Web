@@ -30,8 +30,11 @@ import axios from "axios";
 export const getObjects = async (
   initData: string,
   filters: AbandonedObjectFilters,
+  locale: string,
 ): Promise<ObjectsResponse> => {
   const queryParams = new URLSearchParams();
+
+  queryParams.append("locale", locale);
 
   for (const [key, value] of Object.entries(filters)) {
     if (Array.isArray(value)) {

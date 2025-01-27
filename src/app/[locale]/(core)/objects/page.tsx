@@ -9,11 +9,11 @@ import { AbandonedObjectCategory } from "@/types/categories";
 import { getCategories } from "@/services/categories";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ locale: string }>;
   searchParams: Promise<AbandonedObjectFilters>;
 };
 
-const ObjectsPage = async (props: Props) => {
+const ObjectsPage = async ({ params, searchParams }: Props) => {
   let objects: AbandonedObject[] = [];
   let categories: AbandonedObjectCategory[] = [];
 
@@ -25,7 +25,8 @@ const ObjectsPage = async (props: Props) => {
       console.log(`Raw init data:`, initDataRaw);
       const objectsResponse = await getObjects(
         initDataRaw.value,
-        await props.searchParams,
+        await searchParams,
+        (await params).locale,
       );
       if (objectsResponse.success) objects = objectsResponse.results;
     }
