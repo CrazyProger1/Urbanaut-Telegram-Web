@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   SWIPE_CONFIDENCE_THRESHOLD,
@@ -12,6 +11,7 @@ import {
 } from "@/constants/animations";
 import { swipePower } from "@/utils/swipe";
 import { useAccountStore } from "@/stores";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 interface Props {
   children: React.ReactNode;
