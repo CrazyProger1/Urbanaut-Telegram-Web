@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import clsx from "clsx";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, Link } from "@/i18n/routing";
 
 interface Props {
   href: string;
