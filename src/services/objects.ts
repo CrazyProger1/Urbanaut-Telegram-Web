@@ -34,8 +34,6 @@ export const getObjects = async (
 ): Promise<ObjectsResponse> => {
   const queryParams = new URLSearchParams();
 
-  queryParams.append("locale", locale);
-
   for (const [key, value] of Object.entries(filters)) {
     if (Array.isArray(value)) {
       value.forEach((v) => queryParams.append(key, v));
@@ -53,6 +51,7 @@ export const getObjects = async (
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",
+        "Accept-Language": locale,
         Authorization: encodedInitData,
       },
     });

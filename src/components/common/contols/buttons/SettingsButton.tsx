@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { usePathname, useRouter } from "next/navigation";
+
 import { motion } from "framer-motion";
 import { ICONS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 import { backButton } from "@telegram-apps/sdk-react";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 const SettingsButton = () => {
   const pathname = usePathname();
