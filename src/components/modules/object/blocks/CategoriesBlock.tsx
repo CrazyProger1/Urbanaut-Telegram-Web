@@ -2,11 +2,11 @@
 
 import React from "react";
 import { HorizontalMasonry } from "simple-masonry-ui";
-import Link from "next/link";
 import { LINKS } from "@/constants/nav";
 import { CategoryBadge } from "@/components/modules/badges";
 import { Block } from "@/components/common/blocks";
 import { AbandonedObject } from "@/types/objects";
+import { Link } from "@/i18n/routing";
 
 interface Props {
   object: AbandonedObject;
