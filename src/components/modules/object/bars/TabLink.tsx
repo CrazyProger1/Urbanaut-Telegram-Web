@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 interface Props {
   active: boolean;
