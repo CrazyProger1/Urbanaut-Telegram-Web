@@ -199,7 +199,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
         </div>
         <ExpandButton
           onClick={() => setIsExpanded(!isExpanded)}
-          className={
+          expandClassName={
             "p-2 rounded-r-2xl bg-foreground flex items-center  text-text fill-current " +
             (isExpanded ? "bg-selection border border-selection-border" : "")
           }
