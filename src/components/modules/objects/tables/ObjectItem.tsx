@@ -2,9 +2,9 @@ import React from "react";
 import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 import { AbandonedObject } from "@/types/objects";
-import Link from "next/link";
-import { RatingBar } from "../../../common/bars/ratings";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
+import { RatingBar } from "@/components/common/bars/ratings";
 
 export const DIFFICULTY_FRAME = {
   DEFAULT: "shadow-difficulty-frame-newbie",
