@@ -3,6 +3,7 @@
 import React, { FormEvent } from "react";
 import { SearchTextInput } from "@/components/common/contols/inputs";
 import { useRouter } from "@/i18n/routing";
+import { LINKS } from "@/constants/nav";
 
 interface Props {
   className?: string;
@@ -19,7 +20,7 @@ const SearchForm = ({ className }: Props) => {
 
     if (query) {
       router.push({
-        pathname: "/search",
+        pathname: LINKS.objects,
         query: { query: query },
       });
     }
