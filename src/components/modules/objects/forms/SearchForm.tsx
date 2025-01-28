@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FormEvent } from "react";
 import { SearchTextInput } from "@/components/common/contols/inputs";
 import { useRouter } from "@/i18n/routing";
