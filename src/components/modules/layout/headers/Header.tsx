@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
+import { Link } from "@/i18n/routing";
 import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 
