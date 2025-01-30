@@ -114,8 +114,13 @@ const ObjectSearchBar = ({ categories }: Props) => {
     }));
 
     if (!active) {
-      const { [target]: _, ...rest } = filters;
-      setFilters(rest);
+      if (target === "nearest") {
+        const { [target]: _, point, ...rest } = filters;
+        setFilters(rest);
+      } else {
+        const { [target]: _, ...rest } = filters;
+        setFilters(rest);
+      }
     }
   };
 
