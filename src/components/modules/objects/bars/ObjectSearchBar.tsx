@@ -14,6 +14,7 @@ import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
 import { Location } from "@/types/common";
 import { useTranslations } from "use-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
+import { Bounce, toast } from "react-toastify";
 
 interface Props {
   categories: AbandonedObjectCategory[];
@@ -28,7 +29,6 @@ const ObjectSearchBar = ({ categories }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [location, setLocation] = useState<Location | undefined>(undefined);
   const [activeFilters, setActiveFilters] = useState({
     top: false,
     difficulty_level: false,
@@ -83,13 +83,27 @@ const ObjectSearchBar = ({ categories }: Props) => {
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
+          const location = position.coords;
+          if (location && location.latitude && location.longitude)
+            setFilters({
+              ...filters,
+              point: `${location.latitude},${location.longitude}`,
+              nearest: "true",
+            });
         },
         (err) => {
           console.log(err);
+          toast.error("Failed to obtain coordinates ❌", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
         },
       );
     }
@@ -113,15 +127,6 @@ const ObjectSearchBar = ({ categories }: Props) => {
       [target]: true,
     }));
   };
-
-  useEffect(() => {
-    if (location && location.latitude && location.longitude)
-      setFilters({
-        ...filters,
-        point: `${location.latitude},${location.longitude}`,
-        nearest: "true",
-      });
-  }, [location]);
 
   return (
     <>
