@@ -119,7 +119,7 @@ const ObjectSearchBar = ({ categories }: Props) => {
       setFilters({
         ...filters,
         point: `${location.latitude},${location.longitude}`,
-        nearest: true,
+        nearest: "true",
       });
   }, [location]);
 
