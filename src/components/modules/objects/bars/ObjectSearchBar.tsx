@@ -115,7 +115,12 @@ const ObjectSearchBar = ({ categories }: Props) => {
   };
 
   useEffect(() => {
-    if (location) console.log("LOCATION:", location);
+    if (location && location.latitude && location.longitude)
+      setFilters({
+        ...filters,
+        point: `${location.latitude},${location.longitude}`,
+        nearest: true,
+      });
   }, [location]);
 
   return (
