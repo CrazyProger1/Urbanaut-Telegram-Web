@@ -103,10 +103,6 @@ const ObjectSearchBar = ({ categories }: Props) => {
       const { [target]: _, ...rest } = filters;
       setFilters(rest);
     }
-
-    useEffect(() => {
-      if (location) console.log("LOCATION:", location);
-    }, [location]);
   };
 
   const handleHold = (target: string) => {
@@ -117,6 +113,10 @@ const ObjectSearchBar = ({ categories }: Props) => {
       [target]: true,
     }));
   };
+
+  useEffect(() => {
+    if (location) console.log("LOCATION:", location);
+  }, [location]);
 
   return (
     <>

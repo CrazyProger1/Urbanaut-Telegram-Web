@@ -31,7 +31,7 @@ export const useBackButton = (path?: string) => {
     return () => {
       backButton.hide();
     };
-  }, [pathname, router]);
+  }, [pathname, router, path]);
 };
 
 export const useInitData = () => {
