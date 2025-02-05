@@ -1,0 +1,34 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+  workflow_dispatch:
+
+jobs:
+
+  frontend:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Change Directory
+        run: cd /home/urbanaut/frontend
+
+      - name: Update Code
+        run: git pull origin master
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Restart PM2
+        run: sudo /usr/local/bin/pm2 restart frontend
