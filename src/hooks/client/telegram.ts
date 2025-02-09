@@ -9,7 +9,7 @@ export const useTelegramMiniApp = () => {
     try {
       init();
     } catch (exc) {
-      console.error(exc);
+      console.warn(exc);
     }
   }, []);
 };
@@ -35,8 +35,13 @@ export const useBackButton = (path?: string) => {
 };
 
 export const useInitData = () => {
-  const params = useLaunchParams();
-  const initDataRaw = params.initDataRaw;
-  const initData = params.initData;
-  return { initData: initData, initDataRaw: initDataRaw };
+  try {
+    const params = useLaunchParams();
+    const initDataRaw = params.initDataRaw;
+    const initData = params.initData;
+    console.log("INITDATA:", initDataRaw);
+    return { initData: initData, initDataRaw: initDataRaw };
+  } catch (exc) {
+    return { initData: null, initDataRaw: null };
+  }
 };

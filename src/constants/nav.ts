@@ -8,6 +8,7 @@ export const LINKS = {
   blog: "/blog",
   settings: "/settings",
   leaderboard: "/leaderboard",
+  auth: "/auth",
 };
 export const FOOTER_PAGES = [
   LINKS.blog,

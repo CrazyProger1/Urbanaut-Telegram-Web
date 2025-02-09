@@ -52,7 +52,7 @@ export const getObjects = async (
       headers: {
         "Content-Type": "application/json",
         "Accept-Language": locale,
-        Authorization: encodedInitData,
+        Authorization: `tma ${encodedInitData}`,
       },
     });
 

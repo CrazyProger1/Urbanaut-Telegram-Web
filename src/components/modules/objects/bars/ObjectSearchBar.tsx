@@ -11,7 +11,6 @@ import {
 } from "@/components/modules/objects/modals";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/constants/levels";
-import { Location } from "@/types/common";
 import { useTranslations } from "use-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { Bounce, toast } from "react-toastify";
