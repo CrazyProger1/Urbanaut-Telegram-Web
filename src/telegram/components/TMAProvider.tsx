@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useTMASafe } from "@/hooks/client/telegram";
 import dynamic from "next/dynamic";
 
 interface Props {
