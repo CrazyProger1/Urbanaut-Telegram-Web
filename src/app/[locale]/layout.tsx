@@ -6,9 +6,9 @@ import { Locale, routing } from "@/i18n/routing";
 import React from "react";
 import {
   ModalProvider,
-  TMAProvider,
   ToastProvider,
 } from "@/components/common/wrappers/providers";
+import { TMAProvider } from "@/telegram/components";
 import {
   IgnorePagesWrapper,
   SwipeNavigationWrapper,

@@ -5,10 +5,9 @@ import {
   AboutSection,
   GallerySection,
   HeadSection,
-  ConcludeSection,
 } from "@/components/modules/object/sections";
-import { BackButtonWrapper } from "@/components/common/wrappers";
 import { LINKS } from "@/constants/nav";
+import { BackButtonWrapper } from "@/telegram/components";
 
 type Props = {
   params: Promise<{ id: number }>;

@@ -1,17 +1,15 @@
-"use client";
-
 import { Link } from "@/i18n/routing";
 import { STUBS } from "@/constants/media";
 import { LINKS } from "@/constants/nav";
 
 import { SettingsButton } from "@/components/common/contols/buttons";
 import { Suspense } from "react";
-import { useAccountStore } from "@/stores";
 import clsx from "clsx";
 import { Rank } from "@/types/common";
+import { getInitDataCookie } from "@/telegram/utils/server";
 
-const Header = () => {
-  const { initData } = useAccountStore();
+const Header = async () => {
+  const { initData } = await getInitDataCookie();
   const rank: Rank = "LEGEND" as Rank;
   const imageClassName = clsx(
     "size-16 rounded-2xl",

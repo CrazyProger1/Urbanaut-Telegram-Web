@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
 import { STUBS } from "@/constants/media";
-import { useAccountStore } from "@/stores";
+import { getInitDataCookie } from "@/telegram/utils/server";
 
-const AvatarSection = () => {
-  const { initData } = useAccountStore();
+const AvatarSection = async () => {
+  const { initData } = await getInitDataCookie();
   return (
     <div className="flex flex-col items-center w-full">
       <img
@@ -15,7 +13,7 @@ const AvatarSection = () => {
       />
       <div className="mt-4" />
       <div className="font-primary font-bold text-text text-xl text-center">
-        @username
+        @{initData?.user?.username || "username"}
       </div>
     </div>
   );

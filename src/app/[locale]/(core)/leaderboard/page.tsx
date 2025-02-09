@@ -3,7 +3,7 @@ import {
   SearchSection,
   TableSection,
 } from "@/components/modules/leaderboard/sections";
-import { BackButtonWrapper } from "@/components/common/wrappers";
+import { BackButtonWrapper } from "@/telegram/components";
 
 const LeaderboardPage = () => {
   return (

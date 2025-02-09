@@ -4,9 +4,9 @@ import {
 } from "@/components/modules/objects/sections";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { getObjects } from "@/services/objects";
-import { cookies } from "next/headers";
 import { AbandonedObjectCategory } from "@/types/categories";
 import { getCategories } from "@/services/categories";
+import { getInitDataCookie } from "@/telegram/utils/server";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,14 +17,12 @@ const ObjectsPage = async ({ params, searchParams }: Props) => {
   let objects: AbandonedObject[] = [];
   let categories: AbandonedObjectCategory[] = [];
 
-  const cookieStore = await cookies();
-  const initDataRaw = cookieStore.get("initDataRaw");
+  const { initDataRaw } = await getInitDataCookie();
 
   try {
     if (initDataRaw) {
-      console.log(`Raw init data:`, initDataRaw);
       const objectsResponse = await getObjects(
-        initDataRaw.value,
+        initDataRaw,
         await searchParams,
         (await params).locale,
       );

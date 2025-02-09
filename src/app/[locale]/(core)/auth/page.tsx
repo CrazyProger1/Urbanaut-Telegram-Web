@@ -6,43 +6,33 @@ import { parseInitData } from "@telegram-apps/sdk";
 import { z } from "zod";
 import { useRouter } from "@/i18n/routing";
 import { LINKS } from "@/constants/nav";
+import { getInitDataCookie, setInitDataCookie } from "@/telegram/utils/client";
 
 const inputSchema = z.string().min(1, "Init data cannot be empty");
 
 const Page = () => {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const { setInitData } = useAccountStore();
   const router = useRouter();
 
   useEffect(() => {
-    const getCookie = (name: string) => {
-      const match = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith(`${name}=`));
-      return match ? decodeURIComponent(match.split("=")[1]) : null;
-    };
-
-    const initDataRaw = getCookie("initDataRaw");
-
+    const { initDataRaw } = getInitDataCookie();
     if (initDataRaw) {
       try {
         const parsedData = parseInitData(initDataRaw);
-        setInitData(parsedData);
+        document.cookie = `initData=${JSON.stringify(parsedData)}; path=/; max-age=3600`;
         router.push(LINKS.objects);
       } catch {
         setError("Invalid init data in cookies.");
       }
     }
-  }, [setInitData, router]);
+  }, [router]);
 
   const handleSubmit = () => {
     try {
       inputSchema.parse(value);
       const parsedData = parseInitData(value);
-
-      document.cookie = `initDataRaw=${value}; path=/; max-age=3600`;
-      setInitData(parsedData);
+      setInitDataCookie(parsedData, value);
 
       setError(null);
       router.push(LINKS.objects);

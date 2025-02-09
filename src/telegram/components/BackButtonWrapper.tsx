@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useBackButton } from "@/hooks/client/telegram";
+import { useBackButtonSafe } from "@/telegram/hooks/client";
 
 interface Props {
   path?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const BackButtonWrapper = ({ path, children }: Props) => {
-  useBackButton(path);
+  useBackButtonSafe(path);
   return <>{children}</>;
 };
 

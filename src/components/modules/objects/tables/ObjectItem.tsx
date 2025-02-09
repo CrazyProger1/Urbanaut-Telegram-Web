@@ -36,7 +36,6 @@ const ObjectItem = ({ object }: Props) => {
         className={`rounded-2xl object-cover aspect-square size-28 ${frameClass}`}
         width={300}
         height={300}
-        placeholder="blur"
       />
 
       <div className="flex flex-col ml-4 font-primary text-text">
