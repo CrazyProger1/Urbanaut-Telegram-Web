@@ -9,6 +9,7 @@ export const LINKS = {
   settings: "/settings",
   leaderboard: "/leaderboard",
   auth: "/auth",
+  notifications: "/notifications",
 };
 export const FOOTER_PAGES = [
   LINKS.blog,
@@ -37,6 +38,6 @@ export const FOOTER_LINKS = [
   },
   {
     href: LINKS.events,
-    image: ICONS.events,
+    image: ICONS.clock,
   },
 ];
