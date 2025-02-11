@@ -2,6 +2,7 @@ import { Rank } from "@/types/common";
 
 export type User = {
   id: number;
-  username: string;
+  username?: string;
   rank: Rank;
+  avatar: string;
 };

@@ -1,19 +1,22 @@
 import React from "react";
 import { STUBS } from "@/constants/media";
-import { getInitDataCookie } from "@/telegram/utils/server";
+import { User } from "@/types/users";
 
-const AvatarSection = async () => {
-  const { initData } = await getInitDataCookie();
+interface Props {
+  user: User;
+}
+
+const AvatarSection = async ({ user }: Props) => {
   return (
     <div className="flex flex-col items-center w-full">
       <img
-        src={initData?.user?.photoUrl || STUBS.user}
+        src={user.avatar || STUBS.user}
         alt=""
         className="size-52 shadow-rank-frame-legend rounded-2xl"
       />
       <div className="mt-4" />
       <div className="font-primary font-bold text-text text-xl text-center">
-        @{initData?.user?.username || "username"}
+        @{user.username || "username"}
       </div>
     </div>
   );

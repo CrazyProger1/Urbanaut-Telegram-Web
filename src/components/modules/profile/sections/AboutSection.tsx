@@ -1,5 +1,6 @@
 import React from "react";
 import { Block } from "@/components/common/blocks";
+import { User } from "@/types/users";
 
 interface RowProps {
   name: string;
@@ -12,7 +13,12 @@ const Row = ({ name, value }: RowProps) => (
     <div className="pl-1 cursor-pointer">{value}</div>
   </div>
 );
-const AboutSection = () => {
+
+interface Props {
+  user: User;
+}
+
+const AboutSection = ({ user }: Props) => {
   return (
     <div className="flex flex-col font-primary text-text">
       <Block name="Stats">

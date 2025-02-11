@@ -2,7 +2,9 @@ import { ICONS } from "@/constants/media";
 
 export const LINKS = {
   objects: "/objects",
+  object: "/objects/[id]",
   profile: "/profile",
+  user: "/profile/[id]",
   friends: "/friends",
   events: "/events",
   blog: "/blog",
