@@ -1,24 +1,25 @@
-import { API_URL } from "@/config/urls";
 import { ErrorResponse, PaginatedResponse } from "@/types/api";
 import { AbandonedObjectCategory } from "@/types/categories";
+import { axios } from "@/services/api";
+import { API_ENDPOINTS } from "@/constants/api";
 
 type CategoriesResponse =
   | PaginatedResponse<AbandonedObjectCategory>
   | ErrorResponse;
 export const getCategories = async (): Promise<CategoriesResponse> => {
-  const response = await fetch(`${API_URL}/categories/`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    next: {
-      revalidate: 120,
-    },
-  });
-  const data = await response.json();
+  const url = API_ENDPOINTS.categories;
 
-  return {
-    success: response.ok,
-    ...data,
-  };
+  try {
+    const response = await axios.get(url);
+
+    return {
+      success: response.status === 200,
+      ...response.data,
+    };
+  } catch (error) {
+    console.error("Error fetching:", error);
+    return {
+      success: false,
+    } as CategoriesResponse;
+  }
 };

@@ -5,20 +5,22 @@ import {
 } from "@/types/api";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { axios } from "@/services/api";
+import { API_ENDPOINTS } from "@/constants/api";
 
 type ObjectsResponse = PaginatedResponse<AbandonedObject> | ErrorResponse;
 type ObjectResponse = (SuccessfulResponse & AbandonedObject) | ErrorResponse;
 
 export const getObject = async (id: number): Promise<ObjectResponse> => {
   try {
-    const response = await axios.get(`objects/${id}`);
+    const url = API_ENDPOINTS.object.replace("[id]", String(id));
+    const response = await axios.get(url);
 
     return {
       success: response.status === 200,
       ...response.data,
     };
   } catch (error) {
-    console.error("Error fetching objects:", error);
+    console.error("Error fetching:", error);
     return {
       success: false,
     } as ObjectResponse;
@@ -37,8 +39,7 @@ export const getObjects = async (
       queryParams.append(key, String(value));
     }
   }
-
-  const url = `objects/?${queryParams.toString()}`;
+  const url = API_ENDPOINTS.objects + `?${queryParams.toString()}`;
 
   try {
     const response = await axios.get(url);
@@ -48,7 +49,7 @@ export const getObjects = async (
       ...response.data,
     };
   } catch (error) {
-    console.error("Error fetching objects:", error);
+    console.error("Error fetching:", error);
     return {
       success: false,
     } as ObjectsResponse;

@@ -15,19 +15,11 @@ const ObjectsPage = async ({ searchParams }: Props) => {
   let objects: AbandonedObject[] = [];
   let categories: AbandonedObjectCategory[] = [];
 
-  try {
-    const objectsResponse = await getObjects(await searchParams);
-    if (objectsResponse.success) objects = objectsResponse.results;
-  } catch (err) {
-    console.log(err);
-  }
+  const objectsResponse = await getObjects(await searchParams);
+  if (objectsResponse.success) objects = objectsResponse.results;
 
-  try {
-    const categoriesResponse = await getCategories();
-    if (categoriesResponse.success) categories = categoriesResponse.results;
-  } catch (err) {
-    console.log(err);
-  }
+  const categoriesResponse = await getCategories();
+  if (categoriesResponse.success) categories = categoriesResponse.results;
 
   return (
     <>

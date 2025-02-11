@@ -7,12 +7,8 @@ import { getUsers } from "@/services/users";
 const LeaderboardPage = async () => {
   let users: User[] = [];
 
-  try {
-    const response = await getUsers();
-    if (response.success) users = response.results;
-  } catch (err) {
-    console.log(err);
-  }
+  const response = await getUsers();
+  if (response.success) users = response.results;
 
   return (
     <BackButtonWrapper>
