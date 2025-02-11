@@ -3,6 +3,7 @@ import {
   SuccessfulResponse,
   PaginatedResponse,
 } from "@/types/api";
+import axios from "axios";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
 import { API_URL } from "@/config/urls";
 
@@ -25,7 +26,6 @@ export const getObject = async (id: number): Promise<ObjectResponse> => {
     ...data,
   };
 };
-import axios from "axios";
 
 export const getObjects = async (
   initData: string,

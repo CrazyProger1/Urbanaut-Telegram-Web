@@ -26,6 +26,20 @@ const TableSection = () => {
       date: new Date(),
       icon: ICONS.cancel,
     },
+    {
+      id: 4,
+      title: "Ok",
+      message: "Some important ok",
+      date: new Date(),
+      icon: ICONS.checked,
+    },
+    {
+      id: 5,
+      title: "Gift",
+      message: "Some important gift",
+      date: new Date(),
+      icon: ICONS.gift,
+    },
   ];
   return (
     <>

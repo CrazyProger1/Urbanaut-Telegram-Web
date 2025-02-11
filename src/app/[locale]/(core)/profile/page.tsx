@@ -13,7 +13,7 @@ const Profile = () => {
       <AvatarSection />
       <div className="mt-4" />
       <AboutSection />
-      <div className="mt-4" />
+      {/*<div className="mt-4" />*/}
     </>
   );
 };
