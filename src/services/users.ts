@@ -1,27 +1,16 @@
 import { API_URL } from "@/config/urls";
-import axios from "axios";
+
 import { ErrorResponse, PaginatedResponse } from "@/types/api";
 import { User } from "@/types/users";
+import axios from "axios";
 
 type UsersResponse = PaginatedResponse<User> | ErrorResponse;
 
-export const getUsers = async (
-  initData: string,
-  locale: string,
-): Promise<UsersResponse> => {
+export const getUsers = async (): Promise<UsersResponse> => {
   const url = `${API_URL}/users/`;
 
-  const encodedInitData = encodeURIComponent(initData);
-
   try {
-    // noinspection JSAnnotator
-    const response = await axios.get(url, {
-      headers: {
-        "Content-Type": "application/json",
-        "Accept-Language": locale,
-        Authorization: `tma ${encodedInitData}`,
-      },
-    });
+    const response = await axios.get(url);
 
     return {
       success: response.status === 200,

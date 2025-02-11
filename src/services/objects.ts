@@ -3,34 +3,30 @@ import {
   SuccessfulResponse,
   PaginatedResponse,
 } from "@/types/api";
-import axios from "axios";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/objects";
-import { API_URL } from "@/config/urls";
+import { axios } from "@/services/api";
 
 type ObjectsResponse = PaginatedResponse<AbandonedObject> | ErrorResponse;
 type ObjectResponse = (SuccessfulResponse & AbandonedObject) | ErrorResponse;
-export const getObject = async (id: number): Promise<ObjectResponse> => {
-  const response = await fetch(`${API_URL}/objects/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    next: {
-      revalidate: 120,
-    },
-  });
-  const data = await response.json();
 
-  return {
-    success: response.ok,
-    ...data,
-  };
+export const getObject = async (id: number): Promise<ObjectResponse> => {
+  try {
+    const response = await axios.get(`objects/${id}`);
+
+    return {
+      success: response.status === 200,
+      ...response.data,
+    };
+  } catch (error) {
+    console.error("Error fetching objects:", error);
+    return {
+      success: false,
+    } as ObjectResponse;
+  }
 };
 
 export const getObjects = async (
-  initData: string,
   filters: AbandonedObjectFilters,
-  locale: string,
 ): Promise<ObjectsResponse> => {
   const queryParams = new URLSearchParams();
 
@@ -42,19 +38,10 @@ export const getObjects = async (
     }
   }
 
-  const url = `${API_URL}/objects/?${queryParams.toString()}`;
-
-  const encodedInitData = encodeURIComponent(initData);
+  const url = `objects/?${queryParams.toString()}`;
 
   try {
-    // noinspection JSAnnotator
-    const response = await axios.get(url, {
-      headers: {
-        "Content-Type": "application/json",
-        "Accept-Language": locale,
-        Authorization: `tma ${encodedInitData}`,
-      },
-    });
+    const response = await axios.get(url);
 
     return {
       success: response.status === 200,
