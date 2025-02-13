@@ -24,7 +24,7 @@ const SettingsButton = () => {
     <>
       <motion.img
         className="size-12 ml-auto cursor-pointer"
-        src={ICONS.settings}
+        src={ICONS.SETTINGS}
         alt="settings-icon"
         animate={{ rotate: isOpened ? 360 : 0 }}
         transition={{ duration: 0.5 }}

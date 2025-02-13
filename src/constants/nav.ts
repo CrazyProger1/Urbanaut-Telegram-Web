@@ -24,22 +24,22 @@ export const FOOTER_PAGES = [
 export const FOOTER_LINKS = [
   {
     href: LINKS.blog,
-    image: ICONS.leaders,
+    image: ICONS.STAR,
   },
   {
     href: LINKS.profile,
-    image: ICONS.profile,
+    image: ICONS.PROFILE,
   },
   {
     href: LINKS.objects,
-    image: ICONS.objects,
+    image: ICONS.SEARCH,
   },
   {
     href: LINKS.friends,
-    image: ICONS.friends,
+    image: ICONS.FRIENDS,
   },
   {
     href: LINKS.events,
-    image: ICONS.clock,
+    image: ICONS.CLOCK,
   },
 ];

@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { InitData } from "@telegram-apps/types";
+import { AxiosRequestConfig } from "axios";
 
 interface InitDataSet {
   initData?: InitData;
@@ -18,4 +19,14 @@ export const getInitDataCookie = async (): Promise<InitDataSet> => {
     };
   }
   return { initData: undefined, initDataRaw: undefined };
+};
+
+export const getAuthConfig = async (): Promise<AxiosRequestConfig> => {
+  const { initDataRaw } = await getInitDataCookie();
+  const headers = {
+    Authorization: initDataRaw
+      ? `tma ${encodeURIComponent(initDataRaw)}`
+      : null,
+  };
+  return { headers: headers };
 };

@@ -4,4 +4,6 @@ export const API_ENDPOINTS = {
   users: "/users/",
   user: "/users/[id]/",
   categories: "/categories/",
+  notifications: "/notifications/",
+  notification: "/notifications/[id]/",
 };

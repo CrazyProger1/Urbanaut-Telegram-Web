@@ -8,18 +8,28 @@ export const STUBS = {
 };
 
 export const ICONS = {
-  settings: `${ICONS_DIR}/settings.png`,
-  leaders: `${ICONS_DIR}/star.png`,
-  profile: `${ICONS_DIR}/profile.png`,
-  objects: `${ICONS_DIR}/objects.png`,
-  friends: `${ICONS_DIR}/friends.png`,
-  clock: `${ICONS_DIR}/events.png`,
-  notfound: `${ICONS_DIR}/404.png`,
-  lock: `${ICONS_DIR}/padlock.png`,
-  bell: `${ICONS_DIR}/bell.png`,
-  info: `${ICONS_DIR}/information.png`,
-  cancel: `${ICONS_DIR}/cancel.png`,
-  checked: `${ICONS_DIR}/checked.png`,
-  gift: `${ICONS_DIR}/gift.png`,
-  warning: `${ICONS_DIR}/warning.png`,
+  SETTINGS: `${ICONS_DIR}/settings.png`,
+  STAR: `${ICONS_DIR}/star.png`,
+  PROFILE: `${ICONS_DIR}/profile.png`,
+  SEARCH: `${ICONS_DIR}/search.png`,
+  FRIENDS: `${ICONS_DIR}/friends.png`,
+  CLOCK: `${ICONS_DIR}/clock.png`,
+  NOTFOUND: `${ICONS_DIR}/404.png`,
+  LOCK: `${ICONS_DIR}/padlock.png`,
+  BELL: `${ICONS_DIR}/bell.png`,
+  INFO: `${ICONS_DIR}/information.png`,
+  CANCEL: `${ICONS_DIR}/cancel.png`,
+  CHECKED: `${ICONS_DIR}/checked.png`,
+  GIFT: `${ICONS_DIR}/gift.png`,
+  WARNING: `${ICONS_DIR}/warning.png`,
+};
+
+export const NOTIFICATION_ICONS = {
+  NOTIFICATION: ICONS.INFO,
+  GIFT: ICONS.GIFT,
+  WARNING: ICONS.WARNING,
+  CANCEL: ICONS.CANCEL,
+  CLOCK: ICONS.CLOCK,
+  SETTINGS: ICONS.SETTINGS,
+  CHECKED: ICONS.CHECKED,
 };

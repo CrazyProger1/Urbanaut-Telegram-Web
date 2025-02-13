@@ -10,7 +10,7 @@ const HeadSection = () => {
       <div className="flex-1" />
       <Link href={LINKS.notifications}>
         <Image
-          src={ICONS.bell}
+          src={ICONS.BELL}
           alt=""
           className="size-8"
           width={32}

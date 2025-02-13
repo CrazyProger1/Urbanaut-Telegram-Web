@@ -11,7 +11,8 @@ type UsersResponse = PaginatedResponse<User> | ErrorResponse;
 type UserResponse = SuccessfulResponse & User;
 export const getUsers = async (): Promise<UsersResponse> => {
   try {
-    const response = await axios.get(API_ENDPOINTS.users);
+    const url = API_ENDPOINTS.users;
+    const response = await axios.get(url);
 
     return {
       success: response.status === 200,

@@ -5,7 +5,7 @@ import { BackButtonWrapper } from "@/telegram/components";
 
 const SettingsPage = () => (
   <BackButtonWrapper>
-    <UnavailablePage icon={ICONS.lock} />
+    <UnavailablePage icon={ICONS.LOCK} />
   </BackButtonWrapper>
 );
 
