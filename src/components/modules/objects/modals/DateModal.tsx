@@ -1,6 +1,6 @@
-import React from "react";
 import { ModalPortal } from "@/components/common/modals";
 import { ModalTitle } from "@/components/common/typography/titles";
+import { Dropdown, DropdownItem } from "@/components/common/contols/dropdowns";
 
 interface Props {
   show: boolean;
@@ -17,9 +17,13 @@ const DateModal = ({ show, onClose }: Props) => {
         <ModalTitle>Date</ModalTitle>
 
         <div className="text-text text-center">
-          <p className="font-medium font-primary">
-            Sorting by abandoned time and creation time
-          </p>
+          <div className="text-text text-center">
+            <Dropdown>
+              <DropdownItem>Creation date</DropdownItem>
+              <DropdownItem>Built date</DropdownItem>
+              <DropdownItem>Abandoned date</DropdownItem>
+            </Dropdown>
+          </div>
         </div>
       </div>
     </ModalPortal>

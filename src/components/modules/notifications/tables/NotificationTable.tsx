@@ -8,12 +8,10 @@ interface Props {
 
 const NotificationTable = ({ notifications }: Props) => {
   return (
-    <div>
-      <div className="gap-4 flex flex-col">
-        {notifications.map((obj) => (
-          <NotificationItem key={obj.id} notification={obj} />
-        ))}
-      </div>
+    <div className="gap-4 flex flex-col">
+      {notifications.map((obj) => (
+        <NotificationItem key={obj.id} notification={obj} />
+      ))}
     </div>
   );
 };
