@@ -6,24 +6,24 @@ import { LINKS } from "@/constants/nav";
 const AboutSection = () => {
   return (
     <Block name="About">
-      <div className="flex flex-col bg-[#2B241D] rounded-2xl shadow-volume-frame text-text">
+      <div className="flex flex-col  rounded-2xl text-text font-primary">
         <Link
           href={LINKS.about}
-          className="p-4 text-center border-selection rounded-t-2xl hover:bg-selection"
+          className="p-4 bg-[#2B241D] text-lg text-center shadow-volume-frame border border-selection rounded-2xl hover:bg-selection"
         >
-          About Us
+          About Us 🔎
         </Link>
         <Link
           href={LINKS.support}
-          className="p-4 text-center border-t  border-selection hover:bg-selection"
+          className="p-4 mt-4 bg-[#2B241D] text-lg shadow-volume-frame text-center border border-selection rounded-2xl hover:bg-selection"
         >
-          Support
+          Support 🆘
         </Link>
         <Link
           href={LINKS.donate}
-          className="p-4 text-center border-t  border-selection rounded-b-2xl hover:bg-selection"
+          className="p-4 mt-4 bg-[#2B241D] text-lg shadow-volume-frame text-center border border-selection rounded-2xl hover:bg-selection"
         >
-          Donate
+          Donate ❤️
         </Link>
       </div>
     </Block>
