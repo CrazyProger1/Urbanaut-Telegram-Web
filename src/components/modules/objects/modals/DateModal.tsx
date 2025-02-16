@@ -1,6 +1,5 @@
 import { ModalPortal } from "@/components/common/modals";
 import { ModalTitle } from "@/components/common/typography/titles";
-import { Dropdown, DropdownItem } from "@/components/common/contols/dropdowns";
 
 interface Props {
   show: boolean;

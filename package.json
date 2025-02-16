@@ -13,6 +13,7 @@
     "@nextui-org/modal": "^2.2.5",
     "@nextui-org/react": "^2.6.8",
     "@telegram-apps/sdk-react": "^2.0.25",
+    "@tonconnect/ui-react": "^2.0.11",
     "@vkruglikov/react-telegram-web-app": "^2.1.9",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",

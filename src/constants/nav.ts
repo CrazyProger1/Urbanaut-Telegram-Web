@@ -12,6 +12,9 @@ export const LINKS = {
   leaderboard: "/leaderboard",
   auth: "/auth",
   notifications: "/notifications",
+  about: "/about",
+  donate: "/donate",
+  support: "/support",
 };
 export const FOOTER_PAGES = [
   LINKS.blog,
