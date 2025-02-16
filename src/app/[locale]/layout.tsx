@@ -19,6 +19,7 @@ import { Header } from "@/components/modules/layout/headers";
 import { Footer } from "@/components/modules/layout/footers";
 import type { Metadata } from "next";
 import { APP, DESCRIPTION } from "@/constants/app";
+import { TonConnectUIProvider } from "@/telegram/ui-react";
 
 export const metadata: Metadata = {
   title: APP,

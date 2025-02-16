@@ -1,6 +1,7 @@
 "use client";
 
-import { SendTransactionRequest, useTonConnectUI } from "@tonconnect/ui-react";
+import { SendTransactionRequest } from "@tonconnect/ui";
+import { TonConnectButton, useTonConnectUI } from "@/telegram/ui-react";
 
 const transaction: SendTransactionRequest = {
   validUntil: Date.now() + 5 * 60 * 1000,
@@ -16,6 +17,7 @@ const Donate = () => {
   const [tonConnectUI, setOptions] = useTonConnectUI();
   return (
     <div>
+      <TonConnectButton />
       <button onClick={() => tonConnectUI.sendTransaction(transaction)}>
         Send transaction
       </button>

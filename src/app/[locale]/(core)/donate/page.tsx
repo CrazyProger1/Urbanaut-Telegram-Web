@@ -1,7 +1,6 @@
 "use client";
-import dynamic from "next/dynamic";
 
-const Donate = dynamic(() => import("./test"), { ssr: false });
+import Donate from "./test";
 
 const Page = () => {
   return <Donate />;
