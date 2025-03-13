@@ -7,7 +7,8 @@ export const LINKS = {
   user: "/profile/[id]",
   friends: "/friends",
   events: "/events",
-  blog: "/blog",
+  posts: "/posts",
+  post: "/post/[id]",
   settings: "/settings",
   leaderboard: "/leaderboard",
   auth: "/auth",
@@ -17,7 +18,7 @@ export const LINKS = {
   support: "/support",
 };
 export const FOOTER_PAGES = [
-  LINKS.blog,
+  LINKS.posts,
   LINKS.profile,
   LINKS.objects,
   LINKS.friends,
@@ -26,7 +27,7 @@ export const FOOTER_PAGES = [
 
 export const FOOTER_LINKS = [
   {
-    href: LINKS.blog,
+    href: LINKS.posts,
     image: ICONS.STAR,
   },
   {
