@@ -1,5 +1,11 @@
 # Urbanaut-Frontend-Telegram
 
+<p align="center">
+  <img src="public/images/stubs/user.png" alt="User Icon" width="500" height="500" style="border-radius: 10%;">
+</p>
+
+---
+
 Social network for urban explorers - stalkers, diggers and so on.
 
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CrazyProger1/Urbanaut-Telegram-Web)
@@ -7,9 +13,9 @@ Social network for urban explorers - stalkers, diggers and so on.
 
 ## Stack
 
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Zustand](https://img.shields.io/badge/Zustand-E25B33?style=for-the-badge&logo=zustand&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0081F8?style=for-the-badge&logo=framer-motion&logoColor=white)
