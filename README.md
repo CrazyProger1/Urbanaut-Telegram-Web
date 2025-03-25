@@ -1,8 +1,8 @@
 # Urbanaut-Frontend-Telegram
 
-<p align="center">
-  <img src="public/images/stubs/user.png" alt="User Icon" width="500" height="500" style="border-radius: 10%;">
-</p>
+<div align="center">
+  <img src="public/images/stubs/user.png" alt="User Icon" width="200" height="200" style="border-radius: 10%;">
+</div>
 
 ---
 
