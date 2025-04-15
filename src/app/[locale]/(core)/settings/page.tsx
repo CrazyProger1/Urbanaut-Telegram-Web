@@ -1,8 +1,8 @@
-import { useLaunchParams } from "@telegram-apps/sdk-react";
+"use client";
+import { useInitDataSafe } from "@/telegram/hooks/client";
 
 const SettingsPage = () => {
-  const params = useLaunchParams();
-  const initDataRaw = params.initDataRaw;
+  const { initDataRaw } = useInitDataSafe();
 
   return (
     <div className="cursor-copy text-text font-primary">{initDataRaw}</div>
