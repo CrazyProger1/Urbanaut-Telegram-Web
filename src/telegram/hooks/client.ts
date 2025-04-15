@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { backButton, init, useLaunchParams } from "@telegram-apps/sdk-react";
 import { usePathname, useRouter } from "@/i18n/routing";
-import { LINKS } from "@/constants/nav";
 import { setInitDataCookie } from "@/telegram/utils/client";
 
 export const useTMASafe = () => {
@@ -51,17 +50,15 @@ export const useInitDataSafe = () => {
   }
 };
 
-export const useTMAAuthSafe = () => {
+export const useTMAAuthSafe = (onAuthFailed: () => void) => {
   useTMASafe();
-  const router = useRouter();
-  const pathname = usePathname();
   const initDataSet = useInitDataSafe();
 
   useEffect(() => {
     if (initDataSet.initData && initDataSet.initDataRaw) {
       setInitDataCookie(initDataSet.initData, initDataSet.initDataRaw);
     } else {
-      if (pathname != LINKS.auth) router.push(LINKS.auth);
+      onAuthFailed();
     }
-  }, []);
+  }, [initDataSet.initData, initDataSet.initDataRaw, onAuthFailed]);
 };

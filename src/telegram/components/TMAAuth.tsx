@@ -1,9 +1,9 @@
 "use client";
 
-import { useTMAAuthSafe } from "@/telegram/hooks/client";
+// import { useTMAAuthSafe } from "@/telegram/hooks/client";
 
 const TMAAuth = () => {
-  useTMAAuthSafe();
+  // useTMAAuthSafe();
 
   return <></>;
 };

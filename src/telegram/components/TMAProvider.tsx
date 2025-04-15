@@ -6,15 +6,16 @@ import { TonConnectUIProvider } from "@/telegram/ui-react";
 
 interface Props {
   children: React.ReactNode;
+  manifest_url: string;
 }
 
 const TMAAuth = dynamic(() => import("./TMAAuth"), {
   ssr: false,
 });
-const TMAProvider = ({ children }: Props) => {
+const TMAProvider = ({ children, manifest_url }: Props) => {
   return (
     <>
-      <TonConnectUIProvider manifestUrl="https://urbanaut.club/manifests/tonconnect-manifest.json">
+      <TonConnectUIProvider manifestUrl={manifest_url}>
         <TMAAuth />
         {children}
       </TonConnectUIProvider>
