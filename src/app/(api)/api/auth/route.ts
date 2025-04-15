@@ -30,6 +30,16 @@ export async function POST(request: NextRequest) {
       maxAge: 3600,
     });
 
+    // TODO: get user data from API server
+    // TODO: store user data from API in cookies
+    // TODO: return user data from API from this function and store on client side
+    response.cookies.set("userData", userRaw, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 3600,
+    });
+
     return response;
   } catch (error) {
     console.error("Validation error:", error);
