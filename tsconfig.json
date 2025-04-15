@@ -24,6 +24,12 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@common/*": [
+        "components/common/*"
+      ],
+      "@modules/*": [
+        "components/modules/*"
       ]
     },
     "target": "ES2017"
@@ -33,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "node_modules/swapper/build/swapper.d.ts",
+    "node_modules/swapper/build/swapper.d.ts"
   ],
   "exclude": [
     "node_modules"

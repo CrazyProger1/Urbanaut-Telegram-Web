@@ -1,10 +1,11 @@
 import React from "react";
-import { LINKS } from "@/constants/nav";
+
 import { redirect } from "@/i18n/routing";
+import { PAGES } from "@/config/pages";
 
 const Page = () => {
   redirect({
-    href: LINKS.objects,
+    href: PAGES.SETTINGS,
     locale: "uk",
   });
   return <div />;

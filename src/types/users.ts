@@ -1,4 +1,4 @@
-import { Rank } from "@/types/common";
+export type Rank = "NEWBIE" | "PROFESSIONAL" | "STALKER";
 
 export type User = {
   id: number;

@@ -1,8 +1,5 @@
-import { ICONS } from "@/constants/media";
-import { UnavailablePage } from "@/components/common/pages";
-
 const NotFound = () => {
-  return <UnavailablePage icon={ICONS.NOTFOUND} />;
+  return <div>NOT FOUND</div>;
 };
 
 export default NotFound;

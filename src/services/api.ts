@@ -1,7 +1,8 @@
 import ax from "axios";
-import { API_URL } from "@/config/urls";
+
 import { getLocale } from "next-intl/server";
 import { getInitDataCookie } from "@/telegram/utils/server";
+import { API_URL } from "@/config/api";
 
 export const axios = ax.create({
   baseURL: API_URL,

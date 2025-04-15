@@ -11,127 +11,149 @@
         src: url(/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
     }
     @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(/fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
+    }
+    @font-face {
         font-family: 'GigaSans';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
         src: url(/fonts/GigaSans/GigaSans-Medium.ttf) format('truetype');
     }
-}
 
-.dark {
-    --color-mdx-heading-1: 204, 36, 29;
-    --color-mdx-heading-2: 215, 153, 33;
-    --color-mdx-heading-3: 104, 157, 85;
-    --color-mdx-heading-4: 69, 133, 136;
-    --color-mdx-heading-5: 177, 98, 110;
-    --color-mdx-heading-6: 177, 98, 110;
-    --color-mdx-marker: 206, 129, 77;
-    --color-mdx-a: 36, 156, 216;
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-    --color-background-default: 48, 23, 80;
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family: theme('fontFamily.primary'), sans-serif;
+        background-color: rgb(var(--color-background-default));
+        color: rgb(var(--color-text-default));
+    }
 
-    --color-foreground-default: 67, 58, 119;
+    ::selection {
+        background-color: rgba(var(--color-selection-default), 0.3);
+        border: 1px solid rgba(var(--color-selection-border), 0.35);
+    }
+    :root {
+        --color-mdx-heading-1: 204, 36, 29;
+        --color-mdx-heading-2: 215, 153, 33;
+        --color-mdx-heading-3: 104, 157, 85;
+        --color-mdx-heading-4: 69, 133, 136;
+        --color-mdx-heading-5: 177, 98, 110;
+        --color-mdx-heading-6: 177, 98, 110;
+        --color-mdx-a: 36, 156, 216;
+        --color-mdx-ul: 100, 116, 139;
+        --color-mdx-ol: 100, 116, 139;
+        --color-mdx-marker: 206, 129, 77;
+    }
 
-    --color-text-default: 255, 255, 255;
+    .light {
+        --color-background-default: 36, 29, 21;
+        --color-foreground-default: 44, 36, 27;
+        --color-text-default: 209, 166, 107;
+        --color-selection-border: 209, 166, 107;
+        --color-selection-default: 209, 166, 107;
+    }
 
-    --color-selection-border: 255, 255, 255;
-    --color-selection-default: 255, 255, 255;
-
-    --color-state-success-darkest: #19372B;
-    --color-state-success-dark: #345C2C;
-    --color-state-success-default: #457A3B;
-    --color-state-success-light: #66AF59;
-    --color-state-success-lightest: #92CEB8;
-
-    --color-state-warning-dark: #BC7916;
-    --color-state-warning-default: #FAA21E;
-    --color-state-warning-light: #FBB956;
-
-    --color-state-error-darkest: #6C140E;
-    --color-state-error-dark: #A71C0F;
-    --color-state-error-default: #DA291C;
-    --color-state-error-light: #EA665D;
-    --color-state-error-lightest: #EA665D;
-}
-
-.light {
-    --color-mdx-heading-1: 204, 36, 29;
-    --color-mdx-heading-2: 215, 153, 33;
-    --color-mdx-heading-3: 104, 157, 85;
-    --color-mdx-heading-4: 69, 133, 136;
-    --color-mdx-heading-5: 177, 98, 110;
-    --color-mdx-heading-6: 177, 98, 110;
-    --color-mdx-marker: 206, 129, 77;
-    --color-mdx-a: 36, 156, 216;
-
-    --color-background-default: 36, 29, 21;
-
-    --color-foreground-default: 44, 36, 27;
-
-    --color-text-default: 209, 166, 107;
-
-    --color-selection-border: 209, 166, 107;
-    --color-selection-default: 209, 166, 107;
-
-    --color-state-success-darkest: #19372B;
-    --color-state-success-dark: #345C2C;
-    --color-state-success-default: #457A3B;
-    --color-state-success-light: #66AF59;
-    --color-state-success-lightest: #92CEB8;
-
-    --color-state-warning-dark: #BC7916;
-    --color-state-warning-default: #FAA21E;
-    --color-state-warning-light: #FBB956;
-
-    --color-state-error-darkest: #6C140E;
-    --color-state-error-dark: #A71C0F;
-    --color-state-error-default: #DA291C;
-    --color-state-error-light: #EA665D;
-    --color-state-error-lightest: #EA665D;
+    .dark {
+        --color-background-default: 48, 23, 80;
+        --color-foreground-default: 67, 58, 119;
+        --color-text-default: 255, 255, 255;
+        --color-selection-border: 255, 255, 255;
+        --color-selection-default: 255, 255, 255;
+    }
 }
 
 
-body {
-    overflow-x: hidden;
+
+@layer components {
+    .prose {
+        color: rgb(var(--color-text-default));
+    }
+    .prose h1 {
+        color: rgb(var(--color-mdx-heading-1));
+    }
+    .prose h2 {
+        color: rgb(var(--color-mdx-heading-2));
+    }
+    .prose h3 {
+        color: rgb(var(--color-mdx-heading-3));
+    }
+    .prose h4 {
+        color: rgb(var(--color-mdx-heading-4));
+    }
+    .prose h5 {
+        color: rgb(var(--color-mdx-heading-5));
+    }
+    .prose h6 {
+        color: rgb(var(--color-mdx-heading-6));
+    }
+    .prose a {
+        color: rgb(var(--color-mdx-a));
+        text-decoration: underline;
+        transition: opacity 0.2s ease;
+    }
+    .prose a:hover {
+        opacity: 0.8;
+    }
+    .prose ul {
+        color: rgb(var(--color-mdx-ul));
+    }
+    .prose ol {
+        color: rgb(var(--color-mdx-ol));
+    }
+    .prose li::marker {
+        color: rgb(var(--color-mdx-marker));
+    }
 }
 
+@layer utilities {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgb(var(--color-foreground-default));
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(var(--color-text-default), 0.25);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(var(--color-text-default), 0.4);
+    }
 
-::-webkit-scrollbar {
-    width: 8px;
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        background: rgb(var(--color-foreground-default));
+        border-radius: 4px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        background: rgb(var(--color-text-default));
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        background: rgb(var(--color-text-default));
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+    }
 }
-
-::-webkit-scrollbar-track {
-    background: #221F1F;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(136, 136, 136, 0.25);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(85, 85, 85, 0.14);
-}
-
-input[type="range"] {
-    -webkit-appearance: none;
-}
-
-.prose li::marker {
-    color: rgb(var(--color-mdx-marker));
-}
-
-.prose li {
-    color: rgb(var(--color-text-default))
-}
-
-
-.prose a {
-    color: rgb(var(--color-mdx-a));
-    text-decoration: underline;
-}
-
-.prose a:hover {
-    color: rgb(var(--color-mdx-a));
-}
-
