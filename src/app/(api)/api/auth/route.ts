@@ -34,8 +34,10 @@ export async function POST(request: NextRequest) {
       );
     }
     const mergedUser = { ...user, ...apiUser };
+
     await setSession({ initData: initData, user: mergedUser });
-    return NextResponse.json({ mergedUser });
+
+    return NextResponse.json({ user: mergedUser });
   } catch (error) {
     console.error("Validation error:", error);
     return NextResponse.json(
