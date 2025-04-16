@@ -1,7 +1,6 @@
 import ax from "axios";
 
 import { getLocale } from "next-intl/server";
-import { getInitDataCookie } from "@/telegram/utils/server";
 import { API_URL } from "@/config/api";
 
 export const axios = ax.create({
@@ -10,11 +9,11 @@ export const axios = ax.create({
 
 axios.interceptors.request.use(
   async (config) => {
-    const { initDataRaw } = await getInitDataCookie();
-
-    if (initDataRaw) {
-      config.headers.Authorization = `tma ${encodeURIComponent(initDataRaw)}`;
-    }
+    // const { initDataRaw } = await getInitDataCookie();
+    //
+    // if (initDataRaw) {
+    //   config.headers.Authorization = `tma ${encodeURIComponent(initDataRaw)}`;
+    // }
 
     return config;
   },

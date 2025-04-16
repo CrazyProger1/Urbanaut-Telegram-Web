@@ -1,22 +1,26 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import { TonConnectUIProvider } from "@/telegram/ui-react";
+import { init } from "@telegram-apps/sdk";
+import TMAAuth from "./TMAAuth";
 
 interface Props {
   children: React.ReactNode;
-  manifest_url: string;
+  manifestUrl?: string;
 }
 
-const TMAAuth = dynamic(() => import("./TMAAuth"), {
-  ssr: false,
-});
-const TMAProvider = ({ children, manifest_url }: Props) => {
+try {
+  init();
+} catch (e) {
+  console.error("Failed to init Telegram Mini App. Check your environment");
+}
+
+const TMAProvider = ({ children, manifestUrl }: Props) => {
   return (
     <>
-      <TonConnectUIProvider manifestUrl={manifest_url}>
-        <TMAAuth />
+      <TMAAuth />
+      <TonConnectUIProvider manifestUrl={manifestUrl}>
         {children}
       </TonConnectUIProvider>
     </>
