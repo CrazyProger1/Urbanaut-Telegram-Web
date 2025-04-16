@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validate } from "@telegram-apps/init-data-node";
 import { TELEGRAM_BOT_TOKEN } from "@/config/telegram";
+import { setSession } from "@/telegram/utils/auth";
+import { getUser } from "@/services/users";
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,25 +24,18 @@ export async function POST(request: NextRequest) {
 
     const user = JSON.parse(userRaw);
 
-    const response = NextResponse.json({ user });
-    response.cookies.set("initData", initData, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 3600,
-    });
+    await setSession({ initData: initData, user: user });
 
-    // TODO: get user data from API server
-    // TODO: store user data from API in cookies
-    // TODO: return user data from API from this function and store on client side
-    response.cookies.set("userData", userRaw, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 3600,
-    });
-
-    return response;
+    const apiUser = getUser(user.id);
+    if (!apiUser) {
+      return NextResponse.json(
+        { error: "Failed to get user from API" },
+        { status: 400 },
+      );
+    }
+    const mergedUser = { ...user, ...apiUser };
+    await setSession({ initData: initData, user: mergedUser });
+    return NextResponse.json({ mergedUser });
   } catch (error) {
     console.error("Validation error:", error);
     return NextResponse.json(
