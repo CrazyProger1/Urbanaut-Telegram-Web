@@ -1,3 +1,5 @@
+import { User as TelegramUser } from "@telegram-apps/types";
+
 export type Rank = "NEWBIE" | "PROFESSIONAL" | "STALKER" | "LEGEND";
 
 export type Language = "uk" | "en";
@@ -21,4 +23,11 @@ export type User = {
   experience: number;
   karma: number;
   settings: Settings;
+};
+
+export type SessionUser = User & TelegramUser;
+
+export type Session = {
+  initData: string;
+  user: SessionUser;
 };

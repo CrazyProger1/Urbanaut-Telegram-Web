@@ -7,7 +7,7 @@ import React from "react";
 import { Metadata } from "next";
 import { DESCRIPTION, APP } from "@/config/base";
 import { Footer, Header } from "@/components/modules/layout";
-import { TMAProvider } from "@/telegram/components";
+import { TMAProvider } from "@/components/common/wrappers";
 import { TON_MANIFEST_URL } from "@/config/telegram";
 
 export const metadata: Metadata = {

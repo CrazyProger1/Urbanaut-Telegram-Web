@@ -2,7 +2,7 @@ import ax from "axios";
 
 import { getLocale } from "next-intl/server";
 import { API_URL } from "@/config/api";
-import { getSession } from "@/telegram/utils/auth";
+import { getSession } from "@/helpers/auth";
 
 export const axios = ax.create({
   baseURL: API_URL,

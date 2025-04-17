@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validate } from "@telegram-apps/init-data-node";
-import { TELEGRAM_BOT_TOKEN } from "@/config/telegram";
-import { setSession } from "@/telegram/utils/auth";
+import {
+  TELEGRAM_BOT_TOKEN,
+  TELEGRAM_INITDATA_LIFETIME_SECONDS,
+} from "@/config/telegram";
+import { setSession } from "@/helpers/auth";
 import { getUser } from "@/services/users";
 
 export async function POST(request: NextRequest) {
@@ -35,7 +38,10 @@ export async function POST(request: NextRequest) {
     }
     const mergedUser = { ...apiUser, ...telegramUser };
 
-    await setSession({ initData: initData, user: mergedUser });
+    await setSession(
+      { initData: initData, user: mergedUser },
+      TELEGRAM_INITDATA_LIFETIME_SECONDS,
+    );
 
     return NextResponse.json({ user: mergedUser });
   } catch (error) {

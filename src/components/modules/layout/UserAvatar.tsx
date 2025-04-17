@@ -2,10 +2,10 @@ import React from "react";
 import { ALTS, STUBS } from "@/config/media";
 import Image from "next/image";
 import clsx from "clsx";
-import { User } from "@/types/users";
+import { SessionUser } from "@/types/users";
 
 interface Props {
-  user?: User;
+  user?: SessionUser;
 }
 
 const UserAvatar = ({ user }: Props) => {
@@ -21,7 +21,7 @@ const UserAvatar = ({ user }: Props) => {
       width={64}
       height={64}
       className={imageClassName}
-      src={user?.avatar || STUBS.USER}
+      src={user?.avatar || user?.photo_url || STUBS.USER}
       alt={ALTS.USER_AVATAR}
     />
   );

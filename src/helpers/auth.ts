@@ -1,13 +1,13 @@
 import { cookies } from "next/headers";
-import { Session } from "@/telegram/types/session";
+import { Session } from "@/types/users";
 
-export const setSession = async (session: Session) => {
+export const setSession = async (session: Session, exp: number = 3600) => {
   const cookieStore = await cookies();
   cookieStore.set({
     name: "initData",
     value: session.initData,
     httpOnly: true,
-    maxAge: 3600,
+    maxAge: exp,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
   });
@@ -15,7 +15,7 @@ export const setSession = async (session: Session) => {
     name: "userData",
     value: JSON.stringify(session.user),
     httpOnly: true,
-    maxAge: 3600,
+    maxAge: exp,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
   });
