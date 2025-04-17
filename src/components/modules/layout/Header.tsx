@@ -15,12 +15,14 @@ const Header = () => {
         <UserAvatar user={user} />
       </Link>
 
-      <div className="pl-2 text-text font-primary">
-        <p className="text-lg">
+      <div className="pl-2">
+        <h1 className="text-lg font-bold font-primary">
           @{user?.nickname || user?.username || "username"}
-        </p>
+        </h1>
         <Link href={PAGES.LEADERBOARD}>
-          <p className="text-text font-primary text-sm">{user?.rank}</p>
+          <p className="text-text font-primary text-sm">
+            {user?.rank || "NEWBIE"}
+          </p>
         </Link>
       </div>
       <SettingsButton />

@@ -16,6 +16,9 @@ export const ICONS = {
   CHECKED: `${ICONS_DIR}/checked.png`,
   GIFT: `${ICONS_DIR}/gift.png`,
   WARNING: `${ICONS_DIR}/warning.png`,
+  SUPPORT: `${ICONS_DIR}/support.png`,
+  REPORT: `${ICONS_DIR}/report.png`,
+  COMMUNITY: `${ICONS_DIR}/community.png`,
 };
 
 export const IMAGES = {
@@ -30,4 +33,5 @@ export const STUBS = {
 
 export const ALTS = {
   USER_AVATAR: "User photo",
+  BLOCK_ICON: "Block icon",
 };
