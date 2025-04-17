@@ -22,18 +22,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid initData" }, { status: 400 });
     }
 
-    const user = JSON.parse(userRaw);
+    const telegramUser = JSON.parse(userRaw);
 
-    await setSession({ initData: initData, user: user });
+    await setSession({ initData: initData, user: telegramUser });
 
-    const apiUser = getUser(user.id);
-    if (!apiUser) {
+    const { success, ...apiUser } = await getUser(telegramUser.id);
+    if (!success) {
       return NextResponse.json(
         { error: "Failed to get user from API" },
         { status: 400 },
       );
     }
-    const mergedUser = { ...user, ...apiUser };
+    const mergedUser = { ...apiUser, ...telegramUser };
 
     await setSession({ initData: initData, user: mergedUser });
 
