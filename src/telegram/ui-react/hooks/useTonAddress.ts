@@ -19,5 +19,5 @@ export function useTonAddress(userFriendly = true): string {
     } else {
       return "";
     }
-  }, [wallet, userFriendly, wallet?.account.address, wallet?.account.chain]);
+  }, [wallet, userFriendly]);
 }

@@ -16,7 +16,9 @@ const Header = () => {
       </Link>
 
       <div className="pl-2 text-text font-primary">
-        <p className="text-lg">@{user?.nickname || user?.username}</p>
+        <p className="text-lg">
+          @{user?.nickname || user?.username || "username"}
+        </p>
         <Link href={PAGES.LEADERBOARD}>
           <p className="text-text font-primary text-sm">{user?.rank}</p>
         </Link>

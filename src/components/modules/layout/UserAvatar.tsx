@@ -13,6 +13,7 @@ const UserAvatar = ({ user }: Props) => {
     "size-16 rounded-2xl",
     user?.rank === "NEWBIE" && "shadow-rank-newbie",
     user?.rank === "STALKER" && "shadow-rank-stalker",
+    user?.rank === "LEGEND" && "shadow-rank-legend",
     user?.rank === "PROFESSIONAL" && "shadow-rank-professional",
   );
 
