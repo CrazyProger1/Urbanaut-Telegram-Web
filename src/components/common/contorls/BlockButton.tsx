@@ -12,13 +12,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const BlockButton = ({
-  className,
-  variant = "normal",
-  text,
-  icon,
-  onClick,
-}: Props) => {
+const BlockButton = ({ className, variant = "normal", text, icon }: Props) => {
   const extendedClassName = clsx(
     "flex flex-row p-2 gap-4 items-center cursor-pointer",
     className,
@@ -26,7 +20,7 @@ const BlockButton = ({
     variant === "normal" && "bg-foreground hover:bg-selection",
   );
   return (
-    <ClickHandlerWrapper className={extendedClassName} onClick={onClick}>
+    <div className={extendedClassName}>
       {icon && (
         <Image
           className="size-8 select-none"
@@ -37,7 +31,7 @@ const BlockButton = ({
         />
       )}
       <div className="font-primary">{text}</div>
-    </ClickHandlerWrapper>
+    </div>
   );
 };
 

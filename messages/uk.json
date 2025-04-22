@@ -1,17 +1,8 @@
 {
-  "HomePage": {
-    "title": "Hello world!WDASDAS",
-    "about": "Go to the about page"
-  },
-  "ObjectSearchBar": {
-    "category": "категорія",
-    "difficulty": "складність",
-    "nearest": "найближчі",
-    "top": "топ",
-    "new": "нові",
-    "more": "більше"
-  },
-  "SearchTextInput": {
-    "search_placeholder": "введіть для пошуку..."
+  "Settings": {
+    "Donate": "Donate",
+    "Support": "Support",
+    "Report": "Report",
+    "Community": "Community"
   }
 }

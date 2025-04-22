@@ -1,17 +1,8 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
-  "ObjectSearchBar": {
-    "category": "category",
-    "difficulty": "difficulty",
-    "nearest": "nearest",
-    "top": "top",
-    "new": "new",
-    "more": "more"
-  },
-  "SearchTextInput": {
-    "search_placeholder": "type to search..."
+  "Settings": {
+    "Donate": "Donate",
+    "Support": "Support",
+    "Report": "Report",
+    "Community": "Community"
   }
 }

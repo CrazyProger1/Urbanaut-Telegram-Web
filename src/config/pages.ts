@@ -3,4 +3,5 @@ export const PAGES = {
   SETTINGS: "/settings",
   PROFILE: "/profile",
   LEADERBOARD: "/leaderboard",
+  DONATE: "/donate",
 };

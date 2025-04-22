@@ -1,5 +1,5 @@
 import { API_ENDPOINTS } from "@/config/api";
-import { axios } from "@/services/api";
+import { axios } from "@/services/api/api";
 import { User } from "@/types/users";
 import { SuccessfulResponse } from "@/types/api";
 

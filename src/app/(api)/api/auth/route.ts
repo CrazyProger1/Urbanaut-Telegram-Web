@@ -5,7 +5,7 @@ import {
   TELEGRAM_INITDATA_LIFETIME_SECONDS,
 } from "@/config/telegram";
 import { setSession } from "@/helpers/auth";
-import { getUser } from "@/services/users";
+import { getUser } from "@/services/api/users";
 
 export async function POST(request: NextRequest) {
   try {

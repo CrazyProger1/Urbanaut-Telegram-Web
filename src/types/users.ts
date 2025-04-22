@@ -7,11 +7,11 @@ export type Language = "uk" | "en";
 export type Theme = "DARK" | "LIGHT";
 
 export type Settings = {
-  language: Language;
-  is_animations_enabled: boolean;
-  is_notifications_enabled: boolean;
-  is_newsletters_enabled: boolean;
-  theme: Theme;
+  language?: Language;
+  is_animations_enabled?: boolean;
+  is_notifications_enabled?: boolean;
+  is_newsletters_enabled?: boolean;
+  theme?: Theme;
 };
 
 export type User = {

@@ -3,5 +3,6 @@ export const API_URL =
   process.env.API_URL || `https://api.urbanaut.club/api/${API_VERSION}/`;
 
 export const API_ENDPOINTS = {
-  USER: "users/:id/",
+  USER: `${API_URL}users/:id/`,
+  SETTINGS: `${API_URL}settings/`,
 };
