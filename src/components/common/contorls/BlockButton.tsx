@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { ALTS } from "@/config/media";
 import clsx from "clsx";
-import { ClickHandlerWrapper } from "@/components/common/wrappers";
 
 interface Props {
   className?: string;

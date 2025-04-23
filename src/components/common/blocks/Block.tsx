@@ -1,12 +1,18 @@
 import React from "react";
 interface Props {
   className?: string;
+  blockClassName?: string;
   title?: string;
   children?: React.ReactNode;
 }
-const Block = ({ className, title, children }: Props) => {
+const Block = ({ className, title, children, blockClassName }: Props) => {
   return (
-    <div className="flex flex-col shadow-volume pt-2 rounded-2xl bg-foreground">
+    <div
+      className={
+        "flex flex-col shadow-volume pt-2 rounded-2xl bg-foreground " +
+        blockClassName
+      }
+    >
       <div className="text-text font-primary text-lg font-bold text-center">
         {title}
       </div>

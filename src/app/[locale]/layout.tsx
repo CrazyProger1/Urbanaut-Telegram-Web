@@ -7,8 +7,9 @@ import React from "react";
 import { Metadata } from "next";
 import { DESCRIPTION, APP } from "@/config/base";
 import { Footer, Header } from "@/components/modules/layout";
-import { TMAProvider } from "@/components/common/wrappers";
+import { TMAProvider } from "@/components/common/telegram";
 import { TON_MANIFEST_URL } from "@/config/telegram";
+import { ModalProvider } from "@/components/common/modals";
 
 export const metadata: Metadata = {
   title: APP,
@@ -40,11 +41,13 @@ const RootLayout = async ({ children, params }: Props) => {
     <html lang={locale}>
       <body className="light">
         <TMAProvider manifestUrl={TON_MANIFEST_URL}>
-          <Header />
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-          <Footer />
+          <ModalProvider>
+            <Header />
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+            <Footer />
+          </ModalProvider>
         </TMAProvider>
       </body>
     </html>

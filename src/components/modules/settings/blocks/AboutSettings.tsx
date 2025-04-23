@@ -15,7 +15,7 @@ const AboutSettings = async () => {
     {
       text: t("Donate"),
       icon: ICONS.GIFT,
-      href: PAGES.DONATE,
+      href: PAGES.SETTINGS + "?donate=true",
     },
     {
       text: t("Support"),

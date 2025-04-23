@@ -19,6 +19,7 @@ export const ICONS = {
   SUPPORT: `${ICONS_DIR}/support.png`,
   REPORT: `${ICONS_DIR}/report.png`,
   COMMUNITY: `${ICONS_DIR}/community.png`,
+  WALLET: `${ICONS_DIR}/wallet.png`,
 };
 
 export const IMAGES = {
