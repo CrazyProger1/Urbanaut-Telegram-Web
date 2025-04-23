@@ -23,7 +23,7 @@ const BlockButton = ({ className, variant = "normal", text, icon }: Props) => {
     <div className={extendedClassName}>
       {icon && (
         <Image
-          className="size-8 select-none"
+          className="size-8 select-none drop-shadow-volume"
           src={icon}
           width={64}
           height={64}

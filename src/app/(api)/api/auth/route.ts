@@ -38,6 +38,8 @@ export async function POST(request: NextRequest) {
     }
     const mergedUser = { ...apiUser, ...telegramUser };
 
+    console.log("User authenticated: ", mergedUser);
+
     await setSession(
       { initData: initData, user: mergedUser },
       TELEGRAM_INITDATA_LIFETIME_SECONDS,

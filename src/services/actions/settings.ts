@@ -12,4 +12,5 @@ export const toggleAnimations = async (
     is_animations_enabled: animationsEnabled,
   };
   await updateSettings(updatedSettings);
+  return updatedSettings;
 };

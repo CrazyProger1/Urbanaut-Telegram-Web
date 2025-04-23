@@ -23,7 +23,7 @@ const SettingsButton = () => {
 
   return (
     <motion.img
-      className="size-12 ml-auto cursor-pointer"
+      className="size-12 ml-auto cursor-pointer drop-shadow-volume"
       src={ICONS.SETTINGS}
       alt="settings-icon"
       animate={{ rotate: isOpened ? 360 : 0 }}

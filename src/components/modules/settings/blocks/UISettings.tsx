@@ -1,28 +1,32 @@
 "use client";
-import React, { useState, useTransition } from "react";
+import React, { useTransition } from "react";
 import Block from "@/components/common/blocks/Block";
 import { Toggle } from "@/components/common/contorls";
 
 import useAccountStore from "@/stores/accounts";
 import { toggleAnimations } from "@/services/actions/settings";
+import { Loader } from "@/components/common/loaders";
 
 const UISettings = () => {
-  const { user } = useAccountStore();
+  const { user, updateUserSettings } = useAccountStore();
   const [isPending, startTransition] = useTransition();
-  const [animationsEnabled, setAnimationsEnabled] = useState<boolean>(
-    user?.settings.is_animations_enabled || false,
-  );
   const handleToggle = () => {
-    const value = !animationsEnabled;
-    setAnimationsEnabled(value);
+    const value = !user?.settings.is_animations_enabled;
     startTransition(async () => {
-      await toggleAnimations(value, user?.settings);
+      const settings = await toggleAnimations(value, user?.settings);
+      updateUserSettings(settings);
     });
   };
   return (
     <Block className="flex flex-row gap-4 p-2 pl-4 pb-8" title="UI">
-      <Toggle enabled={animationsEnabled} onToggle={handleToggle} />
-      Animations
+      <Toggle
+        enabled={user?.settings.is_animations_enabled}
+        onToggle={handleToggle}
+      />
+      <div className="flex flex-row justify-between w-full items-center">
+        <div>Animations</div>
+        {isPending ? <Loader /> : null}
+      </div>
     </Block>
   );
 };

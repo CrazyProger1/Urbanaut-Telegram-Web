@@ -35,6 +35,9 @@ const config = {
         "rank-stalker": "3px 3px 5px 0px rgba(255, 0, 0, 0.5)",
         "rank-legend": "3px 3px 5px 0px rgba(157, 0, 255, 0.5)",
       },
+      dropShadow: {
+        volume: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+      },
       fontFamily: {
         primary: ["Poppins", "GigaSans", "sans-serif"],
       },
