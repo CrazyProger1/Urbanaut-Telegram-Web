@@ -6,6 +6,8 @@ cd /home/urbanaut/frontend/ || exit
 
 git checkout -- deploy.sh
 
+git stash
+
 git pull
 
 npm install
