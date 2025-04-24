@@ -28,7 +28,7 @@ const DonateModal = ({ visible }: Props) => {
   const [tonConnectUI, setOptions] = useTonConnectUI();
   return (
     <ModalPortal visible={visible}>
-      <Block title="Donate" blockClassName="w-1/4">
+      <Block title="Donate" blockClassName="lg:w-1/4 sm:w-2/4">
         <input
           type="number"
           className="bg-background text-text text-center p-2 w-full placeholder-text focus:outline-none focus:ring-0 appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
