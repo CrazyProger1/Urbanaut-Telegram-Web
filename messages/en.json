@@ -1,8 +1,24 @@
 {
-  "Settings": {
-    "Donate": "Donate",
-    "Support": "Support",
-    "Report": "Report",
-    "Community": "Community"
+  "AboutSettings": {
+    "donate": "Donate",
+    "support": "Support",
+    "report": "Report",
+    "community": "Community",
+    "about": "About"
+  },
+  "DonateModal": {
+    "title": "Donate",
+    "placeholder": "Enter amount...",
+    "connectWallet": "Connect Wallet",
+    "donate": "Donate"
+  },
+  "AccountSettings": {
+    "account": "Account",
+    "restore": "Restore",
+    "delete": "Delete"
+  },
+  "UISettings": {
+    "UI": "UI",
+    "animations": "Animations"
   }
 }

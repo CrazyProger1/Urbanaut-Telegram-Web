@@ -2,6 +2,7 @@
 
 import React, { Suspense, useState } from "react";
 import { z } from "zod";
+import { useTranslations } from "next-intl";
 
 import { ModalPortal } from "@/components/common/modals";
 import { Block } from "@/components/common/blocks";
@@ -16,6 +17,8 @@ import { ShakableInput } from "@/components/common/inputs";
 const amountSchema = z.number().positive();
 
 const DonateModal = () => {
+  const t = useTranslations("DonateModal");
+
   const wallet = useTonWallet();
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const [shaking, setShaking] = useState<boolean>(false);
@@ -51,14 +54,14 @@ const DonateModal = () => {
     <Suspense fallback={null}>
       <ModalPortal query="donate">
         <Block
-          title="Donate"
+          title={t("title")}
           blockClassName="lg:w-1/4 sm:w-2/4"
           onClick={(e) => e.stopPropagation()}
         >
           <HorizontalDivider />
           <ShakableInput
             value={amount}
-            placeholder="Enter amount..."
+            placeholder={t("placeholder")}
             type="number"
             onChange={(e) => {
               setAmount(e.target.value ? Number(e.target.value) : undefined);
@@ -69,14 +72,14 @@ const DonateModal = () => {
           <HorizontalDivider />
           <BlockButton
             icon={ICONS.WALLET}
-            text="Connect Wallet"
+            text={t("connectWallet")}
             onClick={handleConnectWallet}
             disable={wallet !== null}
           />
           <HorizontalDivider />
           <BlockButton
             className="rounded-b-2xl"
-            text="Donate"
+            text={t("donate")}
             icon={ICONS.GIFT}
             onClick={handleSendTransactionClick}
           />

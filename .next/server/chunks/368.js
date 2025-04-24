@@ -1,1 +1,0 @@
-"use strict";exports.id=368,exports.ids=[368],exports.modules={87368:t=>{t.exports=JSON.parse('{"Settings":{"Donate":"Donate","Support":"Support","Report":"Report","Community":"Community"}}')}};

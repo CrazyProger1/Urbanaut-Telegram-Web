@@ -1,1 +1,17 @@
-{"node":{"7fde7a7e4c90e08545a49eb44375df20b632ef33ef":{"workers":{"app/[locale]/(core)/settings/page":{"moduleId":"41529","async":false}},"layer":{"app/[locale]/(core)/settings/page":"action-browser"}}},"edge":{},"encryptionKey":"XIIAVmBgzfg/dpg10fRz3m/1p5eFTX6WgnvInr22Tgw="}
+{
+  "node": {
+    "7fde7a7e4c90e08545a49eb44375df20b632ef33ef": {
+      "workers": {
+        "app/[locale]/(core)/settings/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CProgramming%5C%5CBusiness%5C%5CUrbanaut%5C%5Cweb%5C%5Csrc%5C%5Cservices%5C%5Cactions%5C%5Csettings.ts%22%2C%5B%7B%22id%22%3A%227fde7a7e4c90e08545a49eb44375df20b632ef33ef%22%2C%22exportedName%22%3A%22toggleAnimations%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/[locale]/(core)/settings/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "XIIAVmBgzfg/dpg10fRz3m/1p5eFTX6WgnvInr22Tgw="
+}

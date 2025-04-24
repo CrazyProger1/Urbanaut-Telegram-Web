@@ -1,8 +1,24 @@
 {
-  "Settings": {
-    "Donate": "Donate",
-    "Support": "Support",
-    "Report": "Report",
-    "Community": "Community"
+  "AboutSettings": {
+    "donate": "Донат",
+    "support": "Підтримка",
+    "report": "Репорт",
+    "community": "Ком'юніті",
+    "about": "Інше"
+  },
+  "DonateModal": {
+    "title": "Донат",
+    "placeholder": "Введіть суму...",
+    "connectWallet": "Приєднати гаманець",
+    "donate": "Зробити донат"
+  },
+  "AccountSettings": {
+    "account": "Аккаунт",
+    "restore": "Відновити",
+    "delete": "Видалити"
+  },
+  "UISettings": {
+    "UI": "Інтерфейс",
+    "animations": "Анімації"
   }
 }

@@ -10,32 +10,32 @@ import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 const AboutSettings = async () => {
-  const t = await getTranslations("Settings");
+  const t = await getTranslations("AboutSettings");
   const ABOUT_BUTTONS = [
     {
-      text: t("Donate"),
+      text: t("donate"),
       icon: ICONS.GIFT,
       href: PAGES.SETTINGS + "?donate=true",
     },
     {
-      text: t("Support"),
+      text: t("support"),
       icon: ICONS.SUPPORT,
       href: URLS.SUPPORT + "?text=%23support%0A",
     },
     {
-      text: t("Report"),
+      text: t("report"),
       icon: ICONS.REPORT,
       href: URLS.REPORT + "?text=%23report%0A",
     },
     {
-      text: t("Community"),
+      text: t("community"),
       icon: ICONS.COMMUNITY,
       className: "last:rounded-b-2xl",
       href: URLS.COMMUNITY,
     },
   ];
   return (
-    <Block title="About">
+    <Block title={t("about")}>
       {ABOUT_BUTTONS.map(({ text, icon, className, href }) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
