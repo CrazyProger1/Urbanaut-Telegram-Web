@@ -7,6 +7,7 @@ import { SendTransactionRequest } from "@tonconnect/ui";
 import { useTonConnectUI, useTonWallet } from "@/telegram/ui-react";
 import { BlockButton } from "@/components/common/contorls";
 import { ICONS } from "@/config/media";
+import { TON_WALLET } from "@/config/pay";
 
 const buttonRootId = "ton-connect-button";
 
@@ -27,7 +28,7 @@ const DonateModal = () => {
       validUntil: Date.now() + 5 * 60 * 1000,
       messages: [
         {
-          address: "UQBLKpiR56C_vTkV6GErNF61PyUgDN6YXMJrtekCd0FQaBg0",
+          address: TON_WALLET,
           amount: amount.toString(),
         },
       ],
