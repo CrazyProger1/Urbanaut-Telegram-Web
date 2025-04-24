@@ -1,4 +1,5 @@
 "use client";
+
 import React, { Suspense, useState } from "react";
 import { z } from "zod";
 
@@ -9,23 +10,16 @@ import { useTonConnectUI, useTonWallet } from "@/telegram/ui-react";
 import { BlockButton } from "@/components/common/contorls";
 import { ICONS } from "@/config/media";
 import { TON_WALLET } from "@/config/pay";
+import { HorizontalDivider } from "@/components/common/dividers";
+import { ShakableInput } from "@/components/common/inputs";
 
-const amountSchema = z
-  .number({ required_error: "Enter amount..." })
-  .positive("Amount must be greater than 0");
+const amountSchema = z.number().positive();
 
 const DonateModal = () => {
   const wallet = useTonWallet();
   const [amount, setAmount] = useState<number | undefined>(undefined);
-  const [error, setError] = useState<string | null>(null);
-  const [shake, setShake] = useState(false);
-
+  const [shaking, setShaking] = useState<boolean>(false);
   const [tonConnectUI] = useTonConnectUI();
-
-  const triggerShake = () => {
-    setShake(true);
-    setTimeout(() => setShake(false), 300); // reset after animation
-  };
 
   const handleConnectWallet = () => {
     tonConnectUI.openModal();
@@ -35,13 +29,10 @@ const DonateModal = () => {
     const result = amountSchema.safeParse(amount);
 
     if (!result.success) {
-      setError(result.error.errors[0].message);
-      setAmount(undefined);
-      triggerShake();
+      setShaking(true);
+      setTimeout(() => setShaking(false), 300);
       return;
     }
-
-    setError(null);
 
     const transaction: SendTransactionRequest = {
       validUntil: Date.now() + 5 * 60 * 1000,
@@ -64,27 +55,25 @@ const DonateModal = () => {
           blockClassName="lg:w-1/4 sm:w-2/4"
           onClick={(e) => e.stopPropagation()}
         >
-          <input
-            value={amount ?? ""}
+          <HorizontalDivider />
+          <ShakableInput
+            value={amount}
+            placeholder="Enter amount..."
             type="number"
-            className={`bg-background text-text text-center p-2 w-full placeholder-text focus:outline-none focus:ring-0 appearance-none
-              [&::-webkit-outer-spin-button]:appearance-none
-              [&::-webkit-inner-spin-button]:appearance-none
-              [-moz-appearance:textfield]
-              ${error ? "border border-red-500 placeholder-red-500" : ""}
-              ${shake ? "animate-shake" : ""}`}
-            placeholder={error || "Enter amount..."}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e) => {
               setAmount(e.target.value ? Number(e.target.value) : undefined);
-              setError(null);
             }}
+            shaking={shaking}
+            className={`border ${shaking ? "border-variant-danger" : "border-transparent"}`}
           />
+          <HorizontalDivider />
           <BlockButton
             icon={ICONS.WALLET}
             text="Connect Wallet"
             onClick={handleConnectWallet}
             disable={wallet !== null}
           />
+          <HorizontalDivider />
           <BlockButton
             className="rounded-b-2xl"
             text="Donate"

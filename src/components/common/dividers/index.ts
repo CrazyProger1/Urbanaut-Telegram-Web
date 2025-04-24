@@ -1,1 +1,1 @@
-export { default as VerticalDivider } from "./VerticalDivider";
+export { default as HorizontalDivider } from "./VerticalDivider";
