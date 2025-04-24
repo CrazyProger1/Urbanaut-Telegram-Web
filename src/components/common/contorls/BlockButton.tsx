@@ -5,9 +5,10 @@ import clsx from "clsx";
 
 interface Props {
   className?: string;
-  variant?: "normal" | "danger";
+  variant?: "normal" | "danger" | "disabled";
   icon?: string;
   text?: string;
+  disable?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
@@ -17,15 +18,21 @@ const BlockButton = ({
   text,
   icon,
   onClick,
+  disable,
 }: Props) => {
+  if (disable) {
+    variant = "disabled";
+  }
   const extendedClassName = clsx(
     "flex flex-row p-2 gap-4 items-center cursor-pointer",
     className,
+
     variant === "danger" && "bg-variant-danger",
     variant === "normal" && "bg-foreground hover:bg-selection",
+    variant === "disabled" && "bg-variant-disabled",
   );
   return (
-    <div onClick={onClick} className={extendedClassName}>
+    <div onClick={disable ? undefined : onClick} className={extendedClassName}>
       {icon && (
         <Image
           className="size-8 select-none drop-shadow-volume"

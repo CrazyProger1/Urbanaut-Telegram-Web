@@ -54,7 +54,8 @@
         --color-mdx-ul: 100, 116, 139;
         --color-mdx-ol: 100, 116, 139;
         --color-mdx-marker: 206, 129, 77;
-        --color-variant-danger: 93,36,31;
+        --color-variant-danger: 93, 36, 31;
+        --color-variant-disabled: 61, 50, 35;
     }
 
     .light {

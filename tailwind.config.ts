@@ -64,8 +64,10 @@ const config = {
           border: "rgba(var(--color-selection-border), 0.35)",
           DEFAULT: "rgba(var(--color-selection-default), 0.3)",
         },
+        disabled: "rgb(var(--color-variant-disabled))",
         variant: {
           danger: "rgb(var(--color-variant-danger))",
+          disabled: "rgb(var(--color-variant-disabled))",
         },
       },
     },

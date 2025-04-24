@@ -4,13 +4,14 @@ import React, { Suspense, useState } from "react";
 import { ModalPortal } from "@/components/common/modals";
 import { Block } from "@/components/common/blocks";
 import { SendTransactionRequest } from "@tonconnect/ui";
-import { useTonConnectUI } from "@/telegram/ui-react";
+import { useTonConnectUI, useTonWallet } from "@/telegram/ui-react";
 import { BlockButton } from "@/components/common/contorls";
 import { ICONS } from "@/config/media";
 
 const buttonRootId = "ton-connect-button";
 
 const DonateModal = () => {
+  const wallet = useTonWallet();
   const [amount, setAmount] = useState<number | undefined>(undefined);
 
   const [tonConnectUI, setOptions] = useTonConnectUI();
@@ -56,6 +57,7 @@ const DonateModal = () => {
             icon={ICONS.WALLET}
             text="Connect Wallet"
             onClick={handleConnectWallet}
+            disable={wallet !== null}
           />
           <BlockButton
             className="rounded-b-2xl"
