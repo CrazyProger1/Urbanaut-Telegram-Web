@@ -30,54 +30,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/en/settings": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/[locale]/settings",
-      "dataRoute": "/en/settings.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/uk/settings": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/[locale]/settings",
-      "dataRoute": "/uk/settings.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/en": {
       "experimentalBypassFor": [
         {
@@ -125,10 +77,8 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
-    }
-  },
-  "dynamicRoutes": {
-    "/[locale]/settings": {
+    },
+    "/en/settings": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -140,10 +90,9 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/([^/]+?)/settings(?:/)?$",
-      "dataRoute": "/[locale]/settings.rsc",
-      "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)/settings\\.rsc$",
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/[locale]/settings",
+      "dataRoute": "/en/settings.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -153,6 +102,32 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/uk/settings": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/[locale]/settings",
+      "dataRoute": "/uk/settings.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {
     "/[locale]": {
       "experimentalBypassFor": [
         {
@@ -177,12 +152,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/[locale]/settings": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/([^/]+?)/settings(?:/)?$",
+      "dataRoute": "/[locale]/settings.rsc",
+      "fallback": null,
+      "dataRouteRegex": "^/([^/]+?)/settings\\.rsc$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "94374201c001c508d2a84017bc2d8492",
-    "previewModeSigningKey": "477bce35a642c6b43cdfe3916a2d9fd6204e813174b7f4f73491658ce63c9fb4",
-    "previewModeEncryptionKey": "e6cf624e6aaef2733b6e609b609f1959ef7078505f5d52bc589735d07712b782"
+    "previewModeId": "1051f7e4bc4607c2066652249e89f234",
+    "previewModeSigningKey": "88f4ef2d0b7c91cdc02903dd79f0361231b3643eae8af90ba0873bb9ccf0adca",
+    "previewModeEncryptionKey": "ea41b65e68fbf897180d490ff06abe1fd767b8a002b99e7aa6ac244e8c2e53ab"
   }
 }

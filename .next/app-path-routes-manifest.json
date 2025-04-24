@@ -1,8 +1,8 @@
 {
+  "/_not-found/page": "/_not-found",
   "/(api)/api/auth/route": "/api/auth",
   "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
   "/[...not_found]/page": "/[...not_found]",
-  "/[locale]/(core)/settings/page": "/[locale]/settings",
-  "/[locale]/page": "/[locale]"
+  "/[locale]/page": "/[locale]",
+  "/[locale]/(core)/settings/page": "/[locale]/settings"
 }
