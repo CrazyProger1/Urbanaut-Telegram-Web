@@ -9,7 +9,10 @@ interface Props {
 }
 const ThemedBodyWrapper = ({ children, className }: Props) => {
   const { user } = useAccountStore();
-  const combinedClassName = clsx(className, user?.settings.theme || "light");
+  const combinedClassName = clsx(
+    className,
+    user?.settings.theme?.toLowerCase() || "light",
+  );
   return <body className={combinedClassName}>{children}</body>;
 };
 
