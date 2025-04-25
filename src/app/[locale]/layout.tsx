@@ -6,10 +6,15 @@ import { Locale, routing } from "@/i18n/routing";
 import React from "react";
 import { Metadata } from "next";
 import { DESCRIPTION, APP } from "@/config/base";
-import { Footer, Header } from "@/components/modules/layout";
+import { Footer, Header, ThemedBodyWrapper } from "@/components/modules/layout";
 import { TMAProvider } from "@/components/common/telegram";
 import { TON_MANIFEST_URL } from "@/config/telegram";
 import { ModalProvider } from "@/components/common/modals";
+import {
+  IgnorePagesWrapper,
+  SwipeNavigationWrapper,
+} from "@/components/common/utils";
+import { PAGES } from "@/config/pages";
 
 export const metadata: Metadata = {
   title: APP,
@@ -39,17 +44,21 @@ const RootLayout = async ({ children, params }: Props) => {
 
   return (
     <html lang={locale}>
-      <body className="light">
+      <ThemedBodyWrapper className="flex flex-col min-h-screen">
         <TMAProvider manifestUrl={TON_MANIFEST_URL}>
           <ModalProvider>
-            <Header />
+            <IgnorePagesWrapper pages={[PAGES.PROFILE]}>
+              <Header />
+            </IgnorePagesWrapper>
             <NextIntlClientProvider messages={messages}>
-              {children}
+              <SwipeNavigationWrapper className="py-4 flex-1 flex flex-col h-full">
+                {children}
+              </SwipeNavigationWrapper>
             </NextIntlClientProvider>
             <Footer />
           </ModalProvider>
         </TMAProvider>
-      </body>
+      </ThemedBodyWrapper>
     </html>
   );
 };

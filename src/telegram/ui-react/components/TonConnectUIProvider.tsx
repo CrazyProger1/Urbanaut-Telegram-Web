@@ -21,7 +21,7 @@ export type TonConnectUIProviderProps = {
 
 export interface TonConnectUIProviderPropsWithManifest {
   /**
-   * Url to the [manifest]{@link https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest} with the Dapp metadata that will be displayed in the user's wallet.
+   * Url to the [manifest]{@link https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest} with the Dapp metadata that will be displayed in the users's wallet.
    * If not passed, manifest from `${window.location.origin}/tonconnect-manifest.json` will be taken.
    */
   manifestUrl: string;

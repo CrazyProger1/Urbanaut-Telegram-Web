@@ -4,8 +4,8 @@ import React from "react";
 import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
 import SettingsButton from "./SettingsButton";
-import UserAvatar from "./UserAvatar";
 import useAccountStore from "@/stores/accounts";
+import { UserAvatar } from "@/components/modules/users";
 
 const Header = () => {
   const { user } = useAccountStore();

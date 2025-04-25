@@ -20,5 +20,11 @@
   "UISettings": {
     "UI": "UI",
     "animations": "Animations"
+  },
+  "UserAboutBlock": {
+    "expeditions": "Expeditions",
+    "karma": "Karma",
+    "experience": "Experience",
+    "friends": "Friends"
   }
 }

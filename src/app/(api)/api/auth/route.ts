@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const { success, ...apiUser } = await getUser(telegramUser.id);
     if (!success) {
       return NextResponse.json(
-        { error: "Failed to get user from API" },
+        { error: "Failed to get users from API" },
         { status: 400 },
       );
     }

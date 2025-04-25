@@ -20,5 +20,11 @@
   "UISettings": {
     "UI": "Інтерфейс",
     "animations": "Анімації"
+  },
+  "UserAboutBlock": {
+    "expeditions": "Eкспедиції",
+    "karma": "Карма",
+    "experience": "Досвід",
+    "friends": "Друзі"
   }
 }

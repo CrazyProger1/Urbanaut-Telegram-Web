@@ -20,6 +20,11 @@ export const ICONS = {
   REPORT: `${ICONS_DIR}/report.png`,
   COMMUNITY: `${ICONS_DIR}/community.png`,
   WALLET: `${ICONS_DIR}/wallet.png`,
+  NINJA: `${ICONS_DIR}/ninja.png`,
+  DEAL: `${ICONS_DIR}/deal.png`,
+  BACKPACK: `${ICONS_DIR}/backpack.png`,
+  CALENDAR: `${ICONS_DIR}/calendar.png`,
+  BOOK: `${ICONS_DIR}/book.png`,
 };
 
 export const IMAGES = {
@@ -35,4 +40,6 @@ export const STUBS = {
 export const ALTS = {
   USER_AVATAR: "User photo",
   BLOCK_ICON: "Block icon",
+  NOTIFICATION_ICON: "Notification icon",
+  FOOTER_LINK: "Footer link",
 };
