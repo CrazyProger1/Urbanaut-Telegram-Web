@@ -12,6 +12,6 @@ git pull
 
 npm install
 
-#npm run build
+npm run build
 
 sudo pm2 restart frontend
