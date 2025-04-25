@@ -1,5 +1,0 @@
-{
-  "/(api)/api/auth/route": "app/(api)/api/auth/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/(core)/settings/page": "app/[locale]/(core)/settings/page.js"
-}
