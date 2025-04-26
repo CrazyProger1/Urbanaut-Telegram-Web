@@ -2,7 +2,6 @@ import React from "react";
 import Block from "@/components/common/blocks/Block";
 
 import { HorizontalDivider } from "@/components/common/dividers";
-import { BlockButton } from "@/components/common/contorls";
 import { ICONS } from "@/config/media";
 import { PAGES } from "@/config/pages";
 import { URLS } from "@/config/urls";
@@ -40,7 +39,7 @@ const AboutSettings = async () => {
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
           <Link href={href}>
-            <BlockButton text={text} icon={icon} className={className} />
+            <Block.Button text={text} icon={icon} className={className} />
           </Link>
         </div>
       ))}

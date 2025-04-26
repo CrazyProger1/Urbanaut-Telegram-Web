@@ -4,7 +4,6 @@ import { Block } from "@/components/common/blocks";
 import { SessionUser } from "@/types/users";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { Link } from "@/i18n/routing";
-import { BlockButton } from "@/components/common/contorls";
 import { ICONS } from "@/config/media";
 import { PAGES } from "@/config/pages";
 import { URLS } from "@/config/urls";
@@ -48,7 +47,7 @@ const UserAboutBlock = ({ user }: Props) => {
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
           <Link href={href}>
-            <BlockButton
+            <Block.Button
               text={text}
               metric={count}
               icon={icon}

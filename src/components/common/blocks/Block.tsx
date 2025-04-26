@@ -1,4 +1,6 @@
 import React from "react";
+import BlockButton from "./BlockButton";
+
 interface Props {
   className?: string;
   blockClassName?: string;
@@ -28,5 +30,7 @@ const Block = ({
     </div>
   );
 };
+
+Block.Button = BlockButton;
 
 export default Block;

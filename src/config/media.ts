@@ -25,6 +25,7 @@ export const ICONS = {
   BACKPACK: `${ICONS_DIR}/backpack.png`,
   CALENDAR: `${ICONS_DIR}/calendar.png`,
   BOOK: `${ICONS_DIR}/book.png`,
+  GAS_MASK: `${ICONS_DIR}/gas-mask.png`,
 };
 export const NOTIFICATION_ICONS = {
   NOTIFICATION: ICONS.INFO,

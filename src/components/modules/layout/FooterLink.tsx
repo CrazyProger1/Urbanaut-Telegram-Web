@@ -10,7 +10,8 @@ interface Props {
 }
 
 const FooterLink = ({ page, icon }: Props) => {
-  const active = usePathname() === page;
+  const pathname = usePathname();
+  const active = pathname.includes(page);
 
   const className = clsx(
     "flex p-4 w-full first:rounded-tl-2xl last:rounded-tr-2xl justify-center items-center",

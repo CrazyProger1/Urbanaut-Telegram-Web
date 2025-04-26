@@ -7,6 +7,9 @@ export const PAGES = {
   LEADERBOARD: "/leaderboard",
   NOTIFICATIONS: "/notifications",
   SOCIAL: "/social",
+  FRIENDS: "/social/friends",
+  TEAMS: "/social/teams",
+  REFERRALS: "/social/referrals",
   EVENTS: "/events",
   BLOG: "/blog",
   OBJECTS: "/objects",
@@ -19,7 +22,7 @@ export const FOOTER_PAGES = [
   },
   {
     PAGE: PAGES.PROFILE,
-    ICON: ICONS.PROFILE,
+    ICON: ICONS.GAS_MASK,
   },
   {
     PAGE: PAGES.OBJECTS,

@@ -26,5 +26,10 @@
     "karma": "Карма",
     "experience": "Досвід",
     "friends": "Друзі"
+  },
+  "SocialLayout": {
+    "friends": "друзі",
+    "referrals": "реферали",
+    "teams": "команди"
   }
 }

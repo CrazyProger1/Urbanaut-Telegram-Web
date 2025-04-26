@@ -26,5 +26,10 @@
     "karma": "Karma",
     "experience": "Experience",
     "friends": "Friends"
+  },
+  "SocialLayout": {
+    "friends": "friends",
+    "referrals": "referrals",
+    "teams": "teams"
   }
 }
