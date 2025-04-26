@@ -14,7 +14,7 @@ const ReferralBar = ({ links }: Props) => {
 
   return (
     <Block className="py-2 px-4 flex flex-row justify-between items-center">
-      <div>{link.link}</div>
+      <div>@{link.code}</div>
       <ShareWrapper link={link.link}>
         <ShareIcon />
       </ShareWrapper>

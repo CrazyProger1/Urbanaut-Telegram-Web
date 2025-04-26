@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { shareURL } from "@telegram-apps/sdk";
 

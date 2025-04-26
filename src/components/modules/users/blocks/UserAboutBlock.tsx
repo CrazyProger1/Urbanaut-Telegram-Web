@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Block } from "@/components/common/blocks";
-import { SessionUser } from "@/types/users";
+import { SessionUser, User } from "@/types/users";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { Link } from "@/i18n/routing";
 import { ICONS } from "@/config/media";
@@ -10,7 +10,7 @@ import { URLS } from "@/config/urls";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  user?: SessionUser;
+  user?: User;
 }
 const UserAboutBlock = ({ user }: Props) => {
   const t = useTranslations("UserAboutBlock");

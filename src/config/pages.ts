@@ -4,6 +4,7 @@ export const PAGES = {
   HOME: "/",
   SETTINGS: "/settings",
   PROFILE: "/profile",
+  OTHERS_PROFILE: "/profile/:id",
   LEADERBOARD: "/leaderboard",
   NOTIFICATIONS: "/notifications",
   SOCIAL: "/social",
