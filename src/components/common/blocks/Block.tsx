@@ -17,13 +17,13 @@ const Block = ({
   onClick,
 }: Props) => {
   const combinedBlockClassName = clsx(
-    "flex flex-col shadow-volume pt-2 rounded-2xl bg-foreground",
+    "flex flex-col shadow-volume rounded-2xl bg-foreground",
     blockClassName,
   );
   return (
     <div className={combinedBlockClassName} onClick={onClick}>
       {title ? (
-        <div className="text-text mb-2 font-primary text-lg font-bold text-center">
+        <div className="text-text my-2 font-primary text-lg font-bold text-center">
           {title}
         </div>
       ) : null}

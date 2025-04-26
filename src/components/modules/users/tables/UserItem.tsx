@@ -11,7 +11,7 @@ interface Props {
 
 const UserItem = ({ user }: Props) => {
   return (
-    <Block className="flex flex-row">
+    <Block className="flex flex-row p-2">
       <Link href={PAGES.PROFILE}>
         <UserAvatar user={user} />
       </Link>
