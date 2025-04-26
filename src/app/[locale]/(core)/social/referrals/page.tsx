@@ -13,7 +13,7 @@ const ReferralsPage = async () => {
   if (response.success) referrals = response.results;
 
   return (
-    <div className="px-4">
+    <div className="px-4 flex flex-col gap-4">
       <NavigationBar />
       <UserTable users={referrals} />
     </div>

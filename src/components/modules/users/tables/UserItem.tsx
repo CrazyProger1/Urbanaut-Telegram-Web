@@ -8,7 +8,7 @@ interface Props {
 
 const UserItem = ({ user }: Props) => {
   return (
-    <div className="bg-foreground w-full flex flex-row rounded-2xl p-4 shadow-volume">
+    <div className="bg-foreground w-full flex flex-row rounded-2xl p-2 shadow-volume">
       <UserAvatar user={user} />
     </div>
   );
