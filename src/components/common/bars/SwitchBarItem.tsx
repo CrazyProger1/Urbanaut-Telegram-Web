@@ -29,24 +29,28 @@ const SwitchBarItem = ({
     "border p-2 font-primary w-full flex justify-center items-center first:rounded-l-2xl last:rounded-r-2xl",
     variant === "normal" && "border-transparent bg-foreground",
     variant === "selected" && "border-selection-border bg-selection",
-    variant === "disabled" && "bg-disabled",
+    variant === "disabled" && "border-transparent bg-disabled",
   );
 
   const content = (
-    <div onClick={onClick} className={combinedClassName}>
+    <div onClick={disabled ? undefined : onClick} className={combinedClassName}>
       {children}
     </div>
   );
 
-  if (link) {
-    return (
-      <Link href={link} onClick={onClick} className={combinedClassName}>
-        {children}
-      </Link>
-    );
+  if (disabled || !link) {
+    return content;
   }
 
-  return content;
+  return (
+    <Link
+      href={link}
+      onClick={disabled ? undefined : onClick}
+      className={combinedClassName}
+    >
+      {children}
+    </Link>
+  );
 };
 
 export default SwitchBarItem;

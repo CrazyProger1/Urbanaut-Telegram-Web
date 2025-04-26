@@ -6,4 +6,5 @@ export const API_ENDPOINTS = {
   USER: `users/:id/`,
   SETTINGS: `settings/`,
   NOTIFICATIONS: `notifications/`,
+  REFERRALS: `referrals/`,
 };

@@ -2,10 +2,10 @@ import React from "react";
 import { ALTS, STUBS } from "@/config/media";
 import Image from "next/image";
 import clsx from "clsx";
-import { SessionUser } from "@/types/users";
+import { SessionUser, User } from "@/types/users";
 
 interface Props {
-  user?: SessionUser;
+  user?: SessionUser | User;
   size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
 }
 
@@ -26,13 +26,20 @@ const UserAvatar = ({ user, size = "sm" }: Props) => {
     user?.rank === "LEGEND" && "shadow-rank-legend",
     user?.rank === "PROFESSIONAL" && "shadow-rank-professional",
   );
+  let avatarSrc = STUBS.USER;
+
+  if (user && user?.avatar) {
+    avatarSrc = user.avatar;
+  } else if (user && "photo_url" in user && user.photo_url) {
+    avatarSrc = user.photo_url;
+  }
 
   return (
     <Image
       width={128}
       height={128}
       className={imageClassName}
-      src={user?.avatar || user?.photo_url || STUBS.USER}
+      src={avatarSrc}
       alt={ALTS.USER_AVATAR}
     />
   );

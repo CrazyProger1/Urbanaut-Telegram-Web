@@ -1,6 +1,5 @@
 import React from "react";
 import { SwitchBar } from "@/components/common/bars";
-import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
 import { getPathname } from "@/helpers/pathname";
 import { getTranslations } from "next-intl/server";
@@ -20,14 +19,16 @@ const NavigationBar = async () => {
     {
       href: PAGES.TEAMS,
       text: t("teams"),
+      disabled: true,
     },
   ];
   return (
     <SwitchBar>
-      {SWITCH_PAGES.map(({ href, text }) => (
+      {SWITCH_PAGES.map(({ href, text, disabled }) => (
         <SwitchBar.Item
           key={href}
           link={href}
+          disabled={disabled}
           selected={pathname?.includes(href)}
         >
           {text}
