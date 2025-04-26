@@ -26,6 +26,15 @@ export const ICONS = {
   CALENDAR: `${ICONS_DIR}/calendar.png`,
   BOOK: `${ICONS_DIR}/book.png`,
 };
+export const NOTIFICATION_ICONS = {
+  NOTIFICATION: ICONS.INFO,
+  GIFT: ICONS.GIFT,
+  WARNING: ICONS.WARNING,
+  CANCEL: ICONS.CANCEL,
+  CLOCK: ICONS.CLOCK,
+  SETTINGS: ICONS.SETTINGS,
+  CHECKED: ICONS.CHECKED,
+};
 
 export const IMAGES = {
   USER: `${IMAGES_DIR}/user.png`,

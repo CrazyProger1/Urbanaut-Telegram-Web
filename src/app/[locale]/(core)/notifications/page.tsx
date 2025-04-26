@@ -1,7 +1,16 @@
 import React from "react";
+import { NotificationTable } from "@/components/modules/notifications/tables";
+import { getNotifications } from "@/services/api/notifications";
+import { Notification } from "@/types/notifications";
 
-const NotificationsPage = () => {
-  return <div></div>;
+// TODO: find better solution for next-intl. Next.js thought it's SSG bc of generateStaticParams at layout
+export const dynamic = "force-dynamic";
+
+const NotificationsPage = async () => {
+  const response = await getNotifications();
+  let notifications: Notification[] = [];
+  if (response.success) notifications = response.results;
+  return <NotificationTable notifications={notifications} />;
 };
 
 export default NotificationsPage;
