@@ -11,14 +11,14 @@ interface Props {
 const NotificationItem = ({ notification }: Props) => {
   const { icon, title, is_read, message, shown_at } = notification;
   return (
-    <div className="bg-foreground flex flex-row rounded-2xl p-4 shadow-volume-frame relative">
+    <div className="bg-foreground flex flex-row rounded-2xl p-4 shadow-volume relative">
       <Image
         src={
           NOTIFICATION_ICONS[icon as keyof typeof NOTIFICATION_ICONS] ||
           NOTIFICATION_ICONS.NOTIFICATION
         }
         alt={ALTS.NOTIFICATION_ICON}
-        className="aspect-square size-12"
+        className="aspect-square size-12 drop-shadow-volume"
         width={32}
         height={32}
       />
