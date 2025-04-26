@@ -1,5 +1,6 @@
 import React from "react";
 import BlockButton from "./BlockButton";
+import clsx from "clsx";
 
 interface Props {
   className?: string;
@@ -15,18 +16,19 @@ const Block = ({
   blockClassName,
   onClick,
 }: Props) => {
+  const combinedBlockClassName = clsx(
+    "flex flex-col shadow-volume pt-2 rounded-2xl bg-foreground",
+    blockClassName,
+  );
   return (
-    <div
-      className={
-        "flex flex-col shadow-volume pt-2 rounded-2xl bg-foreground " +
-        blockClassName
-      }
-      onClick={onClick}
-    >
-      <div className="text-text font-primary text-lg font-bold text-center">
-        {title}
-      </div>
-      <div className={"mt-2 " + className}>{children}</div>
+    <div className={combinedBlockClassName} onClick={onClick}>
+      {title ? (
+        <div className="text-text mb-2 font-primary text-lg font-bold text-center">
+          {title}
+        </div>
+      ) : null}
+
+      <div className={className}>{children}</div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { User } from "@/types/users";
 import { UserAvatar } from "@/components/modules/users";
 import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
+import { Block } from "@/components/common/blocks";
 
 interface Props {
   user: User;
@@ -10,7 +11,7 @@ interface Props {
 
 const UserItem = ({ user }: Props) => {
   return (
-    <div className="bg-foreground w-full flex flex-row rounded-2xl p-2 shadow-volume">
+    <Block className="flex flex-row">
       <Link href={PAGES.PROFILE}>
         <UserAvatar user={user} />
       </Link>
@@ -23,7 +24,7 @@ const UserItem = ({ user }: Props) => {
           {user?.rank || "NEWBIE"}
         </p>
       </div>
-    </div>
+    </Block>
   );
 };
 
