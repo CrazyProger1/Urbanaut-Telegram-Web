@@ -1,6 +1,8 @@
 import React from "react";
 import { User } from "@/types/users";
 import { UserAvatar } from "@/components/modules/users";
+import { Link } from "@/i18n/routing";
+import { PAGES } from "@/config/pages";
 
 interface Props {
   user: User;
@@ -9,7 +11,18 @@ interface Props {
 const UserItem = ({ user }: Props) => {
   return (
     <div className="bg-foreground w-full flex flex-row rounded-2xl p-2 shadow-volume">
-      <UserAvatar user={user} />
+      <Link href={PAGES.PROFILE}>
+        <UserAvatar user={user} />
+      </Link>
+
+      <div className="pl-2">
+        <h1 className="text-lg font-bold font-primary">
+          @{user?.nickname || user?.username || "username"}
+        </h1>
+        <p className="text-text font-primary text-sm">
+          {user?.rank || "NEWBIE"}
+        </p>
+      </div>
     </div>
   );
 };
