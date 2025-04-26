@@ -1,14 +1,13 @@
-"use client";
-
 import React from "react";
 import { SwitchBar } from "@/components/common/bars";
-import { Link, usePathname } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
-import { useTranslations } from "next-intl";
+import { getPathname } from "@/helpers/pathname";
+import { getTranslations } from "next-intl/server";
 
-const NavigationBar = () => {
-  const pathname = usePathname();
-  const t = useTranslations("SocialLayout");
+const NavigationBar = async () => {
+  const pathname = await getPathname();
+  const t = await getTranslations("SocialLayout");
   const SWITCH_PAGES = [
     {
       href: PAGES.REFERRALS,
@@ -26,11 +25,13 @@ const NavigationBar = () => {
   return (
     <SwitchBar>
       {SWITCH_PAGES.map(({ href, text }) => (
-        <Link className="w-full" key={text} href={href}>
-          <SwitchBar.Item selected={pathname.includes(href)}>
-            {text}
-          </SwitchBar.Item>
-        </Link>
+        <SwitchBar.Item
+          key={href}
+          link={href}
+          selected={pathname?.includes(href)}
+        >
+          {text}
+        </SwitchBar.Item>
       ))}
     </SwitchBar>
   );
