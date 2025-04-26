@@ -26,6 +26,7 @@ export const ICONS = {
   CALENDAR: `${ICONS_DIR}/calendar.png`,
   BOOK: `${ICONS_DIR}/book.png`,
   GAS_MASK: `${ICONS_DIR}/gas-mask.png`,
+  SHARE: `${ICONS_DIR}/share.png`,
 };
 export const NOTIFICATION_ICONS = {
   NOTIFICATION: ICONS.INFO,
@@ -52,4 +53,5 @@ export const ALTS = {
   BLOCK_ICON: "Block icon",
   NOTIFICATION_ICON: "Notification icon",
   FOOTER_LINK: "Footer link",
+  SHARE_ICON: "Share icon",
 };

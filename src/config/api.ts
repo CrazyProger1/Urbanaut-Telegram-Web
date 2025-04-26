@@ -7,4 +7,5 @@ export const API_ENDPOINTS = {
   SETTINGS: `settings/`,
   NOTIFICATIONS: `notifications/`,
   REFERRALS: `referrals/`,
+  REFERRAL_LINKS: `referral_links/`,
 };
