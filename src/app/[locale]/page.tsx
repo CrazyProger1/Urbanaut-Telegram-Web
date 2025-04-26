@@ -5,7 +5,7 @@ import { PAGES } from "@/config/pages";
 
 const Page = () => {
   redirect({
-    href: PAGES.SETTINGS,
+    href: PAGES.OBJECTS,
     locale: "uk",
   });
   return <div />;

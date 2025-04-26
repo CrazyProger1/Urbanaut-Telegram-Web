@@ -9,6 +9,7 @@ export const PAGES = {
   SOCIAL: "/social",
   EVENTS: "/events",
   BLOG: "/blog",
+  OBJECTS: "/objects",
 };
 
 export const FOOTER_PAGES = [
@@ -21,7 +22,7 @@ export const FOOTER_PAGES = [
     ICON: ICONS.PROFILE,
   },
   {
-    PAGE: PAGES.HOME,
+    PAGE: PAGES.OBJECTS,
     ICON: ICONS.SEARCH,
   },
   {

@@ -14,6 +14,7 @@ const FooterLink = ({ page, icon }: Props) => {
 
   const className = clsx(
     "flex p-4 w-full first:rounded-tl-2xl last:rounded-tr-2xl justify-center items-center",
+    !active && " border border-transparent",
     active && "bg-selection border border-selection-border shadow-volume",
   );
   return (
