@@ -1,5 +1,6 @@
 import React from "react";
 import BlockButton from "./BlockButton";
+import BlockExpand from "./BlockExpand";
 import clsx from "clsx";
 
 interface Props {
@@ -34,5 +35,6 @@ const Block = ({
 };
 
 Block.Button = BlockButton;
+Block.Expand = BlockExpand;
 
 export default Block;

@@ -8,7 +8,7 @@ interface Props {
   variant?: "normal" | "danger" | "disabled";
   icon?: string;
   text?: string;
-  metric?: string | number;
+  metric?: string | number | React.ReactNode;
   disable?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
@@ -44,7 +44,7 @@ const BlockButton = ({
           alt={ALTS.BLOCK_ICON}
         />
       )}
-      <div className="flex flex-row justify-between font-primary w-full">
+      <div className="flex flex-row justify-between font-primary w-full items-center">
         <div>{text}</div>
         <div>{metric}</div>
       </div>

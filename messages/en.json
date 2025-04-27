@@ -31,5 +31,11 @@
     "friends": "friends",
     "referrals": "referrals",
     "teams": "teams"
+  },
+  "ObjectAboutBlock": {
+    "state": "State",
+    "statistics": "Statistics",
+    "expeditions": "Expeditions",
+    "location": "Location"
   }
 }

@@ -6,7 +6,6 @@ import { ALTS, STUBS } from "@/config/media";
 import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
 import { RatingBar } from "@/components/common/bars";
-import { HorizontalDivider } from "@/components/common/dividers";
 
 interface Props {
   object: AbandonedObject;

@@ -28,6 +28,9 @@ export const ICONS = {
   GAS_MASK: `${ICONS_DIR}/gas-mask.png`,
   SHARE: `${ICONS_DIR}/share.png`,
   TELEGRAM: `${ICONS_DIR}/telegram.png`,
+  STATISTICS: `${ICONS_DIR}/statistics.png`,
+  PIN: `${ICONS_DIR}/pin.png`,
+  CLIPBOARD: `${ICONS_DIR}/clipboard.png`,
 };
 export const NOTIFICATION_ICONS = {
   NOTIFICATION: ICONS.INFO,

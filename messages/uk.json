@@ -31,5 +31,11 @@
     "friends": "друзі",
     "referrals": "реферали",
     "teams": "команди"
+  },
+  "ObjectAboutBlock": {
+    "state": "Стан",
+    "statistics": "Статистика",
+    "expeditions": "Експедиції",
+    "location": "Розташування"
   }
 }
