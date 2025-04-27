@@ -14,6 +14,7 @@ export const PAGES = {
   EVENTS: "/events",
   BLOG: "/blog",
   OBJECTS: "/objects",
+  OBJECT: "/objects/:id",
   UNAVAILABLE: "/unavailable",
 };
 
