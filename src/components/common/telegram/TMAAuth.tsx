@@ -1,4 +1,5 @@
 "use client";
+import { useLaunchParams } from "@telegram-apps/sdk-react";
 import React, { useEffect } from "react";
 import { retrieveRawInitData } from "@telegram-apps/sdk-react";
 import { BASE_URL } from "@/config/base";
@@ -8,6 +9,12 @@ import { INITDATA_FALLBACK } from "@/config/telegram";
 
 const TMAAuth = () => {
   const { setUser } = useAccountStore();
+
+  const launchParams = useLaunchParams();
+  const startParam = launchParams?.startParam;
+  console.log(launchParams);
+  console.log("Starting param", startParam);
+
   useEffect(() => {
     let initData = undefined;
     try {
