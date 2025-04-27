@@ -16,7 +16,7 @@ const ReferralBar = ({ links }: Props) => {
     <Block className="py-2 px-4 flex flex-row justify-between items-center">
       <div>@{link.code}</div>
       <ShareWrapper link={link.link}>
-        <ShareIcon />
+        <ShareIcon className="cursor-pointer" />
       </ShareWrapper>
     </Block>
   );

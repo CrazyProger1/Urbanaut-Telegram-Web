@@ -5,9 +5,9 @@ import NotificationItem from "./NotificationItem";
 interface Props {
   notifications: Notification[];
 }
-const NotificationTable = ({ notifications }: Props) => {
+const NotificationsTable = ({ notifications }: Props) => {
   return (
-    <div className="flex flex-col gap-4 px-4">
+    <div className="flex flex-col gap-4">
       {notifications.map((notification) => (
         <NotificationItem key={notification.id} notification={notification} />
       ))}
@@ -15,4 +15,4 @@ const NotificationTable = ({ notifications }: Props) => {
   );
 };
 
-export default NotificationTable;
+export default NotificationsTable;

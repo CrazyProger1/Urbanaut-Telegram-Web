@@ -9,4 +9,5 @@ export const API_ENDPOINTS = {
   REFERRALS: `referrals/`,
   REFERRAL_LINKS: `referral_links/`,
   APPLY_REFERRAL_LINK: `referral_links/:code/apply`,
+  OBJECTS: `objects/`,
 };

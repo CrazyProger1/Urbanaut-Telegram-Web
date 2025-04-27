@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationBar } from "@/components/modules/social/bars";
 import { getReferralLinks, getReferrals } from "@/services/api/referrals";
 import { User } from "@/types/users";
-import { UserTable } from "@/components/modules/users/tables";
+import { UsersTable } from "@/components/modules/users/tables";
 import { ReferralBar } from "@/components/modules/referrals/bars";
 import { ReferralLink } from "@/types/referrals";
 
@@ -22,7 +22,7 @@ const ReferralsPage = async () => {
     <div className="px-4 flex flex-col gap-4">
       <NavigationBar />
       <ReferralBar links={links} />
-      <UserTable users={referrals} />
+      <UsersTable users={referrals} />
     </div>
   );
 };

@@ -1,1 +1,1 @@
-export { default as NotificationTable } from "./NotificationTable";
+export { default as NotificationsTable } from "./NotificationsTable";

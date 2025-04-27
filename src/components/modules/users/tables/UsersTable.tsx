@@ -6,7 +6,7 @@ interface Props {
   users: User[];
 }
 
-const UserTable = ({ users }: Props) => {
+const UsersTable = ({ users }: Props) => {
   return (
     <div className="flex flex-col gap-4">
       {users.map((user) => (
@@ -16,4 +16,4 @@ const UserTable = ({ users }: Props) => {
   );
 };
 
-export default UserTable;
+export default UsersTable;

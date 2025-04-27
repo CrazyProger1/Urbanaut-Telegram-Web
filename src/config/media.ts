@@ -57,4 +57,5 @@ export const ALTS = {
   SHARE_ICON: "Share icon",
   TELEGRAM_ICON: "Telegram icon",
   LOCK_ICON: "Lock icon",
+  OBJECT_PHOTO: "Abandoned object photo",
 };

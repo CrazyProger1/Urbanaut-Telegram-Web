@@ -1,5 +1,5 @@
 import React from "react";
-import { NotificationTable } from "@/components/modules/notifications/tables";
+import { NotificationsTable } from "@/components/modules/notifications/tables";
 import { getNotifications } from "@/services/api/notifications";
 import { Notification } from "@/types/notifications";
 
@@ -10,7 +10,11 @@ const NotificationsPage = async () => {
   const response = await getNotifications();
   let notifications: Notification[] = [];
   if (response.success) notifications = response.results;
-  return <NotificationTable notifications={notifications} />;
+  return (
+    <div className="px-4">
+      <NotificationsTable notifications={notifications} />
+    </div>
+  );
 };
 
 export default NotificationsPage;
