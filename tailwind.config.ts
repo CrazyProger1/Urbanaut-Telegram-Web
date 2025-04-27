@@ -53,6 +53,10 @@ const config = {
         primary: ["Poppins", "GigaSans", "sans-serif"],
       },
       colors: {
+        rating: {
+          fill: "rgb(253, 224, 71)",
+          empty: "rgba(var(--color-selection-default), 0.3)",
+        },
         mdx: {
           heading: {
             1: "rgb(var(--color-mdx-heading-1))", // h1 color

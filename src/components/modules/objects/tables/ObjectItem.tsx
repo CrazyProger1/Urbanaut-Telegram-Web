@@ -5,6 +5,8 @@ import Image from "next/image";
 import { ALTS, STUBS } from "@/config/media";
 import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
+import { RatingBar } from "@/components/common/bars";
+import { HorizontalDivider } from "@/components/common/dividers";
 
 interface Props {
   object: AbandonedObject;
@@ -21,10 +23,13 @@ const ObjectItem = ({ object }: Props) => {
           src={object.photo || STUBS.OBJECT}
           alt={ALTS.OBJECT_PHOTO}
         />
-        <div className="ml-2 flex flex-col font-primary">
-          <div className="text-md font-bold">{object.name}</div>
-          {/*<div className="text-sm">{object.short_description}</div>*/}
-          <div></div>
+        <div className="ml-2 flex flex-col font-primary justify-between">
+          <div>
+            <div className="text-md font-bold">{object.name}</div>
+            <div className="text-xs mt-1">{object.short_description}</div>
+          </div>
+
+          <RatingBar value={Number(object.rating?.value || 0)} />
         </div>
       </Block>
     </Link>
