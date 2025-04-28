@@ -14,6 +14,10 @@ const ObjectPhotoSlider = ({ object }: Props) => {
   const centerW = 300;
   const centerH = (centerW * 9) / 16;
 
+  if (!photos || photos?.length < 3) {
+    return null;
+  }
+
   return (
     <div
       className="relative w-full flex justify-center items-center"
@@ -28,7 +32,7 @@ const ObjectPhotoSlider = ({ object }: Props) => {
           src={photos[0].src}
           alt={ALTS.OBJECT_PHOTO}
           fill
-          className="object-cover"
+          className="object-cover drop-shadow-volume"
         />
       </div>
 
@@ -41,7 +45,7 @@ const ObjectPhotoSlider = ({ object }: Props) => {
           src={photos[1].src}
           alt={ALTS.OBJECT_PHOTO}
           fill
-          className="object-cover"
+          className="object-cover drop-shadow-volume"
         />
       </div>
 
@@ -54,7 +58,7 @@ const ObjectPhotoSlider = ({ object }: Props) => {
           src={photos[2].src}
           alt={ALTS.OBJECT_PHOTO}
           fill
-          className="object-cover"
+          className="object-cover drop-shadow-volume"
         />
       </div>
     </div>
