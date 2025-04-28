@@ -5,6 +5,7 @@ import {
   ObjectAboutBlock,
   ObjectDescriptionBlock,
 } from "@/components/modules/objects/blocks";
+import { ObjectPhotoSlider } from "@/components/modules/objects/sliders";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +18,7 @@ const ObjectPage = async ({ params }: Props) => {
   if (!response.success) return notFound();
   return (
     <div className="px-4 flex flex-col gap-4">
+      <ObjectPhotoSlider object={response} />
       <ObjectAboutBlock object={response} />
       <ObjectDescriptionBlock object={response} />
     </div>
