@@ -40,6 +40,7 @@
     "react-toastify": "^10.0.6",
     "sass": "^1.81.0",
     "simple-masonry-ui": "^0.0.12",
+    "slugify": "^1.6.6",
     "swiper": "^11.1.15",
     "waterfall.js": "^1.1.0",
     "zod": "^3.24.1",

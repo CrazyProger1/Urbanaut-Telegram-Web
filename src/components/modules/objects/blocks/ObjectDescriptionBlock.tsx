@@ -2,6 +2,7 @@ import React from "react";
 import { AbandonedObject } from "@/types/abandoned";
 import { Block } from "@/components/common/blocks";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { slugify } from "@/helpers/url";
 
 interface Props {
   object: AbandonedObject;
@@ -46,13 +47,13 @@ const ObjectDescriptionBlock = ({ object }: Props) => {
       {sections.map((section, index) => (
         <Block.Expand
           key={index}
-          text={section.title}
-          query={`des${index}cription`}
+          content={section.title}
+          query={slugify(section.title)}
+          last={sections.length - 1 === index}
         >
-          <div className="p-2">
-            <div
-              className="
-      text-text font-primary w-full prose text-xs
+          <div
+            className="
+      p-2 text-text font-primary w-full prose text-xs
       prose-strong:font-primary
       prose-h1:text-text prose-h1:text-2xl prose-h1:font-primary prose-h1:text-center
       prose-h2:text-text prose-h2:text-xl prose-h2:font-primary prose-h2:text-center
@@ -67,9 +68,8 @@ const ObjectDescriptionBlock = ({ object }: Props) => {
       prose-ul:text-mdx-ul
       prose-ol:text-mdx-ol
       prose-a:text-mdx-a"
-            >
-              <MDXRemote source={section.content as string} />
-            </div>
+          >
+            <MDXRemote source={section.content as string} />
           </div>
         </Block.Expand>
       ))}

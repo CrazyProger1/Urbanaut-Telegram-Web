@@ -39,7 +39,7 @@ const AboutSettings = async () => {
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
           <Link href={href}>
-            <Block.Button text={text} icon={icon} className={className} />
+            <Block.Button content={text} icon={icon} className={className} />
           </Link>
         </div>
       ))}

@@ -38,7 +38,6 @@ const ObjectAboutBlock = async ({ object }: Props) => {
     {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
-      className: "last:rounded-b-2xl",
       href: URLS.COMMUNITY,
       count: 4,
       query: "expeditions",
@@ -46,14 +45,14 @@ const ObjectAboutBlock = async ({ object }: Props) => {
   ];
   return (
     <Block blockClassName="w-full" title={`${object.name || "name"}`}>
-      {OBJECT_METRICS.map(({ text, icon, className, query }) => (
+      {OBJECT_METRICS.map(({ text, icon, query }, index) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
           <Block.Expand
             query={query}
-            text={text}
+            content={text}
             icon={icon}
-            className={className}
+            last={OBJECT_METRICS.length - 1 === index}
           >
             Test
           </Block.Expand>

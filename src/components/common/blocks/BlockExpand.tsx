@@ -6,24 +6,39 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import BlockButton from "./BlockButton";
-import { Link, usePathname } from "@/i18n/routing";
+import { usePathname } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import clsx from "clsx";
+import Image from "next/image";
+import { ALTS } from "@/config/media";
+import { OptionalLinkWrapper } from "@/components/common/utils";
 
 interface Props {
   className?: string;
   variant?: "normal" | "danger" | "disabled";
   icon?: string;
-  text?: string;
+  content?: string | React.ReactNode;
   disable?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
   query?: string;
   children?: React.ReactNode;
+  first?: boolean;
+  last?: boolean;
 }
 
-const BlockExpand = (props: Props) => {
-  const { children, query } = props;
+const BlockExpand = ({
+  className,
+  variant = "normal",
+  content,
+  icon,
+  onClick,
+  disable,
+  children,
+  query,
+  first,
+  last,
+}: Props) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [href, setHref] = useState("");
@@ -51,15 +66,41 @@ const BlockExpand = (props: Props) => {
     );
   }, [createQueryString, isOpen, pathname, query, searchParams]);
 
+  if (disable) {
+    variant = "disabled";
+  }
+  const extendedClassName = clsx(
+    "flex flex-row gap-4 items-center cursor-pointer p-2",
+    isOpen && "bg-selection",
+    className,
+
+    variant === "danger" && "bg-variant-danger",
+    variant === "normal" && "bg-foreground active:bg-selection",
+    variant === "disabled" && "bg-variant-disabled",
+    first && "rounded-t-2xl",
+    last && !isOpen && "rounded-b-2xl",
+  );
   return (
-    <div className="flex flex-col">
-      <Link href={href}>
-        <BlockButton
-          className={isOpen ? "bg-selection" : ""}
-          {...props}
-          metric={isOpen ? <FaAngleUp /> : <FaAngleDown />}
-        />
-      </Link>
+    <div className="flex flex-col ">
+      <OptionalLinkWrapper
+        href={href}
+        onClick={disable ? undefined : onClick}
+        className={extendedClassName}
+      >
+        {icon && (
+          <Image
+            className="size-8 select-none drop-shadow-volume"
+            src={icon}
+            width={64}
+            height={64}
+            alt={ALTS.BLOCK_ICON}
+          />
+        )}
+        <div className="flex flex-row justify-between font-primary w-full items-center">
+          <div>{content}</div>
+          <div>{isOpen ? <FaAngleUp /> : <FaAngleDown />}</div>
+        </div>
+      </OptionalLinkWrapper>
       {isOpen ? <>{children}</> : null}
     </div>
   );

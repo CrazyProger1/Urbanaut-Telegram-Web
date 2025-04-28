@@ -71,14 +71,14 @@ const DonateModal = () => {
           <HorizontalDivider />
           <Block.Button
             icon={ICONS.WALLET}
-            text={t("connectWallet")}
+            content={t("connectWallet")}
             onClick={handleConnectWallet}
             disable={wallet !== null}
           />
           <HorizontalDivider />
           <Block.Button
             className="rounded-b-2xl"
-            text={t("donate")}
+            content={t("donate")}
             icon={ICONS.GIFT}
             onClick={handleSendTransactionClick}
           />

@@ -48,7 +48,7 @@ const UserAboutBlock = ({ user }: Props) => {
           <HorizontalDivider />
           <Link href={href}>
             <Block.Button
-              text={text}
+              content={text}
               metric={count}
               icon={icon}
               className={className}

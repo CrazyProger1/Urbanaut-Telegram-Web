@@ -12,12 +12,12 @@ const AccountSettings = async () => {
     <Block title={t("account")}>
       <HorizontalDivider />
       <Link href={URLS.RESTORE_ACCOUNT + "?text=%23restore%0A"}>
-        <Block.Button text={t("restore")} icon={ICONS.CHECKED} />
+        <Block.Button content={t("restore")} icon={ICONS.CHECKED} />
       </Link>
       <HorizontalDivider />
       <Link href={URLS.DELETE_ACCOUNT + "?text=%23delete%0A"}>
         <Block.Button
-          text={t("delete")}
+          content={t("delete")}
           variant="danger"
           icon={ICONS.CANCEL}
           className="rounded-b-2xl"
