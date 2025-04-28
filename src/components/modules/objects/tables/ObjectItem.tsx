@@ -25,7 +25,7 @@ const ObjectItem = ({ object }: Props) => {
         <div className="ml-2 flex flex-col font-primary justify-between">
           <div>
             <div className="text-md font-bold">{object.name}</div>
-            <div className="text-xs mt-1">{object.short_description}</div>
+            <div className="text-sm mt-1">{object.short_description}</div>
           </div>
 
           <RatingBar value={Number(object.rating?.value || 0)} />

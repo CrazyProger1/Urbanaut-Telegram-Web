@@ -25,11 +25,9 @@ const OptionalLinkWrapper = ({ href, onClick, className, children }: Props) => {
   };
 
   return href ? (
-    <Link href={href} passHref>
-      <div className={className} onClick={handleClick}>
-        {children}
-      </div>
-    </Link>
+    <div className={className} onClick={handleClick}>
+      {children}
+    </div>
   ) : (
     <div className={className} onClick={onClick}>
       {children}

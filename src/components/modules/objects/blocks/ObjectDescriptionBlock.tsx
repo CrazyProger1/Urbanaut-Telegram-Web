@@ -54,7 +54,7 @@ const ObjectDescriptionBlock = async ({ object }: Props) => {
         >
           <div
             className="
-      p-2 text-text font-primary w-full prose text-xs
+      p-2 text-text font-primary w-full prose text-sm
       prose-strong:font-primary
       prose-h1:text-text prose-h1:text-2xl prose-h1:font-primary prose-h1:text-center
       prose-h2:text-text prose-h2:text-xl prose-h2:font-primary prose-h2:text-center
