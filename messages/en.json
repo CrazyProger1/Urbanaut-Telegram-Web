@@ -37,5 +37,9 @@
     "statistics": "Statistics",
     "expeditions": "Expeditions",
     "location": "Location"
+  },
+  "ObjectDescriptionBlock": {
+    "description": "Description",
+    "main": "Main"
   }
 }

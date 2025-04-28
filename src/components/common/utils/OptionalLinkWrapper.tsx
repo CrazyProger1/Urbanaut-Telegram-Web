@@ -1,21 +1,36 @@
+"use client";
+import Link from "next/link";
+
 import React from "react";
-import { Link } from "@/i18n/routing";
+import { useRouter } from "@/i18n/routing";
 
 interface Props {
   href?: string;
-  children?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
   className?: string;
-  onClick?: React.MouseEventHandler;
+  children: React.ReactNode;
 }
-const OptionalLinkWrapper = ({ href, children, className, onClick }: Props) => {
-  if (href) {
-    return (
-      <Link className={className} onClick={onClick} href={href}>
+
+const OptionalLinkWrapper = ({ href, onClick, className, children }: Props) => {
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (href) {
+      e.preventDefault();
+      router.push(href, { scroll: false });
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
+  return href ? (
+    <Link href={href} passHref>
+      <div className={className} onClick={handleClick}>
         {children}
-      </Link>
-    );
-  }
-  return (
+      </div>
+    </Link>
+  ) : (
     <div className={className} onClick={onClick}>
       {children}
     </div>

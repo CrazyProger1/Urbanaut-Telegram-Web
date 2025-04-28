@@ -3,6 +3,7 @@ import { AbandonedObject } from "@/types/abandoned";
 import { Block } from "@/components/common/blocks";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { slugify } from "@/helpers/url";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
   object: AbandonedObject;
@@ -13,14 +14,13 @@ interface Section {
   content: string;
 }
 
-const parseMarkdown = (markdown: string): Section[] => {
+const parseMarkdown = (markdown: string, main: string): Section[] => {
   const sections: Section[] = [];
 
-  const parts = markdown.split(/^##\s+/m); // Split at each '## '
+  const parts = markdown.split(/^##\s+/m);
   if (parts.length) {
-    // First part is the "Main" description
     sections.push({
-      title: "Main",
+      title: main,
       content: parts[0].trim(),
     });
   }
@@ -37,13 +37,14 @@ const parseMarkdown = (markdown: string): Section[] => {
   return sections;
 };
 
-const ObjectDescriptionBlock = ({ object }: Props) => {
+const ObjectDescriptionBlock = async ({ object }: Props) => {
+  const t = await getTranslations("ObjectDescriptionBlock");
   if (!object.description) return null;
 
-  const sections = parseMarkdown(object.description);
+  const sections = parseMarkdown(object.description, t("main"));
 
   return (
-    <Block title="Description">
+    <Block title={t("description")}>
       {sections.map((section, index) => (
         <Block.Expand
           key={index}

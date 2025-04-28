@@ -37,5 +37,9 @@
     "statistics": "Статистика",
     "expeditions": "Експедиції",
     "location": "Розташування"
+  },
+  "ObjectDescriptionBlock": {
+    "description": "Опис",
+    "main": "Головне"
   }
 }
