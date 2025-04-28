@@ -55,6 +55,7 @@ const BlockExpand = (props: Props) => {
     <div className="flex flex-col">
       <Link href={href}>
         <BlockButton
+          className={isOpen ? "bg-selection" : ""}
           {...props}
           metric={isOpen ? <FaAngleUp /> : <FaAngleDown />}
         />

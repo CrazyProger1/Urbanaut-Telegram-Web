@@ -30,7 +30,7 @@ const BlockButton = ({
     className,
 
     variant === "danger" && "bg-variant-danger",
-    variant === "normal" && "bg-foreground hover:bg-selection",
+    variant === "normal" && "bg-foreground active:bg-selection",
     variant === "disabled" && "bg-variant-disabled",
   );
   return (
