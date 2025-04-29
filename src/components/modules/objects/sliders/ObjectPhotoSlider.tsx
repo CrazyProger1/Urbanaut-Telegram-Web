@@ -79,7 +79,7 @@ const ObjectPhotoSlider = ({ object }: Props) => {
           src={photos[getPhotoIndex(-1)].src}
           alt={ALTS.OBJECT_PHOTO}
           fill
-          className="object-cover drop-shadow-volume"
+          className="object-cover drop-shadow-volume blur-sm"
         />
       </div>
 
@@ -121,7 +121,7 @@ const ObjectPhotoSlider = ({ object }: Props) => {
           src={photos[getPhotoIndex(1)].src}
           alt={ALTS.OBJECT_PHOTO}
           fill
-          className="object-cover drop-shadow-volume"
+          className="object-cover drop-shadow-volume blur-sm"
         />
       </div>
     </div>
