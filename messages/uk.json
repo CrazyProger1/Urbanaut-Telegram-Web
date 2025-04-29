@@ -27,7 +27,7 @@
     "experience": "Досвід",
     "friends": "Друзі"
   },
-  "SocialLayout": {
+  "SocialNavigationBar": {
     "friends": "друзі",
     "referrals": "реферали",
     "teams": "команди"
@@ -55,5 +55,9 @@
   },
   "Header": {
     "newbie": "Новачок"
+  },
+  "LeaderboardNavigationBar": {
+      "experience": "досвід",
+      "karma": "карма"
   }
 }

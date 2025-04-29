@@ -11,7 +11,11 @@ const LOCK_WOBBLE_ANIMATION = {
   transition: { duration: 0.3, ease: "easeInOut" },
 };
 
-const UnavailablePage = () => {
+interface Props {
+  icon?: string;
+}
+
+const UnavailablePage = ({ icon }: Props) => {
   const controls = useAnimation();
 
   return (
@@ -21,9 +25,9 @@ const UnavailablePage = () => {
     >
       <div className="absolute inset-0 bg-foreground blur-sm rounded-2xl h-full mx-4" />
       <motion.img
-        src={ICONS.LOCK}
+        src={icon || ICONS.LOCK}
         className="relative z-10 size-14 drop-shadow-volume"
-        alt={ALTS.LOCK_ICON}
+        alt={ALTS.UNAVAILABLE_ICON}
         animate={controls}
         style={{ transformOrigin: "top center" }}
       />

@@ -4,9 +4,9 @@ import { PAGES } from "@/config/pages";
 import { getPathname } from "@/helpers/pathname";
 import { getTranslations } from "next-intl/server";
 
-const NavigationBar = async () => {
+const SocialNavigationBar = async () => {
   const pathname = await getPathname();
-  const t = await getTranslations("SocialLayout");
+  const t = await getTranslations("SocialNavigationBar");
   const SWITCH_PAGES = [
     {
       href: PAGES.REFERRALS,
@@ -38,4 +38,4 @@ const NavigationBar = async () => {
   );
 };
 
-export default NavigationBar;
+export default SocialNavigationBar;

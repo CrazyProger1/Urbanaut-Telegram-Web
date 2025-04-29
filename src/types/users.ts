@@ -33,3 +33,7 @@ export type Session = {
   initData: string;
   user: SessionUser;
 };
+
+export type UserFilters = {
+  ordering?: string;
+};

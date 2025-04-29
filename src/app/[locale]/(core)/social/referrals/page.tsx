@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationBar } from "@/components/modules/social/bars";
+import { SocialNavigationBar } from "@/components/modules/social/bars";
 import { getReferralLinks, getReferrals } from "@/services/api/referrals";
 import { User } from "@/types/users";
 import { UsersTable } from "@/components/modules/users/tables";
@@ -20,7 +20,7 @@ const ReferralsPage = async () => {
 
   return (
     <div className="px-4 flex flex-col gap-4">
-      <NavigationBar />
+      <SocialNavigationBar />
       <ReferralBar links={links} />
       <UsersTable users={referrals} />
     </div>

@@ -59,6 +59,6 @@ export const ALTS = {
   FOOTER_LINK: "Footer link",
   SHARE_ICON: "Share icon",
   TELEGRAM_ICON: "Telegram icon",
-  LOCK_ICON: "Lock icon",
+  UNAVAILABLE_ICON: "Unavailable page icon",
   OBJECT_PHOTO: "Abandoned object photo",
 };

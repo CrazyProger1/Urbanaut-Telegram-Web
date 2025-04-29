@@ -27,7 +27,7 @@
     "experience": "Experience",
     "friends": "Friends"
   },
-  "SocialLayout": {
+  "SocialNavigationBar": {
     "friends": "friends",
     "referrals": "referrals",
     "teams": "teams"
@@ -55,5 +55,9 @@
   },
   "Header": {
     "newbie": "newbie"
+  },
+  "LeaderboardNavigationBar": {
+    "experience": "experience",
+    "karma": "karma"
   }
 }

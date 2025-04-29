@@ -1,9 +1,10 @@
 import { API_ENDPOINTS } from "@/config/api";
 import { axios } from "@/services/api/api";
-import { User } from "@/types/users";
-import { SuccessfulResponse } from "@/types/api";
+import { User, UserFilters } from "@/types/users";
+import { PaginatedResponse, SuccessfulResponse } from "@/types/api";
 
 type UserResponse = SuccessfulResponse & User;
+type UsersResponse = PaginatedResponse<User>;
 
 export const getUser = async (id: number): Promise<UserResponse> => {
   try {
@@ -19,5 +20,24 @@ export const getUser = async (id: number): Promise<UserResponse> => {
     return {
       success: false,
     } as UserResponse;
+  }
+};
+export const getUsers = async (
+  filters?: UserFilters,
+): Promise<UsersResponse> => {
+  try {
+    const searchParams = new URLSearchParams(filters);
+    const url = `${API_ENDPOINTS.USERS}?${searchParams.toString()}`;
+    const response = await axios.get(url);
+
+    return {
+      success: response.status === 200,
+      ...response.data,
+    };
+  } catch (error) {
+    console.error("Error fetching:", error);
+    return {
+      success: false,
+    } as UsersResponse;
   }
 };
