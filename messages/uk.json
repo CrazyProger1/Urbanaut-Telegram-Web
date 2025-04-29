@@ -52,5 +52,8 @@
   },
   "LocationExpand": {
     "unknown": "Невідомо"
+  },
+  "Header": {
+    "newbie": "Новачок"
   }
 }

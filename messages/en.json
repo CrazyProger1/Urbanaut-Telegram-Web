@@ -52,5 +52,8 @@
   },
   "LocationExpand": {
     "unknown": "Unknown"
+  },
+  "Header": {
+    "newbie": "newbie"
   }
 }

@@ -21,10 +21,10 @@ const UserAvatar = ({ user, size = "sm" }: Props) => {
     size == "4xl" && "size-40",
     size == "5xl" && "size-44",
     size == "6xl" && "size-48",
-    user?.rank === "NEWBIE" && "shadow-rank-newbie",
-    user?.rank === "STALKER" && "shadow-rank-stalker",
-    user?.rank === "LEGEND" && "shadow-rank-legend",
-    user?.rank === "PROFESSIONAL" && "shadow-rank-professional",
+    user?.rank.key === "NEWBIE" && "shadow-rank-newbie",
+    user?.rank.key === "STALKER" && "shadow-rank-stalker",
+    user?.rank.key === "LEGEND" && "shadow-rank-legend",
+    user?.rank.key === "PROFESSIONAL" && "shadow-rank-professional",
   );
   let avatarSrc = STUBS.USER;
 

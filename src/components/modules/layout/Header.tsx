@@ -9,6 +9,7 @@ import { UserAvatar } from "@/components/modules/users";
 
 const Header = () => {
   const { user } = useAccountStore();
+
   return (
     <div className="bg-foreground shadow-volume p-2 mx-4 rounded-b-2xl flex flex-row items-center">
       <Link href={PAGES.PROFILE}>
@@ -21,7 +22,7 @@ const Header = () => {
         </h1>
         <Link href={PAGES.LEADERBOARD}>
           <p className="text-text font-primary text-sm">
-            {user?.rank || "NEWBIE"}
+            {user?.rank.name || "newbie"}
           </p>
         </Link>
       </div>

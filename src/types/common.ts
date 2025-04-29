@@ -19,6 +19,5 @@ export type Security =
   | "YES_MILITARY";
 export type Preservation = "DANGEROUS" | "LOW" | "MEDIUM" | "HIGH";
 export type Difficulty = "NEWBIE" | "EASY" | "MEDIUM" | "HARD" | "LEGEND";
-export type Rank = "NEWBIE" | "PROFESSIONAL" | "STALKER" | "LEGEND";
 export type Language = "uk" | "en";
 export type Theme = "DARK" | "LIGHT";

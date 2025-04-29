@@ -1,4 +1,10 @@
-import { Rating, Location } from "@/types/common";
+import {
+  Rating,
+  Location,
+  Difficulty,
+  Preservation,
+  Security,
+} from "@/types/common";
 
 export type AbandonedObjectCategory = {
   id: number;
@@ -26,9 +32,9 @@ export type AbandonedObject = {
   location?: Location;
   photo?: string;
   photos?: AbandonedObjectPhoto[];
-  security_level: string;
-  preservation_level: string;
-  difficulty_level: string;
+  security_level: Security;
+  preservation_level: Preservation;
+  difficulty_level: Difficulty;
 };
 
 export type AbandonedObjectFilters = {

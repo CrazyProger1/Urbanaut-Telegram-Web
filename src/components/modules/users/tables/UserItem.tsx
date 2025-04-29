@@ -22,7 +22,7 @@ const UserItem = ({ user }: Props) => {
             @{user?.nickname || user?.username || "username"}
           </h1>
           <p className="text-text font-primary text-sm">
-            {user?.rank || "NEWBIE"}
+            {user?.rank.name || "newbie"}
           </p>
         </div>
       </div>
