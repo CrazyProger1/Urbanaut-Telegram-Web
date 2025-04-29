@@ -3,12 +3,13 @@ import { getUsers } from "@/services/api/users";
 import { UsersTable } from "@/components/modules/users/tables";
 import { UserFilters, User } from "@/types/users";
 import { LeaderboardNavigationBar } from "@/components/modules/users/bars";
+import { PaginationParams } from "@/types/api";
 
 interface Props {
-  searchParams: Promise<UserFilters>;
+  searchParams: Promise<UserFilters & PaginationParams>;
 }
 const Page = async ({ searchParams }: Props) => {
-  const filters: UserFilters = await searchParams;
+  const filters = await searchParams;
   const response = await getUsers(filters);
   let users: User[] = [];
   if (response.success) users = response.results;

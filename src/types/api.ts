@@ -17,3 +17,8 @@ export type PaginatedResponse<T> = {
   count: number;
   results: T[];
 } & SuccessfulResponse;
+
+export type PaginationParams = {
+  offset?: string;
+  limit?: string;
+};

@@ -1,11 +1,12 @@
 import {
   ErrorResponse,
   PaginatedResponse,
+  PaginationParams,
   SuccessfulResponse,
 } from "@/types/api";
 import { API_ENDPOINTS } from "@/config/api";
 import { axios } from "@/services/api/api";
-import { AbandonedObject } from "@/types/abandoned";
+import { AbandonedObject, AbandonedObjectFilters } from "@/types/abandoned";
 
 type AbandonedObjectsResponse =
   | PaginatedResponse<AbandonedObject>
@@ -15,23 +16,25 @@ type AbandonedObjectResponse =
   | (SuccessfulResponse & AbandonedObject)
   | ErrorResponse;
 
-export const getAbandonedObjects =
-  async (): Promise<AbandonedObjectsResponse> => {
-    try {
-      const url = API_ENDPOINTS.OBJECTS;
-      const response = await axios.get(url);
+export const getAbandonedObjects = async (
+  params?: AbandonedObjectFilters & PaginationParams,
+): Promise<AbandonedObjectsResponse> => {
+  try {
+    const searchParams = new URLSearchParams(params);
+    const url = `${API_ENDPOINTS.OBJECTS}?${searchParams.toString()}`;
+    const response = await axios.get(url);
 
-      return {
-        success: response.status === 200,
-        ...response.data,
-      };
-    } catch (error) {
-      console.error("Error fetching:", error);
-      return {
-        success: false,
-      } as AbandonedObjectsResponse;
-    }
-  };
+    return {
+      success: response.status === 200,
+      ...response.data,
+    };
+  } catch (error) {
+    console.error("Error fetching:", error);
+    return {
+      success: false,
+    } as AbandonedObjectsResponse;
+  }
+};
 
 export const getAbandonedObject = async (
   id: number,

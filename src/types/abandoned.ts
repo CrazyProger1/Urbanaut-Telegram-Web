@@ -5,6 +5,8 @@ import {
   Preservation,
   Security,
 } from "@/types/common";
+import request from "@/i18n/request";
+import * as test from "node:test";
 
 export type AbandonedObjectCategory = {
   id: number;
@@ -40,9 +42,9 @@ export type AbandonedObject = {
 export type AbandonedObjectFilters = {
   difficulty_level?: string;
   query?: string;
-  rating?: Rating;
-  nearest?: boolean;
-  max_distance?: number;
+  rating?: string;
+  nearest?: string;
+  max_distance?: string;
   point?: string;
   ordering?: string;
 };

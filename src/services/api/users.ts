@@ -1,7 +1,11 @@
 import { API_ENDPOINTS } from "@/config/api";
 import { axios } from "@/services/api/api";
 import { User, UserFilters } from "@/types/users";
-import { PaginatedResponse, SuccessfulResponse } from "@/types/api";
+import {
+  PaginatedResponse,
+  PaginationParams,
+  SuccessfulResponse,
+} from "@/types/api";
 
 type UserResponse = SuccessfulResponse & User;
 type UsersResponse = PaginatedResponse<User>;
@@ -23,10 +27,10 @@ export const getUser = async (id: number): Promise<UserResponse> => {
   }
 };
 export const getUsers = async (
-  filters?: UserFilters,
+  params?: UserFilters & PaginationParams,
 ): Promise<UsersResponse> => {
   try {
-    const searchParams = new URLSearchParams(filters);
+    const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.USERS}?${searchParams.toString()}`;
     const response = await axios.get(url);
 
