@@ -1,10 +1,5 @@
 import { User as TelegramUser } from "@telegram-apps/types";
-
-export type Rank = "NEWBIE" | "PROFESSIONAL" | "STALKER" | "LEGEND";
-
-export type Language = "uk" | "en";
-
-export type Theme = "DARK" | "LIGHT";
+import { Language, Rank, Theme } from "@/types/common";
 
 export type Settings = {
   language?: Language;

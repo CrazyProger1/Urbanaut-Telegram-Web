@@ -83,7 +83,7 @@ const BlockExpand = ({
   return (
     <div className="flex flex-col ">
       <OptionalLinkWrapper
-        href={href}
+        href={disable ? undefined : href}
         onClick={disable ? undefined : onClick}
         className={extendedClassName}
       >

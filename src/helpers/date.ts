@@ -1,9 +1,19 @@
 import { format } from "date-fns";
+import { enUS, uk } from "date-fns/locale";
+import { Locale } from "@/i18n/routing";
 
-export const formatDate = (date?: Date) => {
+export const formatDate = (date?: Date, locale?: Locale) => {
   if (!date) return "unknown";
+
+  if (!locale) locale = "en";
+
+  const localeMap = {
+    en: enUS,
+    uk: uk,
+  };
+  const translations = localeMap[locale];
   try {
-    return format(date, "MMMM d, yyyy").toLowerCase();
+    return format(date, "MMMM d, yyyy", { locale: translations }).toLowerCase();
   } catch (e) {
     return "unknown";
   }

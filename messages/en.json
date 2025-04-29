@@ -41,5 +41,16 @@
   "ObjectDescriptionBlock": {
     "description": "Description",
     "main": "Main"
+  },
+  "StateExpand": {
+    "preservation": "Preservation",
+    "difficulty": "Difficulty",
+    "security": "Security",
+    "built_at": "Built",
+    "abandoned_at": "Abandoned",
+    "unknown": "Unknown"
+  },
+  "LocationExpand": {
+    "unknown": "Unknown"
   }
 }

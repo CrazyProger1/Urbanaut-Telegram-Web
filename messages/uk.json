@@ -41,5 +41,16 @@
   "ObjectDescriptionBlock": {
     "description": "Опис",
     "main": "Головне"
+  },
+  "StateExpand": {
+    "preservation": "Стан",
+    "difficulty": "Складність",
+    "security": "Охорона",
+    "built_at": "Збудовано",
+    "abandoned_at": "Закинуто",
+    "unknown": "Невідомо"
+  },
+  "LocationExpand": {
+    "unknown": "Невідомо"
   }
 }

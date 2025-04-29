@@ -1,11 +1,13 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ICONS } from "@/config/media";
-import { PAGES } from "@/config/pages";
-import { URLS } from "@/config/urls";
 import { Block } from "@/components/common/blocks";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { AbandonedObject } from "@/types/abandoned";
+import LocationExpand from "./LocationExpand";
+import StateExpand from "./StateExpand";
+import StatisticsExpand from "@/components/modules/objects/blocks/StatisticsExpand";
+import ExpeditionsExpand from "@/components/modules/objects/blocks/ExpeditionsExpand";
 
 interface Props {
   object: AbandonedObject;
@@ -17,35 +19,32 @@ const ObjectAboutBlock = async ({ object }: Props) => {
     {
       text: t("location"),
       icon: ICONS.PIN,
-      href: PAGES.SETTINGS + "?donate=true",
-      count: 14,
       query: "location",
+      element: <LocationExpand object={object} />,
     },
     {
       text: t("state"),
       icon: ICONS.CLIPBOARD,
-      href: URLS.SUPPORT + "?text=%23support%0A",
-      count: 24,
       query: "state",
+      element: <StateExpand object={object} />,
     },
     {
       text: t("statistics"),
       icon: ICONS.STATISTICS,
-      href: URLS.REPORT + "?text=%23report%0A",
-      count: 321,
       query: "statistics",
+      element: <StatisticsExpand object={object} />,
     },
     {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
-      href: URLS.COMMUNITY,
-      count: 4,
       query: "expeditions",
+      element: <ExpeditionsExpand object={object} />,
+      disabled: true,
     },
   ];
   return (
     <Block blockClassName="w-full" title={`${object.name || "name"}`}>
-      {OBJECT_METRICS.map(({ text, icon, query }, index) => (
+      {OBJECT_METRICS.map(({ text, icon, query, element, disabled }, index) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
           <Block.Expand
@@ -53,8 +52,9 @@ const ObjectAboutBlock = async ({ object }: Props) => {
             content={text}
             icon={icon}
             last={OBJECT_METRICS.length - 1 === index}
+            disable={disabled}
           >
-            Test
+            {element}
           </Block.Expand>
         </div>
       ))}

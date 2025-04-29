@@ -1,4 +1,4 @@
-import { Rating } from "@/types/common";
+import { Rating, Location } from "@/types/common";
 
 export type AbandonedObjectCategory = {
   id: number;
@@ -23,7 +23,7 @@ export type AbandonedObject = {
   built_at?: Date;
   abandoned_at?: Date;
   creator?: number;
-  location?: number;
+  location?: Location;
   photo?: string;
   photos?: AbandonedObjectPhoto[];
   security_level: string;

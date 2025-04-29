@@ -3,11 +3,15 @@ import clsx from "clsx";
 interface Props {
   className?: string;
   fill?: boolean;
+  size?: "sm" | "md" | "lg";
 }
-const StarIcon = ({ className, fill }: Props) => {
+const StarIcon = ({ className, fill, size }: Props) => {
   const combinedClassNames = clsx(
     className,
-    "w-4 h-4 ms-1",
+    "ms-1",
+    size === "sm" && "w-4 h-4",
+    size === "md" && "w-6 h-6",
+    size === "lg" && "w-8 h-8",
     fill && "text-yellow-300",
     !fill && "text-rating-empty",
   );
