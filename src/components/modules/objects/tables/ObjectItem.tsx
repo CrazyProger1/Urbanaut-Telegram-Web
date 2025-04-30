@@ -9,10 +9,11 @@ import { RatingBar } from "@/components/common/bars";
 import clsx from "clsx";
 
 interface Props {
-  object: AbandonedObject;
+  object?: AbandonedObject;
 }
 
 const ObjectItem = ({ object }: Props) => {
+  if (!object) return null;
   const imageClassName = clsx(
     "aspect-square size-32 rounded-2xl",
     object.difficulty_level === "NEWBIE" && "shadow-difficulty-newbie",

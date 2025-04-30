@@ -1,3 +1,5 @@
+"use server";
+
 import {
   ErrorResponse,
   PaginatedResponse,
@@ -8,11 +10,11 @@ import { API_ENDPOINTS } from "@/config/api";
 import { axios } from "@/services/api/api";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/abandoned";
 
-type AbandonedObjectsResponse =
+export type AbandonedObjectsResponse =
   | PaginatedResponse<AbandonedObject>
   | ErrorResponse;
 
-type AbandonedObjectResponse =
+export type AbandonedObjectResponse =
   | (SuccessfulResponse & AbandonedObject)
   | ErrorResponse;
 
@@ -27,7 +29,7 @@ export const getAbandonedObjects = async (
     return {
       success: response.status === 200,
       ...response.data,
-    };
+    } as AbandonedObjectsResponse;
   } catch (error) {
     console.error("Error fetching:", error);
     return {
