@@ -59,5 +59,8 @@
   "LeaderboardNavigationBar": {
     "experience": "experience",
     "karma": "karma"
+  },
+  "PaginatedObjectsTable": {
+    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
   }
 }

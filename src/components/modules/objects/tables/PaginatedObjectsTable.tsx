@@ -6,12 +6,14 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { PaginationParams } from "@/types/api";
 import { getAbandonedObjects } from "@/services/api/objects";
 import { Loader } from "@/components/common/loaders";
+import { useTranslations } from "next-intl";
 
 interface Props {
   filters?: AbandonedObjectFilters & PaginationParams;
 }
 
 const PaginatedObjectsTable = ({ filters }: Props) => {
+  const t = useTranslations("PaginatedObjectsTable");
   const [objects, setObjects] = useState<AbandonedObject[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
@@ -78,7 +80,7 @@ const PaginatedObjectsTable = ({ filters }: Props) => {
       <div ref={triggerRef} className="flex justify-center">
         {isLoading && <Loader />}
         {!hasMore && objects.length > 0 && (
-          <p className="text-center">Wow, you scrolled so far 🧐</p>
+          <p className="text-center">{t("far_scroll")}</p>
         )}
       </div>
     </div>
