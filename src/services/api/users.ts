@@ -1,3 +1,5 @@
+"use server";
+
 import { API_ENDPOINTS } from "@/config/api";
 import { axios } from "@/services/api/api";
 import { User, UserFilters } from "@/types/users";
