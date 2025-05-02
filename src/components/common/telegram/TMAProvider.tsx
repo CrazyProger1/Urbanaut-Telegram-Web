@@ -13,7 +13,7 @@ interface Props {
 try {
   init();
 } catch (e) {
-  console.error("Failed to init Telegram Mini App. Check your environment");
+  // console.error("Failed to init Telegram Mini App. Check your environment");
 }
 
 const TMAProvider = ({ children, manifestUrl }: Props) => {

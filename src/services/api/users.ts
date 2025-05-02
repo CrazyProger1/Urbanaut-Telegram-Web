@@ -31,6 +31,7 @@ export const getUser = async (id: number): Promise<UserResponse> => {
 export const getUsers = async (
   params?: UserFilters & PaginationParams,
 ): Promise<UsersResponse> => {
+  console.log("params: ", params);
   try {
     const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.USERS}?${searchParams.toString()}`;

@@ -8,6 +8,8 @@ import { UserFilters } from "@/types/users";
 import { PaginationParams } from "@/types/api";
 import { getUsers } from "@/services/api/users";
 import { Loader } from "@/components/common/loaders";
+import ObjectItem from "@/components/modules/objects/tables/ObjectItem";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 interface Props {
   filters?: UserFilters & PaginationParams;
@@ -15,24 +17,36 @@ interface Props {
 
 const PaginatedUsersTable = ({ filters }: Props) => {
   const t = useTranslations("PaginatedUsersTable");
-  const {
-    objects: users,
-    isLoading,
-    hasMore,
-    triggerRef,
-  } = usePaginate<UserFilters & PaginationParams, User>(getUsers, filters);
+  const { items, fetchData, isLoading, hasMore, refresh } = usePaginate(
+    getUsers,
+    filters,
+  );
   return (
-    <div className="flex flex-col gap-4">
-      {users.map((user) => (
-        <UserItem key={user.id} user={user} />
+    <InfiniteScroll
+      className="flex flex-col gap-4 px-4 overflow-hidden"
+      dataLength={items.length}
+      next={fetchData}
+      hasMore={hasMore}
+      loader={<div className="text-center">Loading...</div>}
+      endMessage={
+        !isLoading && <p className="text-center">{t("far_scroll")}</p>
+      }
+      refreshFunction={refresh}
+      pullDownToRefresh
+      pullDownToRefreshThreshold={50}
+      pullDownToRefreshContent={
+        <h3 className="text-center">&#8595; Pull down to refresh</h3>
+      }
+      releaseToRefreshContent={
+        <h3 className="text-center">&#8593; Release to refresh</h3>
+      }
+    >
+      {items.map((item, index) => (
+        <div key={item.id} className={index === 0 ? "-mt-4" : ""}>
+          <UserItem user={item} />
+        </div>
       ))}
-      <div ref={triggerRef} className="flex justify-center">
-        {isLoading && <Loader />}
-        {!hasMore && users.length > 0 && (
-          <p className="text-center">{t("far_scroll")}</p>
-        )}
-      </div>
-    </div>
+    </InfiniteScroll>
   );
 };
 

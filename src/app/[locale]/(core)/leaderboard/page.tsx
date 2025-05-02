@@ -12,8 +12,11 @@ interface Props {
 const Page = async ({ searchParams }: Props) => {
   const filters = await searchParams;
   return (
-    <div className="px-4 flex flex-col gap-4">
-      <LeaderboardNavigationBar filters={filters} />
+    <div className="flex flex-col gap-4">
+      <div className="px-4">
+        <LeaderboardNavigationBar filters={filters} />
+      </div>
+
       <PaginatedUsersTable filters={filters} />
     </div>
   );

@@ -20,7 +20,7 @@ const TMAAuth = () => {
       const launchParams = retrieveLaunchParams();
       console.log(launchParams);
     } catch (e) {
-      console.error("Failed to retrieve init data. Check your environment");
+      // console.error("Failed to retrieve init data. Check your environment");
       initData = INITDATA_FALLBACK;
     }
 
