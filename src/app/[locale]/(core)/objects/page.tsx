@@ -1,6 +1,9 @@
 import React from "react";
 
-import { AbandonedObjectFilters } from "@/types/abandoned";
+import {
+  AbandonedObjectFilters,
+  AbandonedObjectSearchBarParams,
+} from "@/types/abandoned";
 import { ObjectSearchBar } from "@/components/modules/objects/bars";
 import { PaginationParams } from "@/types/api";
 import { PaginatedObjectsTable } from "@/components/modules/objects/tables";
@@ -8,15 +11,20 @@ import { PaginatedObjectsTable } from "@/components/modules/objects/tables";
 export const dynamic = "force-dynamic";
 
 interface Props {
-  searchParams: Promise<AbandonedObjectFilters & PaginationParams>;
+  searchParams: Promise<
+    AbandonedObjectFilters & PaginationParams & AbandonedObjectSearchBarParams
+  >;
 }
 
 const ObjectsPage = async ({ searchParams }: Props) => {
-  const filters = await searchParams;
+  const params = await searchParams;
   return (
-    <div>
-      <ObjectSearchBar />
-      <PaginatedObjectsTable filters={filters} />
+    <div className="flex flex-col gap-4">
+      <div className="px-4">
+        <ObjectSearchBar params={params} />
+      </div>
+
+      <PaginatedObjectsTable params={params} />
     </div>
   );
 };

@@ -48,6 +48,9 @@ export type AbandonedObjectFilters = {
   point?: string;
   ordering?: string;
 };
+export type AbandonedObjectSearchBarParams = {
+  bar_opened?: string;
+};
 export type AbandonedArea = {
   id: number;
 };

@@ -10,14 +10,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { usePaginate } from "@/hooks/api";
 
 interface Props {
-  filters?: AbandonedObjectFilters & PaginationParams;
+  params?: AbandonedObjectFilters & PaginationParams;
 }
 
-const PaginatedObjectsTable = ({ filters }: Props) => {
+const PaginatedObjectsTable = ({ params }: Props) => {
   const t = useTranslations("PaginatedObjectsTable");
   const { items, hasMore, fetchData, isLoading, refresh } = usePaginate(
     getAbandonedObjects,
-    filters,
+    params,
   );
 
   return (
