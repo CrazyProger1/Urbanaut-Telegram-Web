@@ -61,10 +61,12 @@
     "karma": "karma"
   },
   "PaginatedObjectsTable": {
-    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0"
+    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0",
+    "loading": "Loading..."
   },
   "PaginatedUsersTable": {
-    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0"
+    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0",
+    "loading": "Loading..."
   }
 
 }

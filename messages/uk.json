@@ -61,9 +61,11 @@
       "karma": "карма"
   },
   "PaginatedObjectsTable": {
-    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
+    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0",
+    "loading": "Завантаження..."
   },
   "PaginatedUsersTable": {
-    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
+    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0",
+    "loading": "Завантаження..."
   }
 }

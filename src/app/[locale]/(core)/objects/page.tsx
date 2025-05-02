@@ -14,7 +14,7 @@ interface Props {
 const ObjectsPage = async ({ searchParams }: Props) => {
   const filters = await searchParams;
   return (
-    <div className="px-4">
+    <div>
       <ObjectSearchBar />
       <PaginatedObjectsTable filters={filters} />
     </div>

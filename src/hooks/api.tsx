@@ -22,7 +22,17 @@ export const usePaginate = <Filters, Obj>(
   const triggerRef = useRef<HTMLDivElement>(null);
   const [objects, setObjects] = useState<Obj[]>([]);
 
+  useEffect(() => {
+    setObjects([]);
+    setHasMore(true);
+    setIsLoading(false);
+    setOffset(Number(params?.offset || 0));
+    loadMore();
+    console.log("PARAMS UPDATED:", params);
+  }, [params]);
+
   const loadMore = useCallback(async () => {
+    console.log("Loading more...");
     if (isLoading || !hasMore) return;
 
     setIsLoading(true);
