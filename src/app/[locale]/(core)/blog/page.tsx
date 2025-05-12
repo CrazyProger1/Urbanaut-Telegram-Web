@@ -1,8 +1,17 @@
 import React from "react";
-import { UnavailablePage } from "@/components/common/pages";
+import { PaginatedPostsTable } from "@/components/modules/blog/tables";
+import { PaginationParams } from "@/types/api";
 
-const BlogPage = () => {
-  return <UnavailablePage />;
+interface Props {
+  searchParams: Promise<PaginationParams>;
+}
+const BlogPage = async ({ searchParams }: Props) => {
+  const params = await searchParams;
+  return (
+    <div className="flex flex-col gap-4">
+      <PaginatedPostsTable params={params} />
+    </div>
+  );
 };
 
 export default BlogPage;

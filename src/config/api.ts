@@ -11,5 +11,7 @@ export const API_ENDPOINTS = {
   REFERRAL_LINKS: `referral_links/`,
   APPLY_REFERRAL_LINK: `referral_links/:code/apply`,
   OBJECTS: `objects/`,
-  OBJECT: "objects/:id",
+  OBJECT: "objects/:id/",
+  POSTS: "posts/",
+  POST: "posts/:id/",
 };

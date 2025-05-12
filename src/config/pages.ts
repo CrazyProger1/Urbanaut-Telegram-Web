@@ -13,6 +13,7 @@ export const PAGES = {
   REFERRALS: "/social/referrals",
   EVENTS: "/events",
   BLOG: "/blog",
+  POST: "/blog/:id",
   OBJECTS: "/objects",
   OBJECT: "/objects/:id",
   UNAVAILABLE: "/unavailable",

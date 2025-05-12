@@ -67,6 +67,10 @@
   "PaginatedUsersTable": {
     "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0",
     "loading": "Loading..."
+  },
+  "PaginatedPostsTable": {
+    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0",
+    "loading": "Loading..."
   }
 
 }
