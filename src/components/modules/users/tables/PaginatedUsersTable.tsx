@@ -34,12 +34,8 @@ const PaginatedUsersTable = ({ filters }: Props) => {
       refreshFunction={refresh}
       pullDownToRefresh
       pullDownToRefreshThreshold={50}
-      pullDownToRefreshContent={
-        <h3 className="text-center">&#8595; Pull down to refresh</h3>
-      }
-      releaseToRefreshContent={
-        <h3 className="text-center">&#8593; Release to refresh</h3>
-      }
+      pullDownToRefreshContent={<h3 className="text-center">&#8595;</h3>}
+      releaseToRefreshContent={<h3 className="text-center">&#8593;</h3>}
     >
       {items.map((item, index) => (
         <div key={item.id} className={index === 0 ? "-mt-4" : ""}>

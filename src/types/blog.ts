@@ -4,11 +4,12 @@ export type BlogPost = {
   id: number;
   title: string;
   topic: BlogTopic;
-  created_by: User;
+  summary?: string;
+  created_by?: User;
   created_at?: Date;
   updated_at?: Date;
   published_at?: Date;
-  content?: string;
+  content: string;
   has_delete_permission?: boolean;
   has_change_permission?: boolean;
 };

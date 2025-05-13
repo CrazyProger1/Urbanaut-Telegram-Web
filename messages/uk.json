@@ -71,5 +71,16 @@
   "PaginatedPostsTable": {
     "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0",
     "loading": "Завантаження..."
+  },
+  "PostItem": {
+    "unknown": "невідомий"
+  },
+  "PostContentBlock": {
+    "main": "Вступ"
+  },
+  "PostAboutBlock": {
+    "statistics": "Статистика",
+    "author": "Автор",
+    "metadata": "Метадані"
   }
 }

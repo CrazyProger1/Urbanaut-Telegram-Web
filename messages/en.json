@@ -71,6 +71,17 @@
   "PaginatedPostsTable": {
     "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0",
     "loading": "Loading..."
+  },
+  "PostItem": {
+    "unknown": "unknown"
+  },
+  "PostContentBlock": {
+    "main": "Introduction"
+  },
+  "PostAboutBlock": {
+    "statistics": "Statistics",
+    "author": "Author",
+    "metadata": "Metadata"
   }
 
 }
