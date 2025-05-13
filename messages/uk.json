@@ -4,7 +4,8 @@
     "support": "Підтримка",
     "report": "Репорт",
     "community": "Ком'юніті",
-    "about": "Інше"
+    "about": "Інше",
+    "terms": "Умови використання"
   },
   "DonateModal": {
     "title": "Донат",
@@ -82,5 +83,9 @@
     "statistics": "Статистика",
     "author": "Автор",
     "metadata": "Метадані"
+  },
+  "TermsBlock": {
+    "terms": "Умови використання",
+    "intro": "Вступ"
   }
 }

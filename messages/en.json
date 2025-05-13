@@ -4,7 +4,8 @@
     "support": "Support",
     "report": "Report",
     "community": "Community",
-    "about": "About"
+    "about": "About",
+    "terms": "Terms of Usage"
   },
   "DonateModal": {
     "title": "Donate",
@@ -82,6 +83,9 @@
     "statistics": "Statistics",
     "author": "Author",
     "metadata": "Metadata"
+  },
+  "TermsBlock": {
+    "terms": "Terms of Use",
+    "intro": "Introduction"
   }
-
 }

@@ -17,6 +17,7 @@ export const PAGES = {
   OBJECTS: "/objects",
   OBJECT: "/objects/:id",
   UNAVAILABLE: "/unavailable",
+  TERMS: "/terms",
 };
 
 export const FOOTER_PAGES = [

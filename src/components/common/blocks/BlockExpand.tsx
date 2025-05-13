@@ -27,7 +27,7 @@ interface Props {
   last?: boolean;
 }
 
-const BlockExpand = ({
+export const BlockExpand = ({
   className,
   variant = "normal",
   content,
@@ -105,5 +105,3 @@ const BlockExpand = ({
     </div>
   );
 };
-
-export default BlockExpand;

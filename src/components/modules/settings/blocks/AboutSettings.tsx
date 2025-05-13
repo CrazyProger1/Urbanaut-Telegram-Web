@@ -1,5 +1,5 @@
 import React from "react";
-import Block from "@/components/common/blocks/Block";
+import { Block } from "@/components/common/blocks";
 
 import { HorizontalDivider } from "@/components/common/dividers";
 import { ICONS } from "@/config/media";
@@ -29,8 +29,13 @@ const AboutSettings = async () => {
     {
       text: t("community"),
       icon: ICONS.COMMUNITY,
-      className: "last:rounded-b-2xl",
       href: URLS.COMMUNITY,
+    },
+    {
+      text: t("terms"),
+      icon: ICONS.INFO,
+      className: "last:rounded-b-2xl",
+      href: PAGES.TERMS,
     },
   ];
   return (

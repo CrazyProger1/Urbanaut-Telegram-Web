@@ -1,5 +1,5 @@
 import React from "react";
-import Block from "@/components/common/blocks/Block";
+import { Block } from "@/components/common/blocks";
 import { ICONS } from "@/config/media";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { Link } from "@/i18n/routing";

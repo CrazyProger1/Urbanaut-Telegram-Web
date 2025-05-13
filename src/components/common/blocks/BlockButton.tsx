@@ -15,7 +15,7 @@ interface Props {
   link?: string;
 }
 
-const BlockButton = ({
+export const BlockButton = ({
   className,
   variant = "normal",
   content,
@@ -59,5 +59,3 @@ const BlockButton = ({
     </OptionalLinkWrapper>
   );
 };
-
-export default BlockButton;

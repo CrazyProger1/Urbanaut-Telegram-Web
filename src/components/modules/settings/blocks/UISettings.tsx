@@ -1,6 +1,6 @@
 "use client";
 import React, { useTransition } from "react";
-import Block from "@/components/common/blocks/Block";
+import { Block } from "@/components/common/blocks";
 import { Toggle } from "@/components/common/contorls";
 
 import useAccountStore from "@/stores/accounts";
