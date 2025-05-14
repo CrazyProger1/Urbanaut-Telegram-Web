@@ -1,8 +1,12 @@
 import React from "react";
-import { UnavailablePage } from "@/components/common/pages";
+import { PaginatedEventsTable } from "@/components/modules/events/tables";
 
 const EventsPage = () => {
-  return <UnavailablePage />;
+  return (
+    <div>
+      <PaginatedEventsTable />
+    </div>
+  );
 };
 
 export default EventsPage;

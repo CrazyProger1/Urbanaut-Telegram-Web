@@ -29,7 +29,7 @@ export const BlockButton = ({
     variant = "disabled";
   }
   const extendedClassName = clsx(
-    "flex flex-row p-2 gap-4 items-center cursor-pointer",
+    "flex flex-row p-2 gap-2 items-center cursor-pointer",
     className,
 
     variant === "danger" && "bg-variant-danger",

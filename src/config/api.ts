@@ -15,4 +15,6 @@ export const API_ENDPOINTS = {
   POSTS: "posts/",
   POST: "posts/:id/",
   CURRENT_TERMS: "terms/current/",
+  EVENTS: "events/",
+  EVENT: "events/:id",
 };

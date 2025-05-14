@@ -46,12 +46,14 @@ export const IMAGES = {
   USER: `${IMAGES_DIR}/user.png`,
   OBJECT: `${IMAGES_DIR}/object.png`,
   POST: `${IMAGES_DIR}/post.png`,
+  EVENT: `${IMAGES_DIR}/event.png`,
 };
 
 export const STUBS = {
   USER: IMAGES.USER,
   OBJECT: IMAGES.OBJECT,
   POST: IMAGES.POST,
+  EVENT: IMAGES.EVENT,
 };
 
 export const ALTS = {
@@ -64,4 +66,5 @@ export const ALTS = {
   UNAVAILABLE_ICON: "Unavailable page icon",
   OBJECT_PHOTO: "Abandoned object photo",
   POST_PHOTO: "Blog post photo",
+  EVENT_PHOTO: "Event photo",
 };

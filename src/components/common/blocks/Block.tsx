@@ -1,6 +1,8 @@
 import React from "react";
 
 import clsx from "clsx";
+import { BlockButton } from "./BlockButton";
+import { BlockExpand } from "./BlockExpand";
 
 interface Props {
   className?: string;
@@ -9,7 +11,8 @@ interface Props {
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
-export const Block = ({
+
+const Block = ({
   className,
   title,
   children,
@@ -32,3 +35,8 @@ export const Block = ({
     </div>
   );
 };
+
+Block.Button = BlockButton;
+Block.Expand = BlockExpand;
+
+export default Block;

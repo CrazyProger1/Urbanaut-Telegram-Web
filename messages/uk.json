@@ -87,5 +87,8 @@
   "TermsBlock": {
     "terms": "Умови використання",
     "intro": "Вступ"
+  },
+  "PaginatedEventsTable": {
+    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
   }
 }

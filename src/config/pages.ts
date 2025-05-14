@@ -18,6 +18,7 @@ export const PAGES = {
   OBJECT: "/objects/:id",
   UNAVAILABLE: "/unavailable",
   TERMS: "/terms",
+  EVENT: "/events/:id",
 };
 
 export const FOOTER_PAGES = [

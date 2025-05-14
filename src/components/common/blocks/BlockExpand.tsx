@@ -70,7 +70,7 @@ export const BlockExpand = ({
     variant = "disabled";
   }
   const extendedClassName = clsx(
-    "flex flex-row gap-4 items-center cursor-pointer p-2",
+    "flex flex-row gap-2 items-center cursor-pointer p-2",
     isOpen && "bg-selection",
     className,
 
