@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { Block } from "@/components/common/blocks";
-import { SessionUser, User } from "@/types/users";
+import { User } from "@/types/users";
 import { HorizontalDivider } from "@/components/common/dividers";
-import { Link } from "@/i18n/routing";
 import { ICONS } from "@/config/media";
 import { PAGES } from "@/config/pages";
 import { URLS } from "@/config/urls";
@@ -14,7 +13,15 @@ interface Props {
 }
 const UserAboutBlock = ({ user }: Props) => {
   const t = useTranslations("UserAboutBlock");
+  const hasDocument = user?.document !== undefined;
+
   const USER_METRICS = [
+    {
+      text: t("document"),
+      icon: ICONS.PROFILE,
+      href: PAGES.DOCUMENT,
+      disabled: !hasDocument,
+    },
     {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
@@ -25,13 +32,13 @@ const UserAboutBlock = ({ user }: Props) => {
       text: t("karma"),
       icon: ICONS.DEAL,
       href: URLS.SUPPORT + "?text=%23support%0A",
-      count: 24,
+      count: user?.karma || 0,
     },
     {
       text: t("experience"),
       icon: ICONS.NINJA,
       href: URLS.REPORT + "?text=%23report%0A",
-      count: 321,
+      count: user?.experience || 0,
     },
     {
       text: t("friends"),
@@ -43,17 +50,17 @@ const UserAboutBlock = ({ user }: Props) => {
   ];
   return (
     <Block blockClassName="w-full" title={`@${user?.username || "username"}`}>
-      {USER_METRICS.map(({ text, icon, className, href, count }) => (
+      {USER_METRICS.map(({ text, icon, className, href, count, disabled }) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
-          <Link href={href}>
-            <Block.Button
-              content={text}
-              metric={count}
-              icon={icon}
-              className={className}
-            />
-          </Link>
+          <Block.Button
+            content={text}
+            metric={count}
+            icon={icon}
+            className={className}
+            disable={disabled}
+            link={hasDocument ? href : undefined}
+          />
         </div>
       ))}
     </Block>

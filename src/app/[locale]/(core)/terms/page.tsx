@@ -2,6 +2,8 @@ import React from "react";
 import { TermsBlock } from "@/components/modules/terms/blocks";
 import { getCurrentTerms } from "@/services/api/terms";
 
+export const dynamic = "force-dynamic";
+
 const Page = async () => {
   const response = await getCurrentTerms();
 

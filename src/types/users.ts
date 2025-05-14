@@ -3,6 +3,10 @@ import { Language, Theme } from "@/types/common";
 
 export type RankKey = "NEWBIE" | "PROFESSIONAL" | "STALKER" | "LEGEND";
 
+export type Document = {
+  code: string;
+};
+
 export type Rank = {
   id: number;
   key: RankKey;
@@ -25,6 +29,7 @@ export type User = {
   experience: number;
   karma: number;
   settings: Settings;
+  document?: Document;
 };
 
 export type SessionUser = User & TelegramUser;

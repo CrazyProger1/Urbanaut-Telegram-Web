@@ -26,7 +26,8 @@
     "expeditions": "Expeditions",
     "karma": "Karma",
     "experience": "Experience",
-    "friends": "Friends"
+    "friends": "Friends",
+    "document": "Document"
   },
   "SocialNavigationBar": {
     "friends": "friends",

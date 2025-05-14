@@ -19,6 +19,7 @@ export const PAGES = {
   UNAVAILABLE: "/unavailable",
   TERMS: "/terms",
   EVENT: "/events/:id",
+  DOCUMENT: "/document",
 };
 
 export const FOOTER_PAGES = [
