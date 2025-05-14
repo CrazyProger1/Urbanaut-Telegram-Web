@@ -14,4 +14,5 @@ export const API_ENDPOINTS = {
   OBJECT: "objects/:id/",
   POSTS: "posts/",
   POST: "posts/:id/",
+  CURRENT_TERMS: "terms/current/",
 };
