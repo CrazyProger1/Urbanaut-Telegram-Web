@@ -17,4 +17,5 @@ export const API_ENDPOINTS = {
   CURRENT_TERMS: "terms/current/",
   EVENTS: "events/",
   EVENT: "events/:id",
+  FRIENDS: "friends/",
 };

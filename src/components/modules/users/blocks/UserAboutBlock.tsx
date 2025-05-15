@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 interface Props {
   user?: User;
 }
+
 const UserAboutBlock = ({ user }: Props) => {
   const t = useTranslations("UserAboutBlock");
   const hasDocument = user?.document !== undefined;
@@ -45,7 +46,7 @@ const UserAboutBlock = ({ user }: Props) => {
       icon: ICONS.FRIENDS,
       className: "last:rounded-b-2xl",
       href: URLS.COMMUNITY,
-      count: 4,
+      count: user?.friends_count || 0,
     },
   ];
   return (

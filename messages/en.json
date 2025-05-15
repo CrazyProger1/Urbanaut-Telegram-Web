@@ -91,5 +91,8 @@
   },
   "PaginatedEventsTable": {
     "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0"
+  },
+  "PaginatedFriendsTable": {
+    "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0"
   }
 }

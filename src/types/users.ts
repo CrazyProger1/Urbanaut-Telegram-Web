@@ -30,6 +30,8 @@ export type User = {
   karma: number;
   settings: Settings;
   document?: Document;
+  is_friend?: boolean;
+  friends_count?: number;
 };
 
 export type SessionUser = User & TelegramUser;

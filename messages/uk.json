@@ -91,5 +91,8 @@
   },
   "PaginatedEventsTable": {
     "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
+  },
+  "PaginatedFriendsTable": {
+    "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
   }
 }
