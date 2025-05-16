@@ -5,8 +5,8 @@ interface Props {
   object: AbandonedObject;
 }
 
-const ExpeditionsExpand = ({ object }: Props) => {
+const ObjectExpeditionsExpand = ({ object }: Props) => {
   return <div></div>;
 };
 
-export default ExpeditionsExpand;
+export default ObjectExpeditionsExpand;

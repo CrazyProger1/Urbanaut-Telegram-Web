@@ -44,15 +44,17 @@
     "description": "Опис",
     "main": "Головне"
   },
-  "StateExpand": {
+  "ObjectStateExpand": {
     "preservation": "Стан",
     "difficulty": "Складність",
     "security": "Охорона",
     "built_at": "Збудовано",
     "abandoned_at": "Закинуто",
+    "created_at": "Створено",
+    "updated_at": "Оновлено",
     "unknown": "Невідомо"
   },
-  "LocationExpand": {
+  "ObjectLocationExpand": {
     "unknown": "Невідомо"
   },
   "Header": {
@@ -94,5 +96,15 @@
   },
   "PaginatedFriendsTable": {
     "far_scroll": "Ого, ти аж сюди доскролив \uD83E\uDDD0"
+  },
+  "PostMetadataExpand": {
+    "created_at": "Створено",
+    "updated_at": "Оновлено"
+  },
+  "PostStatisticsExpand": {
+    "views": "Переглядів"
+  },
+  "ObjectStatisticsExpand": {
+    "views": "Переглядів"
   }
 }

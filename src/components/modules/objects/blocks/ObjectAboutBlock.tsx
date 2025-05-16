@@ -4,10 +4,10 @@ import { ICONS } from "@/config/media";
 import { Block } from "@/components/common/blocks";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { AbandonedObject } from "@/types/abandoned";
-import LocationExpand from "./LocationExpand";
-import StateExpand from "./StateExpand";
-import StatisticsExpand from "@/components/modules/objects/blocks/StatisticsExpand";
-import ExpeditionsExpand from "@/components/modules/objects/blocks/ExpeditionsExpand";
+import ObjectLocationExpand from "./ObjectLocationExpand";
+import ObjectStateExpand from "./ObjectStateExpand";
+import ObjectStatisticsExpand from "./ObjectStatisticsExpand";
+import ObjectExpeditionsExpand from "./ObjectExpeditionsExpand";
 
 interface Props {
   object: AbandonedObject;
@@ -20,25 +20,25 @@ const ObjectAboutBlock = async ({ object }: Props) => {
       text: t("location"),
       icon: ICONS.PIN,
       query: "location",
-      element: <LocationExpand object={object} />,
+      element: <ObjectLocationExpand object={object} />,
     },
     {
       text: t("state"),
       icon: ICONS.CLIPBOARD,
       query: "state",
-      element: <StateExpand object={object} />,
+      element: <ObjectStateExpand object={object} />,
     },
     {
       text: t("statistics"),
       icon: ICONS.STATISTICS,
       query: "statistics",
-      element: <StatisticsExpand object={object} />,
+      element: <ObjectStatisticsExpand object={object} />,
     },
     {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
       query: "expeditions",
-      element: <ExpeditionsExpand object={object} />,
+      element: <ObjectExpeditionsExpand object={object} />,
       disabled: true,
     },
   ];

@@ -4,6 +4,8 @@ import { HorizontalDivider } from "@/components/common/dividers";
 import { Block } from "@/components/common/blocks";
 import { getTranslations } from "next-intl/server";
 import { BlogPost } from "@/types/blog";
+import PostMetadataExpand from "./PostMetadataExpand";
+import PostStatisticsExpand from "./PostStatisticsExpand";
 
 interface Props {
   post: BlogPost;
@@ -16,14 +18,14 @@ const PostAboutBlock = async ({ post }: Props) => {
       text: t("metadata"),
       icon: ICONS.CLIPBOARD,
       query: "metadata",
-      element: <div>test</div>,
+      element: <PostMetadataExpand post={post} />,
       disabled: false,
     },
     {
       text: t("statistics"),
       icon: ICONS.STATISTICS,
       query: "statistics",
-      element: <div>test</div>,
+      element: <PostStatisticsExpand post={post} />,
       disabled: false,
     },
     {

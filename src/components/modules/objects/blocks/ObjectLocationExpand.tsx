@@ -7,8 +7,8 @@ interface Props {
   object: AbandonedObject;
 }
 
-const LocationExpand = async ({ object }: Props) => {
-  const t = await getTranslations("LocationExpand");
+const ObjectLocationExpand = async ({ object }: Props) => {
+  const t = await getTranslations("ObjectLocationExpand");
   const lat = object?.location?.point?.latitude;
   const lng = object?.location?.point?.longitude;
 
@@ -31,4 +31,4 @@ const LocationExpand = async ({ object }: Props) => {
   );
 };
 
-export default LocationExpand;
+export default ObjectLocationExpand;

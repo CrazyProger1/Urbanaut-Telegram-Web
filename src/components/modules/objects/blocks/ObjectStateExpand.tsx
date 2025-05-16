@@ -9,8 +9,8 @@ import { Difficulty, Preservation, Security } from "@/types/common";
 interface Props {
   object: AbandonedObject;
 }
-const StateExpand = async ({ object }: Props) => {
-  const t = await getTranslations("StateExpand");
+const ObjectStateExpand = async ({ object }: Props) => {
+  const t = await getTranslations("ObjectStateExpand");
   const locale = (await getLocale()) as Locale;
 
   const DIFFICULTY_MAP = {
@@ -59,6 +59,18 @@ const StateExpand = async ({ object }: Props) => {
         ? formatDate(object.built_at, locale)
         : t("unknown"),
     },
+    {
+      text: t("created_at"),
+      metric: object.created_at
+        ? formatDate(object.created_at, locale)
+        : t("unknown"),
+    },
+    {
+      text: t("updated_at"),
+      metric: object.updated_at
+        ? formatDate(object.updated_at, locale)
+        : t("unknown"),
+    },
   ];
   return (
     <div className="flex flex-col">
@@ -75,4 +87,4 @@ const StateExpand = async ({ object }: Props) => {
   );
 };
 
-export default StateExpand;
+export default ObjectStateExpand;

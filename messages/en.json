@@ -44,15 +44,17 @@
     "description": "Description",
     "main": "Main"
   },
-  "StateExpand": {
+  "ObjectStateExpand": {
     "preservation": "Preservation",
     "difficulty": "Difficulty",
     "security": "Security",
     "built_at": "Built",
     "abandoned_at": "Abandoned",
+    "created_at": "Created",
+    "updated_at": "Updated",
     "unknown": "Unknown"
   },
-  "LocationExpand": {
+  "ObjectLocationExpand": {
     "unknown": "Unknown"
   },
   "Header": {
@@ -94,5 +96,15 @@
   },
   "PaginatedFriendsTable": {
     "far_scroll": "Wow, you scrolled so far \uD83E\uDDD0"
+  },
+  "PostMetadataExpand": {
+    "created_at": "Created",
+    "updated_at": "Updated"
+  },
+  "PostStatisticsExpand": {
+    "views": "Views"
+  },
+  "ObjectStatisticsExpand": {
+    "views": "Views"
   }
 }

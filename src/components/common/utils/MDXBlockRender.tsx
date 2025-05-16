@@ -3,6 +3,7 @@ import { Block } from "@/components/common/blocks";
 import { slugify } from "@/helpers/url";
 import { MDXRender } from "@/components/common/utils/index";
 import { parseMarkdown } from "@/helpers/markdown";
+import VerticalDivider from "@/components/common/dividers/VerticalDivider";
 
 interface Props {
   title?: string;
@@ -19,15 +20,17 @@ const MDXBlockRender = ({
   return (
     <Block title={title}>
       {sections.map((section, index) => (
-        <Block.Expand
-          first={title === undefined && index === 0}
-          key={index}
-          content={section.title}
-          query={slugify(section.title)}
-          last={sections.length - 1 === index}
-        >
-          <MDXRender source={section.content} />
-        </Block.Expand>
+        <div key={index} className="flex flex-col">
+          {!title && index > 0 && <VerticalDivider />}
+          <Block.Expand
+            first={title === undefined && index === 0}
+            content={section.title}
+            query={slugify(section.title)}
+            last={sections.length - 1 === index}
+          >
+            <MDXRender source={section.content} />
+          </Block.Expand>
+        </div>
       ))}
     </Block>
   );
