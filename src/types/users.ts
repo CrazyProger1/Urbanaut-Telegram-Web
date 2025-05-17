@@ -1,5 +1,6 @@
 import { User as TelegramUser } from "@telegram-apps/types";
-import { Language, Theme } from "@/types/common";
+import { Theme } from "@/types/common";
+import { Locale } from "@/i18n/routing";
 
 export type RankKey = "NEWBIE" | "PROFESSIONAL" | "STALKER" | "LEGEND";
 
@@ -13,7 +14,7 @@ export type Rank = {
   name: string;
 };
 export type Settings = {
-  language?: Language;
+  language?: Locale;
   is_animations_enabled?: boolean;
   is_notifications_enabled?: boolean;
   is_newsletters_enabled?: boolean;

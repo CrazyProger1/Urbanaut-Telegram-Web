@@ -5,7 +5,6 @@ import { HorizontalDivider } from "@/components/common/dividers";
 import { ICONS } from "@/config/media";
 import { PAGES } from "@/config/pages";
 import { URLS } from "@/config/urls";
-import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 const AboutSettings = async () => {
@@ -43,9 +42,12 @@ const AboutSettings = async () => {
       {ABOUT_BUTTONS.map(({ text, icon, className, href }) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
-          <Link href={href}>
-            <Block.Button content={text} icon={icon} className={className} />
-          </Link>
+          <Block.Button
+            content={text}
+            icon={icon}
+            className={className}
+            link={href}
+          />
         </div>
       ))}
     </Block>

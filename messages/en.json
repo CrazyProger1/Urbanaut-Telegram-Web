@@ -16,11 +16,14 @@
   "AccountSettings": {
     "account": "Account",
     "restore": "Restore",
-    "delete": "Delete"
+    "delete": "Delete",
+
+    "region": "Region"
   },
   "UISettings": {
     "UI": "UI",
-    "animations": "Animations"
+    "animations": "Animations",
+    "language": "Language"
   },
   "UserAboutBlock": {
     "expeditions": "Expeditions",
@@ -106,5 +109,12 @@
   },
   "ObjectStatisticsExpand": {
     "views": "Views"
+  },
+  "SecuritySettings": {
+    "security": "Security",
+    "keeper": "KEEPER"
+  },
+  "LanguageModal": {
+    "language": "Language"
   }
 }

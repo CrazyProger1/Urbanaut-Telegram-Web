@@ -1,6 +1,6 @@
 import React from "react";
 import { Block } from "@/components/common/blocks";
-import { ICONS } from "@/config/media";
+import { COUNTRY_ICONS, ICONS } from "@/config/media";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { Link } from "@/i18n/routing";
 import { URLS } from "@/config/urls";
@@ -11,18 +11,25 @@ const AccountSettings = async () => {
   return (
     <Block title={t("account")}>
       <HorizontalDivider />
-      <Link href={URLS.RESTORE_ACCOUNT + "?text=%23restore%0A"}>
-        <Block.Button content={t("restore")} icon={ICONS.CHECKED} />
-      </Link>
+      <Block.Button
+        variant="disabled"
+        content={t("region")}
+        icon={ICONS.REGION}
+      />
       <HorizontalDivider />
-      <Link href={URLS.DELETE_ACCOUNT + "?text=%23delete%0A"}>
-        <Block.Button
-          content={t("delete")}
-          variant="danger"
-          icon={ICONS.CANCEL}
-          className="rounded-b-2xl"
-        />
-      </Link>
+      <Block.Button
+        content={t("restore")}
+        icon={ICONS.CHECKED}
+        link={URLS.RESTORE_ACCOUNT + "?text=%23restore%0A"}
+      />
+      <HorizontalDivider />
+      <Block.Button
+        link={URLS.DELETE_ACCOUNT + "?text=%23delete%0A"}
+        content={t("delete")}
+        variant="danger"
+        icon={ICONS.CANCEL}
+        className="rounded-b-2xl"
+      />
     </Block>
   );
 };

@@ -31,7 +31,18 @@ export const ICONS = {
   STATISTICS: `${ICONS_DIR}/statistics.png`,
   PIN: `${ICONS_DIR}/pin.png`,
   CLIPBOARD: `${ICONS_DIR}/clipboard.png`,
-};
+  REGION: `${ICONS_DIR}/region.png`,
+  UKRAINE: `${ICONS_DIR}/ukraine.png`,
+  UNITED_KINGDOM: `${ICONS_DIR}/united-kingdom.png`,
+  SOS: `${ICONS_DIR}/sos.png`,
+  ANGEL: `${ICONS_DIR}/angel.png`,
+} as const;
+
+export const COUNTRY_ICONS = {
+  ua: ICONS.UKRAINE,
+  gb: ICONS.UNITED_KINGDOM,
+} as const;
+
 export const NOTIFICATION_ICONS = {
   NOTIFICATION: ICONS.INFO,
   GIFT: ICONS.GIFT,
@@ -40,7 +51,7 @@ export const NOTIFICATION_ICONS = {
   CLOCK: ICONS.CLOCK,
   SETTINGS: ICONS.SETTINGS,
   CHECKED: ICONS.CHECKED,
-};
+} as const;
 
 export const IMAGES = {
   USER: `${IMAGES_DIR}/user.png`,
@@ -67,4 +78,5 @@ export const ALTS = {
   OBJECT_PHOTO: "Abandoned object photo",
   POST_PHOTO: "Blog post photo",
   EVENT_PHOTO: "Event photo",
-};
+  LANGUAGE_ICON: "Language icon",
+} as const;

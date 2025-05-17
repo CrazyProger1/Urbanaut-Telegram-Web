@@ -16,11 +16,13 @@
   "AccountSettings": {
     "account": "Аккаунт",
     "restore": "Відновити",
-    "delete": "Видалити"
+    "delete": "Видалити",
+    "region": "Регіон"
   },
   "UISettings": {
     "UI": "Інтерфейс",
-    "animations": "Анімації"
+    "animations": "Анімації",
+    "language": "Мова"
   },
   "UserAboutBlock": {
     "expeditions": "Eкспедиції",
@@ -106,5 +108,12 @@
   },
   "ObjectStatisticsExpand": {
     "views": "Переглядів"
+  },
+  "SecuritySettings": {
+    "security": "Безпека",
+    "keeper": "KEEPER (система безпеки)"
+  },
+  "LanguageModal": {
+    "language": "Мова"
   }
 }
