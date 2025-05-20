@@ -17,7 +17,6 @@
     "account": "Account",
     "restore": "Restore",
     "delete": "Delete",
-
     "region": "Region"
   },
   "UISettings": {
@@ -116,5 +115,14 @@
   },
   "LanguageModal": {
     "language": "Language"
+  },
+  "ObjectSearchBar": {
+    "search": "search...",
+    "category": "category",
+    "difficulty": "difficulty",
+    "location": "location"
+  },
+  "DifficultyModal": {
+    "title": "Difficulty"
   }
 }

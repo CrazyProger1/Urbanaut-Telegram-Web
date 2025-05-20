@@ -115,5 +115,14 @@
   },
   "LanguageModal": {
     "language": "Мова"
+  },
+  "ObjectSearchBar": {
+    "search": "пошук...",
+    "category": "категорія",
+    "difficulty": "складність",
+    "location": "локація"
+  },
+  "DifficultyModal": {
+    "title": "Складність"
   }
 }

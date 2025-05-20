@@ -3,3 +3,4 @@ export { default as ShareIcon } from "./ShareIcon";
 export { default as TelegramIcon } from "./TelegramIcon";
 export { default as StarIcon } from "./StarIcon";
 export { default as CountryIcon } from "./CountryIcon";
+export { default as MoreIcon } from "./MoreIcon";
