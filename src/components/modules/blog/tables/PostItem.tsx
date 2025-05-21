@@ -22,7 +22,7 @@ const PostItem = ({ post }: Props) => {
           className="aspect-square size-32 rounded-2xl shadow-volume"
           width={128}
           height={128}
-          src={STUBS.POST}
+          src={post.photo || STUBS.POST}
           alt={ALTS.OBJECT_PHOTO}
         />
         <div className="ml-2 flex flex-col font-primary justify-between">

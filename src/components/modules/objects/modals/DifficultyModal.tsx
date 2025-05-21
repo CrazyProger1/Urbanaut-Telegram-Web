@@ -5,17 +5,22 @@ import { GradientStepInput } from "@/components/common/inputs";
 import { DIFFICULTY_COLORS, DIFFICULTY_LEVELS } from "@/config/common";
 import { Block } from "@/components/common/blocks";
 import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
+import { MODAL_KEYS } from "@/config/params";
 
 const DifficultyModal = () => {
   const t = useTranslations("DifficultyModal");
-
+  const pathname = usePathname();
+  const router = useRouter();
   const handleClose = (difficulty: string) => {
-    console.log(difficulty);
+    const searchParams = new URLSearchParams();
+    searchParams.set("difficulty_level", difficulty);
+    router.push(`${pathname}?${searchParams.toString()}`);
   };
   const [level, setLevel] = useState(0);
   return (
     <ModalPortal
-      query="difficulty"
+      query={MODAL_KEYS.DIFFICULTY}
       onClose={() => handleClose(DIFFICULTY_LEVELS[level])}
     >
       <Block

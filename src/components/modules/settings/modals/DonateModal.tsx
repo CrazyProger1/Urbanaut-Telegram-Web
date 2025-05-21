@@ -12,6 +12,7 @@ import { ICONS } from "@/config/media";
 import { TON_WALLET } from "@/config/pay";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { ShakableInput } from "@/components/common/inputs";
+import { MODAL_KEYS } from "@/config/params";
 
 const amountSchema = z.number().positive();
 
@@ -51,7 +52,7 @@ const DonateModal = () => {
 
   return (
     <Suspense fallback={null}>
-      <ModalPortal query="donate">
+      <ModalPortal query={MODAL_KEYS.DONATE}>
         <Block
           title={t("title")}
           blockClassName="lg:w-1/4 sm:w-2/4"

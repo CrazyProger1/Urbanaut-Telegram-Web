@@ -124,5 +124,11 @@
   },
   "DifficultyModal": {
     "title": "Difficulty"
+  },
+  "PostSearchBar": {
+    "search": "search...",
+    "topic": "topic",
+    "length": "length",
+    "author": "author"
   }
 }

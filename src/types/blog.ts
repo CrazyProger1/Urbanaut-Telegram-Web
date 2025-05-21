@@ -12,6 +12,7 @@ export type BlogPost = {
   content: string;
   has_delete_permission?: boolean;
   has_change_permission?: boolean;
+  photo?: string;
 };
 
 export type BlogTopic = {

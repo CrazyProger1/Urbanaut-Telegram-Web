@@ -9,7 +9,7 @@ interface Props {
   disable?: boolean;
   link?: string;
 }
-const SearchBarItem = ({
+const SearchBarToggle = ({
   variant = "normal",
   className,
   children,
@@ -23,7 +23,7 @@ const SearchBarItem = ({
     variant = "disabled";
   }
   const combinedClassNames = clsx(
-    "bg-foreground p-2 w-full text-center border",
+    "bg-foreground p-2 w-full text-center border cursor-pointer",
     variant === "activated" && "bg-selection border-selection-border",
     variant === "normal" && "bg-foreground border-transparent",
     variant === "disabled" && "bg-variant-disabled border-transparent",
@@ -36,4 +36,4 @@ const SearchBarItem = ({
   );
 };
 
-export default SearchBarItem;
+export default SearchBarToggle;

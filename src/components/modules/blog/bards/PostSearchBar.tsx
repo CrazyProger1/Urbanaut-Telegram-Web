@@ -6,35 +6,20 @@ import {
   AbandonedObjectSearchBarParams,
 } from "@/types/abandoned";
 
-import { usePathname } from "@/i18n/routing";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { MoreIcon } from "@/components/common/icons";
 import { SearchBarToggle } from "@/components/common/toggles";
-import { MODAL_KEYS } from "@/config/params";
 
 interface Props {
   params?: AbandonedObjectFilters & AbandonedObjectSearchBarParams;
 }
 
-const ObjectSearchBar = ({ params }: Props) => {
+const PostSearchBar = ({ params }: Props) => {
   // TODO: IMPLEMENT & REFACTOR!!!! Mocked for diploma
-  const pathname = usePathname();
   const [isBarOpen, setIsBarOpen] = useState(false);
-  const isDifficultyChosen = !!params?.difficulty_level;
-  const isNearestChosen = !!params?.nearest;
-  const t = useTranslations("ObjectSearchBar");
+  const t = useTranslations("PostSearchBar");
 
-  const getFullUrl = (query: string, value: string) => {
-    const searchParams = new URLSearchParams(params);
-    searchParams.set(query, value);
-    return `${pathname}?${searchParams.toString()}`;
-  };
-  const getClearedUrl = (query: string) => {
-    const searchParams = new URLSearchParams(params);
-    searchParams.delete(query);
-    return `${pathname}?${searchParams.toString()}`;
-  };
   const openCloseButtonClass = clsx(
     "flex flex-col border text-center px-2 justify-center rounded-r-2xl cursor-pointer",
     isBarOpen && "bg-selection border-selection-border",
@@ -45,21 +30,10 @@ const ObjectSearchBar = ({ params }: Props) => {
       <div className="flex flex-col w-full">
         <div className="flex flex-row">
           <SearchBarToggle className="rounded-l-2xl">
-            {t("category")}
+            {t("topic")}
           </SearchBarToggle>
-          <SearchBarToggle
-            link={
-              isDifficultyChosen
-                ? getClearedUrl("difficulty_level")
-                : getFullUrl(MODAL_KEYS.DIFFICULTY, "true")
-            }
-            active={isDifficultyChosen}
-          >
-            {t("difficulty")}
-          </SearchBarToggle>
-          <SearchBarToggle active={isNearestChosen}>
-            {t("location")}
-          </SearchBarToggle>
+          <SearchBarToggle>{t("length")}</SearchBarToggle>
+          <SearchBarToggle>{t("author")}</SearchBarToggle>
         </div>
         {isBarOpen && (
           <form>
@@ -83,4 +57,4 @@ const ObjectSearchBar = ({ params }: Props) => {
   );
 };
 
-export default ObjectSearchBar;
+export default PostSearchBar;
