@@ -18,7 +18,7 @@ const ProfilePage = () => {
       </div>
 
       <UserAvatar user={user} size="6xl" />
-      <UserAboutBlock user={user} />
+      <UserAboutBlock user={user} me />
     </div>
   );
 };

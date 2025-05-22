@@ -10,9 +10,10 @@ import { useTranslations } from "next-intl";
 
 interface Props {
   user?: User;
+  me?: boolean;
 }
 
-const UserAboutBlock = ({ user }: Props) => {
+const UserAboutBlock = ({ user, me }: Props) => {
   const t = useTranslations("UserAboutBlock");
   const hasDocument = user?.document !== undefined;
 
@@ -20,7 +21,7 @@ const UserAboutBlock = ({ user }: Props) => {
     {
       text: t("document"),
       icon: ICONS.PROFILE,
-      href: PAGES.DOCUMENT,
+      href: hasDocument ? PAGES.DOCUMENT : undefined,
       disabled: !hasDocument,
     },
     {
@@ -45,7 +46,7 @@ const UserAboutBlock = ({ user }: Props) => {
       text: t("friends"),
       icon: ICONS.FRIENDS,
       className: "last:rounded-b-2xl",
-      href: URLS.COMMUNITY,
+      href: me ? PAGES.FRIENDS : undefined,
       count: user?.friends_count || 0,
     },
   ];
@@ -60,7 +61,7 @@ const UserAboutBlock = ({ user }: Props) => {
             icon={icon}
             className={className}
             disable={disabled}
-            link={hasDocument ? href : undefined}
+            link={href}
           />
         </div>
       ))}

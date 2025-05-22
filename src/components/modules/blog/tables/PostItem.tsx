@@ -8,6 +8,7 @@ import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ALTS, STUBS } from "@/config/media";
 import { useTranslations } from "next-intl";
+import { Badge } from "@/components/common/badges";
 
 interface Props {
   post: BlogPost;
@@ -29,6 +30,12 @@ const PostItem = ({ post }: Props) => {
           <div>
             <div className="text-md font-bold">{post.title}</div>
             <div className="text-sm mt-1">{post.summary}</div>
+          </div>
+
+          <div className="flex flex-wrap gap-1">
+            {post.topics
+              ?.slice(0, 2)
+              .map((topic) => <Badge key={topic.id} text={topic.name} />)}
           </div>
 
           <div className="flex flex-row justify-end">

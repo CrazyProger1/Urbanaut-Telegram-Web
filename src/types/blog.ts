@@ -3,7 +3,7 @@ import { User } from "@/types/users";
 export type BlogPost = {
   id: number;
   title: string;
-  topic: BlogTopic;
+  topics: BlogTopic[];
   summary?: string;
   created_by?: User;
   created_at?: Date;

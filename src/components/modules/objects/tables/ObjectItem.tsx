@@ -7,6 +7,7 @@ import { Link } from "@/i18n/routing";
 import { PAGES } from "@/config/pages";
 import { RatingBar } from "@/components/common/bars";
 import clsx from "clsx";
+import { Badge } from "@/components/common/badges";
 
 interface Props {
   object?: AbandonedObject;
@@ -35,6 +36,14 @@ const ObjectItem = ({ object }: Props) => {
           <div>
             <div className="text-md font-bold">{object.name}</div>
             <div className="text-sm mt-1">{object.short_description}</div>
+          </div>
+
+          <div className="flex flex-wrap gap-1">
+            {object.categories
+              ?.slice(0, 2)
+              .map((category) => (
+                <Badge key={category.id} text={category.name} />
+              ))}
           </div>
 
           <RatingBar value={Number(object.rating?.value || 0)} />
