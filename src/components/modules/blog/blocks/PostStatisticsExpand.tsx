@@ -3,6 +3,7 @@ import React from "react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/routing";
 import { HorizontalDivider } from "@/components/common/dividers";
+import { BlockMetric } from "@/components/common/blocks";
 
 interface Props {
   post: BlogPost;
@@ -14,18 +15,20 @@ const PostStatisticsExpand = async ({ post }: Props) => {
     {
       text: t("views"),
       metric: 0,
+      tooltip: `${t("views")} - ${0}`,
     },
   ];
 
   return (
     <div className="flex flex-col">
-      {STATE_METRICS.map(({ metric, text }, index) => (
+      {STATE_METRICS.map(({ metric, text, tooltip }, index) => (
         <div key={text}>
           <HorizontalDivider />
-          <div className="p-2 font-primary text-text flex flex-row justify-between">
-            <div>{text}</div>
-            <div>{metric}</div>
-          </div>
+          <BlockMetric
+            metric={metric}
+            text={text}
+            tooltip={tooltip || metric}
+          />
         </div>
       ))}
     </div>

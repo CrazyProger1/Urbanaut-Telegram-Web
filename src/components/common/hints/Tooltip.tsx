@@ -20,7 +20,7 @@ const Tooltip = ({ children, text }: Props) => {
       hideOnClick={true}
       delay={1000}
       interactive={true}
-      animation="shift-away"
+      animation="perspective-extreme"
       aria={{ content: "describedby" }}
       maxWidth={200}
       theme="tooltip"

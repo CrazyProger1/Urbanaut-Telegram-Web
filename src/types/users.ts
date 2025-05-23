@@ -33,6 +33,8 @@ export type User = {
   document?: Document;
   is_friend?: boolean;
   friends_count?: number;
+  posts_count?: number;
+  events_count?: number;
 };
 
 export type SessionUser = User & TelegramUser;

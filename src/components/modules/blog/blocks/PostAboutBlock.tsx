@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { BlogPost } from "@/types/blog";
 import PostMetadataExpand from "./PostMetadataExpand";
 import PostStatisticsExpand from "./PostStatisticsExpand";
+import PostAuthorExpand from "./PostAuthorExpand";
 
 interface Props {
   post: BlogPost;
@@ -32,7 +33,7 @@ const PostAboutBlock = async ({ post }: Props) => {
       text: t("author"),
       icon: ICONS.PROFILE,
       query: "author",
-      element: <div>test</div>,
+      element: <PostAuthorExpand post={post} />,
       disabled: false,
     },
   ];

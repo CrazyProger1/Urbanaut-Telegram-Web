@@ -29,7 +29,8 @@
     "karma": "Карма",
     "experience": "Досвід",
     "friends": "Друзі",
-    "document": "Посвідчення"
+    "document": "Посвідчення",
+    "posts": "Пости"
   },
   "SocialNavigationBar": {
     "friends": "друзі",

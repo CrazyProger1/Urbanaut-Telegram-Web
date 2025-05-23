@@ -27,19 +27,23 @@ const UserAboutBlock = ({ user, me }: Props) => {
     {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
-      href: PAGES.SETTINGS + "?donate=true",
-      count: 14,
+      href: PAGES.EVENTS,
+      count: user?.events_count,
+    },
+    {
+      text: t("posts"),
+      icon: ICONS.BOOK,
+      href: PAGES.BLOG,
+      count: user?.posts_count,
     },
     {
       text: t("karma"),
       icon: ICONS.DEAL,
-      href: URLS.SUPPORT + "?text=%23support%0A",
       count: user?.karma || 0,
     },
     {
       text: t("experience"),
       icon: ICONS.NINJA,
-      href: URLS.REPORT + "?text=%23report%0A",
       count: user?.experience || 0,
     },
     {

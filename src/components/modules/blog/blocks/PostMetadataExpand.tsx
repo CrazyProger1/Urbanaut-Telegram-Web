@@ -4,6 +4,7 @@ import { HorizontalDivider } from "@/components/common/dividers";
 import { Locale } from "@/i18n/routing";
 import { formatDate } from "@/helpers/date";
 import { getLocale, getTranslations } from "next-intl/server";
+import { BlockMetric } from "@/components/common/blocks";
 
 interface Props {
   post: BlogPost;
@@ -32,10 +33,7 @@ const PostMetadataExpand = async ({ post }: Props) => {
       {STATE_METRICS.map(({ metric, text }, index) => (
         <div key={text}>
           <HorizontalDivider />
-          <div className="p-2 font-primary text-text flex flex-row justify-between">
-            <div>{text}</div>
-            <div>{metric}</div>
-          </div>
+          <BlockMetric metric={metric} text={text} tooltip={metric} />
         </div>
       ))}
     </div>
