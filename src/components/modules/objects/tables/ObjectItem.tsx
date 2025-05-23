@@ -24,7 +24,7 @@ const ObjectItem = ({ object }: Props) => {
   );
   return (
     <Link href={PAGES.OBJECT.replace(":id", String(object.id))}>
-      <Block className="flex flex-row p-2">
+      <Block className="flex flex-row p-2" blockClassName="active:bg-selection">
         <Image
           className={imageClassName}
           width={128}

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 
 import React from "react";
 import { useRouter } from "@/i18n/routing";
@@ -11,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const OptionalLinkWrapper = ({ href, onClick, className, children }: Props) => {
+const OptionalLink = ({ href, onClick, className, children }: Props) => {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -35,4 +34,4 @@ const OptionalLinkWrapper = ({ href, onClick, className, children }: Props) => {
   );
 };
 
-export default OptionalLinkWrapper;
+export default OptionalLink;

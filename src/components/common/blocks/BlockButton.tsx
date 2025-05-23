@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from "react";
 import Image from "next/image";
 import { ALTS } from "@/config/media";
 import clsx from "clsx";
-import { OptionalLinkWrapper } from "@/components/common/utils";
+import { OptionalLink } from "@/components/common/utils";
 
 interface Props {
   className?: string;
@@ -38,7 +38,7 @@ const BlockButton = ({
   );
 
   return (
-    <OptionalLinkWrapper
+    <OptionalLink
       href={link}
       onClick={disable ? undefined : onClick}
       className={extendedClassName}
@@ -56,7 +56,7 @@ const BlockButton = ({
         <div>{content}</div>
         <div>{metric}</div>
       </div>
-    </OptionalLinkWrapper>
+    </OptionalLink>
   );
 };
 export default BlockButton;

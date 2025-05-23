@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { OptionalLinkWrapper } from "@/components/common/utils";
+import { OptionalLink } from "@/components/common/utils";
 interface Props {
   variant?: "normal" | "disabled" | "activated";
   className?: string;
@@ -30,9 +30,9 @@ const SearchBarToggle = ({
     className,
   );
   return (
-    <OptionalLinkWrapper href={link} className={combinedClassNames}>
+    <OptionalLink href={link} className={combinedClassNames}>
       {children}
-    </OptionalLinkWrapper>
+    </OptionalLink>
   );
 };
 

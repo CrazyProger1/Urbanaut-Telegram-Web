@@ -30,7 +30,8 @@
     "experience": "Experience",
     "friends": "Friends",
     "document": "Document",
-    "posts": "Posts"
+    "posts": "Posts",
+    "achievements": "Achievements"
   },
   "SocialNavigationBar": {
     "friends": "friends",

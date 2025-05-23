@@ -18,7 +18,7 @@ const PostItem = ({ post }: Props) => {
   const t = useTranslations("PostItem");
   return (
     <Link href={PAGES.POST.replace(":id", String(post.id))}>
-      <Block className="flex flex-row p-2">
+      <Block className="flex flex-row p-2" blockClassName="active:bg-selection">
         <Image
           className="aspect-square size-32 rounded-2xl shadow-volume"
           width={128}

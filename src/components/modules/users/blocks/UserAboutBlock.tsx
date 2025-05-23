@@ -33,8 +33,13 @@ const UserAboutBlock = ({ user, me }: Props) => {
     {
       text: t("posts"),
       icon: ICONS.BOOK,
-      href: PAGES.BLOG,
+      href: `${PAGES.BLOG}?created_by=${user?.id}`,
       count: user?.posts_count,
+    },
+    {
+      text: t("achievements"),
+      icon: ICONS.STAR,
+      count: 150,
     },
     {
       text: t("karma"),

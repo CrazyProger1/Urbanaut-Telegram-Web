@@ -12,7 +12,7 @@ import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import clsx from "clsx";
 import Image from "next/image";
 import { ALTS } from "@/config/media";
-import { OptionalLinkWrapper } from "@/components/common/utils";
+import { OptionalLink } from "@/components/common/utils";
 
 interface Props {
   className?: string;
@@ -82,7 +82,7 @@ const BlockExpand = ({
   );
   return (
     <div className="flex flex-col ">
-      <OptionalLinkWrapper
+      <OptionalLink
         href={disable ? undefined : href}
         onClick={disable ? undefined : onClick}
         className={extendedClassName}
@@ -100,7 +100,7 @@ const BlockExpand = ({
           <div>{content}</div>
           <div>{isOpen ? <FaAngleUp /> : <FaAngleDown />}</div>
         </div>
-      </OptionalLinkWrapper>
+      </OptionalLink>
       {isOpen ? <>{children}</> : null}
     </div>
   );
