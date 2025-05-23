@@ -130,5 +130,25 @@
     "topic": "topic",
     "length": "length",
     "author": "author"
+  },
+  "SecurityLevels": {
+    "NO": "No security",
+    "YES": "Security",
+    "YES_WITH_DOGS": "Security with dogs",
+    "YES_WITH_WEAPONS": "Security with weapons",
+    "YES_MILITARY": "Militarized security"
+  },
+  "DifficultyLevels": {
+    "NEWBIE": "Newbie",
+    "EASY": "Easy",
+    "MEDIUM": "Medium",
+    "HARD": "Hard",
+    "LEGEND": "Legend"
+  },
+  "PreservationLevels": {
+    "LOW": "Low",
+    "MEDIUM": "Medium",
+    "HIGH": "High",
+    "DANGEROUS": "Dangerous"
   }
 }

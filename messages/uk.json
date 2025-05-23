@@ -130,5 +130,25 @@
     "topic": "топік",
     "length": "довжина",
     "author": "автор"
+  },
+  "SecurityLevels": {
+    "NO": "Без охорони",
+    "YES": "Охорона",
+    "YES_WITH_DOGS": "Охорона з собаками",
+    "YES_WITH_WEAPONS": "Охорона зі зброєю",
+    "YES_MILITARY": "Війскова охорона"
+  },
+  "DifficultyLevels": {
+    "NEWBIE": "Новачок",
+    "EASY": "Легкий",
+    "MEDIUM": "Середній",
+    "HARD": "Важкий",
+    "LEGEND": "Легенда"
+  },
+  "PreservationLevels": {
+    "LOW": "Низький",
+    "MEDIUM": "Середній",
+    "HIGH": "Високий",
+    "DANGEROUS": "Небезпечний"
   }
 }

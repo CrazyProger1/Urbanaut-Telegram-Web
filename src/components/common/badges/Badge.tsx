@@ -6,7 +6,9 @@ interface Props {
 }
 const Badge = ({ text, size = "sm" }: Props) => {
   return (
-    <div className="bg-selection px-2 rounded-lg text-sm text-text">{text}</div>
+    <div className="bg-selection px-2 rounded-lg text-sm text-text shadow-volume">
+      {text}
+    </div>
   );
 };
 

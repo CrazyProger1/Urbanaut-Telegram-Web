@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { formatDate } from "@/helpers/date";
 import { Locale } from "@/i18n/routing";
 import { Difficulty, Preservation, Security } from "@/types/common";
+import { BlockMetric } from "@/components/common/blocks";
 
 interface Props {
   object: AbandonedObject;
@@ -12,6 +13,10 @@ interface Props {
 const ObjectStateExpand = async ({ object }: Props) => {
   const t = await getTranslations("ObjectStateExpand");
   const locale = (await getLocale()) as Locale;
+
+  const dt = await getTranslations("DifficultyLevels");
+  const pt = await getTranslations("PreservationLevels");
+  const st = await getTranslations("SecurityLevels");
 
   const DIFFICULTY_MAP = {
     NEWBIE: "⚪️",
@@ -34,18 +39,25 @@ const ObjectStateExpand = async ({ object }: Props) => {
     YES_MILITARY: "⚫️",
   };
 
+  const difficulty = object.difficulty_level as Difficulty;
+  const preservation = object.preservation_level as Preservation;
+  const security = object.security_level as Security;
+
   const STATE_METRICS = [
     {
       text: t("security"),
-      metric: SECURITY_MAP[object.security_level as Security],
+      metric: SECURITY_MAP[security],
+      tooltip: st(security),
     },
     {
       text: t("difficulty"),
-      metric: DIFFICULTY_MAP[object.difficulty_level as Difficulty],
+      metric: DIFFICULTY_MAP[difficulty],
+      tooltip: dt(difficulty),
     },
     {
       text: t("preservation"),
-      metric: PRESERVATION_MAP[object.preservation_level as Preservation],
+      metric: PRESERVATION_MAP[preservation],
+      tooltip: pt(preservation),
     },
     {
       text: t("abandoned_at"),
@@ -74,13 +86,10 @@ const ObjectStateExpand = async ({ object }: Props) => {
   ];
   return (
     <div className="flex flex-col">
-      {STATE_METRICS.map(({ metric, text }, index) => (
+      {STATE_METRICS.map(({ metric, text, tooltip }, index) => (
         <div key={text}>
           <HorizontalDivider />
-          <div className="p-2 font-primary text-text flex flex-row justify-between">
-            <div>{text}</div>
-            <div>{metric}</div>
-          </div>
+          <BlockMetric metric={metric} text={text} tooltip={tooltip} />
         </div>
       ))}
     </div>
