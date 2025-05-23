@@ -5,7 +5,7 @@ import { z } from "zod";
 import { useTranslations } from "next-intl";
 
 import { ModalPortal } from "@/components/common/modals";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockButton } from "@/components/common/blocks";
 import { SendTransactionRequest } from "@tonconnect/ui";
 import { useTonConnectUI, useTonWallet } from "@/telegram/ui-react";
 import { ICONS } from "@/config/media";
@@ -70,14 +70,14 @@ const DonateModal = () => {
             className={`border ${shaking ? "border-variant-danger" : "border-transparent"}`}
           />
           <HorizontalDivider />
-          <Block.Button
+          <BlockButton
             icon={ICONS.WALLET}
             content={t("connectWallet")}
             onClick={handleConnectWallet}
             disable={wallet !== null}
           />
           <HorizontalDivider />
-          <Block.Button
+          <BlockButton
             className="rounded-b-2xl"
             content={t("donate")}
             icon={ICONS.GIFT}

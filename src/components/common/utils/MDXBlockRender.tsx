@@ -1,5 +1,5 @@
 import React from "react";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockExpand } from "@/components/common/blocks";
 import { slugify } from "@/helpers/url";
 import { MDXRender } from "@/components/common/utils/index";
 import { parseMarkdown } from "@/helpers/markdown";
@@ -22,14 +22,14 @@ const MDXBlockRender = ({
       {sections.map((section, index) => (
         <div key={index} className="flex flex-col">
           {!title && index > 0 && <VerticalDivider />}
-          <Block.Expand
+          <BlockExpand
             first={title === undefined && index === 0}
             content={section.title}
             query={slugify(section.title)}
             last={sections.length - 1 === index}
           >
             <MDXRender source={section.content} />
-          </Block.Expand>
+          </BlockExpand>
         </div>
       ))}
     </Block>

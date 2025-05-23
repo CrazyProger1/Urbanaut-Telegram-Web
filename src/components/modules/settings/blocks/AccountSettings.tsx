@@ -1,5 +1,5 @@
 import React from "react";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockButton } from "@/components/common/blocks";
 import { COUNTRY_ICONS, ICONS } from "@/config/media";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { Link } from "@/i18n/routing";
@@ -11,19 +11,19 @@ const AccountSettings = async () => {
   return (
     <Block title={t("account")}>
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         variant="disabled"
         content={t("region")}
         icon={ICONS.REGION}
       />
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         content={t("restore")}
         icon={ICONS.CHECKED}
         link={URLS.RESTORE_ACCOUNT + "?text=%23restore%0A"}
       />
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         link={URLS.DELETE_ACCOUNT + "?text=%23delete%0A"}
         content={t("delete")}
         variant="danger"

@@ -18,7 +18,7 @@ const Tooltip = ({ children, text }: Props) => {
       placement="top"
       touch={true}
       hideOnClick={true}
-      delay={300}
+      delay={1000}
       interactive={true}
       animation="shift-away"
       aria={{ content: "describedby" }}

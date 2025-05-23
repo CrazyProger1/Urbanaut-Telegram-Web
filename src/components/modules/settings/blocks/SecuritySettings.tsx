@@ -1,5 +1,5 @@
 import React from "react";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockButton } from "@/components/common/blocks";
 import { getTranslations } from "next-intl/server";
 import { ICONS } from "@/config/media";
 import { HorizontalDivider } from "@/components/common/dividers";
@@ -9,18 +9,18 @@ const SecuritySettings = async () => {
   return (
     <Block title={t("security")}>
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         content={t("keeper")}
         variant="disabled"
         icon={ICONS.ANGEL}
-      ></Block.Button>
+      ></BlockButton>
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         content="SOS"
         variant="disabled"
         icon={ICONS.SOS}
         className="rounded-b-2xl"
-      ></Block.Button>
+      ></BlockButton>
     </Block>
   );
 };

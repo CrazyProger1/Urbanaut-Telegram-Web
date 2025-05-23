@@ -1,5 +1,5 @@
 import React from "react";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockButton } from "@/components/common/blocks";
 
 import { HorizontalDivider } from "@/components/common/dividers";
 import { ICONS } from "@/config/media";
@@ -42,7 +42,7 @@ const AboutSettings = async () => {
       {ABOUT_BUTTONS.map(({ text, icon, className, href }) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
-          <Block.Button
+          <BlockButton
             content={text}
             icon={icon}
             className={className}

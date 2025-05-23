@@ -1,6 +1,6 @@
 "use client";
 import React, { useTransition } from "react";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockButton } from "@/components/common/blocks";
 import { Toggle } from "src/components/common/toggles";
 
 import useAccountStore from "@/stores/accounts";
@@ -30,7 +30,7 @@ const UISettings = () => {
   return (
     <Block title={t("UI")}>
       <HorizontalDivider />
-      <Block.Button
+      <BlockButton
         content={t("language")}
         icon={COUNTRY_ICONS[LOCALE_COUNTRY_MAP[locale]]}
         link={PAGES.SETTINGS + "?language=true"}

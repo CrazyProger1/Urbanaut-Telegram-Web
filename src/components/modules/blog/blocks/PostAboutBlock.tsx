@@ -1,7 +1,7 @@
 import React from "react";
 import { ICONS } from "@/config/media";
 import { HorizontalDivider } from "@/components/common/dividers";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockExpand } from "@/components/common/blocks";
 import { getTranslations } from "next-intl/server";
 import { BlogPost } from "@/types/blog";
 import PostMetadataExpand from "./PostMetadataExpand";
@@ -41,7 +41,7 @@ const PostAboutBlock = async ({ post }: Props) => {
       {POST_METRICS.map(({ text, icon, query, element, disabled }, index) => (
         <div key={index}>
           <HorizontalDivider />
-          <Block.Expand
+          <BlockExpand
             query={query}
             content={text}
             icon={icon}
@@ -49,7 +49,7 @@ const PostAboutBlock = async ({ post }: Props) => {
             last={POST_METRICS.length - 1 === index}
           >
             {element}
-          </Block.Expand>
+          </BlockExpand>
         </div>
       ))}
     </Block>

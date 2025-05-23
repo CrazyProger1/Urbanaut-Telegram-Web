@@ -1,7 +1,7 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ICONS } from "@/config/media";
-import { Block } from "@/components/common/blocks";
+import { Block, BlockExpand } from "@/components/common/blocks";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { AbandonedObject } from "@/types/abandoned";
 import ObjectLocationExpand from "./ObjectLocationExpand";
@@ -47,7 +47,7 @@ const ObjectAboutBlock = async ({ object }: Props) => {
       {OBJECT_METRICS.map(({ text, icon, query, element, disabled }, index) => (
         <div className="flex flex-col" key={text}>
           <HorizontalDivider />
-          <Block.Expand
+          <BlockExpand
             query={query}
             content={text}
             icon={icon}
@@ -55,7 +55,7 @@ const ObjectAboutBlock = async ({ object }: Props) => {
             disable={disabled}
           >
             {element}
-          </Block.Expand>
+          </BlockExpand>
         </div>
       ))}
     </Block>
