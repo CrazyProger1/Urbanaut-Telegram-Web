@@ -6,7 +6,6 @@ import { RatingBar } from "@/components/common/bars";
 import { HorizontalDivider } from "@/components/common/dividers";
 import { useTranslations } from "next-intl";
 import { vote } from "@/services/api/rating";
-import { Loader } from "@/components/common/loaders";
 
 interface Props {
   object: AbandonedObject;

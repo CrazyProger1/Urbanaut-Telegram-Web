@@ -1,6 +1,16 @@
 import React from "react";
+import clsx from "clsx";
 
-const Loader = () => {
+interface Props {
+  size?: "sm" | "md" | "lg";
+}
+
+const Loader = ({ size = "sm" }: Props) => {
+  const className = clsx(
+    "text-selection animate-spin fill-text",
+    size === "sm" && "w-4 h-4",
+    size === "md" && "w-8 h-8",
+  );
   return (
     <div role="status">
       <svg

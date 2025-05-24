@@ -1,10 +1,12 @@
 import React from "react";
 import clsx from "clsx";
+
 interface Props {
   className?: string;
   fill?: boolean;
   size?: "sm" | "md" | "lg";
 }
+
 const StarIcon = ({ className, fill, size }: Props) => {
   const combinedClassNames = clsx(
     className,

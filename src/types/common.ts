@@ -1,6 +1,7 @@
 export type Rating = {
   id: number;
   value: number;
+  vote?: number;
 };
 
 export type Point = {

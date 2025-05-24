@@ -14,7 +14,7 @@ import {
   IgnorePagesWrapper,
   SwipeNavigationWrapper,
 } from "@/components/common/utils";
-import { PAGES } from "@/config/pages";
+import { PAGES, SWIPE_NAVIGATION_PAGES } from "@/config/pages";
 
 export const metadata: Metadata = {
   title: APP,
@@ -51,7 +51,10 @@ const RootLayout = async ({ children, params }: Props) => {
               <Header />
             </IgnorePagesWrapper>
             <NextIntlClientProvider messages={messages}>
-              <SwipeNavigationWrapper className="py-4 flex-1 flex flex-col h-full">
+              <SwipeNavigationWrapper
+                pages={SWIPE_NAVIGATION_PAGES}
+                className="py-4 flex-1 flex flex-col h-full"
+              >
                 {children}
               </SwipeNavigationWrapper>
             </NextIntlClientProvider>
