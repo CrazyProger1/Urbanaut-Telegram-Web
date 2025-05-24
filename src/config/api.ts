@@ -18,4 +18,5 @@ export const API_ENDPOINTS = {
   EVENTS: "events/",
   EVENT: "events/:id",
   FRIENDS: "friends/",
+  VOTE: "ratings/:id/votes/",
 };

@@ -1,15 +1,31 @@
-import React from "react";
+"use client";
+
+import React, { useState, useTransition } from "react";
 import { AbandonedObject } from "@/types/abandoned";
 import { RatingBar } from "@/components/common/bars";
 import { HorizontalDivider } from "@/components/common/dividers";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { vote } from "@/services/api/rating";
+import { Loader } from "@/components/common/loaders";
 
 interface Props {
   object: AbandonedObject;
 }
 
-const ObjectStatisticsExpand = async ({ object }: Props) => {
-  const t = await getTranslations("ObjectStatisticsExpand");
+const ObjectStatisticsExpand = ({ object }: Props) => {
+  const t = useTranslations("ObjectStatisticsExpand");
+  const [value, setValue] = useState(object.rating?.value || 0);
+  const [isPending, startTransition] = useTransition();
+  const handleVote = (value: number) => {
+    setValue(value);
+    startTransition(async () => {
+      if (object.rating && value) {
+        const newRating = await vote(object.rating.id, value);
+        setValue(newRating.value);
+      }
+    });
+  };
+
   return (
     <div className="flex flex-col">
       <HorizontalDivider />
@@ -19,7 +35,7 @@ const ObjectStatisticsExpand = async ({ object }: Props) => {
       </div>
       <HorizontalDivider />
       <div className="p-2 flex flex-row justify-center">
-        <RatingBar size="md" value={object.rating?.value} />
+        <RatingBar size="md" value={value} onVote={handleVote} active={true} />
       </div>
     </div>
   );
