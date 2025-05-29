@@ -43,3 +43,25 @@ axios.interceptors.request.use(
     return Promise.reject(error);
   },
 );
+
+export const fetchExtended = async (
+  path: string,
+  options: RequestInit = {},
+): Promise<Response> => {
+  const session = await getSession();
+  const locale = await getLocale();
+
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+    "Accept-Language": locale || "en",
+    ...(session && {
+      Authorization: `tma ${encodeURIComponent(session.initData)}`,
+    }),
+    ...(options.headers || {}),
+  };
+
+  return await fetch(`${API_URL}${path}`, {
+    ...options,
+    headers,
+  });
+};
