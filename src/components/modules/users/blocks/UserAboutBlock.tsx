@@ -25,6 +25,12 @@ const UserAboutBlock = ({ user, me }: Props) => {
       disabled: !hasDocument,
     },
     {
+      text: t("achievements"),
+      icon: ICONS.STAR,
+      count: 0,
+      disabled: true,
+    },
+    {
       text: t("expeditions"),
       icon: ICONS.BACKPACK,
       href: PAGES.EVENTS,
@@ -35,11 +41,6 @@ const UserAboutBlock = ({ user, me }: Props) => {
       icon: ICONS.BOOK,
       href: `${PAGES.BLOG}?created_by=${user?.id}`,
       count: user?.posts_count,
-    },
-    {
-      text: t("achievements"),
-      icon: ICONS.STAR,
-      count: 150,
     },
     {
       text: t("karma"),

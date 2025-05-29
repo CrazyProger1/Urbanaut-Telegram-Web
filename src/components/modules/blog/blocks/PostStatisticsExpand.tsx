@@ -14,8 +14,8 @@ const PostStatisticsExpand = async ({ post }: Props) => {
   const STATE_METRICS = [
     {
       text: t("views"),
-      metric: 0,
-      tooltip: `${t("views")} - ${0}`,
+      metric: post.views,
+      tooltip: `${t("views")} - ${post.views}`,
     },
   ];
 

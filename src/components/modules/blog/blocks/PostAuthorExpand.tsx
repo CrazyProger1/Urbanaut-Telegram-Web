@@ -17,12 +17,13 @@ const PostAuthorExpand = ({ post }: Props) => {
     return "unknown";
   }
   return (
-    <div className="flex flex-col">
+    <Link
+      className="flex flex-col"
+      href={PAGES.OTHERS_PROFILE.replace(":id", String(user.id))}
+    >
       <HorizontalDivider />
       <div className="p-2 flex flex-row items-center">
-        <Link href={PAGES.OTHERS_PROFILE.replace(":id", String(user.id))}>
-          <UserAvatar user={user} />
-        </Link>
+        <UserAvatar user={user} />
         <div className="pl-2">
           <h1 className=" font-bold font-primary">
             @{user?.nickname || user?.username || "username"}
@@ -32,7 +33,7 @@ const PostAuthorExpand = ({ post }: Props) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -37,6 +37,7 @@ export type AbandonedObject = {
   security_level: Security;
   preservation_level: Preservation;
   difficulty_level: Difficulty;
+  views?: number;
 };
 
 export type AbandonedObjectFilters = {

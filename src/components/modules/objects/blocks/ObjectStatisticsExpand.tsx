@@ -30,7 +30,7 @@ const ObjectStatisticsExpand = ({ object }: Props) => {
       <HorizontalDivider />
       <div className="p-2 font-primary text-text flex flex-row justify-between">
         <div>{t("views")}</div>
-        <div>0</div>
+        <div>{object.views}</div>
       </div>
       <HorizontalDivider />
       <div className="p-2 flex flex-row justify-center">
