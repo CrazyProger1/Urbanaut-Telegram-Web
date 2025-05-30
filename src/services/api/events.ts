@@ -7,7 +7,7 @@ import {
   SuccessfulResponse,
 } from "@/types/api";
 import { API_ENDPOINTS } from "@/config/api";
-import { axios } from "@/services/api/api";
+import { fetchExtended } from "@/services/api/api";
 import { CommunityEvent } from "@/types/events";
 
 export type EventsResponse = PaginatedResponse<CommunityEvent> | ErrorResponse;
@@ -22,11 +22,12 @@ export const getEvents = async (
   try {
     const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.EVENTS}?${searchParams.toString()}`;
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     } as EventsResponse;
   } catch (error) {
     console.error("Error fetching:", error);
@@ -39,11 +40,12 @@ export const getEvents = async (
 export const getEvent = async (id: number): Promise<EventResponse> => {
   try {
     const url = API_ENDPOINTS.EVENT.replace(":id", String(id));
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     };
   } catch (error) {
     console.error("Error fetching:", error);

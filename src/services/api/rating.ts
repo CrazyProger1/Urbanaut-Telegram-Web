@@ -1,7 +1,7 @@
 "use server";
 
 import { API_ENDPOINTS } from "@/config/api";
-import { axios } from "@/services/api/api";
+import { fetchExtended } from "@/services/api/api";
 import { SuccessfulResponse } from "@/types/api";
 import { Rating } from "@/types/common";
 
@@ -13,11 +13,16 @@ export const vote = async (
 ): Promise<VoteResponse> => {
   try {
     const url = API_ENDPOINTS.VOTE.replace(":id", String(id));
-    const response = await axios.post(url, { value: value });
+    const response = await fetchExtended(url, {
+      method: "POST",
+      body: JSON.stringify({ value }),
+    });
+
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     };
   } catch (error) {
     console.error("Error fetching:", error);

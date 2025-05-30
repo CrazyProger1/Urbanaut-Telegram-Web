@@ -1,7 +1,7 @@
 "use server";
 
 import { API_ENDPOINTS } from "@/config/api";
-import { axios } from "@/services/api/api";
+import { fetchExtended } from "@/services/api/api";
 import { User, UserFilters } from "@/types/users";
 import {
   PaginatedResponse,
@@ -15,11 +15,12 @@ type UsersResponse = PaginatedResponse<User>;
 export const getUser = async (id: number): Promise<UserResponse> => {
   try {
     const url = `${API_ENDPOINTS.USER.replace(":id", id.toString())}`;
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     };
   } catch (error) {
     console.error("Error fetching:", error);
@@ -35,11 +36,12 @@ export const getUsers = async (
   try {
     const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.USERS}?${searchParams.toString()}`;
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     };
   } catch (error) {
     console.error("Error fetching:", error);

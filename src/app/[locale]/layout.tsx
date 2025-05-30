@@ -16,6 +16,8 @@ import {
 } from "@/components/common/utils";
 import { PAGES, SWIPE_NAVIGATION_PAGES } from "@/config/pages";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: APP,
   description: DESCRIPTION,

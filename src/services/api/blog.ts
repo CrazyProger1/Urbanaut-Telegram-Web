@@ -19,7 +19,7 @@ export const getBlogPosts = async (
   try {
     const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.POSTS}?${searchParams.toString()}`;
-    const response = await fetchExtended(url, { next: { revalidate: 60 } });
+    const response = await fetchExtended(url);
     const data = await response.json();
 
     return {
@@ -37,7 +37,7 @@ export const getBlogPosts = async (
 export const getBlogPost = async (id: number): Promise<BlogPostResponse> => {
   try {
     const url = API_ENDPOINTS.POST.replace(":id", String(id));
-    const response = await fetchExtended(url, { next: { revalidate: 60 } });
+    const response = await fetchExtended(url);
     const data = await response.json();
     return {
       success: response.status === 200,

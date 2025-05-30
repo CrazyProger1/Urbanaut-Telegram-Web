@@ -7,7 +7,7 @@ import {
   SuccessfulResponse,
 } from "@/types/api";
 import { API_ENDPOINTS } from "@/config/api";
-import { axios } from "@/services/api/api";
+import { fetchExtended } from "@/services/api/api";
 import { AbandonedObject, AbandonedObjectFilters } from "@/types/abandoned";
 
 export type AbandonedObjectsResponse =
@@ -24,11 +24,12 @@ export const getAbandonedObjects = async (
   try {
     const searchParams = new URLSearchParams(params);
     const url = `${API_ENDPOINTS.OBJECTS}?${searchParams.toString()}`;
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     } as AbandonedObjectsResponse;
   } catch (error) {
     console.error("Error fetching:", error);
@@ -43,11 +44,12 @@ export const getAbandonedObject = async (
 ): Promise<AbandonedObjectResponse> => {
   try {
     const url = API_ENDPOINTS.OBJECT.replace(":id", String(id));
-    const response = await axios.get(url);
+    const response = await fetchExtended(url);
+    const data = await response.json();
 
     return {
       success: response.status === 200,
-      ...response.data,
+      ...data,
     };
   } catch (error) {
     console.error("Error fetching:", error);
